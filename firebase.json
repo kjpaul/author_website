@@ -1,0 +1,47 @@
+{
+  "hosting": {
+    "public": "public",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      { "source": "/book", "destination": "/series/technical/orbital-rings/", "type": 301 },
+      { "source": "/books", "destination": "/series/", "type": 301 },
+      { "source": "/books/orbital-ring", "destination": "/series/technical/orbital-rings/", "type": 301 },
+      { "source": "/books/orbital-ring/**", "destination": "/series/technical/orbital-rings/", "type": 301 }
+    ],
+    "rewrites": [
+      { "source": "/api/subscribe", "function": "subscribe" }
+    ],
+    "headers": [
+      {
+        "source": "/data/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=3600" }
+        ]
+      },
+      {
+        "source": "/admin/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "private, no-cache" }
+        ]
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs20",
+      "ignore": ["node_modules", ".git", "firebase-debug.log", "*.local"]
+    }
+  ]
+}

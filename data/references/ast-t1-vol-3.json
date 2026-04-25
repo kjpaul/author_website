@@ -1,0 +1,279 @@
+{
+  "series_id": "AST-T1",
+  "book_title": "Engineering Orbital Rings, Mass Drivers and Space Elevators",
+  "volume": 3,
+  "volume_title": "Space Mass Transit Systems, Complete Design Review",
+  "last_updated": "2026-04-18",
+  "chapters": [
+    {
+      "number": "12-13",
+      "title": "Catastrophic Failure Analysis and Design Altitude",
+      "references": [
+        {
+          "num": 1,
+          "type": "journal",
+          "authors": "Robock, A., Oman, L., and Stenchikov, G.L.",
+          "title": "Nuclear winter revisited with a modern climate model and current nuclear arsenals: Still catastrophic consequences",
+          "journal": "Journal of Geophysical Research",
+          "volume": "112",
+          "pages": "D13107",
+          "year": 2007,
+          "doi": "10.1029/2006JD008235"
+        },
+        {
+          "num": 2,
+          "type": "journal",
+          "authors": "Toon, O.B., Robock, A., and Turco, R.P.",
+          "title": "Environmental consequences of nuclear war",
+          "journal": "Physics Today",
+          "volume": "61",
+          "issue": "12",
+          "pages": "37-42",
+          "year": 2008,
+          "doi": "10.1063/1.3047679"
+        },
+        {
+          "num": 3,
+          "type": "journal",
+          "authors": "Housen, K.R. and Holsapple, K.A.",
+          "title": "Ejecta from impact craters",
+          "journal": "Icarus",
+          "volume": "211",
+          "issue": "1",
+          "pages": "856-875",
+          "year": 2011
+        },
+        {
+          "num": 4,
+          "type": "book",
+          "authors": "Melosh, H.J.",
+          "title": "Impact Cratering: A Geologic Process",
+          "publisher": "Oxford University Press",
+          "year": 1989,
+          "note": "Chapter 7: Ejecta scaling laws."
+        },
+        {
+          "num": 5,
+          "type": "report",
+          "authors": "Sawyer, D.M. and Vette, J.I.",
+          "title": "AP-8 Trapped Proton Environment for Solar Maximum and Solar Minimum",
+          "publisher": "NASA/WDC-A-R&S",
+          "report_number": "Report 76-06",
+          "year": 1976
+        },
+        {
+          "num": 6,
+          "type": "journal",
+          "authors": "Li, W. and Hudson, M.K.",
+          "title": "Earth's Van Allen Radiation Belts: From Discovery to the Van Allen Probes Era",
+          "journal": "Journal of Geophysical Research: Space Physics",
+          "volume": "124",
+          "pages": "8319-8351",
+          "year": 2019
+        },
+        {
+          "num": 7,
+          "type": "journal",
+          "authors": "Fischer, D.X. et al.",
+          "title": "The effect of fast neutron irradiation on the superconducting properties of REBCO coated conductors with and without artificial pinning centers",
+          "journal": "Superconductor Science and Technology",
+          "volume": "31",
+          "pages": "044006",
+          "year": 2018
+        },
+        {
+          "num": 8,
+          "type": "report",
+          "authors": "Seltzer, S.M.",
+          "title": "Updated Calculations for Routine Space-Shielding Radiation Dose Estimates: SHIELDOSE-2",
+          "publisher": "NIST",
+          "report_number": "NISTIR 5477",
+          "year": 1994
+        },
+        {
+          "num": 9,
+          "type": "journal",
+          "authors": "Summers, G.P. et al.",
+          "title": "Damage Correlations in Semiconductors Exposed to Gamma, Electron and Proton Radiations",
+          "journal": "IEEE Transactions on Nuclear Science",
+          "volume": "40",
+          "issue": "6",
+          "pages": "1372-1379",
+          "year": 1993
+        },
+        {
+          "num": 10,
+          "type": "journal",
+          "authors": "Messenger, S.R. et al.",
+          "title": "Nonionizing Energy Loss (NIEL) for Heavy Ions",
+          "journal": "IEEE Transactions on Nuclear Science",
+          "volume": "46",
+          "issue": "6",
+          "pages": "1595-1602",
+          "year": 1999
+        }
+      ]
+    },
+    {
+      "number": "1-11",
+      "title": "Design Review: Structure, Subsystems, and Performance",
+      "references": [
+        {
+          "num": 1,
+          "type": "journal",
+          "authors": "Zhang, Y., et al.",
+          "title": "Carbon nanotube fibers with dynamic strength up to 14 GPa",
+          "journal": "Science",
+          "year": 2024,
+          "doi": "10.1126/science.adj1082",
+          "note": "CNT yarn tensile strength, laboratory state of the art as of 2024."
+        },
+        {
+          "num": 2,
+          "type": "journal",
+          "authors": "Bai, Y., et al.",
+          "title": "Carbon nanotube bundles with tensile strength over 80 GPa",
+          "journal": "Nature Nanotechnology",
+          "volume": "13",
+          "pages": "589-595",
+          "year": 2018,
+          "doi": "10.1038/s41565-018-0141-z"
+        },
+        {
+          "num": 3,
+          "type": "journal",
+          "authors": "Xu, L., et al.",
+          "title": "Ultrahigh strength, modulus, and conductivity of graphitic fibers by macromolecular coalescence",
+          "journal": "Science Advances",
+          "volume": "8",
+          "issue": "17",
+          "year": 2022,
+          "doi": "10.1126/sciadv.abn0939",
+          "note": "Bulk CNT/graphitic fiber conductivity of 2.2 MS/m."
+        },
+        {
+          "num": 4,
+          "type": "journal",
+          "authors": "De Luna, R., et al.",
+          "title": "Environmentally stable macroscopic graphene films with specific electrical conductivity exceeding metals",
+          "journal": "Carbon",
+          "volume": "158",
+          "pages": "311-319",
+          "year": 2020,
+          "doi": "10.1016/j.carbon.2019.10.073"
+        },
+        {
+          "num": 5,
+          "type": "report",
+          "authors": "NASA",
+          "title": "Low Earth Orbit Spacecraft Charging Design Standard",
+          "report_number": "NASA-STD-4005A",
+          "year": 2017
+        },
+        {
+          "num": 6,
+          "type": "book",
+          "authors": "Laithwaite, E.R.",
+          "title": "A History of Linear Electric Motors",
+          "publisher": "Macmillan",
+          "year": 1987,
+          "note": "Goodness factor model for linear induction motor performance."
+        },
+        {
+          "num": 7,
+          "type": "journal",
+          "authors": "Kim, K.S., et al.",
+          "title": "Large-scale pattern growth of graphene films for stretchable transparent electrodes",
+          "journal": "Nature",
+          "volume": "457",
+          "pages": "706-710",
+          "year": 2009,
+          "doi": "10.1038/nature07719"
+        },
+        {
+          "num": 8,
+          "type": "journal",
+          "authors": "Chopra, N.G. and Zettl, A.",
+          "title": "Measurement of the elastic modulus of a multi-wall boron nitride nanotube",
+          "journal": "Solid State Communications",
+          "volume": "105",
+          "issue": "5",
+          "pages": "297-300",
+          "year": 1998,
+          "doi": "10.1016/S0038-1098(97)10125-9"
+        },
+        {
+          "num": 9,
+          "type": "report",
+          "authors": "Smith, F.W., et al.",
+          "title": "Boron Nitride Nanotube: Synthesis and Applications",
+          "report_number": "NASA/TM-2014-218062",
+          "year": 2014
+        },
+        {
+          "num": 10,
+          "type": "journal",
+          "authors": "Sanchez-Valencia, J.R., et al.",
+          "title": "Theory of the electrodynamic tether",
+          "journal": "Advances in Space Research",
+          "volume": "7",
+          "issue": "1",
+          "pages": "21-33",
+          "year": 1987,
+          "doi": "10.1016/0273-1177(87)90364-X"
+        },
+        {
+          "num": 11,
+          "type": "report",
+          "authors": "SpaceX",
+          "title": "Starship Users Guide, Revision 1.0",
+          "publisher": "Space Exploration Technologies Corp.",
+          "year": 2020
+        },
+        {
+          "num": 12,
+          "type": "website",
+          "authors": "de Jong, Paul G.",
+          "title": "Orbital Ring Simulation Source Code and Interactive Database",
+          "url": "https://www.orbitalring.space/coding-hub/",
+          "note": "LIM deployment simulator, mass driver simulation, J2 perturbation analysis."
+        },
+        {
+          "num": 13,
+          "type": "journal",
+          "authors": "Grün, E., Zook, H.A., Fechtig, H., and Giese, R.H.",
+          "title": "Collisional balance of the meteoritic complex",
+          "journal": "Icarus",
+          "volume": "62",
+          "issue": "2",
+          "pages": "244-272",
+          "year": 1985,
+          "doi": "10.1016/0019-1035(85)90121-6"
+        },
+        {
+          "num": 14,
+          "type": "journal",
+          "authors": "Robock, A., Oman, L., and Stenchikov, G.L.",
+          "title": "Nuclear winter revisited with a modern climate model and current nuclear arsenals: Still catastrophic consequences",
+          "journal": "Journal of Geophysical Research: Atmospheres",
+          "volume": "112",
+          "pages": "D13107",
+          "year": 2007,
+          "doi": "10.1029/2006JD008235"
+        },
+        {
+          "num": 15,
+          "type": "journal",
+          "authors": "Toon, O.B., Robock, A., and Turco, R.P.",
+          "title": "Environmental consequences of nuclear war",
+          "journal": "Physics Today",
+          "volume": "61",
+          "issue": "12",
+          "pages": "37-42",
+          "year": 2008,
+          "doi": "10.1063/1.3047679"
+        }
+      ]
+    }
+  ]
+}

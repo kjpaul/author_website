@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}<div class="series-overview">
+  <header class="series-hero">
+    <h1>Astronomy's Shocking Twist</h1>
+    <p class="series-lede">A ten-book series spanning real engineering and hard science fiction, covering humanity's path from first orbital infrastructure to interstellar travel.</p>
+  </header>
+
+  {%- if intro_html %}
+  <div class="series-intro">{{ intro_html | safe }}</div>
+  {%- endif %}
+
+  <section class="series-track">
+    <header class="track-header">
+      <h2>Technical Books</h2>
+      <p class="track-lede">Engineering and physics of building space infrastructure — from orbital rings and mass drivers to propulsion, habitats, and generational ships. Rigorous enough to teach from; accessible enough to read cover-to-cover.</p>
+    </header>
+    <div class="book-grid">
+      {% for book in series.technical -%}
+      {% with track="technical" %}{% include "includes/book-card.html" %}{% endwith %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="series-track">
+    <header class="track-header">
+      <h2>Science Fiction</h2>
+      <p class="track-lede">Eight hundred years of human history, constrained by known physics. Characters live normal lifespans. Propulsion is limited by available power. Materials are limited by what can reasonably be manufactured. There are no shortcuts.</p>
+    </header>
+    <div class="book-grid">
+      {% for book in series.fiction -%}
+      {% with track="fiction" %}{% include "includes/book-card.html" %}{% endwith %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <aside class="reading-order">
+    <p><strong>Reading order:</strong> the technical books provide the engineering foundation; the fiction books tell the human story. They can be read independently but are richer together.</p>
+  </aside>
+</div>{% endblock %}

@@ -1,0 +1,34 @@
+{#- Single reference entry. Context: r (reference dict) -#}
+{#- Supports two formats: structured (num/authors/title/journal/...) and simple text (number/text) -#}
+<li class="reference" id="{{ anchor_prefix }}-ref-{{ r.num or r.number }}">
+  <span class="ref-num">[{{ r.num or r.number }}]</span>
+  <div class="ref-body">
+    {%- if r.text %}
+    {#- Simple text format: render the full citation as-is -#}
+    <span class="ref-text">{{ r.text | ref_markdown }}</span>
+    {%- else %}
+    {#- Structured format: build citation from fields -#}
+    {%- if r.authors %}<span class="ref-authors">{{ r.authors }}{% if not r.authors.endswith('.') %}.{% endif %}</span>{% endif %}
+    {%- if r.type == "book" %}
+    <cite class="ref-title">{{ r.title }}</cite>{% if r.edition %}, {{ r.edition }} ed{% endif %}.
+    {% if r.publisher %}{{ r.publisher }}, {% endif %}{{ r.year }}.
+    {%- elif r.type == "report" %}
+    <cite class="ref-title">{{ r.title }}</cite>.
+    {% if r.publisher %}{{ r.publisher }}{% if r.report_number %}, {{ r.report_number }}{% endif %}, {% elif r.report_number %}{{ r.report_number }}, {% endif %}{{ r.year }}.
+    {%- elif r.type == "website" %}
+    <span class="ref-title">&ldquo;{{ r.title }}&rdquo;</span>.
+    {%- if r.year %} {{ r.year }}.{% endif %}
+    {%- elif r.type == "thesis" %}
+    <cite class="ref-title">{{ r.title }}</cite>. {% if r.institution %}{{ r.institution }}, {% endif %}{{ r.year }}.
+    {%- elif r.type == "conference" %}
+    <span class="ref-title">&ldquo;{{ r.title }}&rdquo;</span>. {% if r.conference %}<em>{{ r.conference }}</em>{% endif %}{% if r.pages %}, pp.&nbsp;{{ r.pages }}{% endif %}, {{ r.year }}.
+    {%- else %}
+    <span class="ref-title">&ldquo;{{ r.title }}&rdquo;</span>.
+    {% if r.journal %}<em class="ref-journal">{{ r.journal }}</em>{% endif %}{% if r.volume %}, Vol.&nbsp;{{ r.volume }}{% endif %}{% if r.issue %}, No.&nbsp;{{ r.issue }}{% endif %}{% if r.pages %}, pp.&nbsp;{{ r.pages }}{% endif %}, {{ r.year }}.
+    {%- endif %}
+    {%- if r.doi %} <span class="ref-doi">DOI: <a href="https://doi.org/{{ r.doi }}" rel="noopener">{{ r.doi }}</a></span>{% endif %}
+    {%- if r.url %} <a class="ref-url" href="{{ r.url }}" rel="noopener">{{ r.url }}</a>{% endif %}
+    {%- if r.note %}<div class="ref-note">{{ r.note }}</div>{% endif %}
+    {%- endif %}
+  </div>
+</li>

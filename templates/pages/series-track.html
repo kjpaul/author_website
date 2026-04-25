@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}<div class="series-track-page track-{{ track }}">
+  <header class="track-header">
+    <div class="breadcrumb"><a href="/series/">Series</a> / {{ track_label }}</div>
+    <h1>{{ track_label }}</h1>
+    <p class="track-lede">{{ track_lede }}</p>
+  </header>
+
+  {%- if intro_html %}
+  <div class="track-intro">{{ intro_html | safe }}</div>
+  {%- endif %}
+
+  <div class="book-grid">
+    {% for book in books -%}
+    {% include "includes/book-card.html" %}
+    {% endfor %}
+  </div>
+</div>{% endblock %}

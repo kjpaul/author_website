@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}<article class="references-page track-{{ track }}">
+  <div class="breadcrumb">
+    <a href="/series/">Series</a> / <a href="/series/{{ track }}/">{{ track_label }}</a> / <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a>
+    {%- if vol %} / <a href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/">Vol {{ vol.number | roman }}</a>{% endif %} / References
+  </div>
+
+  <header class="refs-header">
+    <h1>References{% if refs.volume_title %}: {{ refs.volume_title }}{% endif %}</h1>
+    <p class="series-line">
+      {{ refs.book_title }}{% if vol %}, Vol {{ vol.number | roman }}{% endif %}
+    </p>
+    {%- if refs.last_updated %}
+    <p class="refs-meta">Last updated {{ refs.last_updated }}</p>
+    {%- endif %}
+  </header>
+
+  {%- if refs.chapters and refs.chapters | length > 0 %}
+  {%- set afterword_labels = ["afterword", "Afterword", "AFTERWORD"] %}
+  <nav class="chapter-nav" aria-label="Jump to chapter">
+    <span class="chapter-nav-label">Jump to:</span>
+    {% for ch in refs.chapters -%}
+    {%- set num_str = ch.number | string %}
+    {%- if num_str in afterword_labels %}{% set anchor = "afterword" %}{% set label = "Afterword" %}
+    {%- else %}{% set anchor = "ch-" ~ (num_str | replace(' ', '-')) %}{% set label = "Ch " ~ num_str %}{% endif %}
+    <a class="chapter-nav-link" href="#{{ anchor }}">{{ label }}</a>
+    {% endfor %}
+  </nav>
+
+  {% for ch in refs.chapters -%}
+  {%- set num_str = ch.number | string %}
+  {%- if num_str in afterword_labels %}{% set anchor = "afterword" %}{% set heading = "Afterword" %}
+  {%- else %}{% set anchor = "ch-" ~ (num_str | replace(' ', '-')) %}{% set heading = "Chapter " ~ num_str %}{% endif %}
+  <section class="chapter-refs" id="{{ anchor }}">
+    <h2 class="chapter-heading">
+      <span class="chapter-number">{{ heading }}</span>
+      {%- if ch.title %} &middot; <span class="chapter-title">{{ ch.title }}</span>{% endif %}
+    </h2>
+    {%- if ch.references %}
+    <ol class="reference-list">
+      {% for r in ch.references -%}
+      {% with anchor_prefix=anchor %}{% include "includes/reference.html" %}{% endwith %}
+      {% endfor %}
+    </ol>
+    {%- else %}
+    <p class="refs-empty">No references yet for this chapter.</p>
+    {%- endif %}
+  </section>
+  {% endfor %}
+  {%- else %}
+  <p class="refs-pending">
+    References for this volume will be published here when the volume is in print.
+    Citations in the printed text are numbered by chapter; once the references are online,
+    you will be able to look up any reference <code>[N]</code> from Chapter M by selecting
+    the chapter on this page.
+  </p>
+  {%- endif %}
+
+  {%- if vol %}
+  <aside class="refs-quicklinks">
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/">Back to Vol {{ vol.number | roman }}</a>
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">Book overview</a>
+  </aside>
+  {%- endif %}
+</article>{% endblock %}

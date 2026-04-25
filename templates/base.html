@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ title }}{% endblock %} — Paul de Jong</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="stylesheet" href="/css/style.css">
+  {%- block head_extra %}{% endblock %}
+</head>
+<body>
+  {% include "includes/nav.html" %}
+  <main>
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+  {% include "includes/footer.html" %}
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

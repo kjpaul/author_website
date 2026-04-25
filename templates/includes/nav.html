@@ -1,0 +1,41 @@
+<nav>
+    <div class="nav-inner">
+      <a href="/" class="site-name">Paul de Jong</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-icon"></span>
+      </button>
+      <div class="nav-links" id="nav-menu">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-controls="series-menu">
+            Series <span class="caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu" id="series-menu" role="menu">
+            <a href="/series/" role="menuitem" class="dropdown-heading">Series Overview</a>
+            <div class="dropdown-group">
+              <div class="dropdown-group-label">Technical Books</div>
+              {% for book in series.technical -%}
+              <a href="/series/technical/{{ book.slug }}/" role="menuitem" class="dropdown-item">
+                <span class="dropdown-item-title">{{ book.short_title or book.title }}{% if book.volumes %} (Vols I–{{ (book.volumes | length) | roman }}){% endif %}</span>
+                {% with status=book.status %}{% include "includes/status-badge.html" %}{% endwith %}
+              </a>
+              {%- endfor %}
+            </div>
+            <div class="dropdown-group">
+              <div class="dropdown-group-label">Science Fiction</div>
+              {% for book in series.fiction -%}
+              <a href="/series/fiction/{{ book.slug }}/" role="menuitem" class="dropdown-item">
+                <span class="dropdown-item-title">{{ book.short_title or book.title }}</span>
+                {% with status=book.status %}{% include "includes/status-badge.html" %}{% endwith %}
+              </a>
+              {%- endfor %}
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/code/">Code</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </nav>

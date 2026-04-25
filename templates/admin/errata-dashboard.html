@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}<h1>Errata Admin</h1>
+
+<div id="auth-section">
+  <p>Sign in to manage errata submissions.</p>
+  <button id="login-btn" class="cta">Sign in with Google</button>
+</div>
+
+<div id="admin-section" style="display:none">
+  <div class="admin-bar">
+    <span id="user-info"></span>
+    <select id="status-filter">
+      <option value="all">All</option>
+      <option value="pending" selected>Pending</option>
+      <option value="confirmed">Confirmed</option>
+      <option value="fixed">Fixed</option>
+      <option value="rejected">Rejected</option>
+    </select>
+    <button id="logout-btn">Sign out</button>
+  </div>
+  <div id="admin-list"></div>
+</div>
+
+<script src="/js/firebase-config.js"></script>
+<script type="module" src="/js/errata-admin.js"></script>
+{% endblock %}

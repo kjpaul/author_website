@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}<h1>Book Errata</h1>
+<p>
+  Found an error in one of the books? Search existing errata below or
+  submit a new one. All submissions are reviewed before publishing.
+</p>
+
+<div class="errata-search-bar">
+  <input type="text" id="errata-search" placeholder="Search errata..." />
+  <select id="book-filter">
+    <option value="orbital-ring-engineering">Orbital Ring Engineering</option>
+  </select>
+</div>
+<p id="errata-count" class="text-muted"></p>
+<div id="errata-list"></div>
+
+<hr>
+
+<h2>Report an Error</h2>
+<form id="errata-form">
+  <div class="form-group">
+    <label for="f-book">Book</label>
+    <select id="f-book" name="book" required>
+      <option value="orbital-ring-engineering">Orbital Ring Engineering</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="f-page">Page / Section</label>
+    <input type="text" id="f-page" name="page" placeholder="e.g. 142 or Ch.5 Sec.3" required>
+  </div>
+  <div class="form-group">
+    <label for="f-quote">Quote from the book (for context)</label>
+    <textarea id="f-quote" name="quote" rows="3"
+              placeholder="Copy a few lines from the book so we can locate the error..." required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="f-desc">What is the error?</label>
+    <textarea id="f-desc" name="description" rows="3"
+              placeholder="Describe what is wrong and what it should be..." required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="f-email">Your email (optional, for follow-up)</label>
+    <input type="email" id="f-email" name="email" placeholder="you@example.com">
+  </div>
+  <button type="submit" class="cta">Submit</button>
+  <div id="form-status"></div>
+</form>
+
+<script src="/js/firebase-config.js"></script>
+<script type="module" src="/js/errata.js"></script>
+{% endblock %}

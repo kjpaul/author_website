@@ -1,0 +1,20 @@
+{#- Volume card. Context: vol (volume dict), book (parent book dict), track -#}
+<div class="volume-card">
+  <div class="volume-card-header">
+    <span class="volume-number">Vol {{ vol.number | roman }}</span>
+    {% with status=vol.status %}{% include "includes/status-badge.html" %}{% endwith %}
+  </div>
+  <h3 class="volume-card-title">{{ vol.title }}</h3>
+  {%- if vol.chapters %}
+  <div class="volume-card-meta">{{ vol.chapters }} chapters</div>
+  {%- endif %}
+  <div class="volume-card-links">
+    <a href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/">Details</a>
+    {%- if vol.has_references %}
+    <a href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
+    {%- endif %}
+    {%- if vol.purchase_url %}
+    <a href="{{ vol.purchase_url }}" class="volume-card-purchase">Purchase</a>
+    {%- endif %}
+  </div>
+</div>

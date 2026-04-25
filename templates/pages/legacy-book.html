@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}<article class="book-detail legacy-book track-technical">
+  <div class="breadcrumb"><a href="/series/">Series</a> / <a href="/series/technical/">Technical Books</a> / Orbital Ring Engineering (1st Edition)</div>
+
+  <div class="legacy-banner">
+    <strong>This book has been expanded into a three-volume edition with significantly more detail.</strong>
+    See: <a href="/series/technical/orbital-rings/">Engineering Orbital Rings, Mass Drivers and Space Elevators</a> (AST-T1).
+  </div>
+
+  <header class="book-header">
+    <div class="book-info">
+      <div class="book-meta">
+        <span class="book-id">Legacy · 1st Edition</span>
+        {% with status="published" %}{% include "includes/status-badge.html" %}{% endwith %}
+      </div>
+      <h1>Orbital Ring Engineering</h1>
+      <p class="series-line">First edition — single volume</p>
+    </div>
+  </header>
+
+  <div class="book-description">{{ content | safe }}</div>
+</article>{% endblock %}

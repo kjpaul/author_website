@@ -1,0 +1,133 @@
+{
+  "technical": [
+    {
+      "id": "ast-t1",
+      "title": "Orbital Ring, Mass Driver, and Space Elevator Engineering",
+      "short_title": "Orbital Ring, Mass Driver & Space Elevator Engineering",
+      "slug": "orbital-rings",
+      "status": "in_progress",
+      "description": "Mass transit to space: orbital ring, mass driver, and space elevator engineering.",
+      "volumes": [
+        {
+          "number": 1,
+          "title": "The Economic Case for Space Mass Transit",
+          "slug": "vol-1",
+          "status": "in_progress",
+          "chapters": 20,
+          "has_references": true,
+          "has_excerpt": true,
+          "purchase_url": ""
+        },
+        {
+          "number": 2,
+          "title": "Mass Transit Launch Technologies from First Principles",
+          "slug": "vol-2",
+          "status": "in_progress",
+          "chapters": null,
+          "has_references": true,
+          "has_excerpt": false,
+          "purchase_url": ""
+        },
+        {
+          "number": 3,
+          "title": "Space Mass Transit Complete Design Review",
+          "slug": "vol-3",
+          "status": "in_progress",
+          "chapters": 13,
+          "has_references": true,
+          "has_excerpt": false,
+          "purchase_url": ""
+        }
+      ]
+    },
+    {
+      "id": "ast-t2",
+      "title": "Propulsion Systems and the MIA Drive",
+      "short_title": "Propulsion Systems & the MIA Drive",
+      "slug": "mia-drive",
+      "status": "coming_soon",
+      "description": "Ion propulsion and the Mass Ion Accelerator (MIA) drive.",
+      "volumes": null
+    },
+    {
+      "id": "ast-t3",
+      "title": "Living in Space",
+      "short_title": "Living in Space",
+      "slug": "living-in-space",
+      "status": "coming_soon",
+      "description": "O'Neill cylinders, Venus floating cities, lunar, asteroid, and gas giant moon mining.",
+      "volumes": null
+    },
+    {
+      "id": "ast-t4",
+      "title": "Generational Ships",
+      "short_title": "Generational Ships",
+      "slug": "generational-ships",
+      "status": "coming_soon",
+      "description": "Designing ships and societies for multi-generation interstellar voyages.",
+      "volumes": null
+    },
+    {
+      "id": "ast-t5",
+      "title": "The Full Picture",
+      "short_title": "The Full Picture",
+      "slug": "full-picture",
+      "status": "coming_soon",
+      "description": "System-level integration of all components across the technical series.",
+      "volumes": null
+    }
+  ],
+  "fiction": [
+    {
+      "id": "ast-f1",
+      "title": "The Beginning of the End",
+      "subtitle": "2035-2100",
+      "short_title": "The Beginning of the End",
+      "slug": "beginning-of-the-end",
+      "status": "coming_soon",
+      "description": "The discovery that changes everything, and humanity's first steps toward orbital infrastructure."
+    },
+    {
+      "id": "ast-f2",
+      "title": "Learning to Live, Work and Build in Space",
+      "short_title": "Learning to Live, Work and Build in Space",
+      "slug": "learning-to-live",
+      "status": "coming_soon",
+      "description": "Humanity adapts to life in space as the first orbital infrastructure comes online."
+    },
+    {
+      "id": "ast-f3",
+      "title": "En Route to the Challenge",
+      "short_title": "En Route to the Challenge",
+      "slug": "en-route",
+      "status": "coming_soon",
+      "description": "The long voyage outward — generational ships, propulsion, and the human cost."
+    },
+    {
+      "id": "ast-f4",
+      "title": "The Challenge Begins",
+      "short_title": "The Challenge Begins",
+      "slug": "challenge-begins",
+      "status": "coming_soon",
+      "description": "Arrival, conflict, and the work of building humanity's next home."
+    },
+    {
+      "id": "ast-f5",
+      "title": "Humanity's Next Chapter",
+      "short_title": "Humanity's Next Chapter",
+      "slug": "humanitys-next-chapter",
+      "status": "coming_soon",
+      "description": "Eight hundred years after the discovery — what humanity has become."
+    }
+  ],
+  "legacy": [
+    {
+      "id": "orbital-ring-engineering-1st-ed",
+      "title": "Orbital Ring Engineering",
+      "slug": "orbital-ring-engineering-1st-ed",
+      "status": "published",
+      "superseded_by": "ast-t1",
+      "description": "The original single-volume edition, superseded by the three-volume AST-T1."
+    }
+  ]
+}

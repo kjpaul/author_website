@@ -1,0 +1,26 @@
+{#- Book card. Context: book (dict from series.json), track ("technical"|"fiction") -#}
+<a class="book-card track-{{ track }}" href="/series/{{ track }}/{{ book.slug }}/">
+  <div class="book-card-cover">
+    {%- if book.cover_image %}
+    <img src="{{ book.cover_image }}" alt="{{ book.title }} cover">
+    {%- else %}
+    <div class="cover-placeholder">
+      <span class="cover-id">{{ book.id | upper }}</span>
+    </div>
+    {%- endif %}
+  </div>
+  <div class="book-card-body">
+    <div class="book-card-meta">
+      <span class="book-id">{{ book.id | upper }}</span>
+      {% include "includes/status-badge.html" %}
+    </div>
+    <h3 class="book-card-title">{{ book.title }}</h3>
+    {%- if book.subtitle %}
+    <div class="book-card-subtitle">{{ book.subtitle }}</div>
+    {%- endif %}
+    {%- if book.volumes %}
+    <div class="book-card-volumes">{{ book.volumes | length }} Volumes</div>
+    {%- endif %}
+    <p class="book-card-description">{{ book.description }}</p>
+  </div>
+</a>

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}<section class="home-hero">
+  <p class="home-eyebrow">A 10-book series by Paul G. de Jong</p>
+  <h1>Astronomy's Shocking Twist</h1>
+  <p class="home-lede">
+    Humanity's path from first orbital infrastructure to interstellar travel — five technical
+    books on the engineering, and five hard science fiction novels that live inside the physics.
+    Known laws. Real materials. Normal lifespans. No shortcuts.
+  </p>
+  <div class="home-cta-row">
+    <a href="/series/" class="cta">Explore the Series</a>
+    <a href="/series/technical/orbital-rings/" class="cta cta-ghost">Start with Book One</a>
+  </div>
+</section>
+
+<section class="home-tracks">
+  <a href="/series/technical/" class="track-card track-technical">
+    <div class="track-card-label">Technical Books</div>
+    <h2 class="track-card-title">Five books on the engineering.</h2>
+    <p class="track-card-desc">
+      Orbital rings, mass drivers, space elevators, propulsion, habitats, generational ships.
+      Rigorous but accessible — math kept as straightforward as possible.
+    </p>
+    <span class="track-card-cta">See the technical track &rarr;</span>
+  </a>
+  <a href="/series/fiction/" class="track-card track-fiction">
+    <div class="track-card-label">Science Fiction</div>
+    <h2 class="track-card-title">Five novels, eight hundred years.</h2>
+    <p class="track-card-desc">
+      The human story of building space infrastructure, constrained by the same physics as
+      the technical books. Propulsion limited by power. Materials limited by manufacturing.
+    </p>
+    <span class="track-card-cta">See the fiction track &rarr;</span>
+  </a>
+</section>
+
+<section class="home-featured">
+  <div class="section-head">
+    <div class="section-eyebrow">Featured &middot; AST-T1</div>
+    <h2>Engineering Orbital Rings, Mass Drivers and Space Elevators</h2>
+    <p class="section-lede">
+      A three-volume deep dive into mass transit to space: the economic case, the launch
+      technologies from first principles, and a complete design review.
+    </p>
+  </div>
+  <div class="volume-grid">
+    {% for vol in series.technical[0].volumes -%}
+    {% with book=series.technical[0], track="technical" %}{% include "includes/volume-card.html" %}{% endwith %}
+    {% endfor %}
+  </div>
+  <div class="section-footer">
+    <a href="/series/technical/orbital-rings/">Full book page &rarr;</a>
+  </div>
+</section>
+
+<section class="home-blog-teaser">
+  <div class="section-head">
+    <h2>From the Blog</h2>
+    <p class="section-lede">
+      Working notes on orbital ring engineering, space physics, superconductors, and the
+      engineering that shows up in the books.
+    </p>
+  </div>
+  <p><a href="/blog/">Read all posts &rarr;</a></p>
+</section>
+
+<section class="home-code-teaser">
+  <div class="section-head">
+    <h2>Open-Source Companion Code</h2>
+    <p class="section-lede">
+      A Python project for optimizing space-based applications — orbital rings, mass driver
+      systems, and more.
+    </p>
+  </div>
+  <p><a href="https://github.com/kjpaul/orbitalring">View on GitHub &rarr;</a></p>
+</section>
+{% endblock %}

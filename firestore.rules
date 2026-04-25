@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /errata/{errataId} {
+      // Anyone can read confirmed/fixed errata
+      allow read: if resource.data.status in ["confirmed", "fixed"];
+
+      // Admin can read all errata (including pending/rejected)
+      allow read: if request.auth != null
+                  && request.auth.token.email == "paul@orbitalring.space";
+
+      // Anyone can create a new errata (must be pending)
+      allow create: if request.resource.data.status == "pending"
+                    && request.resource.data.keys().hasAll(
+                       ["book", "page", "quote", "description", "status", "created_at"]);
+
+      // Only admin can update or delete
+      allow update, delete: if request.auth != null
+                            && request.auth.token.email == "paul@orbitalring.space";
+    }
+  }
+}

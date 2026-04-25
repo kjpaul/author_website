@@ -1,0 +1,1587 @@
+{
+  "series_id": "AST-T1",
+  "book_title": "Engineering Orbital Rings, Mass Drivers and Space Elevators",
+  "volume": 1,
+  "volume_title": "The Economic Case for Space Mass Transit",
+  "last_updated": "2026-04-25",
+  "chapters": [
+    {
+      "number": "1",
+      "title": "What's Out There",
+      "references": [
+        {
+          "num": 1,
+          "text": "Colaprete, A., et al., \"Detection of Water in the LCROSS Ejecta Plume,\" *Science*, 330(6003), 463-468, 2010."
+        },
+        {
+          "num": 2,
+          "text": "Li, S., et al., \"Direct evidence of surface exposed water ice in the lunar polar regions,\" *PNAS*, 115(36), 8907-8912, 2018."
+        },
+        {
+          "num": 3,
+          "text": "NASA, \"Moon Water and Ices,\" NASA Science, https://science.nasa.gov/moon/moon-water-and-ices/. See also: Hayne, P.O., et al., \"Micro cold traps on the Moon,\" *Nature Astronomy*, 5, 169-175, 2021."
+        },
+        {
+          "num": 4,
+          "text": "Zuber, M.T., et al., \"Constraints on the volatile distribution within Shackleton crater at the lunar south pole,\" *Nature*, 486(7403), 378-381, 2012."
+        },
+        {
+          "num": 5,
+          "text": "ISRO, \"Chandrayaan-3 Pragyan Rover LIBS and ChaSTE Results,\" 2023-2024. See also: Singh, S.K., et al., thermal conductivity measurements from Chandrayaan-3 ChaSTE instrument."
+        },
+        {
+          "num": 6,
+          "text": "Heiken, G.H., Vaniman, D.T., and French, B.M., \"Lunar Sourcebook: A User's Guide to the Moon,\" Cambridge University Press, 1991."
+        },
+        {
+          "num": 7,
+          "text": "Fa, W. and Jin, Y., \"Quantitative estimation of helium-3 spatial distribution in the lunar regolith layer,\" *Icarus*, 190(1), 15-23, 2007. See also: Cocks, F.H., \"3He availability for future nuclear fusion reactors,\" AIAA ASCEND 2021."
+        },
+        {
+          "num": 8,
+          "text": "ESA/DLR/FU Berlin, Mars Express HRSC imagery of Korolev crater. See also: radar-based volume estimates from MARSIS and SHARAD instruments, with range 1,400-3,500 km³."
+        },
+        {
+          "num": 9,
+          "text": "Plaut, J.J., et al., MARSIS subsurface sounding of the south polar layered deposits, *Science*, 316(5821), 92-95, 2007. North polar cap volume: Smith, D.E., et al., *Science*, 284(5419), 1495-1503, 1999."
+        },
+        {
+          "num": 10,
+          "text": "NASA, \"Mars Fact Sheet,\" NASA Space Science Data Coordinated Archive, https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html."
+        },
+        {
+          "num": 11,
+          "text": "Junaedi, C., et al., \"Compact and Lightweight Sabatier Reactor System for Carbon Dioxide Reduction,\" AIAA 2011-5033, 2011."
+        },
+        {
+          "num": 12,
+          "text": "Ehlmann, B.L. and Edwards, C.S., \"Mineralogy of the Martian surface,\" *Annual Review of Earth and Planetary Sciences*, 42, 291-315, 2014."
+        },
+        {
+          "num": 13,
+          "text": "NASA JPL, \"Perseverance Discovers Potential Biosignature,\" 2025. See also: Tice, M.M., et al., vivianite and greigite findings in Jezero Crater mudstones, 2025."
+        },
+        {
+          "num": 14,
+          "text": "NASA JPL, \"Curiosity Discovers Elemental Sulfur on Mars,\" 2024."
+        },
+        {
+          "num": 15,
+          "text": "Long, X., et al., \"Evidence for ancient shoreline on Mars from Zhurong rover observations,\" *Nature*, 2022."
+        },
+        {
+          "num": 16,
+          "text": "Kim, M.Y., et al., \"Comparison of Martian surface ionizing radiation measurements from MSL-RAD with Badhwar-O'Neill 2011/HZETRN model calculations,\" *Journal of Geophysical Research: Planets*, 119(6), 1311-1321, 2014."
+        },
+        {
+          "num": 17,
+          "text": "Connerney, J.E.P., et al., \"Mars crustal magnetism,\" *Space Science Reviews*, 152(1-4), 223-249, 2010."
+        },
+        {
+          "num": 18,
+          "text": "Battalio, M. and Wang, H., \"Martian dust storm climatology,\" *Icarus*, 2024."
+        },
+        {
+          "num": 19,
+          "text": "NASA CNEOS, \"Discovery Statistics,\" https://cneos.jpl.nasa.gov/stats/totals.html. Accessed 2025."
+        },
+        {
+          "num": 20,
+          "text": "The Planetary Society, \"What Are Asteroids Made Of?\" https://www.planetary.org/articles/what-are-asteroids-made-of."
+        },
+        {
+          "num": 21,
+          "text": "Lauretta, D.S., et al., \"Asteroid (101955) Bennu in the laboratory: Properties of the sample collected by OSIRIS-REx,\" *Meteoritics & Planetary Science*, 2024."
+        },
+        {
+          "num": 22,
+          "text": "Yokoyama, T., et al., \"Samples returned from the asteroid Ryugu are similar to Ivuna-type carbonaceous meteorites,\" *Science*, 379(6634), 2023. See also: JAXA initial analysis results, 2022."
+        },
+        {
+          "num": 23,
+          "text": "NASA CNEOS, \"Near-Earth Object Human Space Flight Accessible Targets Study (NHATS),\" https://cneos.jpl.nasa.gov/nhats/."
+        },
+        {
+          "num": 24,
+          "text": "Elkins-Tanton, L.T., et al., \"Observations, meteorites, and models: A preflight assessment of the composition and formation of (16) Psyche,\" *Journal of Geophysical Research: Planets*, 125(3), 2020. Updated post-launch assessment: Elkins-Tanton et al., *AGU Advances*, 2024."
+        },
+        {
+          "num": 25,
+          "text": "Becker, T.M., et al., \"Juno Microwave Radiometer constraints on Europa's ice shell,\" *Nature Astronomy*, 2025."
+        },
+        {
+          "num": 26,
+          "text": "Postberg, F., et al., \"Sodium salts in E-ring ice grains from an ocean below the surface of Enceladus,\" *Nature*, 459, 1098-1101, 2009. Ocean structure: Thomas, P.C., et al., \"Enceladus's measured physical libration requires a global subsurface ocean,\" *Icarus*, 264, 37-47, 2016."
+        },
+        {
+          "num": 27,
+          "text": "Postberg, F., et al., \"Detection of phosphates originating from Enceladus's ocean,\" *Nature*, 618, 489-493, 2023."
+        },
+        {
+          "num": 28,
+          "text": "Saur, J., et al., \"The search for a subsurface ocean in Ganymede with Hubble Space Telescope observations of its auroral ovals,\" *Journal of Geophysical Research: Space Physics*, 120(3), 1715-1737, 2015."
+        },
+        {
+          "num": 29,
+          "text": "Cochrane, C.J., et al., \"Callisto is very likely an ocean world,\" *AGU Advances*, 2025."
+        },
+        {
+          "num": 30,
+          "text": "Barnes, J.W., et al., \"Science Goals and Objectives for the Dragonfly Titan Rotorcraft Relocatable Lander,\" *The Planetary Science Journal*, 2(4), 130, 2021."
+        },
+        {
+          "num": 31,
+          "text": "Palaszewski, B., \"Powdered Aluminum and Oxygen Rocket Propellants: Subscale Combustion Experiments,\" NASA Technical Memorandum 106406 (AIAA-94-3252), 1994. See also: Wickman, J.H., \"Spacecraft combustion of metal/oxygen propellants,\" AIAA 89-2843, 1989. The 250-280 s range represents theoretical vacuum Isp for aluminum-oxygen bipropellant systems. Palaszewski's work specifically tests pneumatic injection of Al/O₂ for lunar ISRU applications, and Wickman's paper calculates the theoretical vacuum Isp ceiling of approximately 280 s for Al/O₂."
+        },
+        {
+          "num": 32,
+          "text": "NASA, \"Venus Fact Sheet,\" NASA Space Science Data Coordinated Archive, https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html. Atmospheric conditions at 50 km altitude derived from Venus International Reference Atmosphere (VIRA) profiles."
+        },
+        {
+          "num": 33,
+          "text": "Landis, G.A., \"Colonization of Venus,\" *AIP Conference Proceedings*, 654, 1193-1200, 2003. See also: Landis, G.A., \"Exploring Venus by Solar Airplane,\" NASA Technical Memorandum, NASA/TM-2001-210839, 2001."
+        },
+        {
+          "num": 34,
+          "text": "Arney, D.C. and Jones, C.A., \"High Altitude Venus Operational Concept (HAVOC): An Exploration Strategy for Venus,\" AIAA SPACE 2015 Conference and Exposition, AIAA 2015-4612, 2015. See also: Jones, C.A., et al., \"Settling Venus: A City in the Clouds?\" AIAA ASCEND 2020."
+        },
+        {
+          "num": 35,
+          "text": "Venus atmospheric nitrogen mass calculated from NASA Venus Fact Sheet data: 3.5% of 4.8 × 10²⁰ kg total atmospheric mass = ~1.7 × 10¹⁹ kg N₂. Earth atmospheric nitrogen: 78% of 5.15 × 10¹⁸ kg = ~4.0 × 10¹⁸ kg N₂. Ratio ≈ 4.2×. See also: Lammer, H., et al., \"Atmospheric nitrogen evolution on Earth and Venus,\" *Earth and Planetary Science Letters*, 450, 49-56, 2016."
+        }
+      ]
+    },
+    {
+      "number": "2",
+      "title": "The Science That Drives Us",
+      "references": [
+        {
+          "num": 1,
+          "text": "Copernicus, N. De revolutionibus orbium coelestium (On the Revolutions of the Celestial Spheres), 1543."
+        },
+        {
+          "num": 2,
+          "text": "Kepler, J. Astronomia Nova (The New Astronomy), 1609."
+        },
+        {
+          "num": 3,
+          "text": "Kepler, J. Harmonices Mundi (The Harmony of the Worlds), 1619."
+        },
+        {
+          "num": 4,
+          "text": "Newton, I. Philosophiæ Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), 1687."
+        },
+        {
+          "num": 5,
+          "text": "Huygens, C. De Vi Centrifuga (On Centrifugal Force), 1659."
+        },
+        {
+          "num": 6,
+          "text": "Faraday, M. Experimental Researches in Electricity. Philosophical Transactions of the Royal Society, 1831."
+        },
+        {
+          "num": 7,
+          "text": "Maxwell, J. C. On the Stability of Saturn's Rings. Adams Prize Essay, 1859."
+        },
+        {
+          "num": 8,
+          "text": "Verne, J. From the Earth to the Moon, 1865."
+        },
+        {
+          "num": 9,
+          "text": "Tsiolkovsky, K. E. Exploration of Outer Space by Means of Rocket Devices, 1903."
+        },
+        {
+          "num": 10,
+          "text": "Goddard, R. H. A Method of Reaching Extreme Altitudes. Smithsonian Miscellaneous Collections, 1919."
+        },
+        {
+          "num": 11,
+          "text": "Oberth, H. Die Rakete zu den Planetenräumen (The Rocket into Interplanetary Space), 1923."
+        },
+        {
+          "num": 12,
+          "text": "Clarke, A. C. Extra-Terrestrial Relays. Journal of Wireless Electronics, October 1945."
+        },
+        {
+          "num": 13,
+          "text": "Clarke, A. C. The Fountains of Paradise, 1979."
+        },
+        {
+          "num": 14,
+          "text": "O'Neill, G. K. The High Frontier: Human Colonies in Space, 1976."
+        },
+        {
+          "num": 15,
+          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders. Journal of the British Interplanetary Society, Vol. 35, pp. 475-497, 1982."
+        },
+        {
+          "num": 16,
+          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders (Part 2). Journal of the British Interplanetary Society, Vol. 36, pp. 115-128, 1982."
+        },
+        {
+          "num": 17,
+          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders (Part 3). Journal of the British Interplanetary Society, Vol. 36, pp. 231-238, 1983."
+        },
+        {
+          "num": 18,
+          "text": "Lofstrom, K. A. Launch Loop: A Low-Cost Earth-to-Orbit Transportation System. AIAA Paper 85-4054, 1985."
+        },
+        {
+          "num": 19,
+          "text": "Robinson, K. S. Red. Bantam Books, 1992."
+        },
+        {
+          "num": 20,
+          "text": "Sagan, C. Cosmos: A Journey Through Space and Time. Random House, 1980."
+        },
+        {
+          "num": 21,
+          "text": "Sagan, C. Pale Blue Dot: A Vision of the Human Future in Space. Random House, 1994."
+        },
+        {
+          "num": 22,
+          "text": "NASA Exoplanet Archive. Accessed March 2026. https://exoplanetarchive.ipac.caltech.edu/"
+        },
+        {
+          "num": 23,
+          "text": "Borucki, W. J. Kepler Mission: Development and Overview. Reports on Progress in Physics, Vol. 79, No. 3, 036901, 2016."
+        },
+        {
+          "num": 24,
+          "text": "Abbott, B. P., et al. Observation of Gravitational Waves from a Binary Black Hole Merger. Physical Review Letters, Vol. 116, No. 6, 061102, 2016."
+        },
+        {
+          "num": 25,
+          "text": "Northrup, E. F. (as Akkad Pseudoman). Zero to Eighty: Being My Lifetime Doings, Reflections, and Inventions; Also My Journey Around the Moon. The Scientific Publishing Company, Princeton, NJ, 1937."
+        },
+        {
+          "num": 26,
+          "text": "Arthur, Isaac. \"Beyond Rockets: 100 Years of Rocketry and What Comes Next.\" Science & Futurism with Isaac Arthur (SFIA), YouTube, March 15, 2026. https://www.youtube.com/watch?v=kJp6DHhfkKw. Covers space elevators, skyhooks, orbital rings, mass drivers and coilguns, launch loops, and hybrid launch systems."
+        },
+        {
+          "num": 27,
+          "text": "Needham, J., \"Science and Civilisation in China,\" Vol. 5, Part 7: Military Technology; The Gunpowder Epic, Cambridge University Press, 1986. See also: Andrade, T., \"The Gunpowder Age: China, Military Innovation, and the Rise of the West in World History,\" Princeton University Press, 2016. Fire arrow demonstrations to the Song court documented as early as 970 AD."
+        },
+        {
+          "num": 28,
+          "text": "Von Braun, W., \"The Mars Project\" (technical appendix), University of Illinois Press, 1953. The accompanying science fiction novel, \"Project Mars: A Technical Tale,\" was written circa 1948 but not published until 2006 by Apogee Books. The novel describes a Martian government led by an elected official titled \"Elon.\""
+        },
+        {
+          "num": 29,
+          "text": "Northrup, E. F. (as Akkad Pseudoman). Zero to Eighty (Annotated). Ron Miller Science Fiction Classics Collection. Originally published 1937 by The Scientific Publishing Company, Princeton, NJ. Reprint available as annotated eBook and through other reprint sources."
+        },
+        {
+          "num": 30,
+          "text": "Suarez, D. Delta-V. Dutton, 2019. Suarez, D. Critical Mass. Dutton, 2023. Critical Mass won the 2024 Prometheus Award for Best Novel."
+        },
+        {
+          "num": 31,
+          "text": "Sandford, J. and Ctein. Saturn Run. G.P. Putnam's Sons, 2015."
+        },
+        {
+          "num": 32,
+          "text": "Weir, A. The Martian. Crown Publishing, 2014. Originally self-published 2011."
+        },
+        {
+          "num": 33,
+          "text": "Weir, A. Artemis. Crown Publishing, 2017."
+        },
+        {
+          "num": 34,
+          "text": "Corey, J. S. A. (Abraham, D. and Franck, T.) Leviathan Wakes. Orbit Books, 2011. First of nine novels in The Expanse series, completed 2021."
+        },
+        {
+          "num": 35,
+          "text": "Riess, A. G., et al. Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant. The Astronomical Journal, Vol. 116, No. 3, pp. 1009-1038, 1998. Perlmutter, S., et al. Measurements of Omega and Lambda from 42 High-Redshift Supernovae. The Astrophysical Journal, Vol. 517, No. 2, pp. 565-586, 1999."
+        },
+        {
+          "num": 36,
+          "text": "Nobel Prize in Physics 2011. Awarded to Saul Perlmutter, Brian P. Schmidt, and Adam G. Riess \"for the discovery of the accelerating expansion of the Universe through observations of distant supernovae.\""
+        },
+        {
+          "num": 37,
+          "text": "Morel, L., Yao, Z., Cladé, P., and Guellati-Khélifa, S. Determination of the fine-structure constant with an accuracy of 81 parts per trillion. Nature, Vol. 588, pp. 61-65, 2020."
+        },
+        {
+          "num": 38,
+          "text": "Adams, D. The Hitchhiker's Guide to the Galaxy. Pan Books, 1979."
+        }
+      ]
+    },
+    {
+      "number": "3",
+      "title": "Vera Rubin and What We Cannot See",
+      "references": [
+        {
+          "num": 1,
+          "text": "Rubin, V.C., \"An Interesting Voyage,\" *Annual Review of Astronomy and Astrophysics*, 49, 1-28, 2011. See also: Carnegie Science, \"Vera Rubin: Opening Doors to Dark Matter and Women in STEM,\" https://carnegiescience.edu/vera-rubin-opening-doors-dark-matter-and-women-stem."
+        },
+        {
+          "num": 2,
+          "text": "Rubin, V.C., Ford, W.K., and Thonnard, N., \"Rotational Properties of 21 Sc Galaxies with a Large Range of Luminosities and Radii, from NGC 4605 (R = 4 kpc) to UGC 2885 (R = 122 kpc),\" *The Astrophysical Journal*, 238, 471-487, 1980."
+        },
+        {
+          "num": 3,
+          "text": "Planck Collaboration, \"Planck 2018 results. VI. Cosmological parameters,\" *Astronomy & Astrophysics*, 641, A6, 2020. Universe composition: ~5% ordinary matter, ~27% dark matter, ~68% dark energy."
+        },
+        {
+          "num": 4,
+          "text": "Riess, A.G., et al., \"Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant,\" *The Astronomical Journal*, 116(3), 1009-1038, 1998. See also: Perlmutter, S., et al., \"Measurements of Ω and Λ from 42 High-Redshift Supernovae,\" *The Astrophysical Journal*, 517(2), 565-586, 1999."
+        },
+        {
+          "num": 5,
+          "text": "Weinberg, S., \"The cosmological constant problem,\" *Reviews of Modern Physics*, 61(1), 1-23, 1989. The discrepancy between the observed value of the cosmological constant and the value predicted by quantum field theory is of order 10^120."
+        },
+        {
+          "num": 6,
+          "text": "Ivezić, Ž., et al., \"LSST: From Science Drivers to Reference Design and Anticipated Data Products,\" *The Astrophysical Journal*, 873(2), 111, 2019. See also: Vera C. Rubin Observatory, https://rubinobservatory.org/."
+        },
+        {
+          "num": 7,
+          "text": "Jurić, M., et al., \"The LSST Data Management System,\" *Astronomical Society of the Pacific Conference Series*, 2017. See also: LSST Data Management, https://www.lsst.org/about/dm."
+        },
+        {
+          "num": 8,
+          "text": "Vera C. Rubin Observatory, \"First Light Images,\" June 23, 2025. Full survey operations commenced early 2026."
+        },
+        {
+          "num": 9,
+          "text": "Jones, R.L., et al., \"The Large Synoptic Survey Telescope as a Near-Earth Object Discovery Machine,\" *Icarus*, 303, 181-202, 2018. See also: Rubin Observatory, \"Near-Earth Objects (NEOs),\" https://www.lsst.org/science/solar-system/neos."
+        },
+        {
+          "num": 10,
+          "text": "Meech, K.J., et al., \"A brief visit from a red and extremely elongated interstellar asteroid,\" *Nature*, 552, 378-381, 2017."
+        },
+        {
+          "num": 11,
+          "text": "Guzik, P., et al., \"Initial characterization of interstellar comet 2I/Borisov,\" *Nature Astronomy*, 4, 53-57, 2020."
+        },
+        {
+          "num": 12,
+          "text": "NASA, \"Comet 3I/ATLAS,\" NASA Science, https://science.nasa.gov/solar-system/comets/3i-atlas/. Discovery date July 1, 2025, by ATLAS survey telescope in Chile. Perihelion October 29, 2025, at 1.36 AU. SPHEREx organic molecule detection reported December 2025."
+        },
+        {
+          "num": 13,
+          "text": "Hoover, D.J., et al., \"Population estimates for interstellar objects detectable by LSST,\" *Monthly Notices of the Royal Astronomical Society*, 2022. Estimates range from ~15 ISOs over the 10-year survey (conservative) to potentially dozens per year depending on population assumptions. See also: Marceta, D. and Seligman, D., predictions of 0-70 asteroidal ISOs per year, 2023."
+        },
+        {
+          "num": 14,
+          "text": "Zucker, C., et al., \"Star formation near the Sun is driven by expansion of the Local Bubble,\" *Nature*, 601, 334-337, 2022. Local Bubble dimensions, formation history, and density measurements. Interior density ~0.005 atoms/cm³, average ISM density ~0.5 atoms/cm³."
+        },
+        {
+          "num": 15,
+          "text": "Knie, K., et al., \"60Fe anomaly in a deep-sea manganese crust and implications for a nearby supernova source,\" *Physical Review Letters*, 93(17), 171103, 2004. Evidence of nearby supernova activity affecting Earth's environment within the last few million years. See also: Wallner, A., et al., \"Recent near-Earth supernovae probed by global deposition of interstellar radioactive 60Fe,\" *Nature*, 532, 69-72, 2016."
+        },
+        {
+          "num": 16,
+          "text": "Rampino, M.R. and Stothers, R.B., \"Terrestrial mass extinctions, cometary impacts and the Sun's motion perpendicular to the galactic plane,\" *Nature*, 308, 709-712, 1984. The galactic plane oscillation hypothesis remains debated; subsequent analyses have found varying levels of statistical support. See also: Shaviv, N.J., \"The spiral structure of the Milky Way, cosmic rays, and ice age epochs on Earth,\" *New Astronomy*, 8(1), 39-77, 2003."
+        },
+        {
+          "num": 17,
+          "text": "LSST survey strategy and solar exclusion zone. Standard WFD survey visits occur at solar elongations >68 degrees; <1% of visits below that threshold. Near-Sun twilight microsurvey operates within ±20° of the ecliptic at solar elongations 35-47° during -12 to -15 degree twilight. See: Schwamb, M.E., et al., \"A near-Sun Solar System Twilight Survey with LSST,\" arXiv:1812.00466, 2018. See also: Rubin Observatory Survey Strategy, https://survey-strategy.lsst.io/."
+        }
+      ]
+    },
+    {
+      "number": "4",
+      "title": "What Could Hit Us",
+      "references": [
+        {
+          "num": 1,
+          "text": "Vredefort impact structure. The original crater diameter is estimated at 170-300 km. Age: 2.023 ± 0.004 billion years. See: Kamo, S.L., et al., \"A 2.023 Ga age for the Vredefort impact event and a first report of shock metamorphosed zircons in pseudotachylitic breccias and granophyre,\" *Earth and Planetary Science Letters*, 119, 441-457, 1993. See also: Wikipedia, \"Vredefort impact structure,\" https://en.wikipedia.org/wiki/Vredefort_impact_structure."
+        },
+        {
+          "num": 2,
+          "text": "Sudbury Basin impact structure. Age: 1.849 billion years. See: Grieve, R.A.F., et al., \"The Sudbury Structure: Controversial or Misunderstood?\" *Journal of Geophysical Research*, 96(E5), 22753-22764, 1991. Economic significance: the nickel and copper deposits of the Sudbury Basin are among the world's largest, directly related to the impact melt sheet."
+        },
+        {
+          "num": 3,
+          "text": "Chicxulub impact and the K-Pg extinction. Impactor diameter: ~10-15 km. Crater diameter: ~200 km. Energy: ~$10^{24}$ joules (~100 million megatons TNT). See: Alvarez, L.W., et al., \"Extraterrestrial Cause for the Cretaceous-Tertiary Extinction,\" *Science*, 208(4448), 1095-1108, 1980. See also: Schulte, P., et al., \"The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary,\" *Science*, 327(5970), 1214-1218, 2010. Wikipedia, \"Chicxulub crater,\" https://en.wikipedia.org/wiki/Chicxulub_crater."
+        },
+        {
+          "num": 4,
+          "text": "Tunguska event, June 30, 1908. Object: stony asteroid ~50-60 m diameter. Airburst altitude: 5-10 km. Energy: ~10-15 megatons TNT. Destruction area: ~2,150 km². See: Vasilyev, N.V., \"The Tunguska Meteorite problem today,\" *Planetary and Space Science*, 46(2-3), 129-150, 1998. See also: NASA, \"115 Years Ago: The Tunguska Asteroid Impact Event,\" https://www.nasa.gov/history/115-years-ago-the-tunguska-asteroid-impact-event/."
+        },
+        {
+          "num": 5,
+          "text": "Chelyabinsk meteor, February 15, 2013. Object: ~18 m diameter, ~9,100 tonnes. Entry velocity: ~19.2 km/s. Airburst altitude: ~30 km. Energy: ~500 kilotons TNT. Injuries: ~1,500. Buildings damaged: 7,200. See: Brown, P.G., et al., \"A 500-kiloton airburst over Chelyabinsk and an enhanced hazard from small impactors,\" *Nature*, 503, 238-241, 2013. See also: Popova, O.P., et al., \"Chelyabinsk Airburst, Damage Assessment, Meteorite Recovery, and Characterization,\" *Science*, 342(6162), 1069-1073, 2013."
+        },
+        {
+          "num": 6,
+          "text": "DART mission. Impact: September 26, 2022. Target: Dimorphos (160 m), satellite of Didymos. Impact velocity: ~6.6 km/s. Orbital period change: -33.0 ± 1.0 minutes (from 11h 55m to 11h 22m). Minimum success criterion: 73 seconds. Exceeded by >25×. See: Thomas, C.A., et al., \"Orbital Period Change of Dimorphos Due to the DART Kinetic Impact,\" *Nature*, 616, 448-451, 2023. See also: NASA, \"NASA Confirms DART Mission Impact Changed Asteroid's Motion in Space,\" https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/."
+        },
+        {
+          "num": 7,
+          "text": "ESA Hera mission. Launch: October 7, 2024 (SpaceX Falcon 9). Mars flyby: March 2025. Arrival at Didymos: November 2026 (ahead of schedule). CubeSats: Milani (spectral/composition) and Juventas (internal structure/gravity field). See: ESA, \"Hera Mission Overview,\" https://www.esa.int/Space_Safety/Hera/Hera_mission_overview. See also: Michel, P., et al., \"The ESA Hera Mission: Detailed Characterization of the DART Impact Outcome and of the Binary Asteroid (65803) Didymos,\" *The Planetary Science Journal*, 3(7), 160, 2022."
+        },
+        {
+          "num": 8,
+          "text": "NEO Surveyor. Launch: September 2027 (no later than June 2028). Location: Sun-Earth L1 Lagrange point. Aperture: 50 cm. Wavelengths: two infrared bands. Survey: 5-year baseline. Goal: detect ≥2/3 of NEOs >140 m. See: Mainzer, A., et al., \"NEO Surveyor: The Near-Earth Object Surveillance Mission,\" *The Planetary Science Journal*, 4(12), 224, 2023. See also: NASA, \"Near-Earth Object Surveyor,\" https://science.nasa.gov/mission/neo-surveyor/."
+        },
+        {
+          "num": 9,
+          "text": "Planetary defense limitations for short-warning and large-object scenarios. See: Barbee, B.W., et al., \"Defending the Earth from Long-Period Comets and Sneaky Asteroids: Short Term Threat Response Requires Long Term Preparation,\" *Journal of Space Safety Engineering*, 5(3-4), 167-175, 2018. See also: National Academies of Sciences, Engineering, and Medicine, \"Origins, Worlds, and Life: A Decadal Strategy for Planetary Science and Astrobiology 2023-2032,\" Chapter 18: Planetary Defense, 2022."
+        },
+        {
+          "num": 10,
+          "text": "Rampino, M.R. and Stothers, R.B., \"Terrestrial mass extinctions, cometary impacts and the Sun's motion perpendicular to the galactic plane,\" *Nature*, 308, 709-712, 1984. Galactic plane oscillation period: ~60-70 Myr full cycle, ~30-35 Myr half-cycle (midplane crossing interval). Oort Cloud extent: ~50,000-100,000 AU. See also: Oort, J.H., \"The structure of the cloud of comets surrounding the Solar System and a hypothesis concerning its origin,\" *Bulletin of the Astronomical Institutes of the Netherlands*, 11, 91-110, 1950."
+        },
+        {
+          "num": 11,
+          "text": "Rampino, M.R. and Prokoph, A., \"Are Impact Craters and Extinction Episodes Periodic? Implications for Planetary Science and Astrobiology,\" *Astrobiology*, 20(10), 1097-1103, 2020. Found continued support for ~27.5 Myr periodicity in extinction events and crater ages. Statistical significance depends on event selection criteria."
+        },
+        {
+          "num": 12,
+          "text": "Shaviv, N.J., \"The spiral structure of the Milky Way, cosmic rays, and ice age epochs on Earth,\" *New Astronomy*, 8(1), 39-77, 2003. Spiral arm crossings correlate with increased cosmic ray flux and potentially with climate variations and impact rates."
+        },
+        {
+          "num": 13,
+          "text": "Rogue planet estimates. Current models suggest free-floating planets may outnumber stars in the Milky Way, with estimates of several rogue planets per star (potentially trillions total). See: Sumi, T., et al., \"A terrestrial-mass rogue planet candidate detected in the shortest-timescale microlensing event,\" *arXiv:2303.08279*, 2023. See also: NASA, \"New Study Reveals NASA's Roman Could Find 400 Earth-Mass Rogue Planets,\" https://www.nasa.gov/missions/roman-space-telescope/new-study-reveals-nasas-roman-could-find-400-earth-mass-rogue-planets/. Johnson, S.A., et al., estimated Roman will increase known rogue planet count by a factor of 100 by 2032."
+        },
+        {
+          "num": 14,
+          "text": "Planet Nine hypothesis. Estimated mass: 5-10 Earth masses. Estimated semimajor axis: 290-460 AU (refined from original 400-800 AU). See: Batygin, K. and Brown, M.E., \"Evidence for a Distant Giant Planet in the Solar System,\" *The Astronomical Journal*, 151(2), 22, 2016. Updated orbital parameters: Brown, M.E. and Batygin, K., \"The Orbit of Planet Nine,\" *The Astronomical Journal*, 168(2), 55, 2024. See also: NASA, \"Hypothetical Planet X,\" https://science.nasa.gov/solar-system/planet-x/."
+        },
+        {
+          "num": 15,
+          "text": "Interstellar object sources and population estimates. Giant planet scattering ejects 90-99% of planetesimals during planetary formation. Population density estimated at ~0.1 per AU³ for 'Oumuamua-class objects, implying ~10,000 inside Neptune's orbit at any time. Total Milky Way population estimated at $10^{23}$ to $10^{26}$ objects. Average star system ejects ~$10^{16}$ objects over its lifetime. See: Do, A., Tucker, M.A., and Tonry, J., \"Interstellar Interlopers: Number Density and Origin of 'Oumuamua-like Objects,\" *The Astrophysical Journal Letters*, 855(1), L10, 2018. See also: Portegies Zwart, S., et al., \"The origin of interstellar asteroidal objects,\" *Astronomy & Astrophysics*, 2018. Shannon, A., et al., \"Oort cloud Ecology - II. the chronology of the formation of the Oort cloud,\" *Astronomy & Astrophysics*, 2021. Forbes, J.C. and Loeb, A., \"Eviction of Dark Matter from the Solar Neighborhood\" (ejection fraction estimates), 2019. Rubin Observatory, \"Visitors from Distant Stars,\" https://rubinobservatory.org/news/visitors-from-distant-stars."
+        },
+        {
+          "num": 16,
+          "text": "Milky Way supernova rate. ESA Integral satellite Al-26 observations yield ~1.9 (±1.1) core-collapse supernovae per century. ~20,000 supernovae in the past million years produced the observed 2.8 solar masses of Al-26. See: Diehl, R., et al., \"Radioactive 26Al from massive stars in the Galaxy,\" *Nature*, 439, 45-47, 2006. See also: ESA, \"Integral identifies supernova rate for Milky Way,\" https://www.esa.int/Science_Exploration/Space_Science/Integral/Integral_identifies_supernova_rate_for_Milky_Way."
+        },
+        {
+          "num": 17,
+          "text": "Supernova dust production, grain sizes, and remnant evolution. A 19-solar-mass supernova produces ~0.1 solar masses of dust. Grain types: carbon (amorphous, graphite), silicates (olivine, pyroxene), metal oxides (alumina, magnesia, spinel), pure metals (iron, Mg, Si), sulfides, and carbides. Grain sizes: ~2 nm (nanodiamonds, ~1,000 atoms) to ~20 μm (largest SiC crystals). No macroscopic solid objects form directly in supernova ejecta. Presolar grains recovered from primitive meteorites confirm these size ranges. Remnant evolution: free expansion → energy-conserving Sedov-Taylor phase → momentum-conserving snowplow phase. See: Sarangi, A. and Cherchneff, I., \"Dust in Supernovae and Supernova Remnants I: Formation Scenarios,\" *Space Science Reviews*, 214, 63, 2018. See also: Zinner, E., \"Presolar Grains,\" *Treatise on Geochemistry*, 2nd ed., Vol. 1, pp. 181-213, 2014."
+        }
+      ]
+    },
+    {
+      "number": "5",
+      "title": "The First Space Age",
+      "references": [
+        {
+          "num": 1,
+          "text": "Goddard, Robert H. First liquid-fueled rocket launch: March 16, 1926, Auburn, Massachusetts. See: NASA, \"Dr. Robert H. Goddard, American Rocketry Pioneer,\" https://www.nasa.gov/centers-and-facilities/goddard/dr-robert-h-goddard-american-rocketry-pioneer/. See also: Clary, D.A., *Rocket Man: Robert H. Goddard and the Birth of the Space Age*, Hyperion, 2003."
+        },
+        {
+          "num": 2,
+          "text": "V-2 rocket. First flight to cross Kármán line: June 1944. Wartime launches: >3,000. Casualties from attacks: ~9,000. Deaths during production (Mittelbau-Dora): ~20,000. See: Neufeld, M.J., *The Rocket and the Reich: Peenemünde and the Coming of the Ballistic Missile Era*, Free Press, 1995. See also: Wikipedia, \"V-2 rocket,\" https://en.wikipedia.org/wiki/V-2_rocket."
+        },
+        {
+          "num": 3,
+          "text": "Korolev biography. Born: January 12, 1907, Zhitomir. Died: January 14, 1966, Moscow. Arrested 1938, sent to Kolyma. Released after war, led Soviet missile and space programs. Identity secret until death. See: Harford, J., *Korolev: How One Man Masterminded the Soviet Drive to Beat America to the Moon*, Wiley, 1997. See also: ESA, \"Sergei Korolev: Father of the Soviet Union's success in space,\" https://www.esa.int/About_Us/50_years_of_ESA/50_years_of_humans_in_space/Sergei_Korolev_Father_of_the_Soviet_Union_s_success_in_space. NASA, \"Sergei P. Korolev,\" https://www.nasa.gov/history/sputnik/korolev.html."
+        },
+        {
+          "num": 4,
+          "text": "Sputnik 1: October 4, 1957. Mass: 83.6 kg. Diameter: 58 cm. Orbit: 215 × 939 km, 96.2-min period. Sputnik 2: November 3, 1957, carrying Laika. See: NASA, \"Sputnik and the Dawn of the Space Age,\" https://history.nasa.gov/sputnik/. See also: Siddiqi, A.A., *Sputnik and the Soviet Space Challenge*, University Press of Florida, 2003."
+        },
+        {
+          "num": 5,
+          "text": "Explorer 1: January 31, 1958. Vanguard TV3 failure: December 6, 1957. Van Allen radiation belts discovery. See: NASA, \"Explorer 1: First U.S. Satellite,\" https://www.nasa.gov/mission_pages/explorer/explorer-overview.html. See also: Van Allen, J.A., et al., \"Observation of high intensity radiation by satellites 1958 Alpha and Gamma,\" *Jet Propulsion*, 28(9), 588-592, 1958."
+        },
+        {
+          "num": 6,
+          "text": "NASA creation: National Aeronautics and Space Act, signed July 29, 1958. Operations began October 1, 1958. Budget history: peak 4.4% of federal budget in 1966 (~\\$5.9 billion, ~\\$55 billion in 2026 dollars). FY2025 budget: ~\\$25.4 billion. See: NASA, \"NASA Budget History,\" https://www.nasa.gov/about/budget/. See also: Launius, R.D., \"Eisenhower, Sputnik, and the Creation of NASA,\" *Prologue Magazine*, 1998."
+        },
+        {
+          "num": 7,
+          "text": "Gagarin: April 12, 1961, Vostok 1, single orbit, 108 minutes. Shepard: May 5, 1961, Freedom 7, suborbital. Glenn: February 20, 1962, Friendship 7, three orbits. Tereshkova: June 16, 1963, Vostok 6. Leonov: March 18, 1965, Voskhod 2, first EVA. See: Siddiqi, A.A., *Challenge to Apollo: The Soviet Union and the Space Race, 1945-1974*, NASA SP-2000-4408, 2000."
+        },
+        {
+          "num": 8,
+          "text": "Kennedy speech: May 25, 1961, Joint Session of Congress. Apollo program: ~400,000 people, 20,000 companies. Total cost: ~\\$25.4 billion (1960s dollars), ~\\$260 billion (2026 dollars). Mercury and Gemini programs as precursors. See: Kennedy, J.F., \"Special Message to the Congress on Urgent National Needs,\" May 25, 1961. See also: Murray, C. and Cox, C.B., *Apollo: The Race to the Moon*, Simon & Schuster, 1989."
+        },
+        {
+          "num": 9,
+          "text": "Saturn V specifications. Height: 110.6 m. Launch mass: ~2,950,000 kg. First stage thrust: 33,400 kN (five F-1 engines). LEO payload: ~130,000 kg. TLI payload: ~48,600 kg. F-1 engine propellant consumption: ~2,578 kg/s per engine. Thirteen launches, all successful. See: NASA, \"Saturn V,\" https://www.nasa.gov/centers/kennedy/about/information/saturn_v.html. See also: Bilstein, R.E., *Stages to Saturn: A Technological History of the Apollo/Saturn Launch Vehicles*, NASA SP-4206, 1980."
+        },
+        {
+          "num": 10,
+          "text": "Apollo missions summary. Apollo 11: July 20, 1969, first lunar landing. EVA duration: 2h 31m. Surface stay: 21h 36m. Samples: 21.5 kg. Total missions: Apollo 11-17 (12 excluded). Total moonwalkers: 12. Total samples: 382 kg. Apollo 13: April 1970, aborted due to service module oxygen tank explosion. See: NASA, \"Apollo,\" https://www.nasa.gov/mission/apollo/. See also: Chaikin, A., *A Man on the Moon: The Voyages of the Apollo Astronauts*, Viking, 1994."
+        },
+        {
+          "num": 11,
+          "text": "N1 rocket. Height: 105 m. LEO payload: ~95,000 kg. First stage engines: 30 × NK-15. Four launch attempts: Feb 21, 1969 (failure T+68s); Jul 3, 1969 (catastrophic failure, pad destroyed, ~7 kt equivalent); Jun 27, 1971 (failure T+51s); Nov 23, 1972 (failure T+107s). Program canceled 1974. See: Siddiqi, A.A., *Challenge to Apollo*, NASA SP-2000-4408, 2000. See also: Wikipedia, \"N1 (rocket),\" https://en.wikipedia.org/wiki/N1_(rocket). Zak, A., \"N1 Superheavy Rocket,\" russianspaceweb.com, https://www.russianspaceweb.com/n1.html."
+        },
+        {
+          "num": 12,
+          "text": "Mariner program. Mariner 2 (1962): first successful Venus flyby. Mariner 4 (1965): first Mars close-up photos. Mariner 9 (1971): first Mars orbiter. Mariner 10 (1974): first gravity assist, first Mercury flybys. See: NASA, \"Mariner,\" https://science.nasa.gov/mission/mariner/."
+        },
+        {
+          "num": 13,
+          "text": "Venera program. 28 missions, 1961-1983. Venera 7 (1970): first soft landing on another planet, 23 min surface transmission. Venera 9 (1975): first surface photos. Venera 13 (1982): 127 min survival, color photos, audio recording, soil analysis. Surface conditions: 462°C, 92 bar. See: NASA NSSDC, \"Venera Missions to Venus,\" https://nssdc.gsfc.nasa.gov/planetary/venera.html. See also: Wikipedia, \"Venera,\" https://en.wikipedia.org/wiki/Venera."
+        },
+        {
+          "num": 14,
+          "text": "Viking 1 and 2 (1975-1976). First successful Mars landers. Biology experiments: labeled release (ambiguous positive), GCMS (no organics detected). See: NASA, \"Viking,\" https://science.nasa.gov/mission/viking/. See also: Klein, H.P., \"The Viking Biological Investigation: General Aspects,\" *Journal of Geophysical Research*, 82(28), 4677-4680, 1977."
+        },
+        {
+          "num": 15,
+          "text": "Voyager 1 and 2. Launched 1977. Planetary encounters: Jupiter (1979), Saturn (1980/1981), Uranus (1986, Voyager 2 only), Neptune (1989, Voyager 2 only). Io active volcanism discovery. Golden Record: 55 languages, music, sounds, 115 images. Pale Blue Dot: February 14, 1990, from 6 billion km. Voyager 1 distance (Feb 2026): ~172 AU. One light-day milestone expected November 2026. Heliopause crossings: Voyager 1 (2012), Voyager 2 (2018). See: NASA, \"Voyager,\" https://science.nasa.gov/mission/voyager/. See also: Sagan, C., *Pale Blue Dot: A Vision of the Human Future in Space*, Random House, 1994."
+        },
+        {
+          "num": 16,
+          "text": "International space agencies. CNES (France): 1961, Astérix satellite 1965. ISRO (India): 1969 (predecessor INCOSPAR 1962), first satellite Aryabhata 1975. NASDA/JAXA (Japan): NASDA 1969, merged into JAXA 2003, first satellite Ohsumi 1970. China: Fifth Academy 1956 (founded by Qian Xuesen), CNSA formally established 1993, first satellite Dong Fang Hong 1 1970. ESA: 1975 (merged ESRO and ELDO). See: Wikipedia, \"List of government space agencies,\" https://en.wikipedia.org/wiki/List_of_government_space_agencies. See also: JAXA, \"NASDA History,\" https://global.jaxa.jp/about/history/nasda/index_e.html."
+        },
+        {
+          "num": 17,
+          "text": "Post-9/11 war costs. Total estimated at ~\\$8 trillion over 20 years (~\\$400 billion/year). Afghanistan alone: ~\\$2.3 trillion over 20 years (~\\$115 billion/year). Iraq/Syria: ~\\$1.79 trillion through 2023. See: Bilmes, L., and Crawford, N.C., Brown University Costs of War Project, https://costsofwar.watson.brown.edu/findings."
+        },
+        {
+          "num": 18,
+          "text": "SpaceX launch vehicles. Falcon Heavy: height 70 m, liftoff thrust ~22,800 kN (27 Merlin engines), LEO payload ~63,800 kg, first flew February 2018. Starship: height ~121 m, Super Heavy booster thrust ~74,000 kN (33 Raptor engines), expected LEO payload ~100-150 tonnes (reusable), ~200-250 tonnes (expendable), first orbital test flights 2023, still in active development as of 2026. See: SpaceX, \"Falcon Heavy,\" https://www.spacex.com/vehicles/falcon-heavy/. SpaceX, \"Starship,\" https://www.spacex.com/vehicles/starship/. See also: Wikipedia, \"Falcon Heavy,\" https://en.wikipedia.org/wiki/Falcon_Heavy; Wikipedia, \"SpaceX Starship,\" https://en.wikipedia.org/wiki/SpaceX_Starship."
+        }
+      ]
+    },
+    {
+      "number": "6",
+      "title": "What Apollo Gave Us",
+      "references": [
+        {
+          "num": 1,
+          "text": "Apollo integrated circuit procurement. NASA purchased approximately 60% of U.S. integrated circuit output in 1963. Fairchild Semiconductor shipped roughly 100,000 devices for Apollo in 1964. The price of ICs dropped roughly 50× between 1961 and 1971. See: Laws, D., \"Silicon Chips Take Man to the Moon,\" Computer History Museum, 2019, https://computerhistory.org/blog/silicon-chips-take-man-to-the-moon/. See also: National Air and Space Museum, \"Apollo Guidance Computer and the First Silicon Chips,\" https://airandspace.si.edu/stories/editorial/apollo-guidance-computer-and-first-silicon-chips."
+        },
+        {
+          "num": 2,
+          "text": "Medical telemetry. Spacelabs Medical developed portable patient monitoring from NASA astronaut monitoring technology. St. Jude Medical (now Abbott) developed programmable pacemakers using NASA-derived wireless telemetry. See: NASA Spinoff, \"Space-Proven Medical Monitor: The Total Patient-Care Package,\" https://spinoff.nasa.gov/Spinoff2006/hm_2.html."
+        },
+        {
+          "num": 3,
+          "text": "Water purification. Silver/copper ion water purification originally developed for Apollo spacecraft. See: NASA Spinoff, \"Water Purification Systems,\" https://spinoff.nasa.gov/node/9594. See also: NASA Spinoff, \"Water Treatment Systems Make a Big Splash,\" https://spinoff.nasa.gov/Spinoff2004/er_1.html."
+        },
+        {
+          "num": 4,
+          "text": "HACCP food safety system. Developed by Pillsbury in partnership with NASA for Apollo food safety requirements. FDA mandated HACCP for seafood (1997) and juice (2001). Now the global standard for food safety. See: NASA Spinoff, \"Food Safety Systems,\" https://spinoff.nasa.gov/. See also: FDA, \"HACCP Principles and Application Guidelines,\" https://www.fda.gov/food/hazard-analysis-critical-control-point-haccp/."
+        },
+        {
+          "num": 5,
+          "text": "General spinoff technologies. NASA's annual Spinoff publication has documented over 2,000 technologies transferred from the space program. Fire-resistant materials developed after the Apollo 1 fire (January 27, 1967). See: NASA Spinoff, https://spinoff.nasa.gov/. See also: Wikipedia, \"NASA spin-off technologies,\" https://en.wikipedia.org/wiki/NASA_spin-off_technologies."
+        },
+        {
+          "num": 6,
+          "text": "Early economic impact studies. Midwest Research Institute (1971): \\$25 billion invested (1958 dollars) returned \\$52 billion through 1971, projected \\$181 billion by 1987. Chase Econometric Associates (1976): estimated \\$23 return per dollar of NASA spending. See: MRIGlobal (Midwest Research Institute), 1971 study. Chase Econometric Associates, \"The Economic Impact of NASA R&D Spending,\" NASA contract NASW-2741, April 1976, https://ntrs.nasa.gov/api/citations/19760017002/downloads/19760017002.pdf. Note: these early studies have been criticized for generous assumptions. See: Hertzfeld, H., \"The State of Space Economic Analyses: Real Questions, Questionable Results,\" *New Space*, 1(1), 2013."
+        },
+        {
+          "num": 7,
+          "text": "NASA FY2023 economic impact. \\$25.4 billion budget generated \\$75.6 billion in total economic output. Supported 304,803 jobs nationwide. Generated \\$9.5 billion in federal, state, and local tax revenues. See: NASA, \"FY 2023 Economic Impact Report,\" October 2024, https://www.nasa.gov/fy-2023-economic-impact-report/."
+        },
+        {
+          "num": 8,
+          "text": "GPS economic value. NIST-commissioned study estimated \\$1.4 trillion in U.S. private sector economic benefits from GPS between 1984 and 2017. Loss of GPS estimated at ~\\$1 billion/day. See: RTI International, \"GPS: A \\$1.4 Trillion Economic Engine,\" https://www.rti.org/impact/gps-14-trillion-economic-engine. See also: U.S. Department of Commerce, Office of Space Commerce, \"Economic Benefits of GPS,\" https://space.commerce.gov/doc-study-on-economic-benefits-of-gps/."
+        },
+        {
+          "num": 9,
+          "text": "Weather satellite and Earth observation value. National Weather Service satellite-enabled forecasting saves thousands of lives annually. Economic value of weather forecasting extends across agriculture, aviation, shipping, construction, and disaster preparedness. See: NOAA National Environmental Satellite, Data, and Information Service (NESDIS), https://www.nesdis.noaa.gov/."
+        },
+        {
+          "num": 10,
+          "text": "Apollo workforce. Peak employment: over 400,000 people across NASA and 20,000+ contractor companies (1967). Average age of Mission Control engineers during Apollo 11: 28. See: Smithsonian Magazine, \"Twenty People Who Made Apollo Happen,\" https://www.smithsonianmag.com/air-space-magazine/twenty-people-who-made-apollo-happen-180972374/. See also: Apollo11Space, \"The Workforce Behind Apollo,\" https://apollo11space.com/the-workforce-behind-apollo-exploring-the-400000-people-who-made-the-moon-landing-possible/."
+        },
+        {
+          "num": 11,
+          "text": "NASA diversity. Marshall Space Flight Center Cooperative Education Program established 1964. Charlie Smoot: first African-American recruiter at NASA. Recruited at historically Black colleges and universities. See: ERE, \"Recruiting for Apollo,\" https://www.ere.net/articles/recruiting-for-apollo."
+        },
+        {
+          "num": 12,
+          "text": "Iraq and Afghanistan war costs. Estimated \\$6-8 trillion including long-term veteran care, interest on debt, and ongoing costs. See: Bilmes, L., \"The Long-Term Costs of United States Care for Veterans of the Afghanistan and Iraq Wars,\" Watson Institute for International and Public Affairs, Brown University, Costs of War Project, https://watson.brown.edu/costsofwar/."
+        },
+        {
+          "num": 13,
+          "text": "Vietnam War costs and veterans. Total cost: approximately \\$168 billion in contemporary dollars (~\\$1 trillion adjusted for inflation). U.S. deaths: 58,220. Wounded: 303,644. PTSD: approximately 271,000 Vietnam veterans still had PTSD decades after the war. Veteran homelessness: nearly half (47%) of homeless male veterans are Vietnam-era veterans. See: Smithsonian Magazine, \"Over a Quarter-Million Vietnam War Veterans Still Have PTSD,\" https://www.smithsonianmag.com/science-nature/over-quarter-million-vietnam-war-veterans-still-have-ptsd-180955997/. See also: Rosenheck, R. and Fontana, A., \"Vietnam era and Vietnam combat veterans among the homeless,\" *American Journal of Public Health*, 84(7), 1994. Congressional Research Service, \"Costs of Major U.S. Wars,\" https://fas.org/publication/war_costs/."
+        }
+      ]
+    },
+    {
+      "number": "7",
+      "title": "The Higher Ground",
+      "references": [
+        {
+          "num": 1,
+          "text": "Apollo 11 television audience. An estimated 650 million people worldwide watched Armstrong's first steps. In the U.S., 93% of televisions in use were tuned to the broadcast. See: National Air and Space Museum, \"Apollo 11 and the World,\" https://airandspace.si.edu/stories/editorial/apollo-11-and-world."
+        },
+        {
+          "num": 2,
+          "text": "Soft power concept. Coined by Joseph Nye in 1990. See: Nye, J.S., \"Soft Power: The Means to Success in World Politics,\" Public Affairs, 2004."
+        },
+        {
+          "num": 3,
+          "text": "Petrodollar system. The pricing of oil in U.S. dollars and its role in maintaining the dollar as the world's reserve currency. For an overview, see: Eichengreen, B., \"Exorbitant Privilege: The Rise and Fall of the Dollar and the Future of the International Monetary System,\" Oxford University Press, 2011."
+        },
+        {
+          "num": 4,
+          "text": "U.S. defense spending FY2024. Department of Defense budget: \\$841.4 billion signed into law December 22, 2023. Total national security spending exceeds \\$1 trillion when including related programs. See: USASpending.gov, Department of Defense spending profile, https://www.usaspending.gov/agency/department-of-defense."
+        },
+        {
+          "num": 5,
+          "text": "NASA budget history. Peak: 4.41% of federal budget in 1966. Current: approximately 0.5%. See: The Planetary Society, \"Your Guide to NASA's Budget,\" https://www.planetary.org/space-policy/nasa-budget."
+        },
+        {
+          "num": 6,
+          "text": "Defense contractor concentration. Five prime contractors receive the dominant share of Pentagon spending. Lockheed Martin: \\$64.7 billion defense revenue (2024). See: Quincy Institute for Responsible Statecraft, \"Profits of War: Top Beneficiaries of Pentagon Spending, 2020-2024,\" https://quincyinst.org/research/profits-of-war-top-beneficiaries-of-pentagon-spending-2020-2024/."
+        },
+        {
+          "num": 7,
+          "text": "NASA FY2023 economic impact. \\$25.4 billion budget generated \\$75.6 billion total economic output across all 50 states, supporting 304,803 jobs. See: NASA, \"FY 2023 Economic Impact Report,\" October 2024, https://www.nasa.gov/fy-2023-economic-impact-report/."
+        },
+        {
+          "num": 8,
+          "text": "U.S. arms exports. The U.S. accounted for 43% of global exports of major conventional weapons, 2020-2024. FY2024: \\$117.9 billion in transferred defense material and services, the highest annual total ever recorded. See: SIPRI Arms Transfers Database, https://www.sipri.org/databases/armstransfers. See also: U.S. State Department, \"Fiscal Year 2023 U.S. Arms Transfers and Defense Trade,\" https://2021-2025.state.gov/fiscal-year-2023-u-s-arms-transfers-and-defense-trade/."
+        },
+        {
+          "num": 9,
+          "text": "Saudi arms sales. 2017 deal: \\$110 billion immediate, \\$350 billion planned over ten years. Total Saudi FMS cases exceed \\$140 billion. See: Forum on the Arms Trade, \"U.S. Arms Sales to Saudi Arabia,\" https://www.forumarmstrade.org/us-saudi-arms_biden.html."
+        },
+        {
+          "num": 10,
+          "text": "Yemen civilian casualties. Saudi-led coalition: over 25,000 airstrikes. Over 19,000 civilians killed or maimed including 2,300+ children. Amnesty International documented specific strikes using Raytheon-manufactured weapons. See: Amnesty International, \"Yemen: US-made weapon used in air strike that killed scores,\" January 2022, https://www.amnesty.org/en/latest/news/2022/01/yemen-us-made-weapon-used-in-air-strike-that-killed-scores-in-escalation-of-saudi-led-coalition-attacks/. See also: Washington Post investigation, \"Saudi War Crimes in Yemen,\" 2022, https://www.washingtonpost.com/investigations/interactive/2022/saudi-war-crimes-yemen/."
+        },
+        {
+          "num": 11,
+          "text": "U.S. support for Iraq in the 1980s. The U.S. removed Iraq from the state sponsors of terrorism list in 1982 to facilitate military and economic support during the Iran-Iraq War. See: NPR, \"U.S. Links to Saddam During Iran-Iraq War,\" 2005, https://www.npr.org/2005/09/22/4859238/u-s-links-to-saddam-during-iran-iraq-war. See also: PBS Frontline, \"Arming Iraq,\" https://www.pbs.org/wgbh/pages/frontline/shows/longroad/etc/arming.html."
+        },
+        {
+          "num": 12,
+          "text": "Operation Cyclone. CIA covert program 1979-1989. Funding rose from \\$20-30 million/year initially to \\$630 million/year by 1987. Indirect connections to al-Qaeda through Haqqani and Hekmatyar networks. See: Bergen, P., \"What the CIA Did and Didn't Do in Soviet-Occupied Afghanistan,\" New Lines Magazine, https://newlinesmag.com/argument/what-the-cia-did-and-didnt-do-in-soviet-occupied-afghanistan/."
+        },
+        {
+          "num": 13,
+          "text": "Civilian harm accountability. As of December 2024, the State Department had received 634 reported incidents potentially involving civilian harm from U.S. arms transfers and had not completed a single investigation into reports it deemed credible. See: U.S. Government Accountability Office, GAO-25-107077, \"Arms Transfers: State Should Take Additional Steps to Respond to Civilian Harm Reports,\" 2025, https://www.gao.gov/products/gao-25-107077."
+        },
+        {
+          "num": 14,
+          "text": "Apollo-Soyuz Test Project. July 15-17, 1975. First international crewed space mission. Stafford and Leonov handshake on July 17. First Soviet mission broadcast live. First time Americans inspected Soviet spacecraft and launch facility. See: Smithsonian National Air and Space Museum, \"With the Apollo-Soyuz Handshake in Space, the Cold War Thawed a Little,\" https://www.smithsonianmag.com/air-space-magazine/apollo-soyuz-cold-war-thawed-little-180975321/."
+        },
+        {
+          "num": 15,
+          "text": "International Space Station. Continuously occupied since November 2, 2000. International partnership including the United States, Russia, Japan, Canada, and ESA member nations. See: NASA, \"International Space Station,\" https://www.nasa.gov/international-space-station/."
+        },
+        {
+          "num": 16,
+          "text": "Teacher in Space Project. Announced by President Reagan on August 27, 1984. Over 11,000 teacher applications received. Christa McAuliffe selected July 1985. Millions of schoolchildren watched Challenger launch live in classrooms on January 28, 1986. See: NASA, \"40 Years Ago: President Reagan Announces Teacher in Space Project,\" https://www.nasa.gov/history/40-years-ago-president-reagan-announces-teacher-in-space-project/. See also: Wikipedia, \"Teacher in Space Project,\" https://en.wikipedia.org/wiki/Teacher_in_Space_Project."
+        },
+        {
+          "num": 17,
+          "text": "Hubble Space Telescope photo books. Dickinson, T., *Hubble's Universe: Greatest Discoveries and Latest Images*, Firefly Books (multiple editions, award-winning bestseller). ESA/Hubble, *Hubble: 15 Years of Discovery* (Wiley-VCH Bestseller Prize 2006). See: ESA/Hubble, \"Hubble 15 Years of Discovery Gets Wiley-VCH Bestseller 2006 Prize,\" https://esahubble.org/announcements/ann0703/. TASCHEN, *Expanding Universe: Photographs from the Hubble Space Telescope*, 2015."
+        },
+        {
+          "num": 18,
+          "text": "NASA public approval. Gallup: approval ratings consistently 60-70%, one of the most popular federal agencies. Research!America 2006 poll: 17% of Americans named the space program as the greatest achievement of the 20th century (highest single answer). See: Gallup, \"50 Years After Moon Landing, Support for Space Program High,\" 2019, https://news.gallup.com/poll/260309/years-moon-landing-support-space-program-high.aspx. See also: Roper Center for Public Opinion Research, \"Fly Me to the Moon: The Public and NASA,\" https://ropercenter.cornell.edu/fly-me-moon-public-and-nasa."
+        },
+        {
+          "num": 19,
+          "text": "Space Shuttle final launch attendance. Discovery final launch (STS-133, February 2011): 400,000-500,000 spectators. Endeavour (STS-134, April 2011): NASA expected 700,000. Atlantis final Shuttle mission (STS-135, July 2011): tourism officials predicted over 1 million. See: Space.com, \"NASA Expects 700,000 Spectators for Friday Shuttle Launch,\" April 2011, https://www.space.com/11507-nasa-space-shuttle-endeavour-launch-crowds.html."
+        }
+      ]
+    },
+    {
+      "number": "8",
+      "title": "The Space Shuttle and the Death of Promise",
+      "references": [
+        {
+          "num": 1,
+          "text": "Space Shuttle original promises. 50+ flights per year projected. Cost per flight: $10-20 million promised. See: Heppenheimer, T.A., *The Space Shuttle Decision: NASA's Search for a Reusable Space Vehicle*, NASA SP-4221, 1999. See also: Space.com, \"NASA's Shuttle Program Cost $209 Billion: Was it Worth It?\", https://www.space.com/12166-space-shuttle-program-cost-promises-209-billion.html."
+        },
+        {
+          "num": 2,
+          "text": "Air Force cross-range requirement. 1,500 nautical mile cross-range capability mandated. Based on single-orbit Vandenberg AFB mission returning to launch site after 90 minutes of Earth rotation (~1,100 nm displacement). Required delta wing design, abandoned straight-wing fully reusable concept. Decision made January 1971 for delta-wing orbiter with expendable tank. Vandenberg launch complex built but never used for Shuttle after Challenger. See: \"Blue Shuttle: How the Air Force Influenced the STS Design Process,\" The High Frontier, 2015, https://thehighfrontier.blog/2015/10/19/blue-shuttle-how-the-air-force-influenced-the-sts-design-process/. See also: NSS, \"The Space Shuttle Decision: Chapter 5,\" https://nss.org/the-space-shuttle-decision-chapter-5/."
+        },
+        {
+          "num": 3,
+          "text": "Solid rocket boosters. Height: ~45 m per booster. Thrust: ~12,500 kN per booster. Morton Thiokol (Utah) contract. Solid motors cannot be throttled or shut down once ignited. Segmented design with field joints sealed by O-rings. See: NASA, \"Space Shuttle Solid Rocket Boosters,\" https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/srb.html."
+        },
+        {
+          "num": 4,
+          "text": "Cost-plus contracting. Contractor reimbursed for all costs plus profit fee. Revenue increases with spending. No financial incentive for efficiency. See: Peck, M.J. and Scherer, F.M., *The Weapons Acquisition Process: An Economic Analysis*, Harvard University Press, 1962. See also: GAO, \"Space Transportation: The Content and Uses of Shuttle Cost Estimates,\" NSIAD-93-115, 1993, https://www.gao.gov/products/nsiad-93-115."
+        },
+        {
+          "num": 5,
+          "text": "Shuttle program totals. 135 missions, 1981-2011. Total cost: ~$209 billion (2010 dollars). Per-flight cost: ~$1.5 billion. Maximum flight rate: 9 missions in one year. Average: ~4.5 per year. LEO payload capacity: 27,500 kg. See: Kyle, E., \"Space Shuttle Data,\" Space Launch Report. See also: Wikipedia, \"Space Shuttle program,\" https://en.wikipedia.org/wiki/Space_Shuttle_program."
+        },
+        {
+          "num": 6,
+          "text": "Challenger disaster. January 28, 1986. STS-51-L. O-ring failure at right SRB field joint. Temperature at launch: ~-1°C (30°F). Roger Boisjoly memo: July 1985. Teleconference the night before: Thiokol engineers recommended no-launch, management reversed. Crew: Scobee, Smith, Onizuka, Resnik, McNair, Jarvis, McAuliffe. Breakup at T+73s, ~14.5 km altitude. Rogers Commission investigation. Feynman O-ring ice water demonstration. See: Rogers Commission Report, 1986, https://www.nasa.gov/history/rogersrep/genindex.htm. See also: Wikipedia, \"Space Shuttle Challenger disaster,\" https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster. Boisjoly biography: https://en.wikipedia.org/wiki/Roger_Boisjoly."
+        },
+        {
+          "num": 7,
+          "text": "Normalization of deviance. Coined by Diane Vaughan. O-ring erosion on previous flights accepted as within tolerable limits through incremental rationalization. See: Vaughan, D., *The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA*, University of Chicago Press, 1996. See also: Columbia Magazine, \"How the Challenger Disaster Became a Case Study of the 'Normalization of Deviance,'\" https://magazine.columbia.edu/article/challenger-disaster-normalization-deviance."
+        },
+        {
+          "num": 8,
+          "text": "Columbia disaster. February 1, 2003. STS-107. Foam strike at T+82s from external tank bipod ramp hit left wing RCC panels. Foam debris observed on 65 of 79 photographed missions. Engineer Rodney Rocha requested satellite imagery of wing damage; request denied. Breakup during reentry at ~61 km altitude over Texas. Crew: Husband, McCool, Anderson, Brown, Chawla, Clark, Ramon. CAIB investigation; Vaughan served on board. See: Columbia Accident Investigation Board Report, August 2003, https://www.nasa.gov/columbia-accident-investigation-board/. See also: Wikipedia, \"Space Shuttle Columbia disaster,\" https://en.wikipedia.org/wiki/Space_Shuttle_Columbia_disaster."
+        }
+      ]
+    },
+    {
+      "number": "9",
+      "title": "Cost-Plus, No-Bid, and the Rot of Public Investment",
+      "references": [
+        {
+          "num": 1,
+          "text": "Boeing-McDonnell Douglas merger. Completed August 1, 1997. \\$14 billion all-stock acquisition. Harry Stonecipher became president/COO of merged company. \"When people say I changed the culture of Boeing, that was the intent, so that it is run like a business rather than a great engineering firm.\" See: Quartz, \"The 1997 merger that paved the way for the Boeing 737 Max crisis,\" 2019, https://qz.com/1776080/how-the-mcdonnell-douglas-boeing-merger-led-to-the-737-max-crisis. See also: Fortune, \"Boeing's 737 Max crisis was fueled by a shareholder-first company culture,\" 2020, https://fortune.com/longform/boeing-737-max-crisis-shareholder-first-culture/."
+        },
+        {
+          "num": 2,
+          "text": "Shareholder value maximization. Friedman, M., \"The Social Responsibility of Business Is to Increase Its Profits,\" New York Times Magazine, September 13, 1970. Jack Welch 2009 retraction: \"On the face of it, shareholder value is the dumbest idea in the world.\" See: Financial Times, \"Welch condemns share price focus,\" March 12, 2009. See also: CFA Institute, \"Shareholder Value Maximization: The World's Dumbest Idea?\", 2014, https://blogs.cfainstitute.org/investor/2014/10/23/shareholder-value-maximization-the-worlds-dumbest-idea/."
+        },
+        {
+          "num": 3,
+          "text": "Boeing stock buybacks and executive compensation. \\$43 billion in stock buybacks 2013-2019. Buyback program suspended April 2019. CEO Dennis Muilenburg: ~\\$96 million gross compensation 2016-2018, \\$62 million exit package December 2019. See: Common Dreams, \"Did Stock Buybacks Knock the Bolts Out of Boeing?\", 2024, https://www.commondreams.org/opinion/boeing-safety-stock-buybacks. See also: NYU Stern Center for Business and Human Rights, \"Boeing's Decline Traced to Decades of Catering to Shareholders Above All Others,\" 2024, https://bhr.stern.nyu.edu/quick-take/boeings-decline-traced-to-decades-of-catering-to-shareholders-above-all-others/."
+        },
+        {
+          "num": 4,
+          "text": "Boeing 737 MAX crashes. Lion Air Flight 610: October 29, 2018, 189 killed. Ethiopian Airlines Flight 302: March 10, 2019, 157 killed. Total: 346 deaths. Cause: MCAS flight control system malfunction. See: Wikipedia, \"Boeing 737 MAX groundings,\" https://en.wikipedia.org/wiki/Boeing_737_MAX_groundings. See also: Harvard Business School Working Knowledge, \"Why Boeing's Problems with the 737 MAX Began More Than 25 Years Ago,\" https://www.library.hbs.edu/working-knowledge/why-boeings-problems-737-max-began-more-than-25-years-ago."
+        },
+        {
+          "num": 5,
+          "text": "Alaska Airlines Flight 1282 door plug blowout. January 5, 2024. Boeing 737 MAX 9. Four retention bolts never installed at factory. All 177 on board survived. NTSB finding: Boeing's \"inadequate training, guidance and oversight\" was the probable cause. See: NPR, \"NTSB says four bolts 'missing' on Alaska Airlines 737 Max 9 door plug blowout,\" February 2024, https://www.npr.org/2024/02/06/1229528737/ntsb-boeing-737-max-9-alaska-airlines-door-plug-missing-bolts."
+        },
+        {
+          "num": 6,
+          "text": "Boeing whistleblowers. John Barnett: former quality manager, raised concerns about 787 Dreamliner manufacturing defects, found dead March 9, 2024 during depositions for his whistleblower case. Death ruled suicide. Family filed wrongful death lawsuit against Boeing, March 2025. Sam Salehpour: engineer, testified before Senate April 17, 2024 about safety shortcuts on 787 and 777 production, reported being threatened with dismissal and physical violence. See: NPR, \"Boeing whistleblower John Barnett found dead,\" March 2024, https://www.npr.org/2024/03/12/1238033573/boeing-whistleblower-john-barnett-dead. See also: Blueprint for Free Speech, \"Boeing Whistleblowers 2024,\" https://www.blueprintforfreespeech.net/en/prize/recipients/2024/boeing-whistleblowers."
+        },
+        {
+          "num": 7,
+          "text": "Perverse incentive structure of stock-based CEO compensation. Stock buybacks reduce shares outstanding, mechanically increasing earnings per share without improving business performance. See: Lazonick, W., \"Profits Without Prosperity,\" Harvard Business Review, September 2014. See also: Democracy Journal, \"What Really Wrecked Boeing,\" https://democracyjournal.org/arguments/what-really-wrecked-boeing/."
+        },
+        {
+          "num": 8,
+          "text": "CEO-to-worker compensation ratio. 1965: approximately 21:1. 2000: over 350:1. 2021: 399:1 (realized compensation measure). CEO pay rose 1,460% from 1978 to 2021; typical worker pay rose 18.1% over same period. See: Economic Policy Institute, \"CEO pay has skyrocketed 1,460% since 1978,\" 2022, https://www.epi.org/publication/ceo-pay-in-2021/."
+        },
+        {
+          "num": 9,
+          "text": "Financial sector growth and brain drain. Financial sector share of GDP: ~4.9% in 1980, ~8% by 2007. See: Greenwood, R. and Scharfstein, D., \"The Growth of Finance,\" Journal of Economic Perspectives, Vol. 27, No. 2, Spring 2013, pp. 3-28. Brain drain from engineering to finance: see Philippon, T. and Reshef, A., \"Wages and Human Capital in the U.S. Finance Industry: 1909-2006,\" Quarterly Journal of Economics, 2012."
+        },
+        {
+          "num": 10,
+          "text": "Enron scandal. Revenue of \\$101 billion in 2000, seventh-largest US company. Bankruptcy filed December 2, 2001: \\$63.4 billion in assets, largest US corporate bankruptcy at the time. 20,000 employees lost jobs and ~\\$2 billion in pension savings. Stock price fell from \\$90.75 to under \\$1. Kenneth Lay convicted on 10 counts (died before sentencing). Jeffrey Skilling convicted on 19 counts, sentenced to 24 years (later reduced to 14). Skilling compensation: \\$132 million in a single year. Lay sold \\$60+ million in stock while aware of fraud. Arthur Andersen (28,000 employees) destroyed after document shredding conviction. Fortune named Enron \"America's Most Innovative Company\" six consecutive years (1996-2001). California energy crisis: Enron traders deliberately created artificial power shortages. See: Britannica, \"Enron scandal,\" https://www.britannica.com/event/Enron-scandal. See also: FBI, \"Enron,\" https://www.fbi.gov/history/famous-cases/enron. McLean, B. and Elkind, P., *The Smartest Guys in the Room: The Amazing Rise and Scandalous Fall of Enron*, Portfolio, 2003."
+        },
+        {
+          "num": 11,
+          "text": "Glass-Steagall repeal and 2008 financial crisis. Glass-Steagall Act of 1933 separated commercial and investment banking. Gramm-Leach-Bliley Act of 1999 repealed key provisions. Joseph Stiglitz: \"when repeal of Glass-Steagall brought investment and commercial banks together, the investment-bank culture came out on top.\" 2008 crisis estimated cost: \\$22 trillion in lost output. See: NPR, \"Fact Check: Did Glass-Steagall Cause The 2008 Financial Crisis?\", 2015, https://www.npr.org/sections/thetwo-way/2015/10/14/448685233/fact-check-did-glass-steagall-cause-the-2008-financial-crisis. See also: U.S. Government Accountability Office, \"Financial Crisis Losses and Potential Impacts,\" GAO-13-180, 2013."
+        },
+        {
+          "num": 12,
+          "text": "American Amnesia. Hacker, J.S. and Pierson, P., *American Amnesia: How the War on Government Led Us to Forget What Made America Prosper*, Simon & Schuster, 2016. Thesis: The mixed economy, combining public investment with private enterprise, was the most important social innovation of the twentieth century. The \"war on government\" destroyed the institutional capacity that made American prosperity possible."
+        },
+        {
+          "num": 13,
+          "text": "Space Launch System. Authorized 2010. Original development budget: ~\\$7 billion. First launch target: 2016. Actual first launch: November 16, 2022 (Artemis I). Total development cost through FY2028: ~\\$23 billion. Per-launch cost: estimated \\$4+ billion. Uses Shuttle-derived RS-25 engines and 5-segment SRBs. Contractors experienced ~\\$6 billion in cost increases and 6+ years of schedule delays. See: GAO, \"Space Launch System: Cost Transparency Needed to Monitor Program Affordability,\" GAO-23-105609, 2023, https://www.gao.gov/products/gao-23-105609."
+        },
+        {
+          "num": 14,
+          "text": "SpaceX comparison. Falcon Heavy: 63,800 kg to LEO, ~\\$150 million per flight. Starship: designed for full reusability, 100-150 tonnes to LEO (reusable configuration), target cost far below expendable systems. SpaceX uses fixed-price contracts, rapid iterative development, and reinvests profits into development. See: SpaceX, vehicle specifications, https://www.spacex.com/vehicles/falcon-heavy/. See also: NASA, \"SpaceX Starship,\" https://www.nasa.gov/humans-in-space/commercial-space/spacex-starship/."
+        },
+        {
+          "num": 15,
+          "text": "China space program achievements. Tiangong space station: operational since 2022. Chang'e 4: first far-side lunar landing, January 2019. Chang'e 5: lunar sample return, December 2020. Tianwen-1: Mars orbiter, lander, and rover, May 2021. Crewed lunar landing planned for approximately 2030. See: Wikipedia, \"Chinese space program,\" https://en.wikipedia.org/wiki/Chinese_space_program."
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "How Giving Up on Space Handed China the Future",
+      "references": [
+        {
+          "num": 1,
+          "text": "Carter White House solar panels. 32 solar water heating panels installed June 20, 1979, on West Wing roof. Built by InterTechnology/Solar Corp. Provided ~75% of energy for heating ~1,000 gallons of hot water. Removed 1986 during Reagan administration roof resurfacing. Press Secretary Dale Petroskey: \"Putting them back up would be very unwise, based on cost.\" Panels stored in warehouse, donated to Unity College (Maine) in 1992. One panel donated to National Museum of American History, 2009. See: Scientific American, \"Where Did the Carter White House's Solar Panels Go?\", https://www.scientificamerican.com/article/carter-white-house-solar-panel-array/. See also: White House Historical Association, \"The White House Gets Solar Panels, 1979,\" https://www.whitehousehistory.org/the-white-house-gets-solar-panels."
+        },
+        {
+          "num": 2,
+          "text": "Reagan administration energy policy. Solar energy research budget cut approximately 90% from Carter-era levels. Renewable energy tax credits eliminated. See: Yale Climate Connections, \"The forgotten story of Jimmy Carter's White House solar panels,\" 2023, https://yaleclimateconnections.org/2023/02/the-forgotten-story-of-jimmy-carters-white-house-solar-panels/."
+        },
+        {
+          "num": 3,
+          "text": "Japan solar PV industry, 1980s-1990s. Sharp: silicon PV cells since 1961, major manufacturer by 1980s. Kyocera: first mass-produced multicrystalline silicon cells using casting method, world record conversion efficiency, first Japanese residential solar system 1993. Sanyo: high-efficiency cells for consumer electronics. By mid-1990s Japan was global leader in PV manufacturing. See: Construction Physics, \"How Did Solar Power Get Cheap? Part II,\" https://www.construction-physics.com/p/how-did-solar-power-get-cheap-part-28a. See also: Wikipedia, \"Solar power in Japan,\" https://en.wikipedia.org/wiki/Solar_power_in_Japan."
+        },
+        {
+          "num": 4,
+          "text": "China solar manufacturing entry. Trina Solar: founded 1997 by Jifan Gao. Suntech Power: founded 2001 by Zhengrong Shi (PhD from University of New South Wales), first 15 MW production line August 2002. Chinese government support: sustained investment, government bank credit, long-term industrial policy. See: Climate Scorecard, \"The Chinese Government as Solar Power Entrepreneur,\" 2021, https://www.climatescorecard.org/2021/04/the-chinese-government-as-solar-power-entrepreneur-and-the-examples-of-suntech-and-longi-green-energy-technology-company/."
+        },
+        {
+          "num": 5,
+          "text": "China solar dominance, 2024. China's global manufacturing share: 98% of wafers, 92% of cells, 85% of finished panels. Forward projection: >80% of all manufacturing stages through 2026; polysilicon/ingot/wafer approaching 95%. See: International Energy Agency, \"Solar PV Global Supply Chains,\" https://www.iea.org/reports/solar-pv-global-supply-chains/executive-summary. See also: Wood Mackenzie, \"China to hold over 80% of global solar manufacturing capacity from 2023-26.\""
+        },
+        {
+          "num": 6,
+          "text": "General Motors EV1. Produced 1996-1999, 1,117 vehicles total. Lead-acid battery range ~100 miles; NiMH battery version: EPA-certified 140 miles. Lease-only, never sold. Recalled ~2004, lessees offered \\$1.9 million to purchase 78 vehicles, GM refused. Fleet crushed at Mesa, Arizona facility. ~40 vehicles survived (most with drivetrains disabled). GM stated lack of replacement parts made them unsafe. See: NPR, \"This little electric car made history. 25 years ago, GM stopped making it,\" December 2024, https://www.npr.org/2024/12/06/nx-s1-5116270/ev1-general-motors-electric-vehicle. See also: Wikipedia, \"General Motors EV1,\" https://en.wikipedia.org/wiki/General_Motors_EV1."
+        },
+        {
+          "num": 7,
+          "text": "\"Who Killed the Electric Car?\" Documentary directed by Chris Paine, released June 28, 2006, Sony Pictures Classics. Premiered 2006 Sundance Film Festival. Examined roles of automakers, oil industry, federal/California government, battery technology, hydrogen fuel cell lobby, and consumers. Follow-up: \"Revenge of the Electric Car\" (2011). See: IMDb, https://www.imdb.com/title/tt0489037/."
+        },
+        {
+          "num": 8,
+          "text": "Lithium-ion battery history. M. Stanley Whittingham: first functional lithium battery, early 1970s, at Exxon Research (titanium disulphide cathode, metallic lithium anode). John B. Goodenough: lithium-cobalt oxide cathode, 1980, doubled voltage to ~4V (University of Oxford, later UT Austin). Akira Yoshino: carbon-based anode replacing metallic lithium, 1985 (Asahi Kasei Corporation, Japan). First commercial rechargeable lithium-ion battery: Sony, 1991. Nobel Prize in Chemistry 2019 shared by Goodenough, Whittingham, and Yoshino. See: NobelPrize.org, \"The Nobel Prize in Chemistry 2019,\" https://www.nobelprize.org/prizes/chemistry/2019/popular-information/."
+        },
+        {
+          "num": 9,
+          "text": "Solyndra. Founded 2005, California. CIGS thin-film cylindrical solar panels. DOE Section 1705 loan guarantee: \\$535 million, September 2009. Bankrupt September 6, 2011, 1,100 employees laid off. Failed due to price collapse of conventional silicon panels driven by Chinese manufacturing scale. Section 1705 portfolio overall: ~\\$16 billion in guarantees, default losses ~2-3%. See: Wikipedia, \"Solyndra,\" https://en.wikipedia.org/wiki/Solyndra. See also: FactCheck.org, \"Obama's Solyndra Problem,\" 2011, https://www.factcheck.org/2011/10/obamas-solyndra-problem/."
+        },
+        {
+          "num": 10,
+          "text": "CIGS thin-film solar cells in space and NASA research. MDS-1 satellite demonstrated exceptional radiation hardness: almost no short-circuit current degradation, ~1% open-circuit voltage degradation, vs significant degradation in conventional silicon and GaAs cells within 1 year. CIGS cells exhibit superior recovery from proton irradiation through thermal annealing (self-healing). Specific power exceeding 2 kW/kg on flexible substrates. NASA Glenn Research Center Photovoltaic & Space Environments Branch: active CIGS research for spacecraft, published reports including \"CIGS2 Thin-Film Solar Cells on Flexible Foils for Space Power\" and \"Recent Progress in CuInS2 Thin-Film Solar Cell Research at NASA Glenn.\" 1989: NASA Glenn SBIR to Iowa Thin Film Technologies for lightweight flexible thin-film space cells. NASA MSFC partnered with Ascent Solar Technologies on CIGS; 2018: Ascent Solar CIGS panels sent to ISS for evaluation; 2025: Ascent Solar and NASA signed Collaborative Agreement Notice for thin-film PV power beaming. See: ResearchGate, \"Super radiation tolerance of CIGS solar cells demonstrated in space by MDS-1 satellite,\" Journal of Crystal Growth, 2003. See also: Journal of Materials Science, \"CIGS for space applications,\" 2023. See also: NASA NTRS, \"Thin-film space power,\" https://ntrs.nasa.gov/citations/20030000597. See also: NASA NTRS, \"Recent Progress in CuInS2 at NASA Glenn,\" https://ntrs.nasa.gov/citations/20050206361. See also: GlobeNewsWire, \"Ascent Solar Technologies Enters Collaborative Agreement Notice with NASA,\" June 2025. See also: Semiconductor Today, \"NASA sends Ascent Solar CIGS to ISS,\" November 2018."
+        },
+        {
+          "num": 11,
+          "text": "Solyndra executive conduct and compensation. Founder/CEO Chris Gronet: \\$400,000 base salary, \\$456,000 negotiated severance. CFO Bill Stover: \\$367,000 base salary. Other senior executives: \\$275,000-\\$300,000 base. Bonuses of \\$37,000-\\$60,000 each paid April 15 and July 8, 2011, months before September 6 bankruptcy. Some executives received \\$120,000 in bonuses in 2011 on top of salary. \\$733 million manufacturing facility. 1,100 employees laid off without severance. CEO Brian Harrison and CFO Stover invoked Fifth Amendment at Congressional hearings, September 2011. DOJ/DOE IG four-year joint investigation (2011-2015): found top leaders \"repeatedly misled federal officials and omitted information about the firm's financial prospects.\" Actions described as \"at best, reckless and irresponsible or, at worst, an orchestrated effort to knowingly and intentionally deceive and mislead the Department.\" No criminal charges filed. See: Mercury News, \"Solyndra executives collected hefty bonuses,\" November 2011. See also: CBS News, \"Former Solyndra CEO Got \\$456K Severance,\" 2011. See also: Washington Post, \"Top leaders of Solyndra solar panel company repeatedly misled federal officials,\" August 2015. See also: TIME, \"The Fallout from Solyndra\" (Fifth Amendment testimony), September 2011. See also: Washington Times, \"Bonuses given after raises at Solyndra,\" February 2012."
+        },
+        {
+          "num": 12,
+          "text": "Fossil fuel lobbying and subsidies vs. clean energy. Oil and gas lobbying: \\$362 million in 2009. Industry spent >\\$500 million on lobbying and advertising in 2009-2010 to oppose Waxman-Markey clean energy bill. Americans for Prosperity (Koch-backed): \\$8.4 million in swing-state TV ads 2011-2012 targeting DOE Section 1705 loan program. Oil industry campaign contributions: \\$34 million (2010) → \\$79 million (2012), 87% to Republicans. Direct federal fossil fuel subsidies: ~\\$20 billion/year. IMF broader estimate (including environmental/health costs): \\$760 billion in 2022. See: Yale Climate Connections, \"Fossil fuel political giving outdistances renewables 13 to one,\" 2020. See also: Energy and Policy Institute, \"Charles Koch distorts the facts, prevents clean energy businesses from succeeding.\" See also: IMF, \"Fossil Fuel Subsidies,\" https://www.imf.org/en/topics/climate-change/energy-subsidies. See also: Our World in Data, \"How much do countries subsidize fossil fuels?\", https://ourworldindata.org/how-much-subsidies-fossil-fuels."
+        },
+        {
+          "num": 13,
+          "text": "China high-speed rail. First line: Beijing-Tianjin, August 1, 2008. Network growth: 37,900 km (end 2020), 45,000 km (2023), >50,000 km (late 2025, ~two-thirds of world total). Plans: 60,000 km by 2030, 70,000 km by 2035. Speeds: 300-350 km/h. See: Wikipedia, \"High-speed rail in China,\" https://en.wikipedia.org/wiki/High-speed_rail_in_China. See also: Chinese government, \"China's operating high-speed railway to hit 60,000 km by 2030,\" 2025."
+        },
+        {
+          "num": 14,
+          "text": "California High-Speed Rail. Original estimate: ~\\$33 billion. Current Phase 1 estimate: \\$126.2 billion (nearly 4x original). >\\$18 billion spent, no track in revenue service. Construction on ~100 miles of Central Valley structures. \\$4 billion in federal grants terminated July 2025 by Federal Railroad Administration (citing \\$7 billion shortfall, missed deadlines, nine compliance violations). Construction contracts issued 2012 with design only 15% complete, to meet ARRA spending deadlines. Groundbreaking October 2013 with zero parcels acquired. Central Valley land acquisition: original budget \\$332 million, actual cost \\$1.5 billion (4.5x overrun). Only 310 of 1,859 parcels acquired by 2019. Authority returned to landowners hundreds of times to renegotiate as design changed. Route placed 20-50 miles east of I-5. See: California State Auditor Report 2018-108. See also: Roads & Bridges, \"Right-of-way acquisition drives up costs for California bullet train.\" See also: Hoover Institution, \"California High-Speed Rail Just Lost \\$4 Billion In Federal Funding,\" 2025. See also: KPBS, \"California bullet train could run out of money before finishing its first Central Valley segment,\" March 2026. See also: Grist, \"Billions spent, miles to go: the story of California's failure to build high-speed rail.\""
+        },
+        {
+          "num": 15,
+          "text": "Wolf Amendment and China ISS exclusion. Passed 2011, named after Rep. Frank Wolf (Virginia). Prohibits NASA from using government funds for direct bilateral cooperation with Chinese government or China-affiliated organizations without FBI and Congressional authorization. Inserted into appropriations bills annually since 2011. Based on 1999 congressional report alleging technology transfer via satellite manufacturers. Effect: China developed fully independent space capability, built Tiangong space station (operational 2022), launched Chang'e lunar program independently. See: Wikipedia, \"Wolf Amendment,\" https://en.wikipedia.org/wiki/Wolf_Amendment. See also: Illinois Journal of Law, Technology & Policy, \"Did Exclusion Ignite China's Drive to Compete in Space Station Technology?\""
+        },
+        {
+          "num": 16,
+          "text": "China maglev rocket launch system. Galactic Energy with Sichuan province research bodies and CASIC. Superconducting magnets accelerate rocket to supersonic speed (>Mach 1) before ignition. Expected benefits: ~double payload capacity, lower fuel consumption, lower maintenance, faster launch cycles. Demonstration expected by 2028. See: South China Morning Post, \"China in bid to challenge SpaceX by deploying maglev rocket launch pad by 2028,\" 2025. See also: Interesting Engineering, \"China plans maglev launch pad to blast rockets past speed of sound,\" 2025."
+        },
+        {
+          "num": 17,
+          "text": "Biden EV summit, August 2021. Tesla (73% of US EV market) not invited. Invitees: GM, Ford, Stellantis (all UAW-represented). White House Press Secretary Jen Psaki: \"These are the three largest employers of the United Auto Workers, so I'll let you draw your own conclusions.\" See: CNN, \"Tesla just got snubbed by Biden's electric vehicle summit,\" August 2021. See also: The Hill, \"Elon Musk complains Biden didn't invite Tesla to White House event,\" 2021."
+        },
+        {
+          "num": 18,
+          "text": "China executive accountability. Directors personally liable for losses from breaches of law or corporate articles. Criminal liability for: false financial reports, concealing assets, tax evasion, misappropriating funds, etc. 2014: GlaxoSmithKline fined 3 billion yuan (~\\$490M), legal representative sentenced to 3 years imprisonment. Research shows Chinese firms penalize CEOs for fraud via pay reduction and are more likely to replace fraud-committing CEOs. See: Journal of Business Ethics, \"CEO Accountability for Corporate Fraud: Evidence from China,\" 2016. See also: CMS Law, \"Legal guide for company directors and CEOs in China.\""
+        },
+        {
+          "num": 19,
+          "text": "CHIPS and Science Act. Signed August 2022. \\$52.7 billion total: \\$39 billion for CHIPS for America Fund (fab construction), 25% investment tax credit for manufacturing equipment, \\$13 billion for R&D and workforce training. US semiconductor manufacturing share: ~40% in 1990, ~12% at time of Act. Funding recipients prohibited from expanding manufacturing in China. See: Wikipedia, \"CHIPS and Science Act,\" https://en.wikipedia.org/wiki/CHIPS_and_Science_Act. See also: Council on Foreign Relations, \"What Is the CHIPS Act?\", https://www.cfr.org/in-brief/what-chips-act."
+        },
+        {
+          "num": 20,
+          "text": "China technology achievements and US priorities. China HSR: >50,000 km. Solar: >80% global manufacturing. Batteries: majority of global lithium-ion production. EVs: largest market and manufacturing base. UHVDC: longest transmission lines globally. Tiangong space station: operational 2022. Chang'e program: far-side landing (2019), sample return (2020), far-side sample return (2024). Thorium MSR and fusion-fission research: active programs. Academic output: leading in number of research papers in multiple fields. US: >750 military bases in 80+ countries (Department of Defense). F-35 lifetime cost: >\\$1.7 trillion (GAO). See: various sources cited in preceding references."
+        },
+        {
+          "num": 21,
+          "text": "China governance structure. National People's Congress: 2,977 deputies (14th NPC), indirectly elected through cascading system from township/village level. Direct elections at village and township levels only (Organic Law of Village Committees, 1987/1998/2018). Chinese People's Political Consultative Conference: advisory body, no legislative power. Central Commission for Discipline Inspection: internal party accountability and anti-corruption. CCP controls nominations at all levels. Officials accountable upward to party hierarchy, not downward to citizens. See: Elections in China, https://en.wikipedia.org/wiki/Elections_in_China. See also: US-China Economic and Security Review Commission, \"CCP Decision-Making and Xi Jinping's Centralization of Authority,\" 2022. See also: Cambridge University Press, China Quarterly, \"Village Elections, Grassroots Governance and the Restructuring of State Power.\""
+        },
+        {
+          "num": 22,
+          "text": "China real estate crisis. Evergrande: liabilities exceeding \\$300 billion, lost ~\\$94 billion in 2021. Country Garden: annual losses of \\$27.5 billion. Real estate sector: ~17% direct GDP contribution, up to ~30% including indirect. Hui Ka Yan (Xu Jiayin): placed under police residential surveillance September 2023. CSRC fined him 47 million yuan, lifetime securities market ban, after finding \\$80 billion in inflated revenues for 2019-2020. Net worth collapsed from \\$42 billion (2017) to \\$1.8 billion. See: NPR, \"Evergrande, Country Garden, and China's real estate crisis,\" January 2024, https://www.npr.org/2024/01/30/1227554424/evergrande-china-real-estate-economy-property-collapse. See also: Fortune Asia, \"CSRC alleges Evergrande's Hui Ka Yan inflated sales revenue,\" March 2024. See also: Council on Foreign Relations, \"Does Evergrande's Collapse Threaten China's Economy?\", https://www.cfr.org/in-brief/does-evergrandes-collapse-threaten-chinas-economy."
+        },
+        {
+          "num": 23,
+          "text": "2008 financial crisis executive accountability and global impact. Zero top Wall Street executives prosecuted for fraud related to 2008 crisis. Compare with savings and loan crisis (1980s-90s): over 1,000 bankers convicted. Some lower-level individuals received jail time (Kareem Serageldin: 30 months; Lee B. Farkas: 30 years). Global impact: nearly all European major financial firms required bailouts; global trade declined 15% (2008-2009); 30 million jobs lost worldwide; countries severely affected included Ukraine, Argentina, Ireland, Russia, Mexico, Hungary, and Baltic states. Estimated \\$22 trillion in lost US economic output. See: Marketplace, \"Why no CEO went to jail after the financial crisis,\" https://features.marketplace.org/why-no-ceo-went-jail-after-financial-crisis/. See also: PBS Frontline, \"Were bankers jailed in past financial crises?\". See also: IMF Blog, \"Lasting Effects: The Global Economic Recovery 10 Years After the Crisis,\" 2018."
+        }
+      ]
+    },
+    {
+      "number": "11",
+      "title": "The Cost of Wars We Didn't Need",
+      "references": [
+        {
+          "num": 1,
+          "text": "Brown University Costs of War Project. Total cost of post-9/11 wars: ~\\$8 trillion through 2023. Breakdown: \\$2.3T direct military (Overseas Contingency Operations), \\$900B Pentagon base budget increase, \\$1.1T+ homeland security, \\$1T+ interest on borrowing (projected \\$6.5T through 2050), \\$2.2T veteran care. Wars funded entirely through borrowing. Human cost: >940,000 direct deaths, >432,000 civilians, 6,967 US military, 8,189 US contractors, 178,000+ allied military/police. Indirect deaths: 3.6-3.8M (malnutrition, disease, infrastructure collapse, trauma). Total: 4.5-4.7M. Displaced: 38-60M across 8 countries. 7.6M+ children under 5 in acute malnutrition (2023). See: Brown University, \"Costs of the 20-year war on terror: \\$8 trillion and 900,000 deaths,\" September 2021, https://www.brown.edu/news/2021-09-01/costsofwar. See also: Costs of War Project, \"How Death Outlives War,\" https://costsofwar.watson.brown.edu/papers/how-death-outlives-war."
+        },
+        {
+          "num": 2,
+          "text": "NASA Artemis program costs. ~\\$93 billion through 2025 per NASA OIG audit. Human Landing System: \\$6.9B obligated, \\$18.3B estimated through FY2030. See: Space.com, \"NASA will spend \\$93 billion on Artemis moon program by 2025.\" See also: Wikipedia, \"Artemis program.\""
+        },
+        {
+          "num": 3,
+          "text": "James Webb Space Telescope. Total cost: ~\\$10 billion (\\$8.8B spacecraft development, \\$861M five years operations). ESA contributed ~€700M, CSA ~CA\\$200M. See: NPR, December 2021. See also: Wikipedia, \"James Webb Space Telescope.\""
+        },
+        {
+          "num": 4,
+          "text": "International Space Station total cost. ~\\$150 billion as of 2010. NASA: \\$58.7B (1985-2015), Russia: \\$12B, Europe: \\$5B, Japan: \\$5B, Canada: \\$2B, plus 36 Shuttle flights at \\$1.4B each (\\$50.4B). Operating cost ~\\$4B/year. See: Wikipedia, \"International Space Station programme.\""
+        },
+        {
+          "num": 5,
+          "text": "Mars mission cost estimates. 1990 Space Exploration Initiative: ~\\$450B over 20-30 years. Robert Zubrin Mars Direct: ~\\$55B over 10 years. 2004 NASA estimate: \\$40-80B. Current expert estimates: up to \\$500B. See: NASA NTRS, \"Humans to Mars Will Cost About Half a Trillion Dollars.\" See also: Wikipedia, \"Mars Direct.\""
+        },
+        {
+          "num": 6,
+          "text": "Apollo program cost. \\$25.4B in 1960s dollars, ~\\$260B in 2026 dollars (program alone, consistent with Ch05 reference [8]). With related programs (Gemini, Ranger, Surveyor, Lunar Orbiter): ~\\$280B in 2026 dollars. See: Christopher R. Cooper, \"How Much Did the Apollo Program Cost,\" https://christopherrcooper.com/apollo-program-cost-return-investment/. See also: The Planetary Society, \"Cost of Apollo,\" https://www.planetary.org/space-policy/cost-of-apollo. See also: Wikipedia, \"Apollo program.\""
+        },
+        {
+          "num": 7,
+          "text": "NIAC (NASA Innovative Advanced Concepts). Annual grant budget in low millions. 2025 Phase I awards: max \\$2.625M total. Funded concepts include: pulsed plasma rockets, interstellar laser sailcraft, Mars VTOL aircraft (MAGGIE), fluidic telescope, advanced power systems. See: NASA, \"About NIAC,\" https://www.nasa.gov/about-niac/. See also: NASA, \"NIAC Funded Studies,\" https://www.nasa.gov/niac-funded-studies/."
+        },
+        {
+          "num": 8,
+          "text": "Defense contractor profits and employment. Top 5 contractors (Lockheed Martin, Boeing, Raytheon/RTX, General Dynamics, Northrop Grumman): >\\$116B in Pentagon contracts 2020-2021. CEO compensation: 200% increase 2001-2020 vs 7% for other large companies. First year of wars: defense CEO pay jumped 79% vs 6% for others. Average top-5 CEO pay by 2020: >\\$21M/year. CEO-to-enlistee pay ratio: 500:1. About half of annual defense spending goes to private contractors. Defense industry employment: >2.23M workers (2024). Average salary: >\\$115,000 (56% above national average). 57% of spending concentrated in 10 states. For every \\$100 of federal spending, NASA receives <\\$0.50, military receives \\$54. See: Quincy Institute, \"Pentagon Profiteers: Executive Compensation in the Arms Industry,\" December 2022. See also: AIA, \"2024 Facts & Figures,\" https://www.aia-aerospace.org/. See also: CorpWatch, \"Defense contractor CEO pay outstrips other CEOs.\""
+        },
+        {
+          "num": 9,
+          "text": "Eisenhower farewell address. January 17, 1961. \"In the councils of government, we must guard against the acquisition of unwarranted influence, whether sought or unsought, by the military-industrial complex.\" Also warned against mortgaging \"the material assets of our grandchildren without risking the loss also of their political and spiritual heritage.\" See: National Archives, \"President Dwight D. Eisenhower's Farewell Address (1961),\" https://www.archives.gov/milestone-documents/president-dwight-d-eisenhowers-farewell-address."
+        },
+        {
+          "num": 10,
+          "text": "Apollo employment. 400,000 Americans at peak (1967), across >20,000 industrial firms and universities. NASA: 33,200 federal employees, 377,000 contractors. Average age at Mission Control: 28. See: Apollo 11 Space, \"The Workforce Behind Apollo,\" https://apollo11space.com/the-workforce-behind-apollo-exploring-the-400000-people-who-made-the-moon-landing-possible/."
+        },
+        {
+          "num": 11,
+          "text": "US funding of Afghan mujahideen and blowback. Carter signed first secret aid directive July 3, 1979, six months before Soviet invasion (December 24, 1979). Brzezinski acknowledged intent to provoke Soviet intervention: 1998 interview called it \"an excellent idea\" that drew \"the Russians into the Afghan trap.\" Operation Cyclone: CIA funneled >\\$2B directly; combined US/Saudi/Chinese aid \\$6-12B; US funding reached \\$630M/year by 1987. US did not directly fund Taliban (formed 1993-1994) or al-Qaeda (founded 1988). However, mujahideen infrastructure armed and trained by CIA included fighters who later became Taliban (including Mullah Omar). Bin Laden operated within mujahideen network. After Soviet withdrawal (1989) and collapse of US support, power vacuum enabled Taliban takeover and al-Qaeda safe harbor. \"Blowback\" argument: Johnson, Chalmers, *Blowback: The Costs and Consequences of American Empire*, Metropolitan Books, 2000. See also: Wikipedia, \"Operation Cyclone.\" See also: NPR Planet Money, \"How Shock Therapy Created Russian Oligarchs,\" 2022. See also: History.State.Gov, \"Soviet Invasion of Afghanistan.\""
+        },
+        {
+          "num": 12,
+          "text": "Jeffrey Sachs and post-Soviet Russia. Sachs recommended Marshall Plan approach for Russia: large-scale Western financial assistance to stabilize economy and support democratic transition. Proposal rejected by Cold Warriors in Washington. U.S. direct aid to Russia by 2001: ~\\$1B total (two-thirds for nuclear weapons security). IMF assistance: \\$22.7B under conditions that contributed to economic chaos. Gorbachev traveled to G7 London Summit July 1991, left empty-handed. Original Marshall Plan: \\$13B (1948 dollars), ~\\$135B current dollars. See: Sachs, J., \"What I did in Russia,\" https://www.jeffsachs.org/newspaper-articles/b4gxflntzkl76ajz2w6yey8ss7sn9m. See also: History News Network, \"The Lost Opportunity to Set Post-Soviet Russia on a Stable Course.\" See also: ScheerPost, \"Jeffrey Sachs: How the Neocons Subverted Russia's Financial Stabilization in the Early 1990s,\" September 2024."
+        },
+        {
+          "num": 13,
+          "text": "Dick Cheney and Halliburton. CEO of Halliburton 1995-2000. Total 2000 compensation: \\$72.5M (\\$12.5M salary, \\$20M retirement, \\$40M stock options). As VP, retained 433,333 Halliburton stock options worth >\\$10M. Stock option value increased 3,281% during Iraq War buildup. 2006 gross income: \\$8.82M, primarily from exercising Halliburton options. Halliburton received >\\$7B in no-bid Iraq contracts, \\$11.4B total Iraq/Afghanistan. No-bid contract later cancelled by Pentagon and opened to competitive bidding after Congressional outrage. FBI/DOJ/Pentagon IG investigations found no legal wrongdoing in contract process. Congressional Research Service confirmed \"retained ties\" to Halliburton despite claims of severing relationship. See: CBS News, \"Cheney's Halliburton Ties Remain,\" 2003. See also: PolitiFact, \"Cheney got \\$34 million payday from Halliburton,\" 2010. See also: Center for Public Integrity, \"Halliburton contracts balloon.\""
+        },
+        {
+          "num": 14,
+          "text": "Russian shock therapy, privatization, and the \"Harvard Boys.\" Shock therapy: rapid price liberalization, subsidy elimination, mass privatization under Yeltsin starting 1991. Key Western advisors: Andrei Shleifer (Harvard), Jonathan Hay (Harvard Law), Lawrence Summers (Harvard). Sachs recommended \\$30B aid package, left by end of 1993 when aid never materialized. Loans-for-shares scheme (1995): oligarchs loaned government money for shares of Norilsk Nickel, Yukos, Sibneft, etc.; government defaulted, oligarchs kept companies at fraction of value. Harvard HIID Russia project suspended 1997 when Shleifer found running hedge fund from Moscow office while advising government. Harvard settled DOJ lawsuit 2005: \\$26.5M; Shleifer paid \\$2M personally. Prices +300% in January 1992 alone; inflation 2,509% for 1992. See: NPR Planet Money, \"How Shock Therapy Created Russian Oligarchs and Paved the Path for Putin,\" 2022. See also: The Nation, \"Harvard Boys Do Russia.\" See also: Harvard Crimson, \"HIID Under Scrutiny,\" March 2024. See also: American Security Project, \"The 1990s to Today: How Privatization Shaped Modern-Day Russia.\""
+        },
+        {
+          "num": 15,
+          "text": "Russian shock therapy health and economic consequences. GDP contracted ~40% between 1991 and 1998. Male life expectancy fell 6 years (63.4 to 57.4) between 1991 and 1994. Death rates among men 35-44 more than doubled. Estimated 5 million excess adult deaths 1991-2001. By 1999, ILO classified 50% of Russia's population below poverty line. By 2015, average real income for 99% of people lower than in 1991; top 1% received 20.2% of all incomes. See: Stuckler, D. and Basu, S., *The Body Economic: Why Austerity Kills*, Basic Books, 2013. See also: PMC, \"Mortality crisis in Russia revisited,\" https://pmc.ncbi.nlm.nih.gov/articles/PMC8553909/. See also: The Conversation, \"The Wild Decade: How the 1990s laid the foundations for Vladimir Putin's Russia.\""
+        },
+        {
+          "num": 16,
+          "text": "Putin's wealth. Official salary: ~\\$140,000/year. Wealth estimates vary widely: Organized Crime and Corruption Reporting Project (OCCRP): \\$24B; Stanislav Belkovsky (former Kremlin adviser): \\$40-70B; Anders Aslund (economist): \\$100-130B; Bill Browder (Hermitage Capital): \\$200B. Panama Papers (2016): ~\\$2B flowing through offshore networks associated with Putin's inner circle via cellist Sergei Roldugin as apparent proxy. Putin not directly named. Navalny Anti-Corruption Foundation: ~\\$1.4B in property assets including Black Sea palace. CNN unable to independently verify. None of these figures independently confirmed. See: ICIJ, \"Panama Papers: The Power Players,\" 2016. See also: Fortune, \"Vladimir Putin's Net Worth.\" See also: TIME, \"Navalny's Palace Investigation,\" January 2021."
+        },
+        {
+          "num": 17,
+          "text": "NATO expansion and the \"broken promise.\" February 9, 1990: Secretary of State James Baker told Soviet FM Shevardnadze the US favored \"iron-clad guarantees that NATO's jurisdiction or forces would not move eastward.\" Assurance was specifically about Germany, not broader expansion. No binding written agreement signed. Germany-specific promises were kept. Gorbachev gave contradictory statements about whether broader promise existed. NATO expanded to Poland, Czech Republic, Hungary (1999) and further east thereafter. Russia's perception of betrayal was real regardless of legal technicalities. See: National Security Archive, \"NATO Expansion: What Gorbachev Heard,\" December 2017, https://nsarchive.gwu.edu/briefing-book/russia-programs/2017-12-12/nato-expansion-what-gorbachev-heard-western-leaders-early. See also: Brookings, \"Did NATO Promise Not to Enlarge? Gorbachev Says 'No'.\""
+        },
+        {
+          "num": 18,
+          "text": "ISS cooperation during geopolitical crises. After Crimea annexation (2014): NASA ended most Roscosmos relations except ISS. Astronaut Steve Swanson: Mission Control \"was completely like it's not happening.\" After Ukraine invasion (Feb 2022): NASA Administrator Bill Nelson saw \"nothing that had interrupted the professional relationship.\" ISS cooperation continued because both nations' segments provide mutual life support and orbital maintenance. See: Scientific American, \"Russia's Invasion of Ukraine Strains International Space Station Partnership.\" See also: CNBC, \"Top NASA official says space station partnership with Russia still working,\" February 2022. See also: Time, \"The U.S. and Russia Signal Continued Cooperation in Space, At Least.\""
+        },
+        {
+          "num": 19,
+          "text": "Iraq War and soft power. Before invasion: global opinion of US generally positive. After: Pew Research found war \"widened the rift between Americans and Western Europeans, further inflamed the Muslim world, softened support for the war on terrorism.\" Negative views: Turkey 68%, France 63%, Germany 59%, Russia 58%. France, Germany, Russia publicly opposed invasion. No UN Security Council authorization obtained (US/UK withdrew resolution March 17, 2003 knowing they lacked votes). \"Coalition of the willing\": 32 countries initially, 49 at peak, 25 remaining by May 2007. Many received monetary incentives. See: Pew Research, \"Trends in Public Opinion about the War in Iraq, 2003-2007.\" See also: Pew Research, \"Views of a Changing World 2003.\" See also: Wikipedia, \"Coalition of the willing (Iraq War).\""
+        },
+        {
+          "num": 20,
+          "text": "U.S. steel industry decline. Peak employment: 650,000 (1953). Peak production: 111.4M tons (1973). 1984: 236,000 jobs, 70M tons. 2015: 142,000 jobs. >500,000 jobs lost total. Productivity: 10.1 man-hours/ton (1980) → 1.5 man-hours/ton (2017); mini-mills 0.5 man-hours/ton. 2020: China 1,064M metric tons (56.7% of world), US 72.7M tons (~5%). China produces ~15x more steel than US. China shipyard capacity exceeds all US yards combined. PLAN: 370+ ships, projected 435 by 2030. See: Wikipedia, \"Steel crisis.\" See also: Wolf Street, \"Global Crude Steel Production,\" June 2021. See also: CSIS, \"China Dominates the Shipbuilding Industry.\""
+        },
+        {
+          "num": 21,
+          "text": "Detroit decline and bankruptcy. Population: 1.8M (1950, 4th largest US city) → 700,000 (2013). Decline: 61%. Bankruptcy filed July 18, 2013: largest municipal bankruptcy in US history. Debt: \\$18-20B. Unemployment >18%. Fewer than half of adult residents employed. See: Wikipedia, \"Detroit bankruptcy.\" See also: Ryan J. Hite, \"Detroit: The Greatest Urban Collapse in U.S. History.\""
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "The Second Space Age",
+      "references": [
+        {
+          "num": 1,
+          "text": "SpaceX founding and early history. Founded 2002 by Elon Musk. Initial investment: ~\\$100M personal + ~\\$100M early investors. Falcon 1: first three launches failed (March 2006: fuel leak; March 2007: roll control; August 2008: stage separation collision). Fourth launch succeeded September 28, 2008. First privately funded liquid-fueled rocket to orbit. Company near bankruptcy after third failure. See: Wikipedia, \"SpaceX,\" https://en.wikipedia.org/wiki/SpaceX. See also: Space.com, \"SpaceX: History and Overview.\""
+        },
+        {
+          "num": 2,
+          "text": "Falcon 9 achievements and costs. 625 total Falcon 9 family launches through March 2026. Success rate: 99.5% (622 full successes). 2025: 165 launches, zero failures, one every 2.2 days. Booster landing success: 97.8% (584/597). Cost per launch: ~\\$67M (Falcon 9), ~\\$97M (Falcon Heavy). Delta IV Heavy comparison: \\$350-400M. Cost reduction: 80-85%. See: SpaceXNow stats, https://spacexnow.com/stats. See also: PatentPC, \"Rocket launch costs 2020-2030.\""
+        },
+        {
+          "num": 3,
+          "text": "COTS program. Established 2006, concluded 2013. NASA total investment: ~\\$800M across SpaceX and Orbital Sciences. Result: two new launch vehicles and two cargo spacecraft. NASA cost benchmark: traditional cost-plus Falcon 9 development estimated at \\$3.6B vs. actual SpaceX cost of ~\\$300M. Ratio: 12:1. See: CGO Benchmark, \"A 2006 NASA Program Shows How Government Can Move at the Speed of Startups,\" https://www.thecgo.org/benchmark/a-2006-nasa-program-shows-how-government-can-move-at-the-speed-of-startups/. See also: NASA NTRS."
+        },
+        {
+          "num": 4,
+          "text": "Crew Dragon. Demo-2: May 30, 2020, astronauts Robert Behnken and Douglas Hurley. First crewed orbital launch from US since Shuttle retirement July 2011. Nine years of Soyuz dependency at ~\\$86M/seat. Crew-1 (first operational): November 16, 2020. See: NASA, \"SpaceX Demo-2.\" See also: Wikipedia, \"SpaceX Crew Dragon.\""
+        },
+        {
+          "num": 5,
+          "text": "Starship development. 11 integrated flight tests through October 2025 (6 successes, 5 failures). October 2024: booster caught by launch tower mechanical arms. Block 3 vehicles targeted March 2026. Cost targets: <\\$10/kg to orbit with high reuse (100+ flights per booster). Current Falcon 9: ~\\$2,700/kg. SLS: >\\$50,000/kg. See: Wikipedia, \"SpaceX Starship.\" See also: NASASpaceFlight, Starship coverage."
+        },
+        {
+          "num": 6,
+          "text": "Blue Origin. Founded 2000 by Jeff Bezos. New Shepard: 38 missions completed, paused January 2026 for 2+ years to redirect resources to lunar program. New Glenn: first orbital flight January 16, 2025 (reached orbit, lost booster); second flight November 13, 2025 (successful booster landing). Blue Moon lunar lander: \\$3.4B fixed-price NASA contract for Artemis V (~2029), 4-crew capacity, 30-day surface stay. Bezos vision: Gerard O'Neill rotating habitats, trillion humans in space. See: Blue Origin, https://www.blueorigin.com/. See also: Space Studies Institute, \"Jeff Bezos on O'Neill Cylinders.\""
+        },
+        {
+          "num": 7,
+          "text": "Rocket Lab. Founded 2006 by Peter Beck (New Zealand). Electron: 300 kg to LEO, ~\\$7.5M/launch. 2025: 21 launches, 100% success. Neutron: 13,000 kg to LEO, \\$50-55M/launch, first flight planned late 2026. Beck: self-taught, no university degree, knighted 2024. New Zealand now has orbital launch capability. See: NASASpaceFlight, \"Rocket Lab 2025 overview.\" See also: Wikipedia, \"Peter Beck.\""
+        },
+        {
+          "num": 8,
+          "text": "CLPS (Commercial Lunar Payload Services). NASA program: fixed-price lunar delivery. 13 eligible providers, \\$2.6B combined max value through 2028. Intuitive Machines Odysseus (IM-1, February 2024): first commercial lunar soft-landing, tipped 30° (laser altimeter failure), all 5 NASA payloads returned data. Firefly Blue Ghost (March 2025): first fully successful commercial lunar landing, 14 days surface ops, 110+ GB data, 10 NASA payloads. Firefly awarded 5 CLPS task orders through 2029. See: NASA CLPS, https://www.nasa.gov/commercial-lunar-payload-services/. See also: Spaceflight Now, \"Blue Ghost Mission 1 concludes,\" March 2025."
+        },
+        {
+          "num": 9,
+          "text": "U.S. railroad history, land grants, streetcar conspiracy, and Amtrak. Railroad land grants: over 175 million acres of public land granted to railroads from 1850-1871 under Pacific Railway Acts of 1862 and 1864. In exchange: mail transport at congressional rates, troop/military supply transport, government priority use. See: National Archives, \"Pacific Railway Act (1862),\" https://www.archives.gov/milestone-documents/pacific-railway-act. See also: Library of Congress, \"Land Grants,\" https://www.loc.gov/collections/railroad-maps-1828-to-1900/articles-and-essays/history-of-railroads-and-maps/land-grants/. In 1916, 98% of commercial intercity travelers moved by rail. National City Lines: formed by GM, Standard Oil of California, Firestone, Mack Trucks, and Phillips Petroleum. Acquired streetcar systems in ~45 cities across 20 states. Convicted 1949 under Sherman Antitrust Act (United States v. National City Lines, Inc., 186 F.2d 562, 7th Cir. 1951). Fine: \\$5,000 per company. See: Justia, \"United States v. National City Lines,\" https://law.justia.com/cases/federal/appellate-courts/F2/186/562/162881/. Passenger rail decline: by 1969, losses totaled \\$200M/year (40% of industry net operating income). Penn Central bankruptcy 1970. Amtrak created 1971 by Rail Passenger Service Act. Current Amtrak: 32.8M passengers in FY2024 (record), max 150 mph (NE Corridor only). Freight train interference: 850,000 minutes of delay in 2024. DOJ has brought only two preference enforcement actions in 50+ years. Japan: Japanese National Railways (JNR) government-owned 1949-1987. Accumulated 27 trillion yen debt, spending 147 yen per 100 yen earned. Privatized April 1, 1987 into seven JR Group companies. JR East: 17M passengers/day. Shinkansen: 186+ mph. See: Wikipedia, \"Japanese National Railways,\" https://en.wikipedia.org/wiki/Japanese_National_Railways. See also: Amtrak, \"Amtrak Sets All-Time Ridership Record in Fiscal Year 2024,\" https://media.amtrak.com/2024/12/amtrak-sets-all-time-ridership-record-in-fiscal-year-2024/. See also: Amtrak, \"The Truth About Amtrak's Legal Right to Preference,\" https://www.amtrak.com/content/dam/projects/dotcom/english/public/documents/corporate/HostRailroadReports/mythbusters-enforcing-amtraks-legal-right-to-preference.pdf. See also: Eno Center for Transportation, \"Amtrak at 50: The Rail Passenger Service Act of 1970,\" https://enotrans.org/article/amtrak-at-50-the-rail-passenger-service-act-of-1970/."
+        },
+        {
+          "num": 10,
+          "text": "Dutch rail restructuring. Nederlandse Spoorwegen founded 1938 as state-owned entity. Split 1995 under EU directive. ProRail created 2003 from merger of three infrastructure entities. Both ProRail and NS remain 100% state-owned. 30+ operators authorized on the network (Arriva, Connexxion, Keolis, Qbuzz, etc.). 2005 delays: 42% of trains in Amsterdam, 40% in Rotterdam. 2022: worst performance statistics in recent years. See: Wikipedia, \"Nederlandse Spoorwegen,\" https://en.wikipedia.org/wiki/Nederlandse_Spoorwegen. See also: Wikipedia, \"ProRail,\" https://en.wikipedia.org/wiki/ProRail. See also: Lexology, \"Rail Transport in the Netherlands,\" https://www.lexology.com/library/detail.aspx?g=480c8bb7-60d0-438b-8434-7b6f3816f53f."
+        },
+        {
+          "num": 11,
+          "text": "Chinese high-speed rail. Network: 48,000 km as of end 2024 (two-thirds of world HSR total). Connects 500+ cities, 96%+ of cities over 500,000 population. 2024 ridership: 3.3 billion passengers. CR400 Fuxing: 350 km/h operational. CR450 in testing at 400 km/h. Built from near-zero since 2008. State-owned: China State Railway Group Co. Debt-to-asset ratio: 64.6% (improving from 66.2%). Net profit of 1.7 billion yuan in 1H 2024. World Bank estimated 8% rate of return as of 2015. HSR construction cost: \\$17-21M/km (two-thirds the cost in other countries). Halving economic distance in Guangdong produced ~10% rise in average business productivity. Source credibility note: \"debt trap\" narrative originates primarily from ORF (Observer Research Foundation, India, majority-funded by Reliance Industries) and Eurasian Times (rated mixed credibility by Media Bias/Fact Check, undisclosed ownership). US highway comparison: Interstate Highway System cost ~\\$500B (2016 dollars), requires annual \\$27B maintenance, \\$420B maintenance backlog, Highway Trust Fund requires General Fund transfers since 2008. See: Wikipedia, \"High-speed rail in China,\" https://en.wikipedia.org/wiki/High-speed_rail_in_China. See also: South China Morning Post, \"China's railway operator brings in gravy train, posting profits and lowering debt ratios,\" https://www.scmp.com/economy/china-economy/article/3276871/chinas-railway-operator-brings-in-gravy-train-posting-profits-and-lowering-debt-ratios. See also: World Bank, \"China's Experience with High Speed Rail Offers Lessons for Other Countries,\" July 2019, https://www.worldbank.org/en/news/press-release/2019/07/08/chinas-experience-with-high-speed-rail-offers-lessons-for-other-countries. See also: Federal Highway Administration, \"Interstate System Cost Estimates,\" https://www.fhwa.dot.gov/infrastructure/50estimate.cfm. See also: China State Council, \"China's railway passenger trips exceed 4.5 billion in 2025,\" https://english.www.gov.cn/archive/statistics/202601/08/content_WS695f6cdec6d00ca5f9a087c1.html."
+        },
+        {
+          "num": 12,
+          "text": "Internet history and consolidation. ARPANET: DOD-funded. NSFNET: expanded 1986, 2M+ computers by 1993. NSFNET backbone decommissioned April 1995, transferred to private ISPs. Current consolidation: AWS 30%, Azure 20%, Google Cloud 13% = 63% of cloud market. Hyperscale operators (Microsoft, Google, Amazon, Meta): \\$370B data center spending in 2025, 44% of global capacity (projected 61% by 2030). >1/3 of Americans have 0-1 broadband providers. January 2025: federal court ruled FCC lacks authority to enforce net neutrality. See: NSF, \"Impacts: Internet,\" https://www.nsf.gov/impacts/internet. See also: Statista, cloud market share. See also: NPR, \"Net neutrality FCC struck,\" January 2025."
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "The Global Space Race",
+      "references": [
+        {
+          "num": 1,
+          "text": "Chang'e lunar program. Chang'e 1: orbiter 2007. Chang'e 2: orbiter 2010. Chang'e 3: near-side landing 2013. Chang'e 4: far-side landing January 2019 (first). Chang'e 5: sample return December 2020 (1.7 kg). Chang'e 6: far-side sample return 2024 (first). Chang'e 7: south pole, planned 2026, water ice search. Chang'e 8: planned 2028, ISRU testing. See: Wikipedia, \"Chinese Lunar Exploration Program.\" See also: The Planetary Society, \"Chang'e missions.\""
+        },
+        {
+          "num": 2,
+          "text": "Tianwen deep-space program. Tianwen-1: Mars orbiter/lander/rover, May 2021. Tianwen-2: asteroid sample return, launched May 28, 2025, target 469219 Kamo'oalewa, \"anchor and attach\" drilling, sample return ~2027, secondary mission to comet 311P/PanSTARRS. Tianwen-3: Mars sample return, two launches late 2028, return by 2031, minimum 500g target. Tianwen-4: launch September 2029, Jupiter arrival December 2035, Callisto orbit February 2038, Uranus flyby post-2040. See: SpaceNews, \"Tianwen-2 launches.\" See also: Wikipedia, \"Tianwen-3,\" \"Tianwen-4.\""
+        },
+        {
+          "num": 3,
+          "text": "Chinese launch vehicles. Long March 10: crew-rated, 70 tons LEO, 27 tons TLI, ground tests complete 2025, first launch targeting 2026. Two launches per crewed lunar mission. Crewed landing 2030. Long March 9: super heavy-lift, 150 tons LEO (exceeds Saturn V 130 tons), first flight targeting 2033, designed for reusability. LandSpace Zhuque-3: orbital test December 2025, landing burn anomaly. Space Pioneer, Space Epoch also developing reusable rockets. See: Wikipedia, \"Long March 9,\" \"Long March 10.\" See also: NASASpaceFlight, Chinese commercial rocket coverage."
+        },
+        {
+          "num": 4,
+          "text": "Tiangong and Xuntian. Tiangong space station: continuously crewed since 2022, entirely Chinese-designed/built. Xuntian Space Telescope: delayed to late 2026, co-orbits Tiangong, field of view 300x Hubble. See: Wikipedia, \"Tiangong space station,\" \"Xuntian.\""
+        },
+        {
+          "num": 5,
+          "text": "China space-based solar power and nuclear propulsion. SBSP timeline: 10 kW LEO test 2028, 1 MW geostationary 2030, 10 MW by 2035. Microwave power transmission testing at Bishan facility (Chongqing). Nuclear spacecraft: 1.5 MW foldable reactor prototype, targeting Mars 3-month round trips. See: SpaceNews, \"China space-based solar power.\" See also: Scientific American, \"China nuclear-powered spacecraft.\""
+        },
+        {
+          "num": 6,
+          "text": "ILRS (International Lunar Research Station). China-Russia joint initiative. MOU signed 2021. Lunar south pole location. Site selection 2025. Construction 2026-2035. Basic facility operational by 2035. See: Wikipedia, \"International Lunar Research Station.\""
+        },
+        {
+          "num": 7,
+          "text": "India Mars and Moon missions. Mangalyaan: launched November 2013, Mars orbit September 2014. Cost \\$54-74M. First attempt success, fourth agency to reach Mars. Operated 7+ years (6-month design life). Contact lost October 2022. Mangalyaan-2: approved February 2025, rover/helicopter/sky crane. Chandrayaan-1 (2008): discovered lunar water molecules. Chandrayaan-2 (2019): orbiter success, lander crash. Chandrayaan-3: landed August 23, 2023, first south pole soft landing. Cost ~\\$75M. See: Wikipedia, \"Mars Orbiter Mission,\" \"Chandrayaan-3.\" See also: ISRO."
+        },
+        {
+          "num": 8,
+          "text": "India future missions. Gaganyaan: first uncrewed test March 2026, first crewed Q1 2027, three astronauts. Fourth nation to independently launch humans. Shukrayaan (Venus): launch March 29, 2028, Venus orbit July 2028. LUPEX: JAXA-ISRO partnership, approved March 2025, launch NET 2027-2028, JAXA rover + ISRO lander on H3 rocket. See: Wikipedia, \"Gaganyaan,\" \"Shukrayaan-1,\" \"LUPEX.\" See also: ISRO press releases."
+        },
+        {
+          "num": 9,
+          "text": "Japan sample return and lunar missions. Hayabusa: returned Itokawa samples 2010. Hayabusa2: returned 5.4g Ryugu samples December 6, 2020; extended mission to Torifune flyby 2026, 1998 KY26 rendezvous 2031. SLIM: landed January 20, 2024, 10-meter pinpoint accuracy (world first), landed on side, survived three lunar nights, concluded August 2025. See: Wikipedia, \"Hayabusa2,\" \"SLIM.\""
+        },
+        {
+          "num": 10,
+          "text": "Japan H3 and MMX. H3: five successful flights through October 2025. December 22, 2025 failure (LE-5B-3 engine anomaly). Fleet grounded pending investigation. MMX (Phobos sample return): postponed from FY2026, launch pending H3 return to flight, sample return early 2030s. See: Wikipedia, \"H3 (rocket),\" \"Martian Moons eXploration.\""
+        },
+        {
+          "num": 11,
+          "text": "ESA missions and Ariane 6. JUICE: launched April 2023, Jupiter arrival July 2031, Ganymede orbit 2034. Double Earth-Moon flyby August 2024, Venus flyby August 2025. EnVision: construction contract January 2025, launch 2031, Venus arrival 2034. NASA participation uncertain (budget cuts). Ariane 6: four successful launches 2025, eight planned 2026, Block 2 variant entering service. Space Rider: inaugural flight 2027-2028 on Vega C+. ESA geographic return policy: contracts distributed by member state contribution, not efficiency. See: ESA, \"JUICE,\" \"EnVision,\" \"Ariane 6.\" See also: Wikipedia."
+        },
+        {
+          "num": 12,
+          "text": "Mars Sample Return cancellation. Joint NASA-ESA mission cancelled January 2026, Congress eliminated funding. Prior redesign reduced cost to ~\\$7B. Perseverance collected 33 of 43 planned sample tubes. Samples on Mars with no return vehicle. See: SpaceNews, \"Mars Sample Return funding eliminated.\" See also: The Planetary Society."
+        },
+        {
+          "num": 13,
+          "text": "Emerging space nations. UAE Hope: launched 2020, Mars orbit February 2021, exceeded 10 TB data (vs 1 TB target), extended through 2028, captured 3I/ATLAS comet images October 2025. South Korea Nuri (KSLV-II): fourth launch November 2025, 13 satellites, entirely Korean-developed. Lunar lander planned 2032. See: Wikipedia, \"Emirates Mars Mission,\" \"Nuri (rocket).\""
+        },
+        {
+          "num": 14,
+          "text": "International cooperation argument. No single nation has all required capabilities. Outer Space Treaty (1967) prohibits national sovereignty claims in space but does not address infrastructure ownership. Legal framework for orbital infrastructure governance does not yet exist. ISS cooperation survived Crimea and Ukraine crises. See: United Nations Office for Outer Space Affairs, \"Outer Space Treaty,\" https://www.unoosa.org/oosa/en/ourwork/spacelaw/treaties/introouterspacetreaty.html."
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "The Next Decade",
+      "references": [
+        {
+          "num": 1,
+          "text": "Artemis program status. Artemis I: uncrewed, launched November 2022, successful lunar flyby. Artemis II: crewed lunar flyby, launched April 1, 2026. Crew: Reid Wiseman (commander), Victor Glover (pilot), Christina Koch and Jeremy Hansen (mission specialists). Artemis III: restructured February 2026, no longer lunar landing, will conduct LEO docking tests with HLS landers and AxEMU suit testing. Budget: May 2025 proposed 24% NASA cut (\\$6B), Congress overrode via \"One Big Beautiful Bill\" (July 4, 2025, \\$9.9B additional funding, \\$4.1B for SLS Artemis IV/V). February 2026: SLS Block 1B, Block 2, EUS, and ML2 cancelled. SLS cost: ~\\$4B/launch. See: SpacePolicyOnline, NASA Artemis pages. See also: NASASpaceFlight.com, Artemis coverage."
+        },
+        {
+          "num": 2,
+          "text": "SPHEREx. Launched March 12, 2025, Falcon 9 from Vandenberg. First light April 2025. Science operations from May 1, 2025. Near-infrared all-sky survey: ~450 million galaxies, >100 million stars. Studies galaxy formation, star-forming region ices, epoch of reionization. Two-year nominal mission. See: NASA JPL, \"SPHEREx,\" https://www.jpl.nasa.gov/missions/spherex."
+        },
+        {
+          "num": 3,
+          "text": "Vera C. Rubin Observatory. First light June 23, 2025. Full LSST operations expected early 2026. 3.2-gigapixel camera on 8.4-meter telescope. 20 terabytes/night. 10-year survey: asteroid detection/planetary defense, dark energy, transient phenomena, outer solar system objects. See: Rubin Observatory, https://rubinobservatory.org/. See also: NOIRLab."
+        },
+        {
+          "num": 4,
+          "text": "Nancy Grace Roman Space Telescope. Completed November 2025. Launch target: late 2026/early 2027, Falcon Heavy to Sun-Earth L2. 2.4-meter mirror (same as Hubble), 200x Hubble field of view. 63-day equivalent of 85 Hubble-years. Exoplanet direct imaging, dark energy, supermassive black hole census, wide-field surveys for JWST follow-up. See: NASA, \"Roman Space Telescope,\" https://roman.gsfc.nasa.gov/."
+        },
+        {
+          "num": 5,
+          "text": "DART and Hera planetary defense. DART: impacted Dimorphos September 26, 2022 at 6.6 km/s. Orbital period change: -33 minutes (expected minimum ~7 minutes). Momentum enhancement factor β ≈ 3.6 (range 2.2-4.9). First deliberate asteroid deflection test. Hera: launched October 7, 2024. Mars/Deimos flyby March 2025. Arrival Didymos November 2026. Six-month investigation: crater characterization, internal properties, calibration for future planetary defense. See: NASA DART, https://dart.jhuapl.edu/. See also: ESA Hera, https://www.esa.int/Safety_Security/Hera."
+        },
+        {
+          "num": 6,
+          "text": "BepiColombo. ESA-JAXA joint mission. Final flyby January 2025. Mercury orbit insertion November 2026 (delayed from December 2025 due to MTM power malfunction). Separates into two orbiters: MPO (ESA) and MMO (JAXA). Studies Mercury surface, interior, magnetosphere, geological history. See: ESA, \"BepiColombo,\" https://www.esa.int/Science_Exploration/Space_Science/BepiColombo."
+        },
+        {
+          "num": 7,
+          "text": "JUICE (Jupiter Icy Moons Explorer). ESA mission. Launched April 2023. Double Earth-Moon flyby August 2024. Venus flyby August 2025. Earth flybys 2026 and 2029. Jupiter arrival July 2031. Studies Europa, Ganymede, Callisto. Ganymede orbit 2034 (first spacecraft to orbit a moon other than Earth's). See: ESA, \"JUICE,\" https://www.esa.int/Science_Exploration/Space_Science/Juice."
+        },
+        {
+          "num": 8,
+          "text": "Europa Clipper. NASA mission. Launched October 14, 2024. Mars gravity assist March 2025. Earth gravity assist December 2026. Europa arrival April 2030. Nearly 50 Europa flybys. Studies subsurface ocean, ice shell, habitability, surface geology, chemistry. Europa ocean contains more water than all Earth's oceans combined. See: NASA, \"Europa Clipper,\" https://europa.nasa.gov/."
+        },
+        {
+          "num": 9,
+          "text": "Dragonfly. NASA mission to Titan. Launch July 2028 on Falcon Heavy. Arrival late 2034. Nuclear-powered rotorcraft. Titan: 1.5x Earth atmospheric pressure, nitrogen atmosphere, liquid methane/ethane seas, complex organic chemistry analogous to prebiotic Earth. Three-year surface mission, multiple landing sites. Studies surface geology, prebiotic chemistry, potential subsurface water ocean. See: NASA, \"Dragonfly,\" https://dragonfly.jhuapl.edu/. See also: Johns Hopkins APL."
+        },
+        {
+          "num": 10,
+          "text": "3I/ATLAS interstellar object. Discovered July 1, 2025 by ATLAS telescope, Chile. Third confirmed interstellar object (after 1I/'Oumuamua 2017, 2I/Borisov 2019). Hyperbolic orbit confirms extrasolar origin. Hubble observations August 2025: nucleus 440 m to 5.6 km diameter (larger than predecessors). Active outgassing with jets. Potentially older than solar system. Closest Earth approach: 1.8 AU. Three interstellar objects in 8 years suggests high galactic flux. See: NASA Science, \"3I/ATLAS.\" See also: ScienceDaily, \"Third interstellar object discovered.\" See also: Space.com."
+        },
+        {
+          "num": 11,
+          "text": "Commercial space stations. Vast Haven-1: launch May 2026 on Falcon 9. 10.1 m long, 45 m³ habitable volume, 1.1 m domed window, Starlink comms. Four-person crew NET late June 2026. Axiom Space: first module launch 2026 (attached to ISS initially), free-flying by 2028, four-module final configuration. ISS planned deorbit ~2030. See: Vast, https://www.vastspace.com/. See also: Axiom Space, https://www.axiomspace.com/. See also: NASA commercial LEO destinations."
+        },
+        {
+          "num": 12,
+          "text": "China near-term missions. Chang'e 7: south pole 2026, water ice search. Long March 10: first launch 2026, crewed lunar landing ~2030. Tianwen-2: launched May 2025, asteroid Kamo'oalewa, sample return ~2027. Chang'e 8: 2028, ISRU testing. Tianwen-3: Mars sample return, launch late 2028, return by 2031. ILRS: operational by 2035. See: various sources cited in Chapter 13 references."
+        },
+        {
+          "num": 13,
+          "text": "ESA PLATO mission. PLAnetary Transits and Oscillations of stars. Launch target: late 2026/early 2027 on Ariane 6 to Sun-Earth L2. 26 cameras (24 normal + 2 fast). Searches for rocky exoplanets in habitable zones of Sun-like stars. Planetary radii to 3%, masses to 10%, stellar ages to 10% via asteroseismology. Minimum 4-year mission. See: ESA, \"PLATO,\" https://www.esa.int/Science_Exploration/Space_Science/PLATO. See also: Rauer, H. et al. \"The PLATO 2.0 mission,\" *Experimental Astronomy*, Vol. 38, pp. 249–330, 2014."
+        },
+        {
+          "num": 14,
+          "text": "NASA Lucy mission. Launched October 16, 2021 on Atlas V from Cape Canaveral. First mission to Jupiter's Trojan asteroids. Donaldjohanson flyby April 20, 2025 (960 km, dress rehearsal). L4 Trojans: Eurybates/Queta (August 2027), Polymele, Leucus, Orus (2027–2028). Earth gravity assist 2031. L5 Trojans: Patroclus/Menoetius (2033). Instruments: L'Ralph (IR spectrometer/imager), L'LORRI (high-res camera), L'TES (thermal spectrometer). See: NASA, \"Lucy,\" https://lucy.swri.edu/. See also: Levison, H. F. et al. \"Lucy: Surveying the Diversity of the Trojan Asteroids, the Fossils of Planet Formation,\" *Planetary Science Journal*, Vol. 2, No. 5, 2021."
+        },
+        {
+          "num": 15,
+          "text": "Uranus Orbiter and Probe. Highest-priority flagship mission, 2023–2032 Planetary Science Decadal Survey (\"Origins, Worlds, and Life\"). Voyager 2 flyby January 1986 (only close-up data). Proposed orbiter + atmospheric entry probe. Studies magnetosphere (59° tilt, offset from center), atmosphere, interior, rings, 27 moons. Original baseline: early 2030s launch with Jupiter gravity assist. Current estimate: mid-to-late 2030s due to Pu-238 shortfall. Arrival mid-2040s. See: National Academies of Sciences, Engineering, and Medicine. *Origins, Worlds, and Life: A Decadal Strategy for Planetary Science and Astrobiology 2023–2032*. The National Academies Press, 2022."
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "Alternative Launch Systems",
+      "references": [
+        {
+          "num": 1,
+          "text": "Space elevator concept and history. Tsiolkovsky: \"sky ladder\" concept, 1895. Artsutanov: 1960 proposal. Pearson: engineering analysis 1970s. Clarke: *The Fountains of Paradise*, 1979. Edwards: NIAC studies 2001-2003, estimated 15-year construction, \\$10-15B cost. Tether from equator to GEO (35,786 km) + counterweight beyond. Baseline climber: 20 metric tons, scaling to 100 tons. Throughput: 5,000-30,000 metric tons/year. Single-point vulnerability: break causes lower section to drape along equator, upper section rises. See: Edwards, B.C., \"The Space Elevator,\" NIAC Phase I/II Reports, 2001-2003. See also: International Space Elevator Consortium, https://www.isec.org/. See also: Wikipedia, \"Space elevator.\""
+        },
+        {
+          "num": 2,
+          "text": "Carbon nanotube material properties. SWCNT tensile strength: 63-100+ GPa depending on chirality (armchair, zigzag, chiral). Density: 1,300-1,700 kg/m³. Specific strength range: ~37,000-77,000 kN·m/kg (vs steel ~154 kN·m/kg). Graphene tensile strength: 100-130 GPa (higher than CNT because bonds are not strained by cylindrical geometry, but cannot be formed into cable). MWCNT toward lower end of range (outer wall shielding, defect accumulation). Real spun fibers: defects reduce strength significantly from individual tube values. Commercial CNT fibers: few GPa, improving. Laboratory spun CNT yarn (2024): 14 GPa. Orbital ring operating stress: 12.5 GPa with safety factor 2 against 25 GPa break strength. The orbital ring uses CNT cable at operating stresses well below the individual tube strength because the cable is a composite of many aligned fibers. See: Yu, M.F., et al., \"Strength and Breaking Mechanism of Multiwalled Carbon Nanotubes Under Tensile Load,\" *Science*, 287, 637-640, 2000. See also: Bai, Y., et al., \"Carbon nanotube bundles with tensile strength over 80 GPa,\" *Nature Nanotechnology*, 13, 589-595, 2018. See also: Zhang, Y., et al., \"Carbon nanotube fibers with dynamic strength up to 14 GPa,\" *Science*, 2024."
+        },
+        {
+          "num": 3,
+          "text": "Skyhook (rotovator / momentum exchange tether). Pearson rotating tether concept, 1960s. Moravec, H., \"A Non-Synchronous Orbital Skyhook,\" *Journal of the Astronautical Sciences*, 25(4), 307-322, 1977. NASA Marshall Space Flight Center tether studies, 2000s. Tethered Satellite System experiments on Space Shuttle (TSS-1 1992, TSS-1R 1996). See also: Wikipedia, \"Skyhook (structure).\" See also: Clarke, A.C., *The Fountains of Paradise*, 1979; Robinson, K.S., *Red Mars*, 1992."
+        },
+        {
+          "num": 4,
+          "text": "Tethered ring. Particle beam active support structure on a segment plane (not great-circle). Ring built at ground/sea level, lifted by pulling tethers inward. Advantages: can be placed at any latitude and orientation, not restricted to great-circle planes. Issues: particle beam startup and alignment while lying on the ground, catastrophic failure if beam contacts tube wall, unrealistic stiffness requirements. See: Graviton Media, \"Tethered Ring\" concept video; project-atlantis.com for design details. Contrast with orbital ring (great-circle plane only, solid cable in orbit, no particle beam)."
+        },
+        {
+          "num": 5,
+          "text": "Space fountain. Active support structure using circulating high-velocity projectile stream. Forward, R.L. and Hyde, R.A., space fountain concepts. Related to active support structures generally. Continuous power required, instant collapse on power loss. See: Wikipedia, \"Space fountain.\" See also: Hyde, R.A., \"Earthbreak: Earth to Space Transportation,\" *Defense Science 2003+*, 1985."
+        },
+        {
+          "num": 6,
+          "text": "Launch loop (Lofstrom loop). Proposed by Keith Lofstrom, 1981 (AAS Newsletter), 1982 (L5 News), formal AIAA presentation 1985. Iron rotor, 5 cm diameter, circulates at 14 km/s through 2,000 km evacuated tube. Upper section at ~80 km altitude. Vehicles accelerated to 7.45 km/s at 1.41g. Payload: 5 metric tons. Throughput: ~150,000 metric tons/year. Power: ~200 MW sustaining, ~500 MW at 35 launches/day. Rotor heats ~80 K per launch; iron Curie temperature ~770°C limits launch rate. See: Lofstrom, K., \"The Launch Loop: A Low Cost Earth-to-High-Orbit Launch System,\" AIAA/SAE/ASME/ASEE Joint Propulsion Conference, 1985. See also: launchloop.com. See also: Wikipedia, \"Launch loop.\""
+        },
+        {
+          "num": 7,
+          "text": "StarTram. James Powell and Gordon Danby (first superconducting maglev patent, 1968). Gen 1: cargo only, 30g, 8 km/s, exit from mountain at 3-7 km altitude, ~150,000 metric tons/year, \\$19B. Gen 2: crewed, 2-3g, 8 km/s, 1,000-1,500 km track, exit at 22 km altitude held by magnetic repulsion (280 MA ground cables, 14 MA overhead), \\$67B. See: startram.com. See also: Wikipedia, \"StarTram.\" See also: NextBigFuture, \"Startram could usher in era of low-cost space travel,\" 2012."
+        },
+        {
+          "num": 8,
+          "text": "Electromagnetic launchers. US Navy EMRG: 2.5 km/s muzzle velocity, 33 MJ (December 2010 record), program suspended ~2020. Gerald Bull / Project HARP: 16-inch gun fired projectile to 180 km altitude (above Kármán line). Project Babylon (Iraqi supergun): 1 m bore, 156 m barrel, cancelled after Bull's assassination 1990. Atmospheric heating scales as v²; ~10 km/s in lower atmosphere produces extreme heating. See: Wikipedia, \"Railgun.\" See also: Wikipedia, \"Project HARP.\" See also: NavWeaps, \"U.S. Rail Gun.\""
+        },
+        {
+          "num": 9,
+          "text": "Lunar mass drivers. Gerard K. O'Neill, Princeton, proposed 1974. MIT prototype \"Mass Driver 1\" built 1976 with Henry Kolm: 40 m/s exit velocity, 33g, \\$2,000 budget. Lunar escape velocity: 2.4 km/s. No atmosphere on Moon, so no aerodynamic heating. See: Wikipedia, \"Gerard K. O'Neill.\" See also: Wikipedia, \"Mass driver.\""
+        },
+        {
+          "num": 10,
+          "text": "SpinLaunch. Ground-based centrifuge launcher. Vacuum chamber, rotating arm accelerates payloads to ~8,000 km/h (2.2 km/s). Small rocket stage for remaining velocity. G-forces during spin-up: ~10,000g. Atmospheric heating at exit. Cargo only. See: SpinLaunch Inc., https://www.spinlaunch.com/. See also: Slingatron (spiral track variant): Tidman, D.A., \"Slingatron: A Mechanical Hypervelocity Mass Accelerator,\" *AIAA Journal*, 1998."
+        },
+        {
+          "num": 11,
+          "text": "Lightcraft. Directed energy propulsion using ground-based laser. Myrabo, L.N., laser lightcraft experiments at Rensselaer Polytechnic Institute, 1990s-2000s, funded by NASA and US Air Force. Successfully flew small test vehicles. Scaling challenges: megawatt-to-gigawatt laser power required"
+        },
+        {
+          "num": 12,
+          "text": "Breakthrough Starshot. Funded 2016 by Yuri Milner, \\$100M. Gram-scale \"StarChip\" spacecraft with 4×4 m reflective sail. Ground-based phased laser array: 100 GW combined. Target velocity: 0.2c (60,000 km/s). Acceleration: ~10,000g. Alpha Centauri transit: ~20 years. Not mass transit: payload in grams. See: Wikipedia, \"Breakthrough Starshot.\" See also: Caltech, \"Lightsails research.\""
+        },
+        {
+          "num": 13,
+          "text": "Orbital ring parameters (from Volume III). Retrograde equatorial (baseline design): cable velocity 8,543 m/s, cable-casing relative velocity 9,026 m/s, tension 892 GN, mass ratio 10.45. Ring circumference at 250 km: 41,646 km. Operating stress: 12.5 GPa (CNT, safety factor 2). Retrograde preferred because it eliminates subsonic zone during mass driver launches. Mass driver: LSM with superconducting DC magnets on sled. Launch velocity: 3g crewed (~16 km/s), 13g cargo (~30 km/s). Combined with Earth orbital velocity: >60 km/s. Solar array: ~5 TW expanded. HVDC: 10 MV pole-to-pole. Mass transit capacity: millions/day. See: Volumes II and III of this series for complete engineering analysis."
+        }
+      ]
+    },
+    {
+      "number": "16",
+      "title": "The Orbital Ring",
+      "references": [
+        {
+          "num": 1,
+          "text": "Orbital ring concept. The idea of an orbital ring was first proposed by Nikola Tesla in 1870 and independently developed by multiple engineers. The modern engineering concept was developed by Paul Birch in a series of papers for the Journal of the British Interplanetary Society: \"Orbital Ring Systems and Jacob's Ladders, Part I,\" JBIS, 35, 475-497, 1982; \"Part II,\" JBIS, 36, 115-128, 1983; \"Part III,\" JBIS, 38, 167-176, 1985. See also: Lofstrom, K., \"The Launch Loop,\" 1985 (related active structure concept). Isaac Arthur, \"Orbital Rings,\" Science & Futurism with Isaac Arthur, YouTube, for accessible explanations of the concept."
+        },
+        {
+          "num": 2,
+          "text": "Carbon nanotube material properties. Operating stress: 12.50 GPa with safety factor 2 against 25 GPa break strength. Density: 1,700 kg/m³. Laboratory state of the art (2024): 14 GPa in spun CNT yarn. Zhang, Y., et al., \"Carbon nanotube fibers with dynamic strength up to 14 GPa,\" *Science*, 2024. Theoretical limit for perfect SWCNTs exceeds 100 GPa. Bai, Y., et al., \"Carbon nanotube bundles with tensile strength over 80 GPa,\" *Nature Nanotechnology*, 13, 589-595, 2018."
+        },
+        {
+          "num": 3,
+          "text": "Ring parameters at 250 km altitude. All values from Volume III design review, verified against MathCAD worksheets. Retrograde equatorial: v_cable = 8,543 m/s, v_rel = 9,026 m/s, m_cable_hw = 125,432 kg/m, m_ring = 137,432 kg/m, T = 892 GN, A_CNT = 71.4 m², mass ratio 10.45:1, circumference = 41,646 km. Retrograde is preferred over prograde (v_cable = 8,622 m/s, m_ring = 112,658 kg/m, T = 710 GN) because it eliminates the subsonic zone during mass driver launches. See Volume III, Chapter 8 for the full retrograde analysis and Table 8.1 for the comparison."
+        },
+        {
+          "num": 4,
+          "text": "Electromagnetic levitation. DC solenoid coils in casing attract ferromagnetic plates in cable. Nominal gap: 100 mm. Superconducting coils require essentially zero power in steady state. Vertical bearing load: 108.5 kN/m. Lateral forces at 30° inclination: up to 60% of vertical load at equatorial crossings. Retrograde cable direction does not affect EML force or power (DC fields, ferromagnetic plate, no velocity-dependent losses). See Volume III."
+        },
+        {
+          "num": 5,
+          "text": "Linear induction motors. 83,292 sites at 500 m spacing. AC traveling field in stator induces eddy currents in cable reaction plates. Deployment: 8 MW/site, 9-14 months. Post-deployment: ~500 kW/site for velocity maintenance and lateral station-keeping. See Volume III."
+        },
+        {
+          "num": 6,
+          "text": "Anchor lines. CNT cables from ring to ground stations. Length: ~250 km at equator. Functions: structural stability, passenger/cargo transport (trolley cars at 100-130 km/h, ~2-3 hours), power transmission (HVDC conductors). Anchor stations spaced every ~50 km along equator. See Volume III."
+        },
+        {
+          "num": 7,
+          "text": "Mass driver. Linear synchronous motor. 10 km sled, SC DC coils on sled, HTS AC stator on ring. 5,000-tonne spacecraft to 30 km/s in 3.15 hours (4.6 laps), peak power 416 GW. Crewed limit: 3g centrifugal at ~16 km/s. Cargo limit: 13g centrifugal at ~30 km/s. See Volume III."
+        },
+        {
+          "num": 8,
+          "text": "Space elevator return system. Tethers from above GEO (~50,000 km) down to ring altitude. CNT construction. Used for return to Earth, not ascent. See Volume III. For standalone space elevator concept: Edwards, B.C., \"The Space Elevator,\" NIAC Phase I/II Reports, 2001-2003."
+        },
+        {
+          "num": 9,
+          "text": "Power system. Solar arrays: bifacial panels, 300 W/m² average at 1 AU, 45% efficient multi-junction cells. Baseline deployment-era: 666 GW (83,292 sites × 8 MW). Expanded 200 m/side: ~5 TW. HVDC transmission: 10 MV pole-to-pole, graphene-enhanced CNT conductors at 30 MS/m projected conductivity. See Volume III for full power budget."
+        },
+        {
+          "num": 10,
+          "text": "Catastrophic failure analysis. Cable kinetic energy: ~1.86 × 10¹⁹ J (~4.4 gigatons TNT equivalent). At 250 km, total failure deposits CNT mass in stratosphere with nuclear winter-scale consequences. Revised altitude recommendation: ~2,000 km. See Volume III."
+        }
+      ]
+    },
+    {
+      "number": "17",
+      "title": "Venus, The Overlooked Goldmine",
+      "references": [
+        {
+          "num": 1,
+          "text": "Seiff, A., et al., \"Models of the structure of the atmosphere of Venus from the surface to 100 km altitude,\" *Advances in Space Research*, 5(11), 3-58, 1985. See also: Venus International Reference Atmosphere (VIRA), Kliore, A.J., et al., eds., 1985."
+        },
+        {
+          "num": 2,
+          "text": "Landis, G.A., \"Colonization of Venus,\" *AIP Conference Proceedings*, 654, 1193-1200, 2003."
+        },
+        {
+          "num": 3,
+          "text": "Landis, G.A., \"Settling Venus: A City in the Clouds?\" AIAA ASCEND 2020 Conference, AIAA 2020-4152. See also: Landis, G.A., \"Exploring Venus by Solar Airplane,\" NASA/TM-2001-210839, 2001."
+        },
+        {
+          "num": 4,
+          "text": "Arney, D.C. and Jones, C.A., \"High Altitude Venus Operational Concept (HAVOC): An Exploration Strategy for Venus,\" AIAA SPACE 2015, AIAA 2015-4612, 2015."
+        },
+        {
+          "num": 5,
+          "text": "Colozza, A., \"Atmospheric Flight on Venus,\" NASA/CR-2004-213052, 2004. See also: Landis, G.A., LaMarre, C., and Colozza, A., \"Venus atmospheric exploration by solar aircraft,\" *Acta Astronautica*, 56(8), 750-755, 2005."
+        },
+        {
+          "num": 6,
+          "text": "NASA Venus Fact Sheet, https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html."
+        },
+        {
+          "num": 7,
+          "text": "Bugga, R., et al., \"Venus Interior Probe Using In-situ Power and Propulsion (VIP-INSPR),\" NASA NIAC Phase I Report, 2016."
+        },
+        {
+          "num": 8,
+          "text": "Oyama, V.I., et al., \"Venus lower atmospheric composition: analysis by gas chromatography,\" *Journal of Geophysical Research*, 85(A13), 7891-7902, 1980. See also: de Bergh, C., et al., \"The composition of the atmosphere of Venus below 100 km altitude: an overview,\" *Planetary and Space Science*, 54, 1389-1397, 2006."
+        },
+        {
+          "num": 9,
+          "text": "Northrop Grumman / L'Garde, Venus Atmospheric Maneuverable Platform (VAMP) concept, 2014-2015. See also: Lee, G., et al., \"Venus Atmospheric Maneuverable Platform (VAMP),\" AIAA SPACE 2014."
+        },
+        {
+          "num": 10,
+          "text": "Lammer, H., et al., \"Atmospheric nitrogen evolution on Earth and Venus,\" *Earth and Planetary Science Letters*, 450, 49-56, 2016. Venus atmospheric nitrogen mass: 3.5% of 4.8 × 10²⁰ kg ≈ 1.7 × 10¹⁹ kg."
+        },
+        {
+          "num": 11,
+          "text": "Solar constant at Venus: calculated from Earth's solar constant (1,361 W/m²) scaled by (1/0.723)² ≈ 1.91, giving approximately 2,601-2,614 W/m². See NASA Venus Fact Sheet for orbital parameters."
+        },
+        {
+          "num": 12,
+          "text": "Sánchez-Lavega, A., et al., \"Variable winds on Venus mapped in three dimensions,\" *Geophysical Research Letters*, 35, L13204, 2008. See also: Khatuntsev, I.V., et al., \"Winds from the visible (513 nm) images obtained by the Venus Monitoring Camera onboard Venus Express,\" *JGR: Planets*, 127, 2022. ESA Venus Express wind speed data: equatorial zonal winds ~94 m/s at cloud top level, ~60 m/s at 45-47 km, increasing over the mission period."
+        },
+        {
+          "num": 13,
+          "text": "Keating, G.M., et al., \"Venus: Density of Upper Atmosphere from Measurements of Drag on Pioneer Orbiter,\" *Science*, 203(4382), 775-777, 1979. Pioneer Venus Orbiter drag measurements used to derive atmospheric densities at 150-200 km altitude."
+        },
+        {
+          "num": 14,
+          "text": "Licht, S., et al., \"Transformation of the greenhouse gas CO₂ by molten electrolysis into a wide controlled selection of carbon nanotubes,\" *Journal of CO₂ Utilization*, 34, 303-312, 2019. See also: Ren, J., et al., \"New scalable electrosynthesis of distinct high purity graphene nanoallotropes from CO₂,\" *Crystals*, 15(8), 680, 2025."
+        },
+        {
+          "num": 15,
+          "text": "Chen, Y., et al., \"Boron Nitride Nanotubes: Pronounced Resistance to Oxidation,\" *Applied Physics Letters*, 84(13), 2430-2432, 2004. See also: Thibeault, S.A., et al., \"Nanomaterials for radiation shielding,\" *MRS Bulletin*, 40(10), 836-841, 2015. BNNT thermal stability to ~900°C in oxidizing atmospheres; tensile strength 33-90 GPa; Young's modulus ~1.0-1.3 TPa."
+        },
+        {
+          "num": 16,
+          "text": "Chilkoor, G., et al., \"Hexagonal Boron Nitride for Sulfur Corrosion Inhibition,\" *ACS Nano*, 14(11), 14809-14819, 2020. h-BN demonstrates excellent resistance to concentrated sulfuric acid and sulfide environments, with 6-7× lower corrosion rates than unprotected surfaces."
+        },
+        {
+          "num": 17,
+          "text": "Wei, X., et al., \"Carbon Nanotube Mat/Boron Nitride Composite Materials,\" *Composites Part B: Engineering*, 284, 111693, 2024. See also: Kim, D., et al., \"Layer-Structured Carbon Nanotube–Boron Nitride Nanotube Nanocomposites,\" *ACS Applied Materials & Interfaces*, 2025. BNNT coatings on CNT demonstrated via CVD, providing enhanced oxidation resistance and mechanical strength."
+        },
+        {
+          "num": 18,
+          "text": "Neudeck, P.G., et al., \"Prolonged silicon carbide integrated circuit operation in Venus surface atmospheric conditions,\" *AIP Advances*, 6(12), 125119, 2016. SiC ICs demonstrated 521 hours continuous operation at 460°C and 9.3 MPa CO₂, with no failure observed."
+        }
+      ]
+    },
+    {
+      "number": "18",
+      "title": "Powering the Space Industry",
+      "references": [
+        {
+          "num": 1,
+          "text": "Thorium and uranium crustal abundance. Thorium: approximately 10.5 ppm (parts per million by mass) in Earth's upper crust. Uranium: approximately 3 ppm. Thorium is roughly 3.3× more abundant than uranium. Source: Taylor, S.R. and McLennan, S.M., *The Continental Crust: Its Composition and Evolution*, Blackwell Scientific, 1985. See also: IAEA, \"Thorium's Long-term Potential in Nuclear Energy,\" IAEA Bulletin, various issues."
+        },
+        {
+          "num": 2,
+          "text": "Pu-238 production at Oak Ridge. The U.S. Department of Energy restarted domestic Pu-238 production at ORNL, with a target of 1.5 kg/year of heat source plutonium oxide by 2026. Source: U.S. DOE Office of Nuclear Energy press releases, 2024-2025; NASA Radioisotope Power Systems program documentation."
+        },
+        {
+          "num": 3,
+          "text": "Uranium and thorium in chondritic meteorites. Uranium: 8-12 ppb, thorium: 22-45 ppb. Source: Lodders, K., \"Solar System Abundances and Condensation Temperatures of the Elements,\" *Astrophysical Journal*, 591, 1220-1247, 2003. See also: Lovering, J.F., \"The Distribution of Radioactive Elements in Meteorites and Other Natural Materials,\" *Nature*, 1964; Tatsumoto, M., et al., \"U-Th-Pb systematics of chondritic meteorites,\" *Geochimica et Cosmochimica Acta*, 1973."
+        },
+        {
+          "num": 4,
+          "text": "Lunar KREEP concentrations. Uranium in KREEP-rich regions: 5-10 ppm. Highland regolith: 0.5-3 ppm. Source: Jolliff, B.L., et al., \"Major Lunar Crustal Terranes: Surface Expressions and Crust-Mantle Origins,\" *Journal of Geophysical Research*, 105(E2), 4197-4216, 2000. See also: Lawrence, D.J., et al., \"Global Elemental Maps of the Moon: The Lunar Prospector Gamma-Ray Spectrometer,\" *Science*, 281, 1484-1489, 1998."
+        },
+        {
+          "num": 5,
+          "text": "NIF ignition achievement. On December 5, 2022, the National Ignition Facility achieved fusion ignition, delivering 2.05 MJ of laser energy to a fuel capsule that produced 3.15 MJ of fusion energy, a gain of approximately 1.54. The laser system consumed roughly 300 MJ of electrical energy to produce the 2.05 MJ shot. Source: Abu-Shawareb, H., et al., \"Lawson criterion for ignition exceeded in an inertial fusion experiment,\" *Physical Review Letters*, 129, 075001, 2024. See also: LLNL NIF program documentation."
+        },
+        {
+          "num": 6,
+          "text": "Chinese fission-fusion hybrid program history. The FDS (Fusion-Driven Subcritical) system concept has been under development at ASIPP since 1986 under the National Hi-Tech Program (863 Program). Source: Qiu, L.J., et al., \"Overview of Fusion-Fission Hybrid Reactor Design Study in China,\" *Fusion Science and Technology*, 42(1), 2002. See also: Wu, Y., presentation at MIT Fusion-Fission Workshop, \"Fusion-Fission Hybrid Activities in ASIPP.\""
+        },
+        {
+          "num": 7,
+          "text": "FDS series conceptual designs. Wu, Y., et al., \"Conceptual Design Activities of FDS Series Fusion Power Plants in China,\" *Fusion Engineering and Design*, 81(23-24), 2713-2718, 2006. See also: Wu, Y., et al., \"Conceptual design of the fusion-driven subcritical system FDS-I,\" *Fusion Engineering and Design*, 81, 1305-1311, 2006."
+        },
+        {
+          "num": 8,
+          "text": "Xinghuo fission-fusion hybrid power plant. 100 MW target, Nanchang, Jiangxi province, joint venture between China Nuclear Industry 23 Construction Corporation and Lianovation Superconductor. Target Q > 30. Investment over 20 billion RMB (~\\$2.7B). System design 2025, equipment production 2026-2027, assembly 2028-2029, first phase completion 2031. Sources: South China Morning Post, March 2025; Nuclear Engineering International, March 2025; NucNet, March 2025."
+        },
+        {
+          "num": 9,
+          "text": "Z-pinch fission-fusion hybrid. Peng, X., et al., \"Introduction to Z-pinch fusion fission hybrid energy,\" *Nuclear Techniques* (核技术), 48(7), 2025. Peng Xianjue is a senior designer of China's hydrogen bomb program. The Z-FFR concept uses a Z-pinch fusion neutron source rather than a tokamak."
+        },
+        {
+          "num": 10,
+          "text": "KRUSTY reactor test. The Kilopower Reactor Using Stirling Technology (KRUSTY) experiment was conducted at the Nevada National Security Site in 2018. The 1 kWe reactor operated for 28 hours at full power with passive self-regulation. Source: Gibson, M.A., et al., \"NASA's Kilopower Reactor Development and the Path to Higher Power Missions,\" *IEEE Aerospace Conference*, 2017. See also: Poston, D.I., et al., \"KRUSTY Reactor Design,\" *Nuclear Technology*, 206(sup1), S89-S105, 2020."
+        },
+        {
+          "num": 11,
+          "text": "Solar flux values. Solar constant at 1 AU: 1,361 W/m² (Kopp, G. and Lean, J.L., \"A New, Lower Value of Total Solar Irradiance,\" *Geophysical Research Letters*, 38, L01706, 2011). Planetary fluxes calculated by inverse square law using mean orbital radii from the JPL Solar System Dynamics database."
+        },
+        {
+          "num": 12,
+          "text": "RTG power data. Voyager: 470 W at launch (1977), ~220 W in 2025, three MHW-RTGs per spacecraft. Curiosity/Perseverance: ~110 We from MMRTG, 2,000 Wt from 4.8 kg PuO₂. New Horizons: 245 W at launch (2006), ~190 W at Arrokoth (2019). Source: NASA Radioisotope Power Systems Reference Book, 2015 and mission-specific documentation from JPL, APL/JHU."
+        },
+        {
+          "num": 13,
+          "text": "Lunar synodic period and polar illumination. Synodic period: 29.53 days. Axial tilt: 1.54°. Peaks of near-eternal light at south pole identified by Bussey, D.B.J., et al., \"Illumination conditions of the south pole of the Moon derived using Kaguya topography,\" *Icarus*, 208, 558-564, 2010."
+        },
+        {
+          "num": 14,
+          "text": "Chelyabinsk meteoroid. Approximately 20 m diameter, 13,000 tonnes, entry velocity 19.16 km/s, airburst energy approximately 500 kilotons TNT equivalent. Not detected before atmospheric entry. Source: Brown, P.G., et al., \"A 500-kiloton airburst over Chelyabinsk and an enhanced hazard from small impactors,\" *Nature*, 503, 238-241, 2013."
+        }
+      ]
+    },
+    {
+      "number": "19",
+      "title": "Solar Power from the Ring",
+      "references": [
+        {
+          "num": 1,
+          "text": "Solar constant at 1 AU: 1,361 W/m². Source: Kopp, G. and Lean, J.L., \"A New, Lower Value of Total Solar Irradiance,\" *Geophysical Research Letters*, 38, L01706, 2011."
+        },
+        {
+          "num": 2,
+          "text": "Global primary energy consumption and electricity consumption: approximately 20 TW and 4 TW respectively in the mid-2020s. Source: BP Statistical Review of World Energy, 2024 edition; International Energy Agency, World Energy Outlook, 2024."
+        },
+        {
+          "num": 3,
+          "text": "Van Allen radiation belt structure and inner proton belt characteristics. Source: Baker, D.N., et al., \"The Relativistic Electron-Proton Telescope (REPT) Instrument on Board the Radiation Belt Storm Probes (RBSP) Spacecraft: Characterization of Earth's Radiation Belt High-Energy Particle Populations,\" *Space Science Reviews*, 179, 337-381, 2013. See also: Van Allen, J.A., \"Radiation belts around the Earth,\" *Scientific American*, 200, 39-47, 1959."
+        },
+        {
+          "num": 4,
+          "text": "Multi-junction and graphene-based photovoltaic efficiency limits. Source: Green, M.A., et al., \"Solar cell efficiency tables (version 62),\" *Progress in Photovoltaics: Research and Applications*, 31, 651-663, 2023. See also: Cao, Y., et al., \"Unconventional superconductivity in magic-angle graphene superlattices,\" *Nature*, 556, 43-50, 2018. The photovoltaic application of twisted bilayer graphene is forward-looking and is discussed in detail in Volume II."
+        },
+        {
+          "num": 5,
+          "text": "Bifacial solar panel gain from albedo. Source: Guerrero-Lemus, R., et al., \"Bifacial solar photovoltaics: A technology review,\" *Renewable and Sustainable Energy Reviews*, 60, 1533-1549, 2016."
+        },
+        {
+          "num": 6,
+          "text": "Atomic oxygen erosion in low Earth orbit. Source: Banks, B.A., et al., \"Atomic-Oxygen Undercutting of Protected Polymers in Low Earth Orbit,\" *Journal of Spacecraft and Rockets*, 41(3), 335-339, 2004. See also: de Groh, K.K., et al., \"MISSE 2 PEACE Polymers Atomic Oxygen Erosion Experiment on the International Space Station,\" *NASA/TM-2008-215264*, 2008."
+        },
+        {
+          "num": 7,
+          "text": "Carrington-class coronal mass ejection induced currents and mitigation in long conductors. Source: National Research Council, *Severe Space Weather Events: Understanding Societal and Economic Impacts*, National Academies Press, 2008."
+        },
+        {
+          "num": 8,
+          "text": "Ring design altitude, cable parameters, and anchor line spacing for the 2,000 kilometer baseline. Source: Volume III, Chapter 14, \"Pinning Down the Design Altitude,\" and the Volume III engineering chapter on the solar array. The 2,000 kilometer altitude is driven by the minimum safe altitude analysis for catastrophic failure, Chapter 14 of Volume III."
+        },
+        {
+          "num": 9,
+          "text": "Geomagnetic rigidity cutoff at the equator: approximately 15 GV, which filters solar energetic particle events below a few GeV. Source: Smart, D.F. and Shea, M.A., \"A review of geomagnetic cutoff rigidities for earth-orbiting spacecraft,\" *Advances in Space Research*, 36, 2012-2020, 2005."
+        }
+      ]
+    },
+    {
+      "number": "20",
+      "title": "Why We Must Build It",
+      "references": [
+        {
+          "num": 1,
+          "text": "NASA economic impact studies. Chase Econometric Associates (1976): \\$23 per dollar invested in Apollo. NASA Office of the Chief Financial Officer, FY2023 Economic Impact Study: \\$75.6 billion total economic output from \\$25.4 billion budget. GPS economic value: RTI International (2019), \"Economic Benefits of the Global Positioning System,\" estimated \\$1.4 trillion in economic benefits from 1984-2017. MRI return on investment: approximately 7:1 from diagnostic imaging technology derived from NASA image processing research."
+        },
+        {
+          "num": 2,
+          "text": "ISS international cooperation. The ISS has been continuously occupied since November 2, 2000, operated by NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada). Crew swap agreements between NASA and Roscosmos continued through the Russian invasion of Ukraine in 2022. Source: NASA ISS program documentation; Swanson, M. and Nelson, B., public statements on ISS cooperation, 2022-2024."
+        },
+        {
+          "num": 3,
+          "text": "Global energy consumption. International Energy Agency (IEA), World Energy Outlook 2024. Global primary energy consumption approximately 14 TW average (2023). Global electricity consumption approximately 3.4 TW average (2023)."
+        },
+        {
+          "num": 4,
+          "text": "Interstate Highway System. Federal Highway Administration, \"Dwight D. Eisenhower National System of Interstate and Defense Highways,\" updated 2024. Construction period: 1956-1991. Cost: approximately \\$530 billion in 2023 dollars. Economic benefit ratio: estimated 6:1 by various studies."
+        },
+        {
+          "num": 5,
+          "text": "Post-9/11 war costs. Crawford, N.C., et al., \"Costs of War,\" Watson Institute for International and Public Affairs, Brown University, updated 2023. Total estimated cost: approximately \\$8 trillion through 2023."
+        },
+        {
+          "num": 6,
+          "text": "Financial sector GDP share. Greenwood, R. and Scharfstein, D., \"The Growth of Finance,\" *Journal of Economic Perspectives*, 27(2), 209-234, 2013. Financial sector share of U.S. GDP: approximately 4.9% in 1980, rising to approximately 8% by the 2020s."
+        },
+        {
+          "num": 7,
+          "text": "Global military spending. Stockholm International Peace Research Institute (SIPRI), Military Expenditure Database, 2024. Global military spending exceeded \\$2.4 trillion in 2023."
+        },
+        {
+          "num": 8,
+          "text": "COTS cost comparison. NASA Office of Inspector General, \"NASA's Management of the Commercial Crew Program,\" Report No. IG-23-011, 2023. COTS total investment: approximately \\$800 million. Falcon 9 cost-plus estimate: approximately \\$3.6 billion. Cost ratio: approximately 12:1. Source also: SpaceX and NASA COTS program documentation."
+        }
+      ]
+    },
+    {
+      "number": "afterword",
+      "title": "While I Was Writing This Book",
+      "references": [
+        {
+          "num": 1,
+          "text": "NASA Ignition announcement, March 24, 2026. \\$20 billion lunar base plan, Gateway paused, Artemis III restructured to LEO demo, Artemis IV first crewed landing 2028, Space Reactor-1 Freedom nuclear Mars spacecraft launch before end 2028. See: NASA, \"NASA Unveils Initiatives to Achieve America's National Space Policy,\" March 24, 2026, https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/. See also: Al Jazeera, \"NASA to spend \\$20bn on moon base, nuclear-powered Mars spacecraft,\" March 24, 2026."
+        },
+        {
+          "num": 2,
+          "text": "SpaceX lunar mass driver concept. Musk described electromagnetic launch system for lunar surface during xAI all-hands meeting, February 2026. Conceptual phase, 15-20 year estimated timeline to operational capability. See: Interesting Engineering, \"Elon Musk teases 'cannon-like' mass drivers for launches from moon,\" February 2026."
+        },
+        {
+          "num": 3,
+          "text": "China electromagnetic launch developments. NUDT maglev record: 1-tonne vehicle to 700 km/h in 2 seconds on 400-meter track, December 2025. See: CGTN, \"China sets world record in maglev tech with 700 km/h in 2 seconds,\" December 25, 2025. Galactic Energy electromagnetic launch pad targeting 2028 first tests. See: Orbital Today, \"China Plans Maglev Rocket Launch System by 2028,\" October 14, 2025."
+        },
+        {
+          "num": 4,
+          "text": "SpinLaunch pivot. \\$30M Series C funding August 2025, redirected toward Meridian Space LEO broadband constellation rather than kinetic launch system. See: Business Wire, \"SpinLaunch Announces Closing of \\$30M in Funding to Accelerate the Development of the Meridian Space Constellation,\" August 18, 2025."
+        },
+        {
+          "num": 5,
+          "text": "Suarez, Daniel. Critical Mass. Dutton, 2023. Second book in the Delta-v series. Features mass driver construction from in-situ asteroid materials. Winner, 2024 Prometheus Award for Best Novel. See: NSS Book Review, \"Critical Mass,\" https://nss.org/book-review-critical-mass/."
+        },
+        {
+          "num": 6,
+          "text": "China cable-catch booster recovery. CALT developed 25,000-tonne recovery vessel Ling Hang Zhe (Pathfinder), delivered December 2025. Arresting cable system with hooks on booster interstage, similar in principle to aircraft carrier arresting wires. Long March 10B first test flight targeting April 2026. See: Prototyping China, \"China Builds Rocket-Catching Ship,\" March 10, 2026. See also: Space.com, \"China plans to catch reusable rockets with constricting wires,\" 2025. Academic basis: \"Arresting-Cable System for Robust Terminal Landing of Reusable Rockets,\" Journal of Spacecraft and Rockets."
+        },
+        {
+          "num": 7,
+          "text": "Starship Flight 12 status. Block 3 vehicle (Booster 19 with Raptor 3 engines, Ship 39), first flight from second pad at Starbase. FCC approval April-October 2026. 11 prior flight tests with 3 successful booster catches. See: NASASpaceFlight.com, Starship development tracker, March 2026."
+        },
+        {
+          "num": 8,
+          "text": "2025 launch statistics. 324 orbital launch attempts globally, China 92, Rocket Lab Electron 21 consecutive successes, Ariane 6 four flights. See: Space Launch Report, 2025 year-end summary. Rocket Lab Neutron targeting late 2026 first flight."
+        },
+        {
+          "num": 9,
+          "text": "DRACO cancellation. DARPA terminated the Demonstration Rocket for Agile Cislunar Operations program, June 2025. Cited decreasing launch costs and revised cost-benefit analysis. See: SpaceNews, \"DARPA says decreasing launch costs, new analysis led it to cancel DRACO nuclear propulsion project,\" June 2025. See also: Breaking Defense, \"DARPA's DRACO nuclear propulsion project ROARs no more,\" June 2025."
+        },
+        {
+          "num": 10,
+          "text": "NASA/DOE lunar fission surface power. Memorandum of understanding for 100 kWe reactor, target deployment 2030. See: NASA, \"NASA, Department of Energy to Develop Lunar Surface Reactor by 2030,\" https://www.nasa.gov/news-release/nasa-department-of-energy-to-develop-lunar-surface-reactor-by-2030/."
+        },
+        {
+          "num": 11,
+          "text": "Russia-China lunar reactor agreement signed May 2025, targeting 2033-2035 deployment as part of ILRS. See: Space.com, \"Russia and China announce plan to build shared nuclear reactor on the moon by 2035,\" 2025. Rolls-Royce lunar reactor stalled February 2026. See: Bloomberg, \"Rolls-Royce Moon Nuclear Reactor Plan Stalls,\" February 1, 2026."
+        },
+        {
+          "num": 12,
+          "text": "Vera C. Rubin Observatory. First light and initial scientific alerts, February 2026. 800,000 alerts in first night of operations. Full LSST survey: entire visible southern sky every three nights, ~20 TB/night, 10-year duration. See: Rubin Observatory, \"Ever-changing Universe Revealed in First Imagery From Vera C. Rubin Observatory,\" https://rubinobservatory.org/news/first-imagery-rubin."
+        },
+        {
+          "num": 13,
+          "text": "NASA NIAC program. Rebooted 2011 after earlier cancellation. 2025 Phase I: 15 awards at \\$175,000 each (\\$2.625M total). See: NASA, \"NASA Awards 2025 Innovative Technology Concept Studies,\" https://www.nasa.gov/news-release/nasa-awards-2025-innovative-technology-concept-studies/."
+        },
+        {
+          "num": 14,
+          "text": "Edwards, B.C., \"The Space Elevator: A Revolutionary Earth-to-Space Transportation System,\" NIAC Phase I (2000) and Phase II Final Report (2003). Available at: https://www.niac.usra.edu/files/studies/final_report/521Edwards.pdf."
+        },
+        {
+          "num": 15,
+          "text": "Birch, P., \"Orbital Ring Systems and Jacob's Ladders,\" Journal of the British Interplanetary Society, 35, 475-497, 1982. Meulenberg, A., orbital ring studies 2008-2011, NIAC-adjacent work on LEO ring concepts for transport and space solar power."
+        },
+        {
+          "num": 16,
+          "text": "Goddard, Bob. Mother Moon. 2016. First book in a series set at Armstrong Base lunar colony in 2087. Goddard has lectured on Moon colonies at the National University of Science and Technology in Moscow."
+        },
+        {
+          "num": 17,
+          "text": "Zubrin, R., The Case for Mars, Free Press, 1996 (updated editions). Mars Direct architecture using in-situ propellant production. Foundational text for Mars settlement engineering."
+        },
+        {
+          "num": 18,
+          "text": "Northrup, Edwin F. (writing as 'Akkad Pseudoman'). Zero to Eighty: Being My Lifetime Doings, Reflections, and Inventions, Also My Journey Around the Moon. Scientific Publishing Co., 1937. Princeton physics professor and inventor (over 100 patents). Novel includes detailed calculations for an electromagnetic launcher's coils, power, and trajectory. One of the earliest serious treatments of electromagnetic launch in fiction."
+        },
+        {
+          "num": 19,
+          "text": "Long, Ian. How to Develop the Moon. YouTube channel: Anthrofuturism (@anthrofuturism). Covers economics, engineering, and philosophy of lunar development. https://linktr.ee/ianlong."
+        },
+        {
+          "num": 20,
+          "text": "Cain, Fraser. Universe Today (https://www.universetoday.com), founded 1999. YouTube: @frasercain. Astronomy Cast podcast with Dr. Pamela Gay, over 1,500 episodes. One of the longest-running and most reliable independent space news sources."
+        },
+        {
+          "num": 21,
+          "text": "International Space Elevator Consortium (ISEC). 501(c)(3) nonprofit, NSS affiliate since 2013. Annual conferences at Seattle Museum of Flight. 2026 conference: virtual, September 12-13. See: https://www.isec.org/."
+        },
+        {
+          "num": 22,
+          "text": "Japan Space Elevator Association (JSEA). Runs annual SPEC (Space Elevator Challenge) competition. First international space elevator competition near Mt. Fuji. See: https://www.jsea.jp/."
+        },
+        {
+          "num": 23,
+          "text": "National Space Society (NSS). ISDC 2025: Orlando, FL, June 19-22, 2025. See: https://isdc.nss.org/."
+        },
+        {
+          "num": 24,
+          "text": "The Planetary Society. Founded 1980 by Carl Sagan, Bruce Murray, Louis Friedman. Online community grown to ~20,000 members. D.C. office opened for policy advocacy. See: https://www.planetary.org/."
+        },
+        {
+          "num": 25,
+          "text": "British Interplanetary Society (BIS). Founded 1933. Oldest space advocacy organization. Arthur C. Clarke: member at 16, chairman 1947-50 and 1953, proposed communications satellites in 1945 BIS memorandum. See: https://www.bis-space.com/."
+        },
+        {
+          "num": 26,
+          "text": "Mars Society. Founded by Robert Zubrin. Annual conferences in U.S. and Europe. https://www.marssociety.org/."
+        }
+      ]
+    }
+  ]
+}

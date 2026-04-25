@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}<article class="volume-detail track-{{ track }}">
+  <div class="breadcrumb"><a href="/series/">Series</a> / <a href="/series/{{ track }}/">{{ track_label }}</a> / <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a> / Vol {{ vol.number | roman }}</div>
+
+  <header class="volume-header">
+    <div class="volume-meta">
+      <span class="volume-number">Volume {{ vol.number | roman }}</span>
+      {% with status=vol.status %}{% include "includes/status-badge.html" %}{% endwith %}
+    </div>
+    <h1>{{ vol.title }}</h1>
+    <p class="series-line">{{ book.title }}, Vol {{ vol.number | roman }}</p>
+    <p class="series-line-small">Astronomy's Shocking Twist, {{ track_book_label }}</p>
+    {%- if vol.purchase_url %}
+    <p><a class="cta" href="{{ vol.purchase_url }}">Purchase</a></p>
+    {%- endif %}
+  </header>
+
+  {%- if vol_content %}
+  <div class="volume-content">{{ vol_content | safe }}</div>
+  {%- else %}
+  <div class="volume-content">
+    <p>Detailed content, table of contents, and sample excerpts will be posted here as the volume progresses.</p>
+    {%- if vol.chapters %}
+    <p>Current draft: approximately {{ vol.chapters }} chapters.</p>
+    {%- endif %}
+  </div>
+  {%- endif %}
+
+  <aside class="volume-quicklinks">
+    {%- if vol.has_references %}
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
+    {%- endif %}
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/errata/">Errata</a>
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/feedback/">Feedback</a>
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">Back to book</a>
+  </aside>
+</article>{% endblock %}
