@@ -1,7 +1,7 @@
 ---
 title: "About"
 slug: "about"
-date: 2026-04-24
+date: 2026-04-26
 author: "Paul G. de Jong"
 type: page
 status: publish
@@ -18,15 +18,7 @@ Volume I of the technical track, *The Orbital Ring: The Economic Case for Space 
 
 ## About me
 
-I am Paul G. de Jong. I have spent a career working at the intersection of physics, electronics, and software, and I have come at it from several angles.
-
-In the late 1980s I worked at Acuson as an electronics technician on medical ultrasound devices. Acuson was the company that turned ultrasound imaging from a specialist niche into the imaging modality you see in every hospital, and the work there was my first serious exposure to the discipline of building systems where every component has to work and the physics has to be understood at the level of the signal path. Medical imaging is a good teacher. If something is wrong, it tends to show up on the screen.
-
-In the 1990s I was a member of the Hydrogen Energy Association. Hydrogen was not fashionable at the time, and the organization was small and serious. The conversations were about fuel cells, storage, infrastructure, and what it would actually take to run an industrial economy on something other than hydrocarbons. The numbers we argued about then are the numbers the world is arguing about now, thirty years later.
-
-Also in the 1990s I worked on a project called *Making Math Fun*. I was thinking about teaching at the time. The project was about getting students past the wall that most curricula put in front of them, where math is presented as a sequence of rules to memorize rather than as the single most useful toolset for understanding the world. I did not end up becoming a teacher, but the work shaped how I write about technical material now. If a reader has to memorize a formula to follow an argument, the argument has not been explained properly.
-
-Across the years since then I have worked in software and audio, as an inventor, and as a serial entrepreneur. The common thread, across ultrasound, hydrogen, software, audio, and space infrastructure, is that I am interested in systems where the physics is real and the answer matters.
+The career arc has run through several fields. Electronics technician at Acuson medical ultrasound in the late 1980s. Hydrogen Energy Association member in the 1990s, when hydrogen was a fringe topic. A project called Making Math Fun in the same decade, when I was considering teaching. Software and audio since then, as inventor and serial entrepreneur. A home physics lab that has stayed busy throughout. The common thread, across ultrasound, hydrogen, software, audio, the home physics lab, and space infrastructure, is a habit of showing the work. These books are the long version of that habit.
 
 Much of the thinking that led to this book series was prompted by Isaac Arthur's YouTube channel, *Science & Futurism with Isaac Arthur*. If any of this material is new to you and the SFIA format is to your taste, start with his orbital-ring and megastructures episodes. They remain the best accessible introductions available.
 
