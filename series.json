@@ -6,6 +6,7 @@
       "short_title": "Orbital Ring, Mass Driver & Space Elevator Engineering",
       "slug": "orbital-rings",
       "status": "in_progress",
+      "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
       "description": "Mass transit to space: orbital ring, mass driver, and space elevator engineering.",
       "volumes": [
         {
@@ -16,7 +17,12 @@
           "chapters": 20,
           "has_references": true,
           "has_excerpt": true,
-          "purchase_url": ""
+          "purchase_url": "",
+          "isbns": {
+            "hardback": "979-8-9932868-3-9",
+            "paperback": "979-8-9932868-4-6",
+            "epub": "979-8-9932868-5-3"
+          }
         },
         {
           "number": 2,
@@ -105,8 +111,8 @@
     },
     {
       "id": "ast-f4",
-      "title": "The Challenge Begins",
-      "short_title": "The Challenge Begins",
+      "title": "The Catastrophe Begins",
+      "short_title": "The Catastrophe Begins",
       "slug": "challenge-begins",
       "status": "coming_soon",
       "description": "Arrival, conflict, and the work of building humanity's next home."

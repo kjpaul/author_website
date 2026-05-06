@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}<article class="chapter-excerpt">
+  <div class="breadcrumb">
+    <a href="/series/">Series</a><span class="sep">/</span>
+    <a href="/series/technical/">Technical</a><span class="sep">/</span>
+    <a href="/series/technical/orbital-rings/">Orbital Ring, Mass Driver, and Space Elevator Engineering</a><span class="sep">/</span>
+    <a href="/series/technical/orbital-rings/vol-1/">Volume I</a><span class="sep">/</span>
+    Chapter One
+  </div>
+
+  <header class="excerpt-header">
+    <div class="excerpt-eyebrow">Volume I &middot; Chapter 1</div>
+    <h1>{{ meta.title or title }}</h1>
+    <p class="excerpt-deck">An excerpt from <em>The Orbital Ring, Volume I: The Economic Case for Space Mass Transit</em>.</p>
+  </header>
+
+  <div class="excerpt-body">
+    {{ content | safe }}
+  </div>
+</article>{% endblock %}

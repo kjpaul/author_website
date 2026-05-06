@@ -250,6 +250,27 @@ def build_homepage():
     )
 
 
+def build_chapter_excerpts():
+    """Render any chapter-excerpt markdown files under content/books/.
+
+    Each file at content/books/<book>/<slug>.md is rendered to
+    public/books/<book>/<slug>/index.html using the chapter-excerpt template.
+    """
+    for md_path in sorted(glob.glob(os.path.join(CONTENT_DIR, "books", "*", "*.md"))):
+        meta, html = render_markdown_file(md_path)
+        rel = os.path.relpath(md_path, os.path.join(CONTENT_DIR, "books"))
+        rel_no_ext = os.path.splitext(rel)[0]
+        out_path = os.path.join(OUTPUT_DIR, "books", rel_no_ext, "index.html")
+        render_template(
+            "pages/chapter-excerpt.html",
+            out_path,
+            title=meta.get("title", "Chapter excerpt"),
+            description=meta.get("description", meta.get("title", "")),
+            content=html,
+            meta=meta,
+        )
+
+
 def build_errata_pages():
     render_template(
         "pages/errata.html",
@@ -464,13 +485,24 @@ def build_series():
 
 # --- File operations ---
 def clean_output():
+    """Remove the output directory contents.
+
+    On some filesystems (notably Windows shares mounted into a Linux
+    sandbox) individual files cannot be deleted. We do best-effort
+    cleanup and rely on subsequent writes to overwrite stale content.
+    """
     if not os.path.exists(OUTPUT_DIR):
         return
     for item in glob.glob(os.path.join(OUTPUT_DIR, "*")):
-        if os.path.isdir(item):
-            shutil.rmtree(item)
-        else:
-            os.remove(item)
+        try:
+            if os.path.isdir(item):
+                shutil.rmtree(item)
+            else:
+                os.remove(item)
+        except (PermissionError, OSError) as exc:
+            # Skip files we cannot delete; they will be overwritten by
+            # write_file on the next build pass.
+            print(f"  WARN: could not remove {item}: {exc}")
 
 
 def copy_tree(src, dst, label):
@@ -509,6 +541,7 @@ def build():
 
     build_blog_index(posts)
     build_series()
+    build_chapter_excerpts()
     build_errata_pages()
     build_404()
 

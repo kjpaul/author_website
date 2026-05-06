@@ -1,55 +1,68 @@
 {% extends "base.html" %}
-{% block content %}<article class="book-detail track-{{ track }}{% if not book.cover_image %} book-detail-no-cover{% endif %}">
-  <div class="breadcrumb"><a href="/series/">Series</a> / <a href="/series/{{ track }}/">{{ track_label }}</a> / {{ book.title }}</div>
+{% block main_class %}wide{% endblock %}
+{% block content %}<article class="book-detail track-{{ track }}">
+  <div class="breadcrumb">
+    <a href="/series/">Series</a><span class="sep">/</span>
+    <a href="/series/{{ track }}/">{{ track_label }}</a><span class="sep">/</span>
+    {{ book.title }}
+  </div>
 
   <header class="book-header">
-    {%- if book.cover_image %}
-    <div class="book-cover">
-      <img src="{{ book.cover_image }}" alt="{{ book.title }} cover">
+    <div class="book-cover-wrap">
+      {%- if book.id == 'ast-t1' %}
+      <a href="/series/{{ track }}/{{ book.slug }}/vol-1/">
+        <img class="book-cover" src="/images/covers/orbital-ring-vol-1-cover.png" alt="Cover of Volume I, the first book in {{ book.title }}">
+      </a>
+      {%- elif book.cover_image %}
+      <img class="book-cover" src="{{ book.cover_image }}" alt="{{ book.title }} cover">
+      {%- else %}
+      <div class="cover-placeholder">{{ book.id | upper }}</div>
+      {%- endif %}
     </div>
-    {%- endif %}
+
     <div class="book-info">
-      <div class="book-meta">
-        <span class="book-id">{{ book.id | upper }}</span>
-        {% with status=book.status %}{% include "includes/status-badge.html" %}{% endwith %}
+      <div class="book-meta-line">
+        <span>{{ book.id | upper }}</span>
+        <span class="sep">&middot;</span>
+        <span>Astronomy's Shocking Twist {{ track_book_label }}</span>
       </div>
       <h1>{{ book.title }}</h1>
       {%- if book.subtitle %}
       <p class="book-subtitle">{{ book.subtitle }}</p>
       {%- endif %}
-      <p class="series-line">Astronomy's Shocking Twist, {{ track_book_label }}</p>
       {%- if book.description %}
       <p class="book-tagline">{{ book.description }}</p>
+      {%- endif %}
+      <div style="margin: 0.6rem 0 1rem;">
+        {% with status=book.status %}{% include "includes/status-badge.html" %}{% endwith %}
+      </div>
+
+      {%- if book.volumes %}
+      <div class="volume-grid">
+        {% for vol in book.volumes -%}
+        {% include "includes/volume-card.html" %}
+        {% endfor %}
+      </div>
       {%- endif %}
     </div>
   </header>
 
-  {%- if book.volumes %}
-  <section class="volumes-section">
-    <h2>Volumes</h2>
-    <div class="volume-grid">
-      {% for vol in book.volumes -%}
-      {% include "includes/volume-card.html" %}
-      {% endfor %}
-    </div>
-  </section>
-  {%- endif %}
-
   {%- if book_content %}
   <div class="book-description">{{ book_content | safe }}</div>
   {%- elif book.status == "coming_soon" %}
-  <div class="book-description book-description-pending">
-    <p>More details about this book will be posted here as it develops.</p>
+  <div class="book-description">
+    <p>More details about this book will be posted here as it develops. The
+    book is part of the ten-volume <em>Astronomy's Shocking Twist</em>
+    series, written and engineered alongside the rest of the work.</p>
   </div>
   {%- endif %}
 
   <section class="book-links">
     <h2>More</h2>
-    <ul class="link-list">
+    <ul>
       <li><a href="/series/{{ track }}/{{ book.slug }}/errata/">Errata</a></li>
-      <li><a href="/series/{{ track }}/{{ book.slug }}/feedback/">Reader Feedback</a></li>
-      <li><a href="/code/">Related Code</a></li>
-      <li><a href="/blog/">Related Blog Posts</a></li>
+      <li><a href="/code/">Related code</a></li>
+      <li><a href="/blog/">Related blog posts</a></li>
     </ul>
   </section>
 </article>{% endblock %}

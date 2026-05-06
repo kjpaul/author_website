@@ -1,13 +1,17 @@
 {% extends "base.html" %}
-{% block content %}<h1>Blog</h1>
-<div class="card-grid">
-{% for post in posts %}<a href="/blog/{{ post.slug }}/" class="card" style="text-decoration:none;color:inherit">
-  <div class="meta">{{ post.date }}</div>
-  <h3>{{ post.title }}</h3>
-  {%- if post.categories %}
-  <div class="post-categories">{% for cat in post.categories %}<span>{{ cat }}</span>{% endfor %}</div>
-  {%- endif %}
-  <p>{{ post.excerpt | truncate_excerpt }}</p>
-</a>{% if not loop.last %}
-{% endif %}{% endfor %}
-</div>{% endblock %}
+{% block content %}<header class="post-header">
+  <h1>Blog</h1>
+  <p class="post-meta">Working notes on orbital ring engineering and the physics that runs through the books.</p>
+</header>
+<ul class="blog-list">
+{% for post in posts %}
+  <li>
+    <div class="blog-list-date">{{ post.date }}</div>
+    <h2><a href="/blog/{{ post.slug }}/">{{ post.title }}</a></h2>
+    {%- if post.categories %}
+    <div class="post-categories">{% for cat in post.categories %}<span>{{ cat }}</span>{% endfor %}</div>
+    {%- endif %}
+    <p class="excerpt">{{ post.excerpt | truncate_excerpt }}</p>
+  </li>
+{% endfor %}
+</ul>{% endblock %}

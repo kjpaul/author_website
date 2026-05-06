@@ -1,37 +1,133 @@
 {% extends "base.html" %}
+{% block main_class %}wide{% endblock %}
 {% block content %}<article class="volume-detail track-{{ track }}">
-  <div class="breadcrumb"><a href="/series/">Series</a> / <a href="/series/{{ track }}/">{{ track_label }}</a> / <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a> / Vol {{ vol.number | roman }}</div>
-
-  <header class="volume-header">
-    <div class="volume-meta">
-      <span class="volume-number">Volume {{ vol.number | roman }}</span>
-      {% with status=vol.status %}{% include "includes/status-badge.html" %}{% endwith %}
-    </div>
-    <h1>{{ vol.title }}</h1>
-    <p class="series-line">{{ book.title }}, Vol {{ vol.number | roman }}</p>
-    <p class="series-line-small">Astronomy's Shocking Twist, {{ track_book_label }}</p>
-    {%- if vol.purchase_url %}
-    <p><a class="cta" href="{{ vol.purchase_url }}">Purchase</a></p>
-    {%- endif %}
-  </header>
-
-  {%- if vol_content %}
-  <div class="volume-content">{{ vol_content | safe }}</div>
-  {%- else %}
-  <div class="volume-content">
-    <p>Detailed content, table of contents, and sample excerpts will be posted here as the volume progresses.</p>
-    {%- if vol.chapters %}
-    <p>Current draft: approximately {{ vol.chapters }} chapters.</p>
-    {%- endif %}
+  <div class="breadcrumb">
+    <a href="/series/">Series</a><span class="sep">/</span>
+    <a href="/series/{{ track }}/">{{ track_label }}</a><span class="sep">/</span>
+    <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a><span class="sep">/</span>
+    Vol {{ vol.number | roman }}
   </div>
+
+  <section class="home-launch">
+    <div class="cover-wrap">
+      {%- if book.id == 'ast-t1' and vol.number == 1 %}
+      <img class="book-cover" src="/images/covers/orbital-ring-vol-1-cover.png" alt="Cover of Volume I: The Orbital Ring, The Economic Case for Space Mass Transit, by Paul G. de Jong">
+      {%- else %}
+      <div class="cover-placeholder">VOL {{ vol.number | roman }}</div>
+      <div class="cover-caption"><span class="pill">In progress</span>Cover and ISBNs to come</div>
+      {%- endif %}
+    </div>
+
+    <div class="hero-body">
+      <div class="launch-meta">
+        <span class="vol-id">VOLUME {{ vol.number | roman }}</span>
+        {%- if vol.status == 'in_progress' %}
+        <span class="vol-status">In press</span>
+        {%- else %}
+        {% with status=vol.status %}{% include "includes/status-badge.html" %}{% endwith %}
+        {%- endif %}
+      </div>
+
+      <div class="launch-series-line">{{ book.title }} &middot; Volume {{ vol.number | roman }}</div>
+
+      {%- if book.id == 'ast-t1' and vol.number == 1 %}
+      <h1>The <em>Orbital Ring</em></h1>
+      <p class="launch-subtitle">{{ vol.title }}</p>
+
+      <p class="launch-hook">
+        Mass drivers and space elevators built on an orbital ring. This is
+        not science fiction. It is a choice.
+      </p>
+
+      <p class="launch-lede">
+        Volume I is a roller coaster ride through the history that gave us
+        the idea and the politics that makes and breaks it. What is at
+        stake, and what can we do to make a highway to space a realistic
+        option for our future? Volumes II and III explain the technology in
+        detail. This book is about origins, the politics, and the why.
+      </p>
+
+      <div class="launch-inside">
+        <h4>Inside Volume I</h4>
+        <ul>
+          <li>The Apollo legacy and why it still matters</li>
+          <li>Space politics: the good, the bad, and the ugly</li>
+          <li>Skyhooks, launch loops, space elevators, and more</li>
+          <li>An orbital ring that powers the entire planet</li>
+          <li>A future with billions living across the solar system</li>
+        </ul>
+      </div>
+
+      <form class="notify-form" data-notify-form aria-label="Notify me when this volume is available">
+        <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
+        <button class="btn btn-primary notify-form-submit" type="submit">
+          Notify me on release
+          <span class="arrow">&rarr;</span>
+        </button>
+        <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="launch-actions">
+        <a class="btn btn-ghost" href="/books/orbital-ring/chapter-one/">Read Chapter One</a>
+        {%- if vol.has_references %}
+        <a class="btn btn-ghost" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
+        {%- endif %}
+      </div>
+
+      {%- if vol.isbns %}
+      <div class="launch-isbns" aria-label="ISBN-13 numbers for Volume I">
+        {%- if vol.isbns.hardback %}
+        <div>
+          <span class="k">Hardback ISBN</span>
+          <span class="v">{{ vol.isbns.hardback }}</span>
+        </div>
+        {%- endif %}
+        {%- if vol.isbns.paperback %}
+        <div>
+          <span class="k">Paperback ISBN</span>
+          <span class="v">{{ vol.isbns.paperback }}</span>
+        </div>
+        {%- endif %}
+        {%- if vol.isbns.epub %}
+        <div>
+          <span class="k">ePub ISBN</span>
+          <span class="v">{{ vol.isbns.epub }}</span>
+        </div>
+        {%- endif %}
+      </div>
+      {%- endif %}
+      {%- else %}
+      <h1>{{ vol.title }}</h1>
+
+      {%- if vol_content %}
+      <div class="book-description">{{ vol_content | safe }}</div>
+      {%- else %}
+      <p class="launch-lede">
+        Detailed content, table of contents, and sample excerpts will be
+        posted here as Volume {{ vol.number | roman }} progresses.
+        {% if vol.chapters %}Current draft: approximately {{ vol.chapters }} chapters.{% endif %}
+      </p>
+      {%- endif %}
+
+      <div class="launch-actions">
+        {%- if vol.has_references %}
+        <a class="btn btn-primary" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
+        {%- endif %}
+        <a class="btn btn-ghost" href="/series/{{ track }}/{{ book.slug }}/">Back to book</a>
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+
+  {%- if book.id == 'ast-t1' and vol.number == 1 and vol_content %}
+  <div class="book-description" style="max-width: 720px; margin: 2.4rem auto 0;">{{ vol_content | safe }}</div>
   {%- endif %}
 
-  <aside class="volume-quicklinks">
+  <aside class="refs-quicklinks" style="max-width: 720px; margin: 3rem auto 0;">
     {%- if vol.has_references %}
-    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References for Vol {{ vol.number | roman }}</a>
     {%- endif %}
-    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/errata/">Errata</a>
-    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/feedback/">Feedback</a>
-    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">Back to book</a>
+    <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">All volumes</a>
+    <a class="quicklink" href="/series/">Series overview</a>
   </aside>
 </article>{% endblock %}

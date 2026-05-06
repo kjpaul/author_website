@@ -93,3 +93,24 @@ content/blog/drafts/
 # Local backups of generated data
 *.bak
 data/references/*.bak
+
+# Local archives (renamed-aside copies)
+*.archived
+
+# Project housekeeping and Claude-specific files (kept locally)
+CLAUDE.md
+TASKS.md
+website_design_defects_v02.md
+
+# Manuscript and source materials (kept locally, not in public repo)
+Vol_I_Complete_Manuscript.md
+
+# Editorial / marketing drafts (kept locally)
+Website_Content_Brief_v01.md
+website_content_vol_1_hub.md
+back_cover_author_bio_v01.md
+cover_copy_v04.md
+cover_description_v06.md
+
+# Stray screenshots
+ChatGPT_Spine*.png

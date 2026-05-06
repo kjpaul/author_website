@@ -37,4 +37,52 @@
       }
     });
   });
+
+  document.querySelectorAll('[data-notify-form]').forEach((form) => {
+    const status = form.querySelector('[data-notify-status]');
+    const submit = form.querySelector('button[type="submit"]');
+    const input = form.querySelector('input[type="email"]');
+    if (!submit || !input) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email) return;
+      submit.disabled = true;
+      if (status) {
+        status.textContent = 'Submitting…';
+        status.className = 'notify-form-status is-pending';
+      }
+      try {
+        const r = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, groups: ['vol1'] }),
+        });
+        if (r.ok) {
+          if (status) {
+            status.textContent = 'Thanks — check your email to confirm.';
+            status.className = 'notify-form-status is-success';
+          }
+          form.reset();
+        } else {
+          const data = await r.json().catch(() => ({}));
+          if (status) {
+            status.textContent =
+              data.error === 'invalid_email'
+                ? 'That email address looks invalid.'
+                : 'Something went wrong. Please try again.';
+            status.className = 'notify-form-status is-error';
+          }
+        }
+      } catch (_err) {
+        if (status) {
+          status.textContent = 'Network error. Please try again.';
+          status.className = 'notify-form-status is-error';
+        }
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  });
 })();

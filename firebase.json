@@ -11,8 +11,7 @@
     "redirects": [
       { "source": "/book", "destination": "/series/technical/orbital-rings/", "type": 301 },
       { "source": "/books", "destination": "/series/", "type": 301 },
-      { "source": "/books/orbital-ring", "destination": "/series/technical/orbital-rings/", "type": 301 },
-      { "source": "/books/orbital-ring/**", "destination": "/series/technical/orbital-rings/", "type": 301 }
+      { "source": "/books/orbital-ring", "destination": "/series/technical/orbital-rings/", "type": 301 }
     ],
     "rewrites": [
       { "source": "/api/subscribe", "function": "subscribe" }

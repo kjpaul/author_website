@@ -1,15 +1,123 @@
 {% extends "base.html" %}
-{% block content %}<section class="home-hero">
-  <p class="home-eyebrow">A 10-book series by Paul G. de Jong</p>
-  <h1>Astronomy's Shocking Twist</h1>
-  <p class="home-lede">
-    Humanity's path from first orbital infrastructure to interstellar travel — five technical
-    books on the engineering, and five hard science fiction novels that live inside the physics.
-    Known laws. Real materials. Normal lifespans. No shortcuts.
-  </p>
-  <div class="home-cta-row">
-    <a href="/series/" class="cta">Explore the Series</a>
-    <a href="/series/technical/orbital-rings/" class="cta cta-ghost">Start with Book One</a>
+{% block main_class %}wide home{% endblock %}
+{% block content %}<section class="home-launch">
+  <div class="cover-wrap">
+    <a href="/series/technical/orbital-rings/vol-1/">
+      <img class="book-cover" src="/images/covers/orbital-ring-vol-1-cover.png" alt="Cover of Volume I: The Orbital Ring, The Economic Case for Space Mass Transit, by Paul G. de Jong">
+    </a>
+  </div>
+
+  <div class="hero-body">
+    <div class="launch-meta">
+      <span class="vol-id">VOLUME I</span>
+      <span class="vol-status">In press</span>
+    </div>
+
+    <div class="launch-series-line">Orbital Ring, Mass Driver, and Space Elevator Engineering &middot; Volume I</div>
+
+    <h1>The <em>Orbital Ring</em></h1>
+    <p class="launch-subtitle">The Economic Case for Space Mass Transit</p>
+
+    <p class="launch-hook">
+      Mass drivers and space elevators built on an orbital ring. This is not
+      science fiction. It is a choice.
+    </p>
+
+    <p class="launch-lede">
+      Volume I is a roller coaster ride through the history that gave us the
+      idea and the politics that makes and breaks it. What is at stake, and
+      what can we do to make a highway to space a realistic option for our
+      future? Volumes II and III explain the technology in detail. This book
+      is about origins, the politics, and the why.
+    </p>
+
+    <div class="launch-inside">
+      <h4>Inside Volume I</h4>
+      <ul>
+        <li>The Apollo legacy and why it still matters</li>
+        <li>Space politics: the good, the bad, and the ugly</li>
+        <li>Skyhooks, launch loops, space elevators, and more</li>
+        <li>An orbital ring that powers the entire planet</li>
+        <li>A future with billions living across the solar system</li>
+      </ul>
+    </div>
+
+    <form class="notify-form" data-notify-form aria-label="Notify me when Volume I is available">
+      <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
+      <button class="btn btn-primary notify-form-submit" type="submit">
+        Notify me on release
+        <span class="arrow">&rarr;</span>
+      </button>
+      <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="launch-actions">
+      <a class="btn btn-ghost" href="/books/orbital-ring/chapter-one/">Read Chapter One</a>
+      <a class="btn btn-ghost" href="/series/technical/orbital-rings/vol-1/">Volume I details</a>
+    </div>
+
+    <div class="launch-isbns" aria-label="ISBN-13 numbers for Volume I">
+      <div>
+        <span class="k">Hardback ISBN</span>
+        <span class="v">979-8-9932868-3-9</span>
+      </div>
+      <div>
+        <span class="k">Paperback ISBN</span>
+        <span class="v">979-8-9932868-4-6</span>
+      </div>
+      <div>
+        <span class="k">ePub ISBN</span>
+        <span class="v">979-8-9932868-5-3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-shelf">
+  <div class="section-head">
+    <div class="section-eyebrow">Astronomy's Shocking Twist &middot; A 10-book series</div>
+    <h2>The whole shelf, end to end.</h2>
+    <p class="lede">
+      Five technical books on the engineering. Five hard science fiction
+      novels that live inside the same physics. Known laws. Real materials.
+      Normal lifespans. No shortcuts.
+    </p>
+  </div>
+
+  <div class="spine-shelf" role="list" aria-label="The ten-book series">
+    {%- for book in series.technical -%}
+      {%- if book.volumes -%}
+        {%- for vol in book.volumes -%}
+        <a class="spine{% if book.id == 'ast-t1' and vol.number == 1 %}{% else %} spine-tbd{% endif %}" href="/series/technical/{{ book.slug }}/{{ vol.slug }}/" role="listitem" title="{{ book.short_title or book.title }} — Vol {{ vol.number | roman }}: {{ vol.title }}">
+          <span class="spine-vol">{{ vol.number | roman }}</span>
+          <span class="spine-title">{% if book.id == 'ast-t1' %}The Orbital Ring{% else %}{{ book.short_title or book.title }}{% endif %}</span>
+          <span class="spine-globe" aria-hidden="true"></span>
+          <span class="spine-subtitle">{{ vol.title }}</span>
+          <span class="spine-mono">PGdJ</span>
+        </a>
+        {%- endfor -%}
+      {%- else -%}
+        <a class="spine spine-tbd" href="/series/technical/{{ book.slug }}/" role="listitem" title="{{ book.short_title or book.title }}">
+          <span class="spine-vol">T{{ loop.index }}</span>
+          <span class="spine-title">{{ book.short_title or book.title }}</span>
+          <span class="spine-globe" aria-hidden="true"></span>
+          <span class="spine-subtitle">Planned</span>
+          <span class="spine-mono">PGdJ</span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for book in series.fiction -%}
+      <a class="spine spine-fiction spine-tbd" href="/series/fiction/{{ book.slug }}/" role="listitem" title="{{ book.short_title or book.title }}">
+        <span class="spine-vol">F{{ loop.index }}</span>
+        <span class="spine-title">{{ book.short_title or book.title }}</span>
+        <span class="spine-globe" aria-hidden="true"></span>
+        <span class="spine-subtitle">Planned</span>
+        <span class="spine-mono">PGdJ</span>
+      </a>
+    {%- endfor -%}
+  </div>
+  <div class="section-footer">
+    <a href="/series/">Series overview &rarr;</a>
   </div>
 </section>
 
@@ -18,8 +126,9 @@
     <div class="track-card-label">Technical Books</div>
     <h2 class="track-card-title">Five books on the engineering.</h2>
     <p class="track-card-desc">
-      Orbital rings, mass drivers, space elevators, propulsion, habitats, generational ships.
-      Rigorous but accessible — math kept as straightforward as possible.
+      Orbital rings, mass drivers, space elevators, propulsion, habitats,
+      generational ships. Rigorous but accessible. The math is kept as
+      straightforward as the physics allows.
     </p>
     <span class="track-card-cta">See the technical track &rarr;</span>
   </a>
@@ -27,38 +136,21 @@
     <div class="track-card-label">Science Fiction</div>
     <h2 class="track-card-title">Five novels, eight hundred years.</h2>
     <p class="track-card-desc">
-      The human story of building space infrastructure, constrained by the same physics as
-      the technical books. Propulsion limited by power. Materials limited by manufacturing.
+      The human story of building space infrastructure, constrained by the
+      same physics as the technical books. Propulsion is limited by
+      available power. Materials are limited by what can be manufactured.
     </p>
     <span class="track-card-cta">See the fiction track &rarr;</span>
   </a>
 </section>
 
-<section class="home-featured">
-  <div class="section-head">
-    <div class="section-eyebrow">Featured &middot; AST-T1</div>
-    <h2>Engineering Orbital Rings, Mass Drivers and Space Elevators</h2>
-    <p class="section-lede">
-      A three-volume deep dive into mass transit to space: the economic case, the launch
-      technologies from first principles, and a complete design review.
-    </p>
-  </div>
-  <div class="volume-grid">
-    {% for vol in series.technical[0].volumes -%}
-    {% with book=series.technical[0], track="technical" %}{% include "includes/volume-card.html" %}{% endwith %}
-    {% endfor %}
-  </div>
-  <div class="section-footer">
-    <a href="/series/technical/orbital-rings/">Full book page &rarr;</a>
-  </div>
-</section>
-
 <section class="home-blog-teaser">
   <div class="section-head">
-    <h2>From the Blog</h2>
+    <div class="section-eyebrow">Working notes</div>
+    <h2>From the blog</h2>
     <p class="section-lede">
-      Working notes on orbital ring engineering, space physics, superconductors, and the
-      engineering that shows up in the books.
+      Notes on orbital ring engineering, space physics, superconductors, and
+      the engineering that shows up in the books.
     </p>
   </div>
   <p><a href="/blog/">Read all posts &rarr;</a></p>
@@ -66,10 +158,11 @@
 
 <section class="home-code-teaser">
   <div class="section-head">
-    <h2>Open-Source Companion Code</h2>
+    <div class="section-eyebrow">Open source</div>
+    <h2>Companion code</h2>
     <p class="section-lede">
-      A Python project for optimizing space-based applications — orbital rings, mass driver
-      systems, and more.
+      A Python project for optimizing space-based applications, including
+      orbital rings, mass driver systems, and J2 perturbation analysis.
     </p>
   </div>
   <p><a href="https://github.com/kjpaul/orbitalring">View on GitHub &rarr;</a></p>

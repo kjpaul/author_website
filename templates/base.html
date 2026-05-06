@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="/css/style.css">
   {%- block head_extra %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
   {% include "includes/nav.html" %}
-  <main>
+  <main class="{% block main_class %}{% endblock %}">
     {% block content %}{{ content | safe }}{% endblock %}
   </main>
   {% include "includes/footer.html" %}
