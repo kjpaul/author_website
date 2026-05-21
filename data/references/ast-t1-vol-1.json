@@ -3,7 +3,7 @@
   "book_title": "Engineering Orbital Rings, Mass Drivers and Space Elevators",
   "volume": 1,
   "volume_title": "The Economic Case for Space Mass Transit",
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-05-21",
   "chapters": [
     {
       "number": "1",
@@ -35,119 +35,119 @@
         },
         {
           "num": 7,
-          "text": "Fa, W. and Jin, Y., \"Quantitative estimation of helium-3 spatial distribution in the lunar regolith layer,\" *Icarus*, 190(1), 15-23, 2007. See also: Cocks, F.H., \"3He availability for future nuclear fusion reactors,\" AIAA ASCEND 2021."
-        },
-        {
-          "num": 8,
-          "text": "ESA/DLR/FU Berlin, Mars Express HRSC imagery of Korolev crater. See also: radar-based volume estimates from MARSIS and SHARAD instruments, with range 1,400-3,500 km³."
-        },
-        {
-          "num": 9,
-          "text": "Plaut, J.J., et al., MARSIS subsurface sounding of the south polar layered deposits, *Science*, 316(5821), 92-95, 2007. North polar cap volume: Smith, D.E., et al., *Science*, 284(5419), 1495-1503, 1999."
-        },
-        {
-          "num": 10,
-          "text": "NASA, \"Mars Fact Sheet,\" NASA Space Science Data Coordinated Archive, https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html."
-        },
-        {
-          "num": 11,
-          "text": "Junaedi, C., et al., \"Compact and Lightweight Sabatier Reactor System for Carbon Dioxide Reduction,\" AIAA 2011-5033, 2011."
-        },
-        {
-          "num": 12,
-          "text": "Ehlmann, B.L. and Edwards, C.S., \"Mineralogy of the Martian surface,\" *Annual Review of Earth and Planetary Sciences*, 42, 291-315, 2014."
-        },
-        {
-          "num": 13,
-          "text": "NASA JPL, \"Perseverance Discovers Potential Biosignature,\" 2025. See also: Tice, M.M., et al., vivianite and greigite findings in Jezero Crater mudstones, 2025."
-        },
-        {
-          "num": 14,
-          "text": "NASA JPL, \"Curiosity Discovers Elemental Sulfur on Mars,\" 2024."
-        },
-        {
-          "num": 15,
-          "text": "Long, X., et al., \"Evidence for ancient shoreline on Mars from Zhurong rover observations,\" *Nature*, 2022."
-        },
-        {
-          "num": 16,
-          "text": "Kim, M.Y., et al., \"Comparison of Martian surface ionizing radiation measurements from MSL-RAD with Badhwar-O'Neill 2011/HZETRN model calculations,\" *Journal of Geophysical Research: Planets*, 119(6), 1311-1321, 2014."
-        },
-        {
-          "num": 17,
-          "text": "Connerney, J.E.P., et al., \"Mars crustal magnetism,\" *Space Science Reviews*, 152(1-4), 223-249, 2010."
-        },
-        {
-          "num": 18,
-          "text": "Battalio, M. and Wang, H., \"Martian dust storm climatology,\" *Icarus*, 2024."
-        },
-        {
-          "num": 19,
-          "text": "NASA CNEOS, \"Discovery Statistics,\" https://cneos.jpl.nasa.gov/stats/totals.html. Accessed 2025."
-        },
-        {
-          "num": 20,
-          "text": "The Planetary Society, \"What Are Asteroids Made Of?\" https://www.planetary.org/articles/what-are-asteroids-made-of."
-        },
-        {
-          "num": 21,
-          "text": "Lauretta, D.S., et al., \"Asteroid (101955) Bennu in the laboratory: Properties of the sample collected by OSIRIS-REx,\" *Meteoritics & Planetary Science*, 2024."
-        },
-        {
-          "num": 22,
-          "text": "Yokoyama, T., et al., \"Samples returned from the asteroid Ryugu are similar to Ivuna-type carbonaceous meteorites,\" *Science*, 379(6634), 2023. See also: JAXA initial analysis results, 2022."
-        },
-        {
-          "num": 23,
-          "text": "NASA CNEOS, \"Near-Earth Object Human Space Flight Accessible Targets Study (NHATS),\" https://cneos.jpl.nasa.gov/nhats/."
-        },
-        {
-          "num": 24,
-          "text": "Elkins-Tanton, L.T., et al., \"Observations, meteorites, and models: A preflight assessment of the composition and formation of (16) Psyche,\" *Journal of Geophysical Research: Planets*, 125(3), 2020. Updated post-launch assessment: Elkins-Tanton et al., *AGU Advances*, 2024."
-        },
-        {
-          "num": 25,
-          "text": "Becker, T.M., et al., \"Juno Microwave Radiometer constraints on Europa's ice shell,\" *Nature Astronomy*, 2025."
-        },
-        {
-          "num": 26,
-          "text": "Postberg, F., et al., \"Sodium salts in E-ring ice grains from an ocean below the surface of Enceladus,\" *Nature*, 459, 1098-1101, 2009. Ocean structure: Thomas, P.C., et al., \"Enceladus's measured physical libration requires a global subsurface ocean,\" *Icarus*, 264, 37-47, 2016."
-        },
-        {
-          "num": 27,
-          "text": "Postberg, F., et al., \"Detection of phosphates originating from Enceladus's ocean,\" *Nature*, 618, 489-493, 2023."
-        },
-        {
-          "num": 28,
-          "text": "Saur, J., et al., \"The search for a subsurface ocean in Ganymede with Hubble Space Telescope observations of its auroral ovals,\" *Journal of Geophysical Research: Space Physics*, 120(3), 1715-1737, 2015."
-        },
-        {
-          "num": 29,
-          "text": "Cochrane, C.J., et al., \"Callisto is very likely an ocean world,\" *AGU Advances*, 2025."
-        },
-        {
-          "num": 30,
-          "text": "Barnes, J.W., et al., \"Science Goals and Objectives for the Dragonfly Titan Rotorcraft Relocatable Lander,\" *The Planetary Science Journal*, 2(4), 130, 2021."
-        },
-        {
-          "num": 31,
           "text": "Palaszewski, B., \"Powdered Aluminum and Oxygen Rocket Propellants: Subscale Combustion Experiments,\" NASA Technical Memorandum 106406 (AIAA-94-3252), 1994. See also: Wickman, J.H., \"Spacecraft combustion of metal/oxygen propellants,\" AIAA 89-2843, 1989. The 250-280 s range represents theoretical vacuum Isp for aluminum-oxygen bipropellant systems. Palaszewski's work specifically tests pneumatic injection of Al/O₂ for lunar ISRU applications, and Wickman's paper calculates the theoretical vacuum Isp ceiling of approximately 280 s for Al/O₂."
         },
         {
-          "num": 32,
+          "num": 8,
+          "text": "Fa, W. and Jin, Y., \"Quantitative estimation of helium-3 spatial distribution in the lunar regolith layer,\" *Icarus*, 190(1), 15-23, 2007. See also: Cocks, F.H., \"3He availability for future nuclear fusion reactors,\" AIAA ASCEND 2021."
+        },
+        {
+          "num": 9,
+          "text": "ESA/DLR/FU Berlin, Mars Express HRSC imagery of Korolev crater. See also: radar-based volume estimates from MARSIS and SHARAD instruments, with range 1,400-3,500 km³."
+        },
+        {
+          "num": 10,
+          "text": "Plaut, J.J., et al., MARSIS subsurface sounding of the south polar layered deposits, *Science*, 316(5821), 92-95, 2007. North polar cap volume: Smith, D.E., et al., *Science*, 284(5419), 1495-1503, 1999."
+        },
+        {
+          "num": 11,
+          "text": "NASA, \"Mars Fact Sheet,\" NASA Space Science Data Coordinated Archive, https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html."
+        },
+        {
+          "num": 12,
+          "text": "Junaedi, C., et al., \"Compact and Lightweight Sabatier Reactor System for Carbon Dioxide Reduction,\" AIAA 2011-5033, 2011."
+        },
+        {
+          "num": 13,
+          "text": "Ehlmann, B.L. and Edwards, C.S., \"Mineralogy of the Martian surface,\" *Annual Review of Earth and Planetary Sciences*, 42, 291-315, 2014."
+        },
+        {
+          "num": 14,
+          "text": "NASA JPL, \"Perseverance Discovers Potential Biosignature,\" 2025. See also: Tice, M.M., et al., vivianite and greigite findings in Jezero Crater mudstones, 2025."
+        },
+        {
+          "num": 15,
+          "text": "NASA JPL, \"Curiosity Discovers Elemental Sulfur on Mars,\" 2024."
+        },
+        {
+          "num": 16,
+          "text": "Long, X., et al., \"Evidence for ancient shoreline on Mars from Zhurong rover observations,\" *Nature*, 2022."
+        },
+        {
+          "num": 17,
+          "text": "Kim, M.Y., et al., \"Comparison of Martian surface ionizing radiation measurements from MSL-RAD with Badhwar-O'Neill 2011/HZETRN model calculations,\" *Journal of Geophysical Research: Planets*, 119(6), 1311-1321, 2014."
+        },
+        {
+          "num": 18,
+          "text": "Connerney, J.E.P., et al., \"Mars crustal magnetism,\" *Space Science Reviews*, 152(1-4), 223-249, 2010."
+        },
+        {
+          "num": 19,
+          "text": "Battalio, M. and Wang, H., \"Martian dust storm climatology,\" *Icarus*, 2024."
+        },
+        {
+          "num": 20,
           "text": "NASA, \"Venus Fact Sheet,\" NASA Space Science Data Coordinated Archive, https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html. Atmospheric conditions at 50 km altitude derived from Venus International Reference Atmosphere (VIRA) profiles."
         },
         {
-          "num": 33,
+          "num": 21,
           "text": "Landis, G.A., \"Colonization of Venus,\" *AIP Conference Proceedings*, 654, 1193-1200, 2003. See also: Landis, G.A., \"Exploring Venus by Solar Airplane,\" NASA Technical Memorandum, NASA/TM-2001-210839, 2001."
         },
         {
-          "num": 34,
+          "num": 22,
           "text": "Arney, D.C. and Jones, C.A., \"High Altitude Venus Operational Concept (HAVOC): An Exploration Strategy for Venus,\" AIAA SPACE 2015 Conference and Exposition, AIAA 2015-4612, 2015. See also: Jones, C.A., et al., \"Settling Venus: A City in the Clouds?\" AIAA ASCEND 2020."
         },
         {
-          "num": 35,
+          "num": 23,
           "text": "Venus atmospheric nitrogen mass calculated from NASA Venus Fact Sheet data: 3.5% of 4.8 × 10²⁰ kg total atmospheric mass = ~1.7 × 10¹⁹ kg N₂. Earth atmospheric nitrogen: 78% of 5.15 × 10¹⁸ kg = ~4.0 × 10¹⁸ kg N₂. Ratio ≈ 4.2×. See also: Lammer, H., et al., \"Atmospheric nitrogen evolution on Earth and Venus,\" *Earth and Planetary Science Letters*, 450, 49-56, 2016."
+        },
+        {
+          "num": 24,
+          "text": "NASA CNEOS, \"Discovery Statistics,\" https://cneos.jpl.nasa.gov/stats/totals.html. Accessed 2025."
+        },
+        {
+          "num": 25,
+          "text": "The Planetary Society, \"What Are Asteroids Made Of?\" https://www.planetary.org/articles/what-are-asteroids-made-of."
+        },
+        {
+          "num": 26,
+          "text": "Lauretta, D.S., et al., \"Asteroid (101955) Bennu in the laboratory: Properties of the sample collected by OSIRIS-REx,\" *Meteoritics & Planetary Science*, 2024."
+        },
+        {
+          "num": 27,
+          "text": "Yokoyama, T., et al., \"Samples returned from the asteroid Ryugu are similar to Ivuna-type carbonaceous meteorites,\" *Science*, 379(6634), 2023. See also: JAXA initial analysis results, 2022."
+        },
+        {
+          "num": 28,
+          "text": "NASA CNEOS, \"Near-Earth Object Human Space Flight Accessible Targets Study (NHATS),\" https://cneos.jpl.nasa.gov/nhats/."
+        },
+        {
+          "num": 29,
+          "text": "Elkins-Tanton, L.T., et al., \"Observations, meteorites, and models: A preflight assessment of the composition and formation of (16) Psyche,\" *Journal of Geophysical Research: Planets*, 125(3), 2020. Updated post-launch assessment: Elkins-Tanton et al., *AGU Advances*, 2024."
+        },
+        {
+          "num": 30,
+          "text": "Postberg, F., et al., \"Detection of phosphates originating from Enceladus's ocean,\" *Nature*, 618, 489-493, 2023."
+        },
+        {
+          "num": 31,
+          "text": "Becker, T.M., et al., \"Juno Microwave Radiometer constraints on Europa's ice shell,\" *Nature Astronomy*, 2025."
+        },
+        {
+          "num": 32,
+          "text": "Postberg, F., et al., \"Sodium salts in E-ring ice grains from an ocean below the surface of Enceladus,\" *Nature*, 459, 1098-1101, 2009. Ocean structure: Thomas, P.C., et al., \"Enceladus's measured physical libration requires a global subsurface ocean,\" *Icarus*, 264, 37-47, 2016."
+        },
+        {
+          "num": 33,
+          "text": "Saur, J., et al., \"The search for a subsurface ocean in Ganymede with Hubble Space Telescope observations of its auroral ovals,\" *Journal of Geophysical Research: Space Physics*, 120(3), 1715-1737, 2015."
+        },
+        {
+          "num": 34,
+          "text": "Cochrane, C.J., et al., \"Callisto is very likely an ocean world,\" *AGU Advances*, 2025."
+        },
+        {
+          "num": 35,
+          "text": "Barnes, J.W., et al., \"Science Goals and Objectives for the Dragonfly Titan Rotorcraft Relocatable Lander,\" *The Planetary Science Journal*, 2(4), 130, 2021."
         }
       ]
     },
@@ -185,111 +185,111 @@
         },
         {
           "num": 8,
-          "text": "Verne, J. From the Earth to the Moon, 1865."
-        },
-        {
-          "num": 9,
-          "text": "Tsiolkovsky, K. E. Exploration of Outer Space by Means of Rocket Devices, 1903."
-        },
-        {
-          "num": 10,
-          "text": "Goddard, R. H. A Method of Reaching Extreme Altitudes. Smithsonian Miscellaneous Collections, 1919."
-        },
-        {
-          "num": 11,
-          "text": "Oberth, H. Die Rakete zu den Planetenräumen (The Rocket into Interplanetary Space), 1923."
-        },
-        {
-          "num": 12,
-          "text": "Clarke, A. C. Extra-Terrestrial Relays. Journal of Wireless Electronics, October 1945."
-        },
-        {
-          "num": 13,
-          "text": "Clarke, A. C. The Fountains of Paradise, 1979."
-        },
-        {
-          "num": 14,
-          "text": "O'Neill, G. K. The High Frontier: Human Colonies in Space, 1976."
-        },
-        {
-          "num": 15,
-          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders. Journal of the British Interplanetary Society, Vol. 35, pp. 475-497, 1982."
-        },
-        {
-          "num": 16,
-          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders (Part 2). Journal of the British Interplanetary Society, Vol. 36, pp. 115-128, 1982."
-        },
-        {
-          "num": 17,
-          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders (Part 3). Journal of the British Interplanetary Society, Vol. 36, pp. 231-238, 1983."
-        },
-        {
-          "num": 18,
-          "text": "Lofstrom, K. A. Launch Loop: A Low-Cost Earth-to-Orbit Transportation System. AIAA Paper 85-4054, 1985."
-        },
-        {
-          "num": 19,
-          "text": "Robinson, K. S. Red. Bantam Books, 1992."
-        },
-        {
-          "num": 20,
-          "text": "Sagan, C. Cosmos: A Journey Through Space and Time. Random House, 1980."
-        },
-        {
-          "num": 21,
-          "text": "Sagan, C. Pale Blue Dot: A Vision of the Human Future in Space. Random House, 1994."
-        },
-        {
-          "num": 22,
-          "text": "NASA Exoplanet Archive. Accessed March 2026. https://exoplanetarchive.ipac.caltech.edu/"
-        },
-        {
-          "num": 23,
-          "text": "Borucki, W. J. Kepler Mission: Development and Overview. Reports on Progress in Physics, Vol. 79, No. 3, 036901, 2016."
-        },
-        {
-          "num": 24,
-          "text": "Abbott, B. P., et al. Observation of Gravitational Waves from a Binary Black Hole Merger. Physical Review Letters, Vol. 116, No. 6, 061102, 2016."
-        },
-        {
-          "num": 25,
-          "text": "Northrup, E. F. (as Akkad Pseudoman). Zero to Eighty: Being My Lifetime Doings, Reflections, and Inventions; Also My Journey Around the Moon. The Scientific Publishing Company, Princeton, NJ, 1937."
-        },
-        {
-          "num": 26,
-          "text": "Arthur, Isaac. \"Beyond Rockets: 100 Years of Rocketry and What Comes Next.\" Science & Futurism with Isaac Arthur (SFIA), YouTube, March 15, 2026. https://www.youtube.com/watch?v=kJp6DHhfkKw. Covers space elevators, skyhooks, orbital rings, mass drivers and coilguns, launch loops, and hybrid launch systems."
-        },
-        {
-          "num": 27,
           "text": "Needham, J., \"Science and Civilisation in China,\" Vol. 5, Part 7: Military Technology; The Gunpowder Epic, Cambridge University Press, 1986. See also: Andrade, T., \"The Gunpowder Age: China, Military Innovation, and the Rise of the West in World History,\" Princeton University Press, 2016. Fire arrow demonstrations to the Song court documented as early as 970 AD."
         },
         {
-          "num": 28,
+          "num": 9,
+          "text": "Verne, J. From the Earth to the Moon, 1865."
+        },
+        {
+          "num": 10,
+          "text": "Tsiolkovsky, K. E. Exploration of Outer Space by Means of Rocket Devices, 1903."
+        },
+        {
+          "num": 11,
+          "text": "Goddard, R. H. A Method of Reaching Extreme Altitudes. Smithsonian Miscellaneous Collections, 1919."
+        },
+        {
+          "num": 12,
+          "text": "Oberth, H. Die Rakete zu den Planetenräumen (The Rocket into Interplanetary Space), 1923."
+        },
+        {
+          "num": 13,
           "text": "Von Braun, W., \"The Mars Project\" (technical appendix), University of Illinois Press, 1953. The accompanying science fiction novel, \"Project Mars: A Technical Tale,\" was written circa 1948 but not published until 2006 by Apogee Books. The novel describes a Martian government led by an elected official titled \"Elon.\""
         },
         {
-          "num": 29,
+          "num": 14,
+          "text": "Northrup, E. F. (as Akkad Pseudoman). Zero to Eighty: Being My Lifetime Doings, Reflections, and Inventions; Also My Journey Around the Moon. The Scientific Publishing Company, Princeton, NJ, 1937."
+        },
+        {
+          "num": 15,
           "text": "Northrup, E. F. (as Akkad Pseudoman). Zero to Eighty (Annotated). Ron Miller Science Fiction Classics Collection. Originally published 1937 by The Scientific Publishing Company, Princeton, NJ. Reprint available as annotated eBook and through other reprint sources."
         },
         {
-          "num": 30,
+          "num": 16,
+          "text": "Arthur, Isaac. \"Beyond Rockets: 100 Years of Rocketry and What Comes Next.\" Science & Futurism with Isaac Arthur (SFIA), YouTube, March 15, 2026. https://www.youtube.com/watch?v=kJp6DHhfkKw. Covers space elevators, skyhooks, orbital rings, mass drivers and coilguns, launch loops, and hybrid launch systems."
+        },
+        {
+          "num": 17,
+          "text": "Clarke, A. C. Extra-Terrestrial Relays. Journal of Wireless Electronics, October 1945."
+        },
+        {
+          "num": 18,
+          "text": "Clarke, A. C. The Fountains of Paradise, 1979."
+        },
+        {
+          "num": 19,
+          "text": "O'Neill, G. K. The High Frontier: Human Colonies in Space, 1976."
+        },
+        {
+          "num": 20,
+          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders. Journal of the British Interplanetary Society, Vol. 35, pp. 475-497, 1982."
+        },
+        {
+          "num": 21,
+          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders (Part 2). Journal of the British Interplanetary Society, Vol. 36, pp. 115-128, 1982."
+        },
+        {
+          "num": 22,
+          "text": "Birch, P. Orbital Ring Systems and Jacob's Ladders (Part 3). Journal of the British Interplanetary Society, Vol. 36, pp. 231-238, 1983."
+        },
+        {
+          "num": 23,
+          "text": "Lofstrom, K. A. Launch Loop: A Low-Cost Earth-to-Orbit Transportation System. AIAA Paper 85-4054, 1985."
+        },
+        {
+          "num": 24,
+          "text": "Sagan, C. Cosmos: A Journey Through Space and Time. Random House, 1980."
+        },
+        {
+          "num": 25,
+          "text": "Sagan, C. Pale Blue Dot: A Vision of the Human Future in Space. Random House, 1994."
+        },
+        {
+          "num": 26,
+          "text": "Robinson, K. S. Red. Bantam Books, 1992."
+        },
+        {
+          "num": 27,
           "text": "Suarez, D. Delta-V. Dutton, 2019. Suarez, D. Critical Mass. Dutton, 2023. Critical Mass won the 2024 Prometheus Award for Best Novel."
         },
         {
-          "num": 31,
+          "num": 28,
           "text": "Sandford, J. and Ctein. Saturn Run. G.P. Putnam's Sons, 2015."
         },
         {
-          "num": 32,
+          "num": 29,
           "text": "Weir, A. The Martian. Crown Publishing, 2014. Originally self-published 2011."
         },
         {
-          "num": 33,
+          "num": 30,
           "text": "Weir, A. Artemis. Crown Publishing, 2017."
         },
         {
-          "num": 34,
+          "num": 31,
           "text": "Corey, J. S. A. (Abraham, D. and Franck, T.) Leviathan Wakes. Orbit Books, 2011. First of nine novels in The Expanse series, completed 2021."
+        },
+        {
+          "num": 32,
+          "text": "NASA Exoplanet Archive. Accessed March 2026. https://exoplanetarchive.ipac.caltech.edu/"
+        },
+        {
+          "num": 33,
+          "text": "Borucki, W. J. Kepler Mission: Development and Overview. Reports on Progress in Physics, Vol. 79, No. 3, 036901, 2016."
+        },
+        {
+          "num": 34,
+          "text": "Abbott, B. P., et al. Observation of Gravitational Waves from a Binary Black Hole Merger. Physical Review Letters, Vol. 116, No. 6, 061102, 2016."
         },
         {
           "num": 35,
@@ -311,7 +311,7 @@
     },
     {
       "number": "3",
-      "title": "Vera Rubin and What We Cannot See",
+      "title": "Survey Telescopes and What We Cannot See",
       "references": [
         {
           "num": 1,
@@ -343,43 +343,75 @@
         },
         {
           "num": 8,
-          "text": "Vera C. Rubin Observatory, \"First Light Images,\" June 23, 2025. Full survey operations commenced early 2026."
+          "text": "Vera C. Rubin Observatory data flow. Approximately 20 TB of raw image data per night, ~10 million transient alerts per night issued within ~60 seconds of observation, ~15 PB of catalog data over the 10-year survey. Standard cadence revisits each point on the southern sky every few nights with paired 15-second exposures. See: Bellm, E.C., et al., \"A Plan for the Operations of LSST,\" Rubin Observatory Operations documents, https://www.lsst.org/scientists/keynumbers. See also: Jurić, M., et al., \"The LSST Data Management System,\" *ASP Conference Series*, 2017; Ivezić, Ž., et al., *The Astrophysical Journal*, 873(2), 111, 2019."
         },
         {
           "num": 9,
-          "text": "Jones, R.L., et al., \"The Large Synoptic Survey Telescope as a Near-Earth Object Discovery Machine,\" *Icarus*, 303, 181-202, 2018. See also: Rubin Observatory, \"Near-Earth Objects (NEOs),\" https://www.lsst.org/science/solar-system/neos."
+          "text": "Vera C. Rubin Observatory, \"First Light Images,\" June 23, 2025. Full survey operations commenced early 2026."
         },
         {
           "num": 10,
-          "text": "Meech, K.J., et al., \"A brief visit from a red and extremely elongated interstellar asteroid,\" *Nature*, 552, 378-381, 2017."
+          "text": "Jones, R.L., et al., \"The Large Synoptic Survey Telescope as a Near-Earth Object Discovery Machine,\" *Icarus*, 303, 181-202, 2018. See also: Rubin Observatory, \"Near-Earth Objects (NEOs),\" https://www.lsst.org/science/solar-system/neos."
         },
         {
           "num": 11,
-          "text": "Guzik, P., et al., \"Initial characterization of interstellar comet 2I/Borisov,\" *Nature Astronomy*, 4, 53-57, 2020."
+          "text": "WISE and NEOWISE. Wide-field Infrared Survey Explorer (WISE) launched December 2009, conducted all-sky survey at 3.4, 4.6, 12, and 22 µm. Reactivated as NEOWISE in 2013 for asteroid and comet discovery using its two short-wavelength bands. NEOWISE retired August 8, 2024 due to atmospheric drag. Source: Wright, E.L., et al., \"The Wide-field Infrared Survey Explorer (WISE): Mission Description and Initial On-orbit Performance,\" *The Astronomical Journal*, 140(6), 1868-1881, 2010. See also: Mainzer, A., et al., \"Initial Performance of the NEOWISE Reactivation Mission,\" *The Astrophysical Journal*, 792(1), 30, 2014."
         },
         {
           "num": 12,
-          "text": "NASA, \"Comet 3I/ATLAS,\" NASA Science, https://science.nasa.gov/solar-system/comets/3i-atlas/. Discovery date July 1, 2025, by ATLAS survey telescope in Chile. Perihelion October 29, 2025, at 1.36 AU. SPHEREx organic molecule detection reported December 2025."
+          "text": "SPHEREx (Spectro-Photometer for the History of the Universe, Epoch of Reionization, and Ices Explorer). NASA Astrophysics Medium-Class Explorer. All-sky spectrophotometric survey across 102 spectral bands, 0.75-5.0 µm. Launched March 11, 2025. Source: Doré, O., et al., \"Cosmology with the SPHEREx All-Sky Spectral Survey,\" arXiv:1412.4872, 2014. See also: NASA/JPL SPHEREx mission overview, https://www.jpl.nasa.gov/missions/spherex; Korngut, P.M., et al., \"SPHEREx: an all-sky NIR spectral survey,\" *SPIE Astronomical Telescopes + Instrumentation*, 2018."
         },
         {
           "num": 13,
-          "text": "Hoover, D.J., et al., \"Population estimates for interstellar objects detectable by LSST,\" *Monthly Notices of the Royal Astronomical Society*, 2022. Estimates range from ~15 ISOs over the 10-year survey (conservative) to potentially dozens per year depending on population assumptions. See also: Marceta, D. and Seligman, D., predictions of 0-70 asteroidal ISOs per year, 2023."
+          "text": "NEO Surveyor. NASA infrared space telescope dedicated to planetary defense, designed to find ≥90% of near-Earth objects 140 m and larger. Sun-Earth L1 halo orbit, 4-7 µm and 6-10 µm bands, 50 cm aperture. Launch NET September 2027. Source: Mainzer, A.K., et al., \"The Near-Earth Object Surveyor Mission,\" *Planetary Science Journal*, 4, 224, 2023. See also: NASA, \"NEO Surveyor,\" https://science.nasa.gov/mission/neo-surveyor/."
         },
         {
           "num": 14,
-          "text": "Zucker, C., et al., \"Star formation near the Sun is driven by expansion of the Local Bubble,\" *Nature*, 601, 334-337, 2022. Local Bubble dimensions, formation history, and density measurements. Interior density ~0.005 atoms/cm³, average ISM density ~0.5 atoms/cm³."
+          "text": "ESA Gaia mission. All-sky astrometric survey, microarcsecond positional precision for ~2 billion stars to magnitude G≈21. Source: Gaia Collaboration, Prusti, T., et al., \"The Gaia mission,\" *Astronomy & Astrophysics*, 595, A1, 2016. Data release context: Gaia Collaboration, Vallenari, A., et al., \"Gaia Data Release 3: Summary of the content and survey properties,\" *A&A*, 674, A1, 2023. See also: ESA Gaia, https://www.esa.int/Science_Exploration/Space_Science/Gaia."
         },
         {
           "num": 15,
-          "text": "Knie, K., et al., \"60Fe anomaly in a deep-sea manganese crust and implications for a nearby supernova source,\" *Physical Review Letters*, 93(17), 171103, 2004. Evidence of nearby supernova activity affecting Earth's environment within the last few million years. See also: Wallner, A., et al., \"Recent near-Earth supernovae probed by global deposition of interstellar radioactive 60Fe,\" *Nature*, 532, 69-72, 2016."
+          "text": "ATLAS (Asteroid Terrestrial-impact Last Alert System). University of Hawaii-led survey, four 0.5 m telescopes (two in Hawaii, plus stations in Chile and South Africa) covering the whole observable sky every 24 hours for transient and NEO detection. Source: Tonry, J.L., et al., \"ATLAS: A High-Cadence All-Sky Survey System,\" *Publications of the Astronomical Society of the Pacific*, 130(988), 064505, 2018. See also: ATLAS Project, https://atlas.fallingstar.com/."
         },
         {
           "num": 16,
-          "text": "Rampino, M.R. and Stothers, R.B., \"Terrestrial mass extinctions, cometary impacts and the Sun's motion perpendicular to the galactic plane,\" *Nature*, 308, 709-712, 1984. The galactic plane oscillation hypothesis remains debated; subsequent analyses have found varying levels of statistical support. See also: Shaviv, N.J., \"The spiral structure of the Milky Way, cosmic rays, and ice age epochs on Earth,\" *New Astronomy*, 8(1), 39-77, 2003."
+          "text": "Pan-STARRS and Zwicky Transient Facility. Pan-STARRS1: 1.8 m wide-field telescope on Haleakalā, primary NEO and transient survey through the 2010s. Source: Chambers, K.C., et al., \"The Pan-STARRS1 Surveys,\" arXiv:1612.05560, 2016. ZTF: 47 deg² camera on the Palomar 48-inch Schmidt, time-domain survey emphasizing transients. Source: Bellm, E.C., et al., \"The Zwicky Transient Facility: System Overview, Performance, and First Results,\" *Publications of the Astronomical Society of the Pacific*, 131(995), 018002, 2019."
         },
         {
           "num": 17,
+          "text": "Nancy Grace Roman Space Telescope. NASA flagship, 2.4 m aperture, 0.28 deg² wide-field instrument. Galactic Bulge Time Domain Survey expected to detect of order 10^4 microlensing planets including ~10^3 free-floating planets. Launch NET May 2027. Source: Penny, M.T., et al., \"Predictions of the WFIRST Microlensing Survey. I. Bound Planet Detection Rates,\" *The Astrophysical Journal Supplement Series*, 241(1), 3, 2019. See also: NASA Roman Space Telescope, https://roman.gsfc.nasa.gov/."
+        },
+        {
+          "num": 18,
           "text": "LSST survey strategy and solar exclusion zone. Standard WFD survey visits occur at solar elongations >68 degrees; <1% of visits below that threshold. Near-Sun twilight microsurvey operates within ±20° of the ecliptic at solar elongations 35-47° during -12 to -15 degree twilight. See: Schwamb, M.E., et al., \"A near-Sun Solar System Twilight Survey with LSST,\" arXiv:1812.00466, 2018. See also: Rubin Observatory Survey Strategy, https://survey-strategy.lsst.io/."
+        },
+        {
+          "num": 19,
+          "text": "Meech, K.J., et al., \"A brief visit from a red and extremely elongated interstellar asteroid,\" *Nature*, 552, 378-381, 2017."
+        },
+        {
+          "num": 20,
+          "text": "Guzik, P., et al., \"Initial characterization of interstellar comet 2I/Borisov,\" *Nature Astronomy*, 4, 53-57, 2020."
+        },
+        {
+          "num": 21,
+          "text": "NASA, \"Comet 3I/ATLAS,\" NASA Science, https://science.nasa.gov/solar-system/comets/3i-atlas/. Discovery date July 1, 2025, by ATLAS survey telescope in Chile. Perihelion October 29, 2025, at 1.36 AU. SPHEREx organic molecule detection reported December 2025."
+        },
+        {
+          "num": 22,
+          "text": "Hoover, D.J., et al., \"Population estimates for interstellar objects detectable by LSST,\" *Monthly Notices of the Royal Astronomical Society*, 2022. Estimates range from ~15 ISOs over the 10-year survey (conservative) to potentially dozens per year depending on population assumptions. See also: Marceta, D. and Seligman, D., predictions of 0-70 asteroidal ISOs per year, 2023."
+        },
+        {
+          "num": 23,
+          "text": "Zucker, C., et al., \"Star formation near the Sun is driven by expansion of the Local Bubble,\" *Nature*, 601, 334-337, 2022. Local Bubble dimensions, formation history, and density measurements. Interior density ~0.005 atoms/cm³, average ISM density ~0.5 atoms/cm³."
+        },
+        {
+          "num": 24,
+          "text": "Knie, K., et al., \"60Fe anomaly in a deep-sea manganese crust and implications for a nearby supernova source,\" *Physical Review Letters*, 93(17), 171103, 2004. Evidence of nearby supernova activity affecting Earth's environment within the last few million years. See also: Wallner, A., et al., \"Recent near-Earth supernovae probed by global deposition of interstellar radioactive 60Fe,\" *Nature*, 532, 69-72, 2016."
+        },
+        {
+          "num": 25,
+          "text": "Rampino, M.R. and Stothers, R.B., \"Terrestrial mass extinctions, cometary impacts and the Sun's motion perpendicular to the galactic plane,\" *Nature*, 308, 709-712, 1984. The galactic plane oscillation hypothesis remains debated; subsequent analyses have found varying levels of statistical support. See also: Shaviv, N.J., \"The spiral structure of the Milky Way, cosmic rays, and ice age epochs on Earth,\" *New Astronomy*, 8(1), 39-77, 2003."
         }
       ]
     },
@@ -433,15 +465,15 @@
         },
         {
           "num": 12,
-          "text": "Shaviv, N.J., \"The spiral structure of the Milky Way, cosmic rays, and ice age epochs on Earth,\" *New Astronomy*, 8(1), 39-77, 2003. Spiral arm crossings correlate with increased cosmic ray flux and potentially with climate variations and impact rates."
+          "text": "Milky Way supernova rate. ESA Integral satellite Al-26 observations yield ~1.9 (±1.1) core-collapse supernovae per century. ~20,000 supernovae in the past million years produced the observed 2.8 solar masses of Al-26. See: Diehl, R., et al., \"Radioactive 26Al from massive stars in the Galaxy,\" *Nature*, 439, 45-47, 2006. See also: ESA, \"Integral identifies supernova rate for Milky Way,\" https://www.esa.int/Science_Exploration/Space_Science/Integral/Integral_identifies_supernova_rate_for_Milky_Way."
         },
         {
           "num": 13,
-          "text": "Rogue planet estimates. Current models suggest free-floating planets may outnumber stars in the Milky Way, with estimates of several rogue planets per star (potentially trillions total). See: Sumi, T., et al., \"A terrestrial-mass rogue planet candidate detected in the shortest-timescale microlensing event,\" *arXiv:2303.08279*, 2023. See also: NASA, \"New Study Reveals NASA's Roman Could Find 400 Earth-Mass Rogue Planets,\" https://www.nasa.gov/missions/roman-space-telescope/new-study-reveals-nasas-roman-could-find-400-earth-mass-rogue-planets/. Johnson, S.A., et al., estimated Roman will increase known rogue planet count by a factor of 100 by 2032."
+          "text": "Supernova dust production, grain sizes, and remnant evolution. A 19-solar-mass supernova produces ~0.1 solar masses of dust. Grain types: carbon (amorphous, graphite), silicates (olivine, pyroxene), metal oxides (alumina, magnesia, spinel), pure metals (iron, Mg, Si), sulfides, and carbides. Grain sizes: ~2 nm (nanodiamonds, ~1,000 atoms) to ~20 μm (largest SiC crystals). No macroscopic solid objects form directly in supernova ejecta. Presolar grains recovered from primitive meteorites confirm these size ranges. Remnant evolution: free expansion → energy-conserving Sedov-Taylor phase → momentum-conserving snowplow phase. See: Sarangi, A. and Cherchneff, I., \"Dust in Supernovae and Supernova Remnants I: Formation Scenarios,\" *Space Science Reviews*, 214, 63, 2018. See also: Zinner, E., \"Presolar Grains,\" *Treatise on Geochemistry*, 2nd ed., Vol. 1, pp. 181-213, 2014."
         },
         {
           "num": 14,
-          "text": "Planet Nine hypothesis. Estimated mass: 5-10 Earth masses. Estimated semimajor axis: 290-460 AU (refined from original 400-800 AU). See: Batygin, K. and Brown, M.E., \"Evidence for a Distant Giant Planet in the Solar System,\" *The Astronomical Journal*, 151(2), 22, 2016. Updated orbital parameters: Brown, M.E. and Batygin, K., \"The Orbit of Planet Nine,\" *The Astronomical Journal*, 168(2), 55, 2024. See also: NASA, \"Hypothetical Planet X,\" https://science.nasa.gov/solar-system/planet-x/."
+          "text": "Shaviv, N.J., \"The spiral structure of the Milky Way, cosmic rays, and ice age epochs on Earth,\" *New Astronomy*, 8(1), 39-77, 2003. Spiral arm crossings correlate with increased cosmic ray flux and potentially with climate variations and impact rates."
         },
         {
           "num": 15,
@@ -449,11 +481,11 @@
         },
         {
           "num": 16,
-          "text": "Milky Way supernova rate. ESA Integral satellite Al-26 observations yield ~1.9 (±1.1) core-collapse supernovae per century. ~20,000 supernovae in the past million years produced the observed 2.8 solar masses of Al-26. See: Diehl, R., et al., \"Radioactive 26Al from massive stars in the Galaxy,\" *Nature*, 439, 45-47, 2006. See also: ESA, \"Integral identifies supernova rate for Milky Way,\" https://www.esa.int/Science_Exploration/Space_Science/Integral/Integral_identifies_supernova_rate_for_Milky_Way."
+          "text": "Rogue planet estimates. Current models suggest free-floating planets may outnumber stars in the Milky Way, with estimates of several rogue planets per star (potentially trillions total). See: Sumi, T., et al., \"A terrestrial-mass rogue planet candidate detected in the shortest-timescale microlensing event,\" *arXiv:2303.08279*, 2023. See also: NASA, \"New Study Reveals NASA's Roman Could Find 400 Earth-Mass Rogue Planets,\" https://www.nasa.gov/missions/roman-space-telescope/new-study-reveals-nasas-roman-could-find-400-earth-mass-rogue-planets/. Johnson, S.A., et al., estimated Roman will increase known rogue planet count by a factor of 100 by 2032."
         },
         {
           "num": 17,
-          "text": "Supernova dust production, grain sizes, and remnant evolution. A 19-solar-mass supernova produces ~0.1 solar masses of dust. Grain types: carbon (amorphous, graphite), silicates (olivine, pyroxene), metal oxides (alumina, magnesia, spinel), pure metals (iron, Mg, Si), sulfides, and carbides. Grain sizes: ~2 nm (nanodiamonds, ~1,000 atoms) to ~20 μm (largest SiC crystals). No macroscopic solid objects form directly in supernova ejecta. Presolar grains recovered from primitive meteorites confirm these size ranges. Remnant evolution: free expansion → energy-conserving Sedov-Taylor phase → momentum-conserving snowplow phase. See: Sarangi, A. and Cherchneff, I., \"Dust in Supernovae and Supernova Remnants I: Formation Scenarios,\" *Space Science Reviews*, 214, 63, 2018. See also: Zinner, E., \"Presolar Grains,\" *Treatise on Geochemistry*, 2nd ed., Vol. 1, pp. 181-213, 2014."
+          "text": "Planet Nine hypothesis. Estimated mass: 5-10 Earth masses. Estimated semimajor axis: 290-460 AU (refined from original 400-800 AU). See: Batygin, K. and Brown, M.E., \"Evidence for a Distant Giant Planet in the Solar System,\" *The Astronomical Journal*, 151(2), 22, 2016. Updated orbital parameters: Brown, M.E. and Batygin, K., \"The Orbit of Planet Nine,\" *The Astronomical Journal*, 168(2), 55, 2024. See also: NASA, \"Hypothetical Planet X,\" https://science.nasa.gov/solar-system/planet-x/."
         }
       ]
     },
@@ -776,6 +808,10 @@
         {
           "num": 15,
           "text": "China space program achievements. Tiangong space station: operational since 2022. Chang'e 4: first far-side lunar landing, January 2019. Chang'e 5: lunar sample return, December 2020. Tianwen-1: Mars orbiter, lander, and rover, May 2021. Crewed lunar landing planned for approximately 2030. See: Wikipedia, \"Chinese space program,\" https://en.wikipedia.org/wiki/Chinese_space_program."
+        },
+        {
+          "num": 16,
+          "text": "NASA flagship science and exploration record. Hubble Space Telescope: launched 1990, serviced through 2009, more than 1.5 million observations, foundational across modern astrophysics. See: NASA/STScI, https://hubblesite.org/. Voyager 1 and 2: launched 1977, both now in interstellar space, longest continuously operating spacecraft. See: NASA JPL, https://voyager.jpl.nasa.gov/. Earth Observing System: a multi-decade fleet (Terra, Aqua, Aura, Landsat partnership with USGS) underpinning climate, weather, and land-use science. See: NASA EOS, https://eospso.nasa.gov/. Discussion of NASA institutional strengths under sustained mission authority: Logsdon, J.M., *After Apollo? Richard Nixon and the American Space Program*, Palgrave Macmillan, 2015; National Academies, *NASA's Strategic Direction and the Need for a National Consensus*, National Academies Press, 2012."
         }
       ]
     },
@@ -1213,43 +1249,47 @@
       "references": [
         {
           "num": 1,
-          "text": "Orbital ring concept. The idea of an orbital ring was first proposed by Nikola Tesla in 1870 and independently developed by multiple engineers. The modern engineering concept was developed by Paul Birch in a series of papers for the Journal of the British Interplanetary Society: \"Orbital Ring Systems and Jacob's Ladders, Part I,\" JBIS, 35, 475-497, 1982; \"Part II,\" JBIS, 36, 115-128, 1983; \"Part III,\" JBIS, 38, 167-176, 1985. See also: Lofstrom, K., \"The Launch Loop,\" 1985 (related active structure concept). Isaac Arthur, \"Orbital Rings,\" Science & Futurism with Isaac Arthur, YouTube, for accessible explanations of the concept."
+          "text": "Anchor-line transit time scaling between 250 km and 2,000 km altitude. Anchor-line length grows roughly linearly with altitude; for a constant climber speed envelope (electromagnetic-drive trolley cars on the order of 100-130 km/h, with limited acceleration corridors at the endpoints) door-to-door commute time scales with line length. The 2,000 km baseline yields an end-to-end transit roughly eight times longer than the 250 km baseline (~2-3 hours stretching to ~16-24 hours). See Volume III, Chapter 14, \"Pinning Down the Design Altitude,\" and the Volume III chapter on anchor-line transit operations. Tether-climber speed and acceleration limits drawn from: Edwards, B.C., \"The Space Elevator,\" NIAC Phase II Final Report, 2003; Pearson, J., \"The Orbital Tower: A Spacecraft Launcher Using the Earth's Rotational Energy,\" *Acta Astronautica*, 2(9-10), 785-799, 1975."
         },
         {
           "num": 2,
-          "text": "Carbon nanotube material properties. Operating stress: 12.50 GPa with safety factor 2 against 25 GPa break strength. Density: 1,700 kg/m³. Laboratory state of the art (2024): 14 GPa in spun CNT yarn. Zhang, Y., et al., \"Carbon nanotube fibers with dynamic strength up to 14 GPa,\" *Science*, 2024. Theoretical limit for perfect SWCNTs exceeds 100 GPa. Bai, Y., et al., \"Carbon nanotube bundles with tensile strength over 80 GPa,\" *Nature Nanotechnology*, 13, 589-595, 2018."
+          "text": "Catastrophic failure analysis. Cable kinetic energy: ~1.86 × 10¹⁹ J (~4.4 gigatons TNT equivalent). At 250 km, total failure deposits CNT mass in stratosphere with nuclear winter-scale consequences. Revised altitude recommendation: ~2,000 km. See Volume III."
         },
         {
           "num": 3,
-          "text": "Ring parameters at 250 km altitude. All values from Volume III design review, verified against MathCAD worksheets. Retrograde equatorial: v_cable = 8,543 m/s, v_rel = 9,026 m/s, m_cable_hw = 125,432 kg/m, m_ring = 137,432 kg/m, T = 892 GN, A_CNT = 71.4 m², mass ratio 10.45:1, circumference = 41,646 km. Retrograde is preferred over prograde (v_cable = 8,622 m/s, m_ring = 112,658 kg/m, T = 710 GN) because it eliminates the subsonic zone during mass driver launches. See Volume III, Chapter 8 for the full retrograde analysis and Table 8.1 for the comparison."
+          "text": "Orbital ring concept. The idea of an orbital ring was first proposed by Nikola Tesla in 1870 and independently developed by multiple engineers. The modern engineering concept was developed by Paul Birch in a series of papers for the Journal of the British Interplanetary Society: \"Orbital Ring Systems and Jacob's Ladders, Part I,\" JBIS, 35, 475-497, 1982; \"Part II,\" JBIS, 36, 115-128, 1983; \"Part III,\" JBIS, 38, 167-176, 1985. See also: Lofstrom, K., \"The Launch Loop,\" 1985 (related active structure concept). Isaac Arthur, \"Orbital Rings,\" Science & Futurism with Isaac Arthur, YouTube, for accessible explanations of the concept."
         },
         {
           "num": 4,
-          "text": "Electromagnetic levitation. DC solenoid coils in casing attract ferromagnetic plates in cable. Nominal gap: 100 mm. Superconducting coils require essentially zero power in steady state. Vertical bearing load: 108.5 kN/m. Lateral forces at 30° inclination: up to 60% of vertical load at equatorial crossings. Retrograde cable direction does not affect EML force or power (DC fields, ferromagnetic plate, no velocity-dependent losses). See Volume III."
+          "text": "Carbon nanotube material properties. Operating stress: 12.50 GPa with safety factor 2 against 25 GPa break strength. Density: 1,700 kg/m³. Laboratory state of the art (2024): 14 GPa in spun CNT yarn. Zhang, Y., et al., \"Carbon nanotube fibers with dynamic strength up to 14 GPa,\" *Science*, 2024. Theoretical limit for perfect SWCNTs exceeds 100 GPa. Bai, Y., et al., \"Carbon nanotube bundles with tensile strength over 80 GPa,\" *Nature Nanotechnology*, 13, 589-595, 2018."
         },
         {
           "num": 5,
-          "text": "Linear induction motors. 83,292 sites at 500 m spacing. AC traveling field in stator induces eddy currents in cable reaction plates. Deployment: 8 MW/site, 9-14 months. Post-deployment: ~500 kW/site for velocity maintenance and lateral station-keeping. See Volume III."
+          "text": "Ring parameters at 250 km altitude. All values from Volume III design review, verified against MathCAD worksheets. Retrograde equatorial: v_cable = 8,543 m/s, v_rel = 9,026 m/s, m_cable_hw = 125,432 kg/m, m_ring = 137,432 kg/m, T = 892 GN, A_CNT = 71.4 m², mass ratio 10.45:1, circumference = 41,646 km. Retrograde is preferred over prograde (v_cable = 8,622 m/s, m_ring = 112,658 kg/m, T = 710 GN) because it eliminates the subsonic zone during mass driver launches. See Volume III, Chapter 8 for the full retrograde analysis and Table 8.1 for the comparison."
         },
         {
           "num": 6,
-          "text": "Anchor lines. CNT cables from ring to ground stations. Length: ~250 km at equator. Functions: structural stability, passenger/cargo transport (trolley cars at 100-130 km/h, ~2-3 hours), power transmission (HVDC conductors). Anchor stations spaced every ~50 km along equator. See Volume III."
+          "text": "Electromagnetic levitation. DC solenoid coils in casing attract ferromagnetic plates in cable. Nominal gap: 100 mm. Superconducting coils require essentially zero power in steady state. Vertical bearing load: 108.5 kN/m. Lateral forces at 30° inclination: up to 60% of vertical load at equatorial crossings. Retrograde cable direction does not affect EML force or power (DC fields, ferromagnetic plate, no velocity-dependent losses). See Volume III."
         },
         {
           "num": 7,
-          "text": "Mass driver. Linear synchronous motor. 10 km sled, SC DC coils on sled, HTS AC stator on ring. 5,000-tonne spacecraft to 30 km/s in 3.15 hours (4.6 laps), peak power 416 GW. Crewed limit: 3g centrifugal at ~16 km/s. Cargo limit: 13g centrifugal at ~30 km/s. See Volume III."
+          "text": "Linear induction motors. 83,292 sites at 500 m spacing. AC traveling field in stator induces eddy currents in cable reaction plates. Deployment: 8 MW/site, 9-14 months. Post-deployment: ~500 kW/site for velocity maintenance and lateral station-keeping. See Volume III."
         },
         {
           "num": 8,
-          "text": "Space elevator return system. Tethers from above GEO (~50,000 km) down to ring altitude. CNT construction. Used for return to Earth, not ascent. See Volume III. For standalone space elevator concept: Edwards, B.C., \"The Space Elevator,\" NIAC Phase I/II Reports, 2001-2003."
+          "text": "Anchor lines. CNT cables from ring to ground stations. Length: ~250 km at equator. Functions: structural stability, passenger/cargo transport (trolley cars at 100-130 km/h, ~2-3 hours), power transmission (HVDC conductors). Anchor stations spaced every ~50 km along equator. See Volume III."
         },
         {
           "num": 9,
-          "text": "Power system. Solar arrays: bifacial panels, 300 W/m² average at 1 AU, 45% efficient multi-junction cells. Baseline deployment-era: 666 GW (83,292 sites × 8 MW). Expanded 200 m/side: ~5 TW. HVDC transmission: 10 MV pole-to-pole, graphene-enhanced CNT conductors at 30 MS/m projected conductivity. See Volume III for full power budget."
+          "text": "Mass driver. Linear synchronous motor. 10 km sled, SC DC coils on sled, HTS AC stator on ring. 5,000-tonne spacecraft to 30 km/s in 3.15 hours (4.6 laps), peak power 416 GW. Crewed limit: 3g centrifugal at ~16 km/s. Cargo limit: 13g centrifugal at ~30 km/s. See Volume III."
         },
         {
           "num": 10,
-          "text": "Catastrophic failure analysis. Cable kinetic energy: ~1.86 × 10¹⁹ J (~4.4 gigatons TNT equivalent). At 250 km, total failure deposits CNT mass in stratosphere with nuclear winter-scale consequences. Revised altitude recommendation: ~2,000 km. See Volume III."
+          "text": "Space elevator return system. Tethers from above GEO (~50,000 km) down to ring altitude. CNT construction. Used for return to Earth, not ascent. See Volume III. For standalone space elevator concept: Edwards, B.C., \"The Space Elevator,\" NIAC Phase I/II Reports, 2001-2003."
+        },
+        {
+          "num": 11,
+          "text": "Power system. Solar arrays: bifacial panels, 300 W/m² average at 1 AU, 45% efficient multi-junction cells. Baseline deployment-era: 666 GW (83,292 sites × 8 MW). Expanded 200 m/side: ~5 TW. HVDC transmission: 10 MV pole-to-pole, graphene-enhanced CNT conductors at 30 MS/m projected conductivity. See Volume III for full power budget."
         }
       ]
     },
@@ -1259,43 +1299,43 @@
       "references": [
         {
           "num": 1,
-          "text": "Seiff, A., et al., \"Models of the structure of the atmosphere of Venus from the surface to 100 km altitude,\" *Advances in Space Research*, 5(11), 3-58, 1985. See also: Venus International Reference Atmosphere (VIRA), Kliore, A.J., et al., eds., 1985."
-        },
-        {
-          "num": 2,
-          "text": "Landis, G.A., \"Colonization of Venus,\" *AIP Conference Proceedings*, 654, 1193-1200, 2003."
-        },
-        {
-          "num": 3,
-          "text": "Landis, G.A., \"Settling Venus: A City in the Clouds?\" AIAA ASCEND 2020 Conference, AIAA 2020-4152. See also: Landis, G.A., \"Exploring Venus by Solar Airplane,\" NASA/TM-2001-210839, 2001."
-        },
-        {
-          "num": 4,
-          "text": "Arney, D.C. and Jones, C.A., \"High Altitude Venus Operational Concept (HAVOC): An Exploration Strategy for Venus,\" AIAA SPACE 2015, AIAA 2015-4612, 2015."
-        },
-        {
-          "num": 5,
-          "text": "Colozza, A., \"Atmospheric Flight on Venus,\" NASA/CR-2004-213052, 2004. See also: Landis, G.A., LaMarre, C., and Colozza, A., \"Venus atmospheric exploration by solar aircraft,\" *Acta Astronautica*, 56(8), 750-755, 2005."
-        },
-        {
-          "num": 6,
           "text": "NASA Venus Fact Sheet, https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html."
         },
         {
-          "num": 7,
-          "text": "Bugga, R., et al., \"Venus Interior Probe Using In-situ Power and Propulsion (VIP-INSPR),\" NASA NIAC Phase I Report, 2016."
+          "num": 2,
+          "text": "Arney, D.C. and Jones, C.A., \"High Altitude Venus Operational Concept (HAVOC): An Exploration Strategy for Venus,\" AIAA SPACE 2015, AIAA 2015-4612, 2015."
         },
         {
-          "num": 8,
+          "num": 3,
+          "text": "Seiff, A., et al., \"Models of the structure of the atmosphere of Venus from the surface to 100 km altitude,\" *Advances in Space Research*, 5(11), 3-58, 1985. See also: Venus International Reference Atmosphere (VIRA), Kliore, A.J., et al., eds., 1985."
+        },
+        {
+          "num": 4,
+          "text": "Sánchez-Lavega, A., et al., \"Variable winds on Venus mapped in three dimensions,\" *Geophysical Research Letters*, 35, L13204, 2008. See also: Khatuntsev, I.V., et al., \"Winds from the visible (513 nm) images obtained by the Venus Monitoring Camera onboard Venus Express,\" *JGR: Planets*, 127, 2022. ESA Venus Express wind speed data: equatorial zonal winds ~94 m/s at cloud top level, ~60 m/s at 45-47 km, increasing over the mission period."
+        },
+        {
+          "num": 5,
+          "text": "Landis, G.A., \"Colonization of Venus,\" *AIP Conference Proceedings*, 654, 1193-1200, 2003."
+        },
+        {
+          "num": 6,
+          "text": "Landis, G.A., \"Settling Venus: A City in the Clouds?\" AIAA ASCEND 2020 Conference, AIAA 2020-4152. See also: Landis, G.A., \"Exploring Venus by Solar Airplane,\" NASA/TM-2001-210839, 2001."
+        },
+        {
+          "num": 7,
           "text": "Oyama, V.I., et al., \"Venus lower atmospheric composition: analysis by gas chromatography,\" *Journal of Geophysical Research*, 85(A13), 7891-7902, 1980. See also: de Bergh, C., et al., \"The composition of the atmosphere of Venus below 100 km altitude: an overview,\" *Planetary and Space Science*, 54, 1389-1397, 2006."
         },
         {
+          "num": 8,
+          "text": "Lammer, H., et al., \"Atmospheric nitrogen evolution on Earth and Venus,\" *Earth and Planetary Science Letters*, 450, 49-56, 2016. Venus atmospheric nitrogen mass: 3.5% of 4.8 × 10²⁰ kg ≈ 1.7 × 10¹⁹ kg."
+        },
+        {
           "num": 9,
-          "text": "Northrop Grumman / L'Garde, Venus Atmospheric Maneuverable Platform (VAMP) concept, 2014-2015. See also: Lee, G., et al., \"Venus Atmospheric Maneuverable Platform (VAMP),\" AIAA SPACE 2014."
+          "text": "Licht, S., et al., \"Transformation of the greenhouse gas CO₂ by molten electrolysis into a wide controlled selection of carbon nanotubes,\" *Journal of CO₂ Utilization*, 34, 303-312, 2019. See also: Ren, J., et al., \"New scalable electrosynthesis of distinct high purity graphene nanoallotropes from CO₂,\" *Crystals*, 15(8), 680, 2025."
         },
         {
           "num": 10,
-          "text": "Lammer, H., et al., \"Atmospheric nitrogen evolution on Earth and Venus,\" *Earth and Planetary Science Letters*, 450, 49-56, 2016. Venus atmospheric nitrogen mass: 3.5% of 4.8 × 10²⁰ kg ≈ 1.7 × 10¹⁹ kg."
+          "text": "Bugga, R., et al., \"Venus Interior Probe Using In-situ Power and Propulsion (VIP-INSPR),\" NASA NIAC Phase I Report, 2016."
         },
         {
           "num": 11,
@@ -1303,15 +1343,15 @@
         },
         {
           "num": 12,
-          "text": "Sánchez-Lavega, A., et al., \"Variable winds on Venus mapped in three dimensions,\" *Geophysical Research Letters*, 35, L13204, 2008. See also: Khatuntsev, I.V., et al., \"Winds from the visible (513 nm) images obtained by the Venus Monitoring Camera onboard Venus Express,\" *JGR: Planets*, 127, 2022. ESA Venus Express wind speed data: equatorial zonal winds ~94 m/s at cloud top level, ~60 m/s at 45-47 km, increasing over the mission period."
+          "text": "Colozza, A., \"Atmospheric Flight on Venus,\" NASA/CR-2004-213052, 2004. See also: Landis, G.A., LaMarre, C., and Colozza, A., \"Venus atmospheric exploration by solar aircraft,\" *Acta Astronautica*, 56(8), 750-755, 2005."
         },
         {
           "num": 13,
-          "text": "Keating, G.M., et al., \"Venus: Density of Upper Atmosphere from Measurements of Drag on Pioneer Orbiter,\" *Science*, 203(4382), 775-777, 1979. Pioneer Venus Orbiter drag measurements used to derive atmospheric densities at 150-200 km altitude."
+          "text": "Northrop Grumman / L'Garde, Venus Atmospheric Maneuverable Platform (VAMP) concept, 2014-2015. See also: Lee, G., et al., \"Venus Atmospheric Maneuverable Platform (VAMP),\" AIAA SPACE 2014."
         },
         {
           "num": 14,
-          "text": "Licht, S., et al., \"Transformation of the greenhouse gas CO₂ by molten electrolysis into a wide controlled selection of carbon nanotubes,\" *Journal of CO₂ Utilization*, 34, 303-312, 2019. See also: Ren, J., et al., \"New scalable electrosynthesis of distinct high purity graphene nanoallotropes from CO₂,\" *Crystals*, 15(8), 680, 2025."
+          "text": "Keating, G.M., et al., \"Venus: Density of Upper Atmosphere from Measurements of Drag on Pioneer Orbiter,\" *Science*, 203(4382), 775-777, 1979. Pioneer Venus Orbiter drag measurements used to derive atmospheric densities at 150-200 km altitude."
         },
         {
           "num": 15,
@@ -1403,34 +1443,42 @@
         },
         {
           "num": 2,
-          "text": "Global primary energy consumption and electricity consumption: approximately 20 TW and 4 TW respectively in the mid-2020s. Source: BP Statistical Review of World Energy, 2024 edition; International Energy Agency, World Energy Outlook, 2024."
+          "text": "Reusable rocket throughput limits compared with space-based solar power mass requirements. Even with full Starship-class reusability, achievable annual upmass to LEO is on the order of a few thousand tonnes per year per vehicle line; gigawatt-scale space solar architectures require structures with masses measured in millions of tonnes. This mass-budget gap is the central reason space-based solar has stalled for half a century without an active-structure launch path. Throughput context: SpaceX Starship payload guide and stated cadence targets, https://www.spacex.com/vehicles/starship/. Mass-requirement context: NASA, \"Space-Based Solar Power as an Opportunity for Strategic Security,\" SERT Phase I Final Report, 2000; Mankins, J.C., *The Case for Space Solar Power*, Virginia Edition Publishing, 2014."
         },
         {
           "num": 3,
-          "text": "Van Allen radiation belt structure and inner proton belt characteristics. Source: Baker, D.N., et al., \"The Relativistic Electron-Proton Telescope (REPT) Instrument on Board the Radiation Belt Storm Probes (RBSP) Spacecraft: Characterization of Earth's Radiation Belt High-Energy Particle Populations,\" *Space Science Reviews*, 179, 337-381, 2013. See also: Van Allen, J.A., \"Radiation belts around the Earth,\" *Scientific American*, 200, 39-47, 1959."
-        },
-        {
-          "num": 4,
-          "text": "Multi-junction and graphene-based photovoltaic efficiency limits. Source: Green, M.A., et al., \"Solar cell efficiency tables (version 62),\" *Progress in Photovoltaics: Research and Applications*, 31, 651-663, 2023. See also: Cao, Y., et al., \"Unconventional superconductivity in magic-angle graphene superlattices,\" *Nature*, 556, 43-50, 2018. The photovoltaic application of twisted bilayer graphene is forward-looking and is discussed in detail in Volume II."
-        },
-        {
-          "num": 5,
-          "text": "Bifacial solar panel gain from albedo. Source: Guerrero-Lemus, R., et al., \"Bifacial solar photovoltaics: A technology review,\" *Renewable and Sustainable Energy Reviews*, 60, 1533-1549, 2016."
-        },
-        {
-          "num": 6,
-          "text": "Atomic oxygen erosion in low Earth orbit. Source: Banks, B.A., et al., \"Atomic-Oxygen Undercutting of Protected Polymers in Low Earth Orbit,\" *Journal of Spacecraft and Rockets*, 41(3), 335-339, 2004. See also: de Groh, K.K., et al., \"MISSE 2 PEACE Polymers Atomic Oxygen Erosion Experiment on the International Space Station,\" *NASA/TM-2008-215264*, 2008."
-        },
-        {
-          "num": 7,
-          "text": "Carrington-class coronal mass ejection induced currents and mitigation in long conductors. Source: National Research Council, *Severe Space Weather Events: Understanding Societal and Economic Impacts*, National Academies Press, 2008."
-        },
-        {
-          "num": 8,
           "text": "Ring design altitude, cable parameters, and anchor line spacing for the 2,000 kilometer baseline. Source: Volume III, Chapter 14, \"Pinning Down the Design Altitude,\" and the Volume III engineering chapter on the solar array. The 2,000 kilometer altitude is driven by the minimum safe altitude analysis for catastrophic failure, Chapter 14 of Volume III."
         },
         {
+          "num": 4,
+          "text": "Van Allen radiation belt structure and inner proton belt characteristics. Source: Baker, D.N., et al., \"The Relativistic Electron-Proton Telescope (REPT) Instrument on Board the Radiation Belt Storm Probes (RBSP) Spacecraft: Characterization of Earth's Radiation Belt High-Energy Particle Populations,\" *Space Science Reviews*, 179, 337-381, 2013. See also: Van Allen, J.A., \"Radiation belts around the Earth,\" *Scientific American*, 200, 39-47, 1959."
+        },
+        {
+          "num": 5,
+          "text": "Global primary energy consumption and electricity consumption: approximately 20 TW and 4 TW respectively in the mid-2020s. Source: BP Statistical Review of World Energy, 2024 edition; International Energy Agency, World Energy Outlook, 2024."
+        },
+        {
+          "num": 6,
+          "text": "Multi-junction and graphene-based photovoltaic efficiency limits. Source: Green, M.A., et al., \"Solar cell efficiency tables (version 62),\" *Progress in Photovoltaics: Research and Applications*, 31, 651-663, 2023. See also: Cao, Y., et al., \"Unconventional superconductivity in magic-angle graphene superlattices,\" *Nature*, 556, 43-50, 2018. The photovoltaic application of twisted bilayer graphene is forward-looking and is discussed in detail in Volume II."
+        },
+        {
+          "num": 7,
+          "text": "Bifacial solar panel gain from albedo. Source: Guerrero-Lemus, R., et al., \"Bifacial solar photovoltaics: A technology review,\" *Renewable and Sustainable Energy Reviews*, 60, 1533-1549, 2016."
+        },
+        {
+          "num": 8,
+          "text": "Atomic oxygen erosion in low Earth orbit. Source: Banks, B.A., et al., \"Atomic-Oxygen Undercutting of Protected Polymers in Low Earth Orbit,\" *Journal of Spacecraft and Rockets*, 41(3), 335-339, 2004. See also: de Groh, K.K., et al., \"MISSE 2 PEACE Polymers Atomic Oxygen Erosion Experiment on the International Space Station,\" *NASA/TM-2008-215264*, 2008."
+        },
+        {
           "num": 9,
+          "text": "Changji-Guquan ±1100 kV ultra-high-voltage direct-current link, China. Energized 2019, 3,293 km from Changji (Xinjiang) to Guquan (Anhui), 12 GW design capacity, the highest-voltage and highest-capacity DC transmission line in commercial operation. Used here as a present-day proof point for ground-side power-station scale. See: Pei, X., et al., \"Overview of the ±1100 kV UHVDC Project from Changji to Guquan,\" *CSEE Journal of Power and Energy Systems*, 6(1), 2020. See also: State Grid Corporation of China project documentation; CIGRE B4 Working Group reports on UHVDC."
+        },
+        {
+          "num": 10,
+          "text": "Carrington-class coronal mass ejection induced currents and mitigation in long conductors. Source: National Research Council, *Severe Space Weather Events: Understanding Societal and Economic Impacts*, National Academies Press, 2008."
+        },
+        {
+          "num": 11,
           "text": "Geomagnetic rigidity cutoff at the equator: approximately 15 GV, which filters solar energetic particle events below a few GeV. Source: Smart, D.F. and Shea, M.A., \"A review of geomagnetic cutoff rigidities for earth-orbiting spacecraft,\" *Advances in Space Research*, 36, 2012-2020, 2005."
         }
       ]
@@ -1453,19 +1501,19 @@
         },
         {
           "num": 4,
-          "text": "Interstate Highway System. Federal Highway Administration, \"Dwight D. Eisenhower National System of Interstate and Defense Highways,\" updated 2024. Construction period: 1956-1991. Cost: approximately \\$530 billion in 2023 dollars. Economic benefit ratio: estimated 6:1 by various studies."
-        },
-        {
-          "num": 5,
-          "text": "Post-9/11 war costs. Crawford, N.C., et al., \"Costs of War,\" Watson Institute for International and Public Affairs, Brown University, updated 2023. Total estimated cost: approximately \\$8 trillion through 2023."
-        },
-        {
-          "num": 6,
           "text": "Financial sector GDP share. Greenwood, R. and Scharfstein, D., \"The Growth of Finance,\" *Journal of Economic Perspectives*, 27(2), 209-234, 2013. Financial sector share of U.S. GDP: approximately 4.9% in 1980, rising to approximately 8% by the 2020s."
         },
         {
-          "num": 7,
+          "num": 5,
           "text": "Global military spending. Stockholm International Peace Research Institute (SIPRI), Military Expenditure Database, 2024. Global military spending exceeded \\$2.4 trillion in 2023."
+        },
+        {
+          "num": 6,
+          "text": "Interstate Highway System. Federal Highway Administration, \"Dwight D. Eisenhower National System of Interstate and Defense Highways,\" updated 2024. Construction period: 1956-1991. Cost: approximately \\$530 billion in 2023 dollars. Economic benefit ratio: estimated 6:1 by various studies."
+        },
+        {
+          "num": 7,
+          "text": "Post-9/11 war costs. Crawford, N.C., et al., \"Costs of War,\" Watson Institute for International and Public Affairs, Brown University, updated 2023. Total estimated cost: approximately \\$8 trillion through 2023."
         },
         {
           "num": 8,
