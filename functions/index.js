@@ -31,8 +31,12 @@ const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
 const nodemailer = require("nodemailer");
+const admin = require("firebase-admin");
+
+admin.initializeApp();
 
 const MAILERLITE_API_KEY = defineSecret("MAILERLITE_API_KEY");
+const TURNSTILE_SECRET_KEY = defineSecret("TURNSTILE_SECRET_KEY");
 
 const CHECKBOX_TO_GROUP_ENV = {
   vol1: "MAILERLITE_GROUP_VOL1",
@@ -76,7 +80,7 @@ function setCors(req, res) {
 exports.subscribe = onRequest(
   {
     region: "us-central1",
-    secrets: [MAILERLITE_API_KEY],
+    secrets: [MAILERLITE_API_KEY, TURNSTILE_SECRET_KEY],
     maxInstances: 5,
   },
   async (req, res) => {
@@ -88,6 +92,15 @@ exports.subscribe = onRequest(
     }
     if (req.method !== "POST") {
       res.status(405).json({ error: "method_not_allowed" });
+      return;
+    }
+
+    // This grandfathered-public function also serves errata submissions
+    // (POST /api/submit-errata). A new function can't be made public because of
+    // the org's Domain Restricted Sharing policy, so errata rides on this one.
+    // Dispatch by payload shape: errata carries `book`/`turnstileToken`.
+    if (req.body && (req.body.book !== undefined || req.body.turnstileToken !== undefined)) {
+      await handleErrataSubmit(req, res);
       return;
     }
 
@@ -151,6 +164,108 @@ function hashEmail(email) {
     h = (h * 31 + email.charCodeAt(i)) | 0;
   }
   return (h >>> 0).toString(16);
+}
+
+// --- Errata submission ------------------------------------------------------
+// Errata come in through the public `subscribe` function above, which routes
+// POST /api/submit-errata here. We can't make a dedicated function public: the
+// org's Domain Restricted Sharing policy blocks granting allUsers to new
+// services, and `subscribe` is grandfathered-public, so errata rides on it.
+// This handler verifies a Cloudflare Turnstile token and a honeypot field, then
+// writes the doc with the Admin SDK. Firestore rules forbid direct client
+// writes, so this is the only way in, which keeps the spam bots out.
+//
+// Setup: create a Turnstile widget at dash.cloudflare.com (site key goes in
+// templates/pages/errata.html), then
+// `firebase functions:secrets:set TURNSTILE_SECRET_KEY`.
+
+const ERRATA_MAX = { book: 100, page: 200, quote: 4000, description: 4000, email: 254 };
+
+// Called by `subscribe` when the payload looks like an erratum. CORS, OPTIONS,
+// and the POST check are already handled by the caller.
+async function handleErrataSubmit(req, res) {
+  const body = req.body || {};
+
+  // Honeypot: a hidden field real users never fill. If it has content it's a
+  // bot; return a fake success so it doesn't learn to adapt.
+  if (typeof body.website === "string" && body.website.trim() !== "") {
+    res.status(200).json({ ok: true });
+    return;
+  }
+
+  // Verify the Cloudflare Turnstile token.
+  const token = typeof body.turnstileToken === "string" ? body.turnstileToken : "";
+  if (!token) {
+    res.status(400).json({ error: "captcha_missing" });
+    return;
+  }
+  const ip = req.headers["cf-connecting-ip"] || "";
+  const human = await verifyTurnstile(token, TURNSTILE_SECRET_KEY.value(), ip);
+  if (!human) {
+    res.status(403).json({ error: "captcha_failed" });
+    return;
+  }
+
+  // Validate the fields.
+  const book = trimStr(body.book);
+  const page = trimStr(body.page);
+  const quote = trimStr(body.quote);
+  const description = trimStr(body.description);
+  const email = trimStr(body.email);
+
+  if (!book || !page || !quote || !description) {
+    res.status(400).json({ error: "missing_fields" });
+    return;
+  }
+  if (book.length > ERRATA_MAX.book || page.length > ERRATA_MAX.page ||
+      quote.length > ERRATA_MAX.quote || description.length > ERRATA_MAX.description ||
+      email.length > ERRATA_MAX.email) {
+    res.status(400).json({ error: "too_long" });
+    return;
+  }
+  if (email && !EMAIL_RE.test(email)) {
+    res.status(400).json({ error: "invalid_email" });
+    return;
+  }
+
+  try {
+    await admin.firestore().collection("errata").add({
+      book,
+      page,
+      quote,
+      description,
+      submitted_by: email || "anonymous",
+      status: "pending",
+      admin_note: "",
+      created_at: admin.firestore.Timestamp.now(),
+    });
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    logger.error(`errata_write_failed: ${err && err.message}`, { code: err && err.code });
+    res.status(500).json({ error: "internal" });
+  }
+}
+
+async function verifyTurnstile(token, secret, ip) {
+  try {
+    const form = new URLSearchParams();
+    form.append("secret", secret || "");
+    form.append("response", token);
+    if (ip) form.append("remoteip", ip);
+    const resp = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      { method: "POST", body: form }
+    );
+    const data = await resp.json();
+    return !!data.success;
+  } catch (err) {
+    logger.error("turnstile_verify_exception", { message: err && err.message });
+    return false;
+  }
+}
+
+function trimStr(v) {
+  return typeof v === "string" ? v.trim() : "";
 }
 
 // --- Errata notification ----------------------------------------------------

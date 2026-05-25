@@ -9,10 +9,8 @@ service cloud.firestore {
       allow read: if request.auth != null
                   && request.auth.token.email == "paul@orbitalring.space";
 
-      // Anyone can create a new errata (must be pending)
-      allow create: if request.resource.data.status == "pending"
-                    && request.resource.data.keys().hasAll(
-                       ["book", "page", "quote", "description", "status", "created_at"]);
+      // No direct client writes. New errata come in through the submitErrata
+      // Cloud Function (Admin SDK), which verifies Turnstile + honeypot first.
 
       // Only admin can update or delete
       allow update, delete: if request.auth != null

@@ -51,10 +51,17 @@
     <label for="f-email">Your email (optional, for follow-up)</label>
     <input type="email" id="f-email" name="email" placeholder="you@example.com">
   </div>
+  <div style="position:absolute;left:-9999px" aria-hidden="true">
+    <label>Leave this field blank
+      <input type="text" name="website" tabindex="-1" autocomplete="off">
+    </label>
+  </div>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAADV41gJX6q3KQgId" style="margin-bottom:1rem"></div>
   <button type="submit" class="cta">Submit</button>
   <div id="form-status"></div>
 </form>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="/js/firebase-config.js"></script>
 <script>window.ERRATA_BOOKS = {{ errata_books_json | safe }};</script>
 <script type="module" src="/js/errata.js"></script>

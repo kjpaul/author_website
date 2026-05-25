@@ -1,6 +1,6 @@
 // Errata tracker — public page
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
-import { getFirestore, collection, query, where, orderBy, getDocs, addDoc, Timestamp }
+import { getFirestore, collection, query, where, orderBy, getDocs }
   from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
 
 const app  = initializeApp(firebaseConfig);   // firebaseConfig loaded from firebase-config.js
@@ -81,29 +81,41 @@ formEl.addEventListener("submit", async (e) => {
   btn.textContent = "Submitting...";
   statusEl.textContent = "";
 
-  const data = {
+  const payload = {
     book:        formEl.book.value,
-    isbn:        BOOKS[formEl.book.value]?.isbn || "",
     page:        formEl.page.value.trim(),
     quote:       formEl.quote.value.trim(),
     description: formEl.description.value.trim(),
-    submitted_by: formEl.email.value.trim() || "anonymous",
-    status:      "pending",
-    admin_note:  "",
-    created_at:  Timestamp.now(),
+    email:       formEl.email.value.trim(),
+    website:     formEl.website.value,                         // honeypot
+    turnstileToken: formEl["cf-turnstile-response"]?.value || "",
   };
 
   try {
-    await addDoc(coll, data);
-    statusEl.innerHTML = '<span class="success">Thank you! Your submission will be reviewed.</span>';
-    formEl.reset();
-    applyBookParam();  // restore any deep-linked book selection after reset
+    const resp = await fetch("/api/submit-errata", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const json = await resp.json().catch(() => ({}));
+
+    if (resp.ok && json.ok) {
+      statusEl.innerHTML = '<span class="success">Thank you! Your submission will be reviewed.</span>';
+      formEl.reset();
+      applyBookParam();  // restore any deep-linked book selection after reset
+    } else {
+      const msg = (json.error === "captcha_failed" || json.error === "captcha_missing")
+        ? "Please complete the verification box and try again."
+        : "Submission failed. Please try again.";
+      statusEl.innerHTML = `<span class="error">${msg}</span>`;
+    }
   } catch (err) {
     console.error(err);
     statusEl.innerHTML = '<span class="error">Submission failed. Please try again.</span>';
   } finally {
     btn.disabled = false;
     btn.textContent = "Submit";
+    if (window.turnstile) window.turnstile.reset();
   }
 });
 

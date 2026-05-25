@@ -14,7 +14,8 @@
       { "source": "/books/orbital-ring", "destination": "/series/technical/orbital-rings/", "type": 301 }
     ],
     "rewrites": [
-      { "source": "/api/subscribe", "function": "subscribe" }
+      { "source": "/api/subscribe", "function": "subscribe" },
+      { "source": "/api/submit-errata", "function": "subscribe" }
     ],
     "headers": [
       {
