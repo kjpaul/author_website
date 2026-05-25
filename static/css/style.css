@@ -1464,7 +1464,7 @@ footer .foot-meta a:hover { color: #c1a064; }
 .book-card-cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 0;
 }
 .book-card-cover .cover-placeholder {
@@ -1669,6 +1669,28 @@ footer .foot-meta a:hover { color: #c1a064; }
 }
 .chapter-excerpt .excerpt-foot p { font-family: var(--serif); margin-bottom: 1rem; }
 .chapter-excerpt .excerpt-foot p:last-child { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.chapter-excerpt .excerpt-body p img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.8rem auto 0.6rem;
+  border-radius: 2px;
+}
+.chapter-excerpt .excerpt-body p img[src$=".svg"] {
+  background: #fff;
+  padding: 0.6rem 0.9rem;
+  max-width: 540px;
+}
+.chapter-excerpt .excerpt-body p:has(img) {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-top: 1.6rem;
+  margin-bottom: 2rem;
+}
 
 /* --- 404 --- */
 .error-page {

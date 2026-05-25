@@ -114,3 +114,9 @@ cover_description_v06.md
 
 # Stray screenshots
 ChatGPT_Spine*.png
+
+# book files
+book/
+
+# local working backups (pre-edit copies for WinMerge)
+backups/

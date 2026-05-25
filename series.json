@@ -130,9 +130,19 @@
     {
       "id": "orbital-ring-engineering-1st-ed",
       "title": "Orbital Ring Engineering",
+      "subtitle": "Mechanics and Material Science for Space Launch Mass Transit Systems",
+      "author": "Paul G. de Jong",
       "slug": "orbital-ring-engineering-1st-ed",
       "status": "published",
       "superseded_by": "ast-t1",
+      "cover_image": "/images/covers/orbital-ring-engineering-1st-ed-cover.jpg",
+      "errata_key": "orbital-ring-engineering",
+      "isbn": "",
+      "amazon": {
+        "hardcover": "https://www.amazon.com/dp/B0FWYN8VLB",
+        "paperback": "https://www.amazon.com/dp/B0FWYNHQZY",
+        "kindle": "https://www.amazon.com/dp/B0FWYMJTPG"
+      },
       "description": "The original single-volume edition, superseded by the three-volume AST-T1."
     }
   ]

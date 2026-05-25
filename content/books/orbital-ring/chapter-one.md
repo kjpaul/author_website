@@ -7,7 +7,7 @@ description: "Read Chapter One of The Orbital Ring, Volume I. The solar system a
 ---
 
 <div class="excerpt-note">
-  <strong>Read Chapter One.</strong> This is the opening chapter of <em>The Orbital Ring, Volume I: The Economic Case for Space Mass Transit</em>. Figures and equations appear in the printed book and in the published online edition. Numbered citations refer to the <a href="/series/technical/orbital-rings/vol-1/references/#ch-1">Volume I references for Chapter 1</a>.
+  <strong>Read Chapter One.</strong> This is the opening chapter of <em>The Orbital Ring, Volume I: The Economic Case for Space Mass Transit</em>. Numbered citations refer to the <a href="/series/technical/orbital-rings/vol-1/references/#ch-1">Volume I references for Chapter 1</a>.
 </div>
 
 ## Introduction
@@ -30,6 +30,8 @@ This book follows a logical progression that puts the orbital ring at the end ra
 
 However, before examining the mechanics of how we leave Earth, we must understand why the destination justifies the immense effort. This chapter surveys the solar system as a destination and as a resource, starting close to home and working outward.
 
+![Image 1.1: Artist's rendering of the orbital ring encircling Earth at 250 km altitude, showing the ring structure against the backdrop of space.](/images/chapter-one/fig-01-orbital-ring.png)
+***Image 1.1: The orbital ring encircling Earth.*** *The ring sits at an altitude between 250 km and 2,000 km, following a great-circle trajectory. Mass drivers mounted on the ring can launch cargo and passengers to destinations throughout the solar system. This book makes the case for building it, starting with the destinations that justify the effort.*
 
 ## The Moon
 
@@ -95,6 +97,8 @@ Whether Mars is the most important destination for human expansion beyond Earth-
 
 Mars has water. A lot of water.
 
+![Image 1.2: Perspective view of Korolev crater on Mars, showing the permanently ice-filled crater basin.](/images/chapter-one/fig-02-korolev-crater.jpg)
+***Image 1.2: Korolev crater, Mars.*** *This 82 km diameter impact crater near the Martian north pole is permanently filled with water ice up to 1.8 km thick. The ice persists year-round because the crater floor acts as a cold trap: air flowing over the ice cools and sinks, creating a layer of cold air that insulates the ice from warmer temperatures above. ESA/DLR/FU Berlin, CC BY-SA 3.0 IGO.*
 
 The most visually striking example is Korolev crater, an 81.4 km diameter impact crater in the northern lowlands centered at 165°E, 73°N. It contains a permanent mound of water ice approximately 1.8 km thick at its center. Radar studies estimate the total ice volume at 1,400 to 3,500 km³, with 2,200 km³ being a reasonable midpoint estimate [8]. The crater functions as a natural cold trap: the thin Martian air above the ice is cooled by the ice surface, becoming denser than the surrounding atmosphere and settling into the crater, which insulates the ice from warmer air above.
 
@@ -108,6 +112,8 @@ The Martian atmosphere is 95.3% carbon dioxide, with 2.7% nitrogen, 1.6% argon, 
 
 The Sabatier reaction converts carbon dioxide and hydrogen into methane and water:
 
+![Equation 1.1: The Sabatier reaction for Mars ISRU propellant production.](/images/chapter-one/eq-01-sabatier.svg)
+*Equation 1.1: The Sabatier reaction combines carbon dioxide from the Martian atmosphere with hydrogen to produce methane and water, with an enthalpy change of −165.4 kJ/mol. The negative enthalpy means the reaction is exothermic: it releases energy rather than requiring it.*
 
 This exothermic character is important for ISRU because it means the reaction runs spontaneously once initiated. The methane produced is a rocket propellant (SpaceX's Raptor engines burn methane and oxygen), and the water can be electrolyzed to recover the hydrogen for recycling and produce oxygen for both breathing and as the oxidizer component of the propellant. A 2011 prototype demonstrated autonomous operation for five consecutive days, producing 1 kg/day of methane at nearly 100% conversion efficiency [11].
 
@@ -131,12 +137,17 @@ Dust storms are a persistent operational hazard. They occur primarily during sou
 
 Then there is distance. Mars ranges from 55 million km at closest approach (opposition) to 400 million km when it is on the far side of the Sun. One-way light travel time ranges from about 4 minutes to about 24 minutes, which means round-trip communication delays of 8 to 48 minutes. Real-time remote control of surface operations is impossible. Everything on Mars must be autonomous or have humans on-site making decisions [10].
 
+![Image 1.3: Size comparison of the five terrestrial planets: Mercury, Venus, Earth, Mars, and the Moon.](/images/chapter-one/fig-03-terrestrial-planets.png)
+***Image 1.3: The terrestrial planets to scale.*** *Mercury, Venus, Earth, the Moon, and Mars shown at their correct relative sizes. Venus is nearly the same diameter as Earth, with 90% of Earth's surface gravity. Mars is significantly smaller, with only 38% of Earth's gravity. These size differences have profound implications for everything from atmospheric retention to escape velocity requirements. NASA, public domain.*
 
 ## Venus
 
 Venus is the planet most people overlook when they talk about human expansion into the solar system, and that is a mistake. At the surface, Venus is hellish: 462°C (hot enough to melt lead), 92 bars of pressure (equivalent to being 900 meters underwater), and an atmosphere of carbon dioxide laced with sulfuric acid clouds. No spacecraft has survived on the surface for more than about two hours. But the surface is not the interesting part.
 
 At approximately 50 km altitude, the atmosphere of Venus is the most Earth-like environment in the solar system outside of Earth itself. The temperature ranges from about 0°C to 50°C. The pressure is close to 1 bar. Gravity at the cloud deck is about 0.9g, where g refers to Earth's surface gravity of 9.81 m/s² (1.0g), compared to the Moon's 0.16g or Mars's 0.38g. The thick atmosphere above provides roughly one kilogram per square centimeter of mass shielding against cosmic radiation and solar particle events, which is comparable to Earth's atmospheric shielding and far better than what Mars offers [32]. You could stand on an open platform at this altitude and need only an oxygen mask and acid-resistant clothing, not a pressure suit.
+
+![Image 1.7: Venus as seen from Mariner 10, showing the thick cloud cover that completely obscures the surface.](/images/chapter-one/fig-07-venus-mariner.jpg)
+***Image 1.7: Venus from Mariner 10.*** *This image, captured by NASA's Mariner 10 spacecraft in February 1974, shows Venus's thick cloud cover in ultraviolet light. The swirling cloud patterns are composed primarily of sulfuric acid droplets and completely obscure the surface below. Beneath these clouds, at approximately 50 km altitude, lies the most Earth-like environment in the solar system outside of Earth itself. NASA/JPL, public domain.*
 
 ### Floating in Carbon Dioxide
 
@@ -185,6 +196,8 @@ The catch is timing. Because NEA orbits are elliptical and inclined relative to 
 
 ### 16 Psyche
 
+![Image 1.4: Artist's illustration of the Psyche spacecraft approaching the metallic asteroid 16 Psyche.](/images/chapter-one/fig-04-psyche.jpg)
+***Image 1.4: NASA's Psyche spacecraft and its target asteroid.*** *The Psyche mission, launched in October 2023, will arrive at the metallic asteroid 16 Psyche in late July 2029. If the asteroid is what it appears to be, it contains more nickel-iron than humanity has ever mined. NASA/JPL-Caltech/ASU, public domain.*
 
 One asteroid deserves special mention. 16 Psyche is an M-type asteroid roughly 220 km across, orbiting in the main belt between Mars and Jupiter. It was originally thought to be up to 95% nickel-iron, which would make it the exposed metallic core of a destroyed protoplanet. More recent analysis suggests a more complex composition of 30-60% metal by volume, mixed with rock [24]. NASA's Psyche spacecraft, launched in October 2023, will arrive in late July 2029 and begin its science mission in August 2029. If Psyche turns out to be what it appears to be, it would represent a quantity of refined metal that dwarfs everything humanity has ever mined.
 
@@ -212,6 +225,8 @@ The bottom line: oxygen, carbon, and sulfur are widely available. Phosphorus has
 
 Beyond the asteroid belt, the giant planets and their moons offer something different from inner solar system resources: scientific discoveries that could redefine our understanding of life itself, along with effectively unlimited reserves of the very elements (water, nitrogen, hydrogen) that are scarce closer to home.
 
+![Image 1.8: Global view of Europa showing the fractured ice surface with brown-red lineae crisscrossing the bright white ice shell.](/images/chapter-one/fig-08-europa.jpg)
+***Image 1.8: Europa's fractured ice surface.*** *This global view from NASA's Galileo spacecraft shows the network of cracks and ridges that cover Europa's ice shell. The brown-red lineae are thought to be material from the subsurface ocean that has welled up through fractures and frozen. Beneath this ice shell, which is roughly 29 km thick, lies a saltwater ocean that may contain more water than all of Earth's oceans combined. NASA/JPL-Caltech, public domain.*
 
 ### Europa
 
@@ -229,6 +244,8 @@ In 2023, researchers confirmed the presence of phosphates in the plume material 
 
 The ocean beneath Enceladus is global, approximately 26-31 km deep, and the entire icy crust is detached from the rocky core [26]. Evidence suggests hydrothermal activity on the ocean floor, where hot water dissolves silica and minerals that are carried upward through the water column and out through the south polar fractures.
 
+![Image 1.5: Size comparison of Ganymede, Earth, and the Moon, showing Ganymede as larger than Mercury.](/images/chapter-one/fig-05-ganymede-size.jpg)
+***Image 1.5: Ganymede, Earth, and the Moon to scale.*** *Ganymede, the largest moon in the solar system, is bigger than the planet Mercury. It has its own magnetic field, a subsurface ocean, and a differentiated interior with a metallic core. Understanding the scale of these worlds is essential to appreciating the scope of resources available in the outer solar system. NASA, public domain.*
 
 ### Ganymede
 
@@ -242,6 +259,8 @@ Callisto, another of Jupiter's Galilean moons (diameter ~4,821 km), was long con
 
 Callisto's relative geological quiescence is actually an advantage for some purposes. Its surface is less radiation-bombarded than Europa's (because it orbits farther from Jupiter and outside the most intense radiation belts), making it a more practical location for a crewed outpost than Europa would be.
 
+![Image 1.6: Artist's concept of NASA's Dragonfly rotorcraft lander on the surface of Titan.](/images/chapter-one/fig-06-dragonfly-titan.png)
+***Image 1.6: NASA's Dragonfly mission to Titan.*** *Dragonfly is a nuclear-powered rotorcraft scheduled for launch in July 2028, arriving at Titan in the mid-2030s. It will fly from site to site across Titan's surface, sampling the organic-rich terrain. Titan's thick nitrogen atmosphere, which is 1.5 times denser than Earth's, makes powered flight relatively easy. NASA/Johns Hopkins APL, public domain.*
 
 ### Titan
 

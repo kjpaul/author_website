@@ -1,22 +1,69 @@
 {% extends "base.html" %}
+{% block main_class %}wide{% endblock %}
 {% block content %}<article class="book-detail legacy-book track-technical">
-  <div class="breadcrumb"><a href="/series/">Series</a> / <a href="/series/technical/">Technical Books</a> / Orbital Ring Engineering (1st Edition)</div>
+  <div class="breadcrumb">
+    <a href="/series/">Series</a><span class="sep">/</span>
+    <a href="/series/technical/">Technical Books</a><span class="sep">/</span>
+    Orbital Ring Engineering (1st Edition)
+  </div>
 
   <div class="legacy-banner">
-    <strong>This book has been expanded into a three-volume edition with significantly more detail.</strong>
-    See: <a href="/series/technical/orbital-rings/">Engineering Orbital Rings, Mass Drivers and Space Elevators</a> (AST-T1).
+    <strong>This is the original single-volume first edition.</strong>
+    It has since been expanded into a three-volume edition with significantly more
+    detail. See: <a href="/series/technical/orbital-rings/">Engineering Orbital Rings, Mass Drivers and Space Elevators</a> (AST-T1).
   </div>
 
   <header class="book-header">
+    <div class="book-cover-wrap">
+      {%- if book.cover_image %}
+      <img class="book-cover" src="{{ book.cover_image }}" alt="Cover of {{ book.title }} by {{ book.author }}">
+      {%- else %}
+      <div class="cover-placeholder">1ST ED</div>
+      {%- endif %}
+    </div>
+
     <div class="book-info">
-      <div class="book-meta">
-        <span class="book-id">Legacy · 1st Edition</span>
+      <div class="book-meta-line">
+        <span>Legacy &middot; 1st Edition</span>
+        <span class="sep">&middot;</span>
         {% with status="published" %}{% include "includes/status-badge.html" %}{% endwith %}
       </div>
-      <h1>Orbital Ring Engineering</h1>
-      <p class="series-line">First edition — single volume</p>
+      <h1>{{ book.title }}</h1>
+      {%- if book.subtitle %}
+      <p class="book-subtitle">{{ book.subtitle }}</p>
+      {%- endif %}
+      {%- if book.author %}
+      <p class="book-tagline">By {{ book.author }}</p>
+      {%- endif %}
+
+      {%- if book.amazon %}
+      <div class="launch-actions">
+        {%- if book.amazon.hardcover %}
+        <a class="btn btn-primary" href="{{ book.amazon.hardcover }}" rel="noopener">Hardcover on Amazon</a>
+        {%- endif %}
+        {%- if book.amazon.paperback %}
+        <a class="btn btn-ghost" href="{{ book.amazon.paperback }}" rel="noopener">Paperback</a>
+        {%- endif %}
+        {%- if book.amazon.kindle %}
+        <a class="btn btn-ghost" href="{{ book.amazon.kindle }}" rel="noopener">Kindle</a>
+        {%- endif %}
+      </div>
+      {%- endif %}
+
+      {%- if book.isbn %}
+      <p class="refs-meta">ISBN: {{ book.isbn }}</p>
+      {%- endif %}
     </div>
   </header>
 
   <div class="book-description">{{ content | safe }}</div>
+
+  <section class="book-links">
+    <h2>More</h2>
+    <ul>
+      <li><a href="/errata/?book={{ book.errata_key or 'orbital-ring-engineering' }}">Report or view errata for this edition</a></li>
+      <li><a href="/series/technical/orbital-rings/">The new three-volume edition</a></li>
+      <li><a href="/code/">Related code</a></li>
+    </ul>
+  </section>
 </article>{% endblock %}

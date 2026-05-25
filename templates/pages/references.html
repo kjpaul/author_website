@@ -22,7 +22,7 @@
     {% for ch in refs.chapters -%}
     {%- set num_str = ch.number | string %}
     {%- if num_str in afterword_labels %}{% set anchor = "afterword" %}{% set label = "Afterword" %}
-    {%- else %}{% set anchor = "ch-" ~ (num_str | replace(' ', '-')) %}{% set label = "Ch " ~ num_str %}{% endif %}
+    {%- else %}{% set anchor = ch.anchor if ch.anchor else ("ch-" ~ (num_str | replace(' ', '-'))) %}{% set label = "Ch " ~ num_str %}{% endif %}
     <a class="chapter-nav-link" href="#{{ anchor }}">{{ label }}</a>
     {% endfor %}
   </nav>
@@ -30,7 +30,7 @@
   {% for ch in refs.chapters -%}
   {%- set num_str = ch.number | string %}
   {%- if num_str in afterword_labels %}{% set anchor = "afterword" %}{% set heading = "Afterword" %}
-  {%- else %}{% set anchor = "ch-" ~ (num_str | replace(' ', '-')) %}{% set heading = "Chapter " ~ num_str %}{% endif %}
+  {%- else %}{% set anchor = ch.anchor if ch.anchor else ("ch-" ~ (num_str | replace(' ', '-'))) %}{% set heading = "Chapter " ~ num_str %}{% endif %}
   <section class="chapter-refs" id="{{ anchor }}">
     <h2 class="chapter-heading">
       <span class="chapter-number">{{ heading }}</span>
@@ -42,6 +42,8 @@
       {% with anchor_prefix=anchor %}{% include "includes/reference.html" %}{% endwith %}
       {% endfor %}
     </ol>
+    {%- elif ch.note %}
+    <p class="refs-empty">{{ ch.note }}</p>
     {%- else %}
     <p class="refs-empty">No references yet for this chapter.</p>
     {%- endif %}
