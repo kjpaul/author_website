@@ -6,6 +6,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signO
   from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
 
 const ADMIN_EMAIL = "paul@orbitalring.space";
+const BOOKS = window.ERRATA_BOOKS || {};
 
 const app  = initializeApp(firebaseConfig);
 const db   = getFirestore(app);
@@ -71,7 +72,7 @@ async function loadAll(statusFilter = "all") {
         <div class="errata-header">
           <span class="errata-page">Page ${escHtml(d.page || "?")}</span>
           <span class="badge badge-${d.status}">${d.status}</span>
-          <span class="errata-meta">${fmtDate(d.created_at)} &middot; ${escHtml(d.submitted_by)}</span>
+          <span class="errata-meta">${escHtml(BOOKS[d.book]?.title || d.book || "?")} &middot; ${fmtDate(d.created_at)} &middot; ${escHtml(d.submitted_by)}</span>
         </div>
         <div class="errata-quote">"${escHtml(d.quote)}"</div>
         <div class="errata-desc">${escHtml(d.description)}</div>

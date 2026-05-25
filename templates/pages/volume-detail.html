@@ -127,6 +127,9 @@
     {%- if vol.has_references %}
     <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References for Vol {{ vol.number | roman }}</a>
     {%- endif %}
+    {%- if book.id == 'ast-t1' %}
+    <a class="quicklink" href="/errata/?book=ast-t1-vol-{{ vol.number }}">Errata for Vol {{ vol.number | roman }}</a>
+    {%- endif %}
     <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">All volumes</a>
     <a class="quicklink" href="/series/">Series overview</a>
   </aside>

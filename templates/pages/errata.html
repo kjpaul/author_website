@@ -4,11 +4,18 @@
   Found an error in one of the books? Search existing errata below or
   submit a new one. All submissions are reviewed before publishing.
 </p>
+<p class="text-muted">
+  The 1st Edition is the original single-volume book. Volumes I, II, and III
+  are the new three-volume edition.
+</p>
 
 <div class="errata-search-bar">
   <input type="text" id="errata-search" placeholder="Search errata..." />
   <select id="book-filter">
-    <option value="orbital-ring-engineering">Orbital Ring Engineering</option>
+    <option value="all">All books</option>
+    {% for b in errata_books -%}
+    <option value="{{ b.key }}">{{ b.title }}</option>
+    {% endfor -%}
   </select>
 </div>
 <p id="errata-count" class="text-muted"></p>
@@ -21,7 +28,9 @@
   <div class="form-group">
     <label for="f-book">Book</label>
     <select id="f-book" name="book" required>
-      <option value="orbital-ring-engineering">Orbital Ring Engineering</option>
+      {% for b in errata_books -%}
+      <option value="{{ b.key }}">{{ b.title }}</option>
+      {% endfor -%}
     </select>
   </div>
   <div class="form-group">
@@ -47,5 +56,6 @@
 </form>
 
 <script src="/js/firebase-config.js"></script>
+<script>window.ERRATA_BOOKS = {{ errata_books_json | safe }};</script>
 <script type="module" src="/js/errata.js"></script>
 {% endblock %}

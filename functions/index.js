@@ -25,6 +25,7 @@
 //     -d '{"email":"test@example.com","groups":["vol1"]}'
 
 const { onRequest } = require("firebase-functions/v2/https");
+const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
 
@@ -148,3 +149,96 @@ function hashEmail(email) {
   }
   return (h >>> 0).toString(16);
 }
+
+// --- Errata notification ----------------------------------------------------
+// When a reader submits an erratum (a new doc in the `errata` collection),
+// email the author so it can be reviewed in the admin dashboard.
+//
+// Email goes out via Resend (https://resend.com), a simple transactional
+// email API. One-time setup:
+//   1. Create a free Resend account and generate an API key.
+//   2. firebase functions:secrets:set RESEND_API_KEY      (paste the key)
+//   3. (Recommended) Verify pauldejong.com in Resend, then set RESEND_FROM
+//      to an address on that domain. Until a domain is verified, Resend's
+//      default onboarding sender delivers to the account owner's inbox.
+//   4. firebase deploy --only functions:onErrataCreated
+//
+// Optional environment parameters (see functions/.env.example):
+//   ERRATA_NOTIFY_TO     - destination address (default author@pauldejong.com)
+//   RESEND_FROM          - From header (default onboarding@resend.dev)
+//   ADMIN_DASHBOARD_URL  - admin link included in the email body
+
+const RESEND_API_KEY = defineSecret("RESEND_API_KEY");
+
+exports.onErrataCreated = onDocumentCreated(
+  {
+    document: "errata/{errataId}",
+    region: "us-central1",
+    secrets: [RESEND_API_KEY],
+    maxInstances: 5,
+  },
+  async (event) => {
+    const snap = event.data;
+    if (!snap) return;
+    const d = snap.data() || {};
+
+    const apiKey = RESEND_API_KEY.value();
+    if (!apiKey) {
+      // Not configured yet: skip quietly rather than failing (and retrying).
+      logger.warn("resend_key_missing", {
+        msg: "RESEND_API_KEY not set; skipping errata email",
+      });
+      return;
+    }
+
+    const to = process.env.ERRATA_NOTIFY_TO || "author@pauldejong.com";
+    const from = process.env.RESEND_FROM || "Orbital Ring Errata <onboarding@resend.dev>";
+    const dashUrl = process.env.ADMIN_DASHBOARD_URL || "https://pauldejong.com/errata/admin/";
+
+    const book = d.book || "unknown";
+    const page = d.page || "?";
+    const subject = `New errata: ${book} (page ${page})`;
+
+    const text = [
+      "A new erratum was submitted on pauldejong.com.",
+      "",
+      `Book:         ${book}`,
+      `ISBN:         ${d.isbn || "n/a"}`,
+      `Page/Section: ${page}`,
+      `Submitted by: ${d.submitted_by || "anonymous"}`,
+      `Status:       ${d.status || "pending"}`,
+      "",
+      "Quote:",
+      d.quote || "(none)",
+      "",
+      "Description:",
+      d.description || "(none)",
+      "",
+      `Review and approve it here: ${dashUrl}`,
+      `Document ID: ${event.params.errataId}`,
+    ].join("\n");
+
+    try {
+      const resp = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({ from, to, subject, text }),
+      });
+
+      if (!resp.ok) {
+        const body = await resp.text();
+        logger.error("resend_send_failed", {
+          status: resp.status,
+          body: body.slice(0, 500),
+        });
+        return;
+      }
+      logger.info("errata_email_sent", { errataId: event.params.errataId, book });
+    } catch (err) {
+      logger.error("resend_exception", { message: err && err.message });
+    }
+  }
+);

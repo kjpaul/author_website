@@ -60,7 +60,12 @@
   <section class="book-links">
     <h2>More</h2>
     <ul>
-      <li><a href="/series/{{ track }}/{{ book.slug }}/errata/">Errata</a></li>
+      {%- if book.status != 'coming_soon' %}
+      <li><a href="/errata/">Errata</a></li>
+      {%- endif %}
+      {%- if book.id == 'ast-t1' %}
+      <li><a href="/series/technical/orbital-ring-engineering-1st-ed/">Original 1st edition</a></li>
+      {%- endif %}
       <li><a href="/code/">Related code</a></li>
       <li><a href="/blog/">Related blog posts</a></li>
     </ul>

@@ -271,18 +271,59 @@ def build_chapter_excerpts():
         )
 
 
+def get_errata_books():
+    """Books available for errata reporting, as an ordered list of dicts
+    with `key`, `title`, and `isbn`.
+
+    The `key` is the stable identifier stored on every Firestore errata
+    document. Do NOT change an existing key or previously submitted errata
+    stop matching their book. New books can be added freely.
+
+    Driven from series.json so adding a book in one place is enough.
+    """
+    books = []
+
+    # Original single-volume edition (the one currently on Amazon).
+    for entry in SERIES.get("legacy", []):
+        books.append({
+            "key": entry.get("errata_key", entry["slug"]),
+            "title": f"{entry['title']} (1st Edition)",
+            "isbn": entry.get("isbn", ""),
+        })
+
+    # The three volumes of the new edition (AST-T1).
+    _, ast_t1 = find_book_by_id("ast-t1")
+    if ast_t1 and ast_t1.get("volumes"):
+        for vol in ast_t1["volumes"]:
+            books.append({
+                "key": f"ast-t1-vol-{vol['number']}",
+                "title": f"Vol {to_roman(vol['number'])}: {vol['title']}",
+                "isbn": (vol.get("isbns") or {}).get("paperback", ""),
+            })
+
+    return books
+
+
 def build_errata_pages():
+    books = get_errata_books()
+    books_map = {b["key"]: {"title": b["title"], "isbn": b["isbn"]} for b in books}
+    books_json = json.dumps(books_map)
+
     render_template(
         "pages/errata.html",
         os.path.join(OUTPUT_DIR, "errata", "index.html"),
         title="Errata",
         description="Report and search for book errata",
+        errata_books=books,
+        errata_books_json=books_json,
     )
     render_template(
         "admin/errata-dashboard.html",
         os.path.join(OUTPUT_DIR, "errata", "admin", "index.html"),
         title="Errata Admin",
         description="Manage book errata submissions",
+        errata_books=books,
+        errata_books_json=books_json,
     )
 
 

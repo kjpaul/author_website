@@ -7,13 +7,8 @@ const app  = initializeApp(firebaseConfig);   // firebaseConfig loaded from fire
 const db   = getFirestore(app);
 const coll = collection(db, "errata");
 
-// --- Books registry ---
-const BOOKS = {
-  "orbital-ring-engineering": {
-    title: "Orbital Ring, Mass Driver, Space Elevator Engineering",
-    isbn:  "979-8-9938893-0-2",
-  },
-};
+// --- Books registry (injected by build.py from series.json) ---
+const BOOKS = window.ERRATA_BOOKS || {};
 
 // --- DOM refs ---
 const listEl     = document.getElementById("errata-list");
@@ -24,7 +19,7 @@ const statusEl   = document.getElementById("form-status");
 const countEl    = document.getElementById("errata-count");
 
 // --- Load & render confirmed errata ---
-async function loadErrata(searchText = "") {
+async function loadErrata(searchText = "", bookKey = "all") {
   listEl.innerHTML = '<p class="loading">Loading...</p>';
 
   try {
@@ -33,10 +28,11 @@ async function loadErrata(searchText = "") {
       orderBy("created_at", "desc"));
     const snap = await getDocs(q);
 
+    const search = searchText.toLowerCase();
     const items = [];
     snap.forEach(doc => {
       const d = doc.data();
-      const search = searchText.toLowerCase();
+      if (bookKey !== "all" && d.book !== bookKey) return;
       if (search && ![d.page, d.quote, d.description, d.admin_note || ""]
           .some(f => (f || "").toLowerCase().includes(search))) {
         return;
@@ -67,7 +63,7 @@ async function loadErrata(searchText = "") {
         <div class="errata-quote">"${escHtml(d.quote)}"</div>
         <div class="errata-desc">${escHtml(d.description)}</div>
         ${adminNote}
-        <div class="errata-meta">${book} &middot; ${fmtDate(d.created_at)}</div>
+        <div class="errata-meta">${escHtml(book)} &middot; ${fmtDate(d.created_at)}</div>
       </div>`;
     }).join("\n");
 
@@ -101,6 +97,7 @@ formEl.addEventListener("submit", async (e) => {
     await addDoc(coll, data);
     statusEl.innerHTML = '<span class="success">Thank you! Your submission will be reviewed.</span>';
     formEl.reset();
+    applyBookParam();  // restore any deep-linked book selection after reset
   } catch (err) {
     console.error(err);
     statusEl.innerHTML = '<span class="error">Submission failed. Please try again.</span>';
@@ -114,8 +111,20 @@ formEl.addEventListener("submit", async (e) => {
 let searchTimeout;
 searchEl.addEventListener("input", () => {
   clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(() => loadErrata(searchEl.value), 300);
+  searchTimeout = setTimeout(() => loadErrata(searchEl.value, bookFilter.value), 300);
 });
+
+// --- Book filter ---
+bookFilter.addEventListener("change", () => loadErrata(searchEl.value, bookFilter.value));
+
+// --- Deep link: /errata/?book=<key> preselects the book in filter + form ---
+function applyBookParam() {
+  const key = new URLSearchParams(location.search).get("book");
+  if (key && BOOKS[key]) {
+    if ([...bookFilter.options].some(o => o.value === key)) bookFilter.value = key;
+    if (formEl && [...formEl.book.options].some(o => o.value === key)) formEl.book.value = key;
+  }
+}
 
 // --- Helpers ---
 function escHtml(s) {
@@ -131,4 +140,5 @@ function fmtDate(ts) {
 }
 
 // --- Init ---
-loadErrata();
+applyBookParam();
+loadErrata("", bookFilter.value);
