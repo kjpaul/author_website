@@ -1735,6 +1735,15 @@ footer .foot-meta a:hover { color: #c1a064; }
     border-bottom: 1px solid var(--rule);
     padding: 1rem 1.5rem;
   }
+  /* Series dropdown: render inline in the column, not as an off-screen panel */
+  .nav-dropdown { width: 100%; }
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    margin-top: 0.4rem;
+    box-shadow: none;
+  }
   footer .foot-grid { grid-template-columns: 1fr; }
   .reference { grid-template-columns: 32px 1fr; }
 }
