@@ -24,6 +24,8 @@
 //     -H 'Content-Type: application/json' \
 //     -d '{"email":"test@example.com","groups":["vol1"]}'
 
+// Runtime is pinned to Node.js 22 in firebase.json ("runtime") and package.json
+// ("engines"); keep them in sync — firebase.json wins if they differ.
 const { onRequest } = require("firebase-functions/v2/https");
 const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
