@@ -28,6 +28,7 @@ const { onRequest } = require("firebase-functions/v2/https");
 const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
+const nodemailer = require("nodemailer");
 
 const MAILERLITE_API_KEY = defineSecret("MAILERLITE_API_KEY");
 
@@ -154,27 +155,28 @@ function hashEmail(email) {
 // When a reader submits an erratum (a new doc in the `errata` collection),
 // email the author so it can be reviewed in the admin dashboard.
 //
-// Email goes out via Resend (https://resend.com), a simple transactional
-// email API. One-time setup:
-//   1. Create a free Resend account and generate an API key.
-//   2. firebase functions:secrets:set RESEND_API_KEY      (paste the key)
-//   3. (Recommended) Verify pauldejong.com in Resend, then set RESEND_FROM
-//      to an address on that domain. Until a domain is verified, Resend's
-//      default onboarding sender delivers to the account owner's inbox.
-//   4. firebase deploy --only functions:onErrataCreated
+// Sent through the author's Google Workspace over Gmail SMTP, so no extra
+// email service is needed. One-time setup:
+//   1. On the Google account named in GMAIL_USER, turn on 2-Step Verification,
+//      then create an App Password (Google Account > Security > App passwords).
+//   2. firebase functions:secrets:set GMAIL_APP_PASSWORD   (paste the 16-char
+//      app password; the spaces Google shows are stripped automatically)
+//   3. firebase deploy --only functions:onErrataCreated
 //
-// Optional environment parameters (see functions/.env.example):
+// Environment parameters (see functions/.env.example):
+//   GMAIL_USER           - Workspace account that sends and authenticates;
+//                          must match the account the App Password belongs to.
+//   MAIL_FROM            - From header (default: GMAIL_USER)
 //   ERRATA_NOTIFY_TO     - destination address (default author@pauldejong.com)
-//   RESEND_FROM          - From header (default onboarding@resend.dev)
 //   ADMIN_DASHBOARD_URL  - admin link included in the email body
 
-const RESEND_API_KEY = defineSecret("RESEND_API_KEY");
+const GMAIL_APP_PASSWORD = defineSecret("GMAIL_APP_PASSWORD");
 
 exports.onErrataCreated = onDocumentCreated(
   {
     document: "errata/{errataId}",
     region: "us-central1",
-    secrets: [RESEND_API_KEY],
+    secrets: [GMAIL_APP_PASSWORD],
     maxInstances: 5,
   },
   async (event) => {
@@ -182,17 +184,20 @@ exports.onErrataCreated = onDocumentCreated(
     if (!snap) return;
     const d = snap.data() || {};
 
-    const apiKey = RESEND_API_KEY.value();
-    if (!apiKey) {
+    // App passwords are displayed with spaces ("abcd efgh ijkl mnop");
+    // Gmail accepts them without, so strip whitespace.
+    const appPassword = (GMAIL_APP_PASSWORD.value() || "").replace(/\s+/g, "");
+    const gmailUser = process.env.GMAIL_USER || "";
+    if (!appPassword || !gmailUser) {
       // Not configured yet: skip quietly rather than failing (and retrying).
-      logger.warn("resend_key_missing", {
-        msg: "RESEND_API_KEY not set; skipping errata email",
+      logger.warn("gmail_not_configured", {
+        msg: "GMAIL_APP_PASSWORD or GMAIL_USER not set; skipping errata email",
       });
       return;
     }
 
     const to = process.env.ERRATA_NOTIFY_TO || "author@pauldejong.com";
-    const from = process.env.RESEND_FROM || "Orbital Ring Errata <onboarding@resend.dev>";
+    const from = process.env.MAIL_FROM || gmailUser;
     const dashUrl = process.env.ADMIN_DASHBOARD_URL || "https://pauldejong.com/errata/admin/";
 
     const book = d.book || "unknown";
@@ -219,26 +224,17 @@ exports.onErrataCreated = onDocumentCreated(
     ].join("\n");
 
     try {
-      const resp = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({ from, to, subject, text }),
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: { user: gmailUser, pass: appPassword },
       });
 
-      if (!resp.ok) {
-        const body = await resp.text();
-        logger.error("resend_send_failed", {
-          status: resp.status,
-          body: body.slice(0, 500),
-        });
-        return;
-      }
+      await transporter.sendMail({ from, to, subject, text });
       logger.info("errata_email_sent", { errataId: event.params.errataId, book });
     } catch (err) {
-      logger.error("resend_exception", { message: err && err.message });
+      logger.error("gmail_send_failed", { message: err && err.message });
     }
   }
 );
