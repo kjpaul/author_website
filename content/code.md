@@ -10,7 +10,7 @@ excerpt: "Open source Python project for modeling orbital rings, space elevators
 
 ## Coding Hub Community
 
-While writing Volume I of the orbital ring series, I started with a set of assumptions that turned out to be completely wrong. Some of the issues I encountered could be solved analytically, but the time-dependent processes, like orbital ring deployment, needed iterative solutions.
+While writing *Why Space*, the economic case that accompanies the orbital ring series, I started with a set of assumptions that turned out to be completely wrong. Some of the issues I encountered could be solved analytically, but the time-dependent processes, like orbital ring deployment, needed iterative solutions.
 
 That process led to some surprising results, which I describe in the book. I did the numerical analysis using simple Python code, running it repeatedly to hone in on results that actually worked.
 

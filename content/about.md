@@ -14,7 +14,7 @@ I have been thinking about orbital rings and space infrastructure for more than 
 
 The planned series is called *Astronomy's Shocking Twist*. It consists of ten books across two tracks. The technical track includes five non-fiction books on space infrastructure: orbital rings, mass drivers, space elevators, propulsion systems, and large-scale space habitation. The hard science fiction track comprises five novels that share a single universe grounded in the technical work. The two tracks are meant to reinforce each other. The fiction tells a story that could happen, while the technical books demonstrate how it could be achieved, using real materials and real numbers.
 
-Volume I of the technical track, *The Orbital Ring: The Economic Case for Space Mass Transit*, serves as the starting point. It is written for a generally educated reader; you do not need an engineering degree to follow the arguments. Volumes II and III are textbooks, while Volume IV, which covers construction, is planned for release after the fiction series is complete.
+The standalone companion to the technical track, *Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building*, the economic case for space mass transit, serves as the starting point for the general reader. It is written for a generally educated reader; you do not need an engineering degree to follow the arguments. Volumes I to III are the engineering: the complete design review, the first principles, and the launch technologies. A volume on construction is planned for release after the fiction series is complete.
 
 ## About me
 

@@ -3,11 +3,11 @@ title: "Chapter One: What's Out There"
 slug: chapter-one
 book: orbital-ring
 volume: 1
-description: "Read Chapter One of The Orbital Ring, Volume I. The solar system as a destination and as a resource."
+description: "Read Chapter One of Why Space, the economic case for space mass transit. The solar system as a destination and as a resource."
 ---
 
 <div class="excerpt-note">
-  <strong>Read Chapter One.</strong> This is the opening chapter of <em>The Orbital Ring, Volume I: The Economic Case for Space Mass Transit</em>. Numbered citations refer to the <a href="/series/technical/orbital-rings/vol-1/references/#ch-1">Volume I references for Chapter 1</a>.
+  <strong>Read Chapter One.</strong> This is the opening chapter of <em>Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building</em>, the economic case for space mass transit. Numbered citations refer to the <a href="/series/technical/why-space/references/#ch-1">Why Space references for Chapter 1</a>.
 </div>
 
 ## Introduction
@@ -291,11 +291,11 @@ The rest of this book is about building it.
 ---
 
 <div class="excerpt-foot">
-  <p><strong>End of excerpt.</strong> Volume I continues with Chapters 2 through 20, covering the science that drives us, what we cannot see, what could hit us, the first space age, the politics, the launch technologies that came before, and the case for the orbital ring itself.</p>
-  <form class="notify-form" data-notify-form aria-label="Notify me when Volume I is available">
+  <p><strong>End of excerpt.</strong> <em>Why Space</em> continues with Chapters 2 through 20, covering the science that drives us, what we cannot see, what could hit us, the first space age, the politics, the launch technologies that came before, and the case for the orbital ring itself.</p>
+  <form class="notify-form" data-notify-form aria-label="Notify me when Why Space is available">
     <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
     <button class="btn btn-primary notify-form-submit" type="submit">Notify me on release <span class="arrow">&rarr;</span></button>
     <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
   </form>
-  <p><a class="btn btn-ghost" href="/series/technical/orbital-rings/vol-1/">Back to Volume I</a> &nbsp; <a class="btn btn-ghost" href="/series/technical/orbital-rings/vol-1/references/#ch-1">Chapter 1 references</a></p>
+  <p><a class="btn btn-ghost" href="/series/technical/why-space/">Back to Why Space</a> &nbsp; <a class="btn btn-ghost" href="/series/technical/why-space/references/#ch-1">Chapter 1 references</a></p>
 </div>

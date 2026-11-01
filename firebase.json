@@ -9,25 +9,104 @@
       "**/node_modules/**"
     ],
     "redirects": [
-      { "source": "/book", "destination": "/series/technical/orbital-rings/", "type": 301 },
-      { "source": "/books", "destination": "/series/", "type": 301 },
-      { "source": "/books/orbital-ring", "destination": "/series/technical/orbital-rings/", "type": 301 }
+      {
+        "source": "/book",
+        "destination": "/series/technical/orbital-rings/",
+        "type": 301
+      },
+      {
+        "source": "/books",
+        "destination": "/series/",
+        "type": 301
+      },
+      {
+        "source": "/books/orbital-ring",
+        "destination": "/series/technical/orbital-rings/",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-3/references",
+        "destination": "/series/technical/orbital-rings/vol-1/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-3/references/",
+        "destination": "/series/technical/orbital-rings/vol-1/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-3/references/index.html",
+        "destination": "/series/technical/orbital-rings/vol-1/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-2/references",
+        "destination": "/series/technical/orbital-rings/vol-3/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-2/references/",
+        "destination": "/series/technical/orbital-rings/vol-3/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-2/references/index.html",
+        "destination": "/series/technical/orbital-rings/vol-3/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-4",
+        "destination": "/series/technical/why-space",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-4/",
+        "destination": "/series/technical/why-space",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-4/references",
+        "destination": "/series/technical/why-space/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-4/references/",
+        "destination": "/series/technical/why-space/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-rings/vol-4/references/index.html",
+        "destination": "/series/technical/why-space/references",
+        "type": 301
+      }
     ],
     "rewrites": [
-      { "source": "/api/subscribe", "function": "subscribe" },
-      { "source": "/api/submit-errata", "function": "subscribe" }
+      {
+        "source": "/api/subscribe",
+        "function": "subscribe"
+      },
+      {
+        "source": "/api/submit-errata",
+        "function": "subscribe"
+      }
     ],
     "headers": [
       {
         "source": "/data/**",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=3600" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
         ]
       },
       {
         "source": "/admin/**",
         "headers": [
-          { "key": "Cache-Control", "value": "private, no-cache" }
+          {
+            "key": "Cache-Control",
+            "value": "private, no-cache"
+          }
         ]
       }
     ]
@@ -41,7 +120,12 @@
       "source": "functions",
       "codebase": "default",
       "runtime": "nodejs22",
-      "ignore": ["node_modules", ".git", "firebase-debug.log", "*.local"]
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "*.local"
+      ]
     }
   ]
 }

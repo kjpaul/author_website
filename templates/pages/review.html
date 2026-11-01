@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}<article class="review-page">
+  <header class="review-intro">
+    {{ intro_html | safe }}
+    {%- if review_books | length > 1 %}
+    <div class="review-jump" role="navigation" aria-label="Jump to a book">
+      <span class="review-jump-label">Jump to</span>
+      {%- for b in review_books %}
+      <a href="#{{ b.anchor }}">{{ b.placeholder }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </header>
+
+  {%- for b in review_books %}
+  <section class="review-book" id="{{ b.anchor }}" aria-labelledby="{{ b.anchor }}-title">
+    <div class="review-book-cover">
+      {%- if b.cover %}
+      <img src="{{ b.cover }}" alt="Cover of {{ b.title }}" loading="lazy" width="400" height="600">
+      {%- else %}
+      <div class="cover-placeholder">{{ b.placeholder }}</div>
+      {%- endif %}
+    </div>
+    <div class="review-book-head">
+      <div class="review-book-label">{{ b.label }}</div>
+      <h2 id="{{ b.anchor }}-title">{{ b.title }}</h2>
+    </div>
+    <div class="review-book-actions">
+      <div class="review-buttons">
+        {%- if b.amazon_url %}
+        <a class="review-btn review-btn-amazon" href="{{ b.amazon_url }}" rel="noopener">Review on Amazon</a>
+        {%- endif %}
+        {%- for s in b.stores %}
+        <a class="review-btn" href="{{ s.url }}" rel="noopener">{{ s.name }}</a>
+        {%- endfor %}
+      </div>
+      {%- if b.amazon_intl %}
+      <div class="review-intl">
+        <span class="review-intl-label">Outside the US? Amazon</span>
+        {%- for c in b.amazon_intl %}
+        <a href="{{ c.url }}" rel="noopener">{{ c.country }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+  {%- else %}
+  <p class="refs-pending">Review links will appear here once the books are in the stores.</p>
+  {%- endfor %}
+
+  <section class="review-outro">
+    {{ outro_html | safe }}
+  </section>
+</article>{% endblock %}

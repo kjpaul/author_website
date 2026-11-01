@@ -2,21 +2,21 @@
 {% block main_class %}wide home{% endblock %}
 {% block content %}<section class="home-launch">
   <div class="cover-wrap">
-    <a href="/series/technical/orbital-rings/vol-1/">
-      <img class="book-cover" src="/images/covers/orbital-ring-vol-1-cover.png" alt="Cover of Volume I: The Orbital Ring, The Economic Case for Space Mass Transit, by Paul G. de Jong">
+    <a href="/series/technical/why-space/">
+      <img class="book-cover" src="/images/covers/orbital-ring-vol-1-cover.png" alt="Cover of Why Space, the economic case for space mass transit, by Paul G. de Jong">
     </a>
   </div>
 
   <div class="hero-body">
     <div class="launch-meta">
-      <span class="vol-id">VOLUME I</span>
+      <span class="vol-id">THE ECONOMIC CASE</span>
       <span class="vol-status">In press</span>
     </div>
 
-    <div class="launch-series-line">Orbital Ring, Mass Driver, and Space Elevator Engineering &middot; Volume I</div>
+    <div class="launch-series-line">The companion to Orbital Ring Engineering</div>
 
-    <h1>The <em>Orbital Ring</em></h1>
-    <p class="launch-subtitle">The Economic Case for Space Mass Transit</p>
+    <h1>Why <em>Space</em></h1>
+    <p class="launch-subtitle">Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building</p>
 
     <p class="launch-hook">
       Mass drivers and space elevators built on an orbital ring. This is not
@@ -24,15 +24,15 @@
     </p>
 
     <p class="launch-lede">
-      Volume I is a roller coaster ride through the history that gave us the
+      <em>Why Space</em> is a roller coaster ride through the history that gave us the
       idea and the politics that makes and breaks it. What is at stake, and
       what can we do to make a highway to space a realistic option for our
-      future? Volumes II and III explain the technology in detail. This book
+      future? Volumes I to III explain the technology in detail. This book
       is about origins, the politics, and the why.
     </p>
 
     <div class="launch-inside">
-      <h4>Inside Volume I</h4>
+      <h4>Inside <em>Why Space</em></h4>
       <ul>
         <li>The Apollo legacy and why it still matters</li>
         <li>Space politics: the good, the bad, and the ugly</li>
@@ -42,7 +42,7 @@
       </ul>
     </div>
 
-    <form class="notify-form" data-notify-form aria-label="Notify me when Volume I is available">
+    <form class="notify-form" data-notify-form aria-label="Notify me when Why Space is available">
       <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
       <button class="btn btn-primary notify-form-submit" type="submit">
         Notify me on release
@@ -53,10 +53,10 @@
 
     <div class="launch-actions">
       <a class="btn btn-ghost" href="/books/orbital-ring/chapter-one/">Read Chapter One</a>
-      <a class="btn btn-ghost" href="/series/technical/orbital-rings/vol-1/">Volume I details</a>
+      <a class="btn btn-ghost" href="/series/technical/why-space/">Why Space details</a>
     </div>
 
-    <div class="launch-isbns" aria-label="ISBN-13 numbers for Volume I">
+    <div class="launch-isbns" aria-label="ISBN-13 numbers for Why Space">
       <div>
         <span class="k">Hardback ISBN</span>
         <span class="v">979-8-9932868-3-9</span>
@@ -96,9 +96,9 @@
           <span class="spine-mono">PGdJ</span>
         </a>
         {%- endfor -%}
-      {%- else -%}
+      {%- elif book.id != 'why-space' -%}
         <a class="spine spine-tbd" href="/series/technical/{{ book.slug }}/" role="listitem" title="{{ book.short_title or book.title }}">
-          <span class="spine-vol">T{{ loop.index }}</span>
+          <span class="spine-vol">{{ book.id | upper | replace('AST-', '') }}</span>
           <span class="spine-title">{{ book.short_title or book.title }}</span>
           <span class="spine-globe" aria-hidden="true"></span>
           <span class="spine-subtitle">Planned</span>

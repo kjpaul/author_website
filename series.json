@@ -2,49 +2,96 @@
   "technical": [
     {
       "id": "ast-t1",
-      "title": "Orbital Ring, Mass Driver, and Space Elevator Engineering",
-      "short_title": "Orbital Ring, Mass Driver & Space Elevator Engineering",
+      "title": "Orbital Ring Engineering",
+      "short_title": "Orbital Ring Engineering",
       "slug": "orbital-rings",
       "status": "in_progress",
-      "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
+      "cover_image": "",
       "description": "Mass transit to space: orbital ring, mass driver, and space elevator engineering.",
       "volumes": [
         {
           "number": 1,
-          "title": "The Economic Case for Space Mass Transit",
+          "title": "Space Mass Transit Complete Design Review",
           "slug": "vol-1",
           "status": "in_progress",
-          "chapters": 20,
+          "chapters": 19,
           "has_references": true,
-          "has_excerpt": true,
+          "has_excerpt": false,
           "purchase_url": "",
-          "isbns": {
-            "hardback": "979-8-9932868-3-9",
-            "paperback": "979-8-9932868-4-6",
-            "epub": "979-8-9932868-5-3"
+          "errata_key": "ast-t1-vol-3",
+          "review": {
+            "amazon_asin": "",
+            "goodreads": "",
+            "barnes_noble": "",
+            "kobo": "",
+            "apple_books": ""
           }
         },
         {
           "number": 2,
-          "title": "Mass Transit Launch Technologies from First Principles",
+          "title": "First Principles: Orbital Mechanics, Materials Science, and Electrical Systems",
           "slug": "vol-2",
+          "status": "in_progress",
+          "chapters": null,
+          "has_references": false,
+          "has_excerpt": false,
+          "purchase_url": "",
+          "errata_key": "ast-t1-first-principles",
+          "review": {
+            "amazon_asin": "",
+            "goodreads": "",
+            "barnes_noble": "",
+            "kobo": "",
+            "apple_books": ""
+          }
+        },
+        {
+          "number": 3,
+          "title": "Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators",
+          "slug": "vol-3",
           "status": "in_progress",
           "chapters": null,
           "has_references": true,
           "has_excerpt": false,
-          "purchase_url": ""
-        },
-        {
-          "number": 3,
-          "title": "Space Mass Transit Complete Design Review",
-          "slug": "vol-3",
-          "status": "in_progress",
-          "chapters": 13,
-          "has_references": true,
-          "has_excerpt": false,
-          "purchase_url": ""
+          "purchase_url": "",
+          "errata_key": "ast-t1-vol-2",
+          "review": {
+            "amazon_asin": "",
+            "goodreads": "",
+            "barnes_noble": "",
+            "kobo": "",
+            "apple_books": ""
+          }
         }
       ]
+    },
+    {
+      "id": "why-space",
+      "title": "Why Space",
+      "subtitle": "Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building",
+      "short_title": "Why Space",
+      "slug": "why-space",
+      "status": "in_progress",
+      "chapters": 20,
+      "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
+      "description": "The economic case for space mass transit, written for the general reader. The standalone companion to Orbital Ring Engineering.",
+      "has_references": true,
+      "has_excerpt": true,
+      "purchase_url": "",
+      "errata_key": "ast-t1-vol-1",
+      "isbns": {
+        "hardback": "979-8-9932868-3-9",
+        "paperback": "979-8-9932868-4-6",
+        "epub": "979-8-9932868-5-3"
+      },
+      "review": {
+        "amazon_asin": "",
+        "goodreads": "",
+        "barnes_noble": "",
+        "kobo": "",
+        "apple_books": ""
+      },
+      "volumes": null
     },
     {
       "id": "ast-t2",
@@ -143,7 +190,15 @@
         "paperback": "https://www.amazon.com/dp/B0FWYNHQZY",
         "kindle": "https://www.amazon.com/dp/B0FWYMJTPG"
       },
-      "description": "The original single-volume edition, superseded by the three-volume AST-T1."
+      "description": "The original single-volume edition, superseded by the three-volume AST-T1.",
+      "review": {
+        "amazon_asin": "B0FWYN8VLB",
+        "goodreads": "https://www.goodreads.com/book/show/242946874",
+        "barnes_noble": "",
+        "kobo": "",
+        "apple_books": "",
+        "anchor": "1st-edition"
+      }
     }
   ]
 }

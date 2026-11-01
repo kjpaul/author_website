@@ -1,11 +1,11 @@
 ---
-title: "Orbital Ring, Mass Driver, and Space Elevator Engineering"
+title: "Orbital Ring Engineering"
 slug: "orbital-rings"
 date: 2026-04-24
 author: "Paul G. de Jong"
 type: page
 status: publish
-excerpt: "A three-volume engineering treatment of the orbital ring: the economic case, the science from first principles, and the complete design review. Companion to the Astronomy's Shocking Twist hard science fiction series."
+excerpt: "A three-volume engineering treatment of the orbital ring: the complete design review, the first principles, and the launch technologies. Companion to the Astronomy's Shocking Twist hard science fiction series."
 ---
 
 A three-volume engineering treatment of the orbital ring, the most credible architecture for moving mass and people between Earth's surface and the rest of the solar system at industrial scale.
@@ -16,21 +16,24 @@ The orbital ring concept dates to 1870. The physics has been worked out for over
 
 This three-volume series is that reference.
 
-- **Volume I: The Economic Case for Space Mass Transit.** Why an orbital ring. What rockets can and cannot do. What alternative launch systems exist, on their own terms. How the economics close. Written for a general educated reader. Math is light and conversational; every equation that appears is explained in words first.
+- **Volume I: Space Mass Transit Complete Design Review.** A full design review of an integrated orbital ring with mass driver and space elevator. Materials, power, control, orbital mechanics, construction sequencing, failure modes. The volume that engineers will read at a desk with a pencil.
 
-- **Volume II: Mass Transit Launch Technologies from First Principles.** The physics and engineering of each launch system, derived from scratch. Rockets, skyhooks, mass drivers, launch loops, non-synchronous space elevators, rotovators, and orbital rings. Written at the level of an undergraduate textbook. Every result is derived. Every derivation is shown.
+- **Volume II: First Principles: Orbital Mechanics, Materials Science, and Electrical Systems.** The groundwork the series builds on, derived from scratch. Written at the level of an undergraduate textbook. Every result is derived. Every derivation is shown.
 
-- **Volume III: Space Mass Transit Complete Design Review.** A full design review of an integrated orbital ring with mass driver and space elevator. Materials, power, control, orbital mechanics, construction sequencing, failure modes. The volume that engineers will read at a desk with a pencil.
+- **Volume III: Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators.** The physics and engineering of each launch system on its own terms. Rockets, skyhooks, mass drivers, launch loops, non-synchronous space elevators, rotovators, and orbital rings.
 
-A fourth volume on construction logistics is planned for after the companion fiction series is complete.
+The economic case is a separate book. *Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building* is the standalone companion to the series, written for a general educated reader: why an orbital ring, what rockets can and cannot do, what alternative launch systems exist, and how the economics close. Math is light and conversational; every equation that appears is explained in words first. [More about Why Space](/series/technical/why-space/).
 
-## Volume I is available first
+A further volume on construction logistics is planned for after the companion fiction series is complete.
 
-Volume I ships in 2026. It is the starting point. Readers who want the engineering before the framing can begin with Volume II when it publishes, but the argument is built on Volume I, and most readers will get more from the series by reading it in order.
+## Where to start
 
-- [Volume I landing page, sample chapter, and notify-me form](/series/technical/orbital-rings/vol-1/)
+*Why Space*, the economic case, ships in 2026 and is the starting point for the general reader. Readers who want the engineering first can begin with Volume I, the design review, which is the volume the open-source code and the published references serve.
+
+- [Volume I, the design review, and its references](/series/technical/orbital-rings/vol-1/)
 - [Volume II summary](/series/technical/orbital-rings/vol-2/)
 - [Volume III summary](/series/technical/orbital-rings/vol-3/)
+- [Why Space, the economic case: landing page, sample chapter, and notify-me form](/series/technical/why-space/)
 
 ## What makes this series different
 
@@ -48,7 +51,8 @@ The fiction series is in advanced planning. Titles will be announced as they are
 
 ## Resources
 
-- [References, organized by chapter](/series/technical/orbital-rings/vol-1/references/)
+- [Volume I references, organized by chapter](/series/technical/orbital-rings/vol-1/references/)
+- [Why Space references, organized by chapter](/series/technical/why-space/references/)
 - [Open-source simulation code on GitHub](/code/)
 - [Submit errata or feedback](/errata/)
 

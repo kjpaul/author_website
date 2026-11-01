@@ -9,11 +9,7 @@
 
   <header class="book-header">
     <div class="book-cover-wrap">
-      {%- if book.id == 'ast-t1' %}
-      <a href="/series/{{ track }}/{{ book.slug }}/vol-1/">
-        <img class="book-cover" src="/images/covers/orbital-ring-vol-1-cover.png" alt="Cover of Volume I, the first book in {{ book.title }}">
-      </a>
-      {%- elif book.cover_image %}
+      {%- if book.cover_image %}
       <img class="book-cover" src="{{ book.cover_image }}" alt="{{ book.title }} cover">
       {%- else %}
       <div class="cover-placeholder">{{ book.id | upper }}</div>
@@ -46,6 +42,62 @@
       {%- endif %}
     </div>
   </header>
+
+  {%- if book.id == 'why-space' %}
+  <section class="home-launch" style="margin-top: 0;">
+    <div class="hero-body">
+      <p class="launch-hook">
+        Mass drivers and space elevators built on an orbital ring. This is
+        not science fiction. It is a choice.
+      </p>
+      <p class="launch-lede">
+        <em>Why Space</em> is a roller coaster ride through the history that gave us
+        the idea and the politics that makes and breaks it. What is at
+        stake, and what can we do to make a highway to space a realistic
+        option for our future? The three volumes of <em>Orbital Ring Engineering</em>
+        explain the technology in detail. This book is about origins, the politics, and the why.
+      </p>
+      <div class="launch-inside">
+        <h4>Inside <em>Why Space</em></h4>
+        <ul>
+          <li>The Apollo legacy and why it still matters</li>
+          <li>Space politics: the good, the bad, and the ugly</li>
+          <li>Skyhooks, launch loops, space elevators, and more</li>
+          <li>An orbital ring that powers the entire planet</li>
+          <li>A future with billions living across the solar system</li>
+        </ul>
+      </div>
+      <form class="notify-form" data-notify-form aria-label="Notify me when Why Space is available">
+        <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
+        <button class="btn btn-primary notify-form-submit" type="submit">
+          Notify me on release
+          <span class="arrow">&rarr;</span>
+        </button>
+        <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
+      </form>
+      <div class="launch-actions">
+        <a class="btn btn-ghost" href="/books/orbital-ring/chapter-one/">Read Chapter One</a>
+        {%- if book.has_references %}
+        <a class="btn btn-ghost" href="/series/{{ track }}/{{ book.slug }}/references/">References</a>
+        {%- endif %}
+        <a class="btn btn-ghost" href="/errata/?book={{ book.errata_key }}">Errata</a>
+      </div>
+      {%- if book.isbns %}
+      <div class="launch-isbns" aria-label="ISBN-13 numbers for Why Space">
+        {%- if book.isbns.hardback %}
+        <div><span class="k">Hardback ISBN</span><span class="v">{{ book.isbns.hardback }}</span></div>
+        {%- endif %}
+        {%- if book.isbns.paperback %}
+        <div><span class="k">Paperback ISBN</span><span class="v">{{ book.isbns.paperback }}</span></div>
+        {%- endif %}
+        {%- if book.isbns.epub %}
+        <div><span class="k">ePub ISBN</span><span class="v">{{ book.isbns.epub }}</span></div>
+        {%- endif %}
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
 
   {%- if book_content %}
   <div class="book-description">{{ book_content | safe }}</div>

@@ -291,14 +291,25 @@ def get_errata_books():
             "isbn": entry.get("isbn", ""),
         })
 
-    # The three volumes of the new edition (AST-T1).
+    # The volumes of the new edition (AST-T1). The key is `errata_key` when a volume carries one (the volumes were renumbered
+    # on 2026-10-29 and the keys stayed with their books), else ast-t1-vol-<number>.
     _, ast_t1 = find_book_by_id("ast-t1")
     if ast_t1 and ast_t1.get("volumes"):
         for vol in ast_t1["volumes"]:
             books.append({
-                "key": f"ast-t1-vol-{vol['number']}",
+                "key": vol.get("errata_key") or f"ast-t1-vol-{vol['number']}",
                 "title": f"Vol {to_roman(vol['number'])}: {vol['title']}",
                 "isbn": (vol.get("isbns") or {}).get("paperback", ""),
+            })
+
+    # Standalone technical books that carry an errata key (Why Space, the economic case, which left the
+    # AST-T1 set on 2026-10-31 and keeps its key ast-t1-vol-1).
+    for book in SERIES.get("technical", []):
+        if not book.get("volumes") and book.get("errata_key"):
+            books.append({
+                "key": book["errata_key"],
+                "title": book["title"],
+                "isbn": (book.get("isbns") or {}).get("paperback", ""),
             })
 
     return books
@@ -476,7 +487,7 @@ def build_reference_pages():
         render_template(
             "pages/references.html",
             out_path,
-            title=f"References — {refs_data.get('volume_title') or refs_data.get('book_title')}",
+            title=refs_data.get("page_title") or f"References — {refs_data.get('volume_title') or refs_data.get('book_title')}",
             description=(
                 f"Numbered references for {refs_data.get('book_title')}"
                 + (f", Volume {to_roman(vol_num)}" if vol_num else "")
@@ -522,6 +533,154 @@ def build_series():
                     build_volume_page(book, vol, track)
     build_legacy_book()
     build_reference_pages()
+
+
+# --- Review page ---
+REVIEW_MD = os.path.join(CONTENT_DIR, "review.md")
+REVIEW_BOOKS_MARKER = "<!-- books -->"
+
+# Stores shown as buttons, in display order. Keys match the `review` block
+# on each volume / book / legacy entry in series.json. Amazon is built from
+# `amazon_asin`; the rest are full URLs pasted into series.json.
+REVIEW_STORES = [
+    ("goodreads", "Goodreads"),
+    ("barnes_noble", "Barnes & Noble"),
+    ("kobo", "Kobo"),
+    ("apple_books", "Apple Books"),
+]
+AMAZON_REVIEW_US = "https://www.amazon.com/review/create-review?asin={asin}"
+AMAZON_REVIEW_INTL = [
+    ("UK", "https://www.amazon.co.uk/review/create-review?asin={asin}"),
+    ("DE", "https://www.amazon.de/review/create-review?asin={asin}"),
+    ("NL", "https://www.amazon.nl/review/create-review?asin={asin}"),
+    ("CA", "https://www.amazon.ca/review/create-review?asin={asin}"),
+    ("AU", "https://www.amazon.com.au/review/create-review?asin={asin}"),
+]
+
+
+def review_entry(review, anchor, label, title, cover, placeholder):
+    """Turn a series.json `review` block into what the template needs.
+
+    Returns None when no link is set, so books that are not out yet stay
+    off the page until their links are added.
+    """
+    review = review or {}
+    asin = (review.get("amazon_asin") or "").strip()
+    stores = [
+        {"key": key, "name": name, "url": review[key].strip()}
+        for key, name in REVIEW_STORES
+        if (review.get(key) or "").strip()
+    ]
+    if not asin and not stores:
+        return None
+    return {
+        "anchor": review.get("anchor") or anchor,
+        "label": label,
+        "title": title,
+        "cover": cover,
+        "placeholder": placeholder,
+        "amazon_url": AMAZON_REVIEW_US.format(asin=asin) if asin else "",
+        "amazon_intl": [
+            {"country": c, "url": u.format(asin=asin)} for c, u in AMAZON_REVIEW_INTL
+        ] if asin else [],
+        "stores": stores,
+    }
+
+
+def get_review_books():
+    """Every book or volume in series.json that has at least one review link.
+
+    Multi-volume books contribute one entry per volume (anchor = volume slug,
+    e.g. #vol-1). Single books contribute one entry (anchor = book slug).
+    Legacy editions come last. The anchor can be overridden with
+    `review.anchor`.
+    """
+    entries = []
+    for track in ("technical", "fiction"):
+        for book in SERIES.get(track, []):
+            if book.get("volumes"):
+                for vol in book["volumes"]:
+                    entries.append(review_entry(
+                        vol.get("review"),
+                        anchor=vol["slug"],
+                        label=f"{book.get('short_title') or book['title']} · Volume {to_roman(vol['number'])}",
+                        title=vol["title"],
+                        cover=vol.get("cover_image", ""),
+                        placeholder=f"Vol {to_roman(vol['number'])}",
+                    ))
+            else:
+                entries.append(review_entry(
+                    book.get("review"),
+                    anchor=book["slug"],
+                    label=book["id"].upper(),
+                    title=book["title"],
+                    cover=book.get("cover_image", ""),
+                    placeholder=book["id"].upper(),
+                ))
+    for entry in SERIES.get("legacy", []):
+        entries.append(review_entry(
+            entry.get("review"),
+            anchor=entry["slug"],
+            label="Original single-volume edition",
+            title=entry["title"],
+            cover=entry.get("cover_image", ""),
+            placeholder="1st Ed",
+        ))
+    return [e for e in entries if e]
+
+
+def build_review_page():
+    """Render /review from content/review.md plus the review links in
+    series.json. The markdown is split at `<!-- books -->`: the part above
+    is the intro, the part below closes the page (the instructors section).
+    """
+    if not os.path.exists(REVIEW_MD):
+        return
+    meta, md_body = parse_frontmatter(read_file(REVIEW_MD))
+    intro_md, _, outro_md = md_body.partition(REVIEW_BOOKS_MARKER)
+    render_template(
+        "pages/review.html",
+        os.path.join(OUTPUT_DIR, "review", "index.html"),
+        title=meta.get("title", "Leave a review"),
+        description=meta.get("excerpt", ""),
+        intro_html=fix_old_urls(render_markdown(intro_md)),
+        outro_html=fix_old_urls(render_markdown(outro_md)),
+        review_books=get_review_books(),
+    )
+
+
+# --- Sitemap ---
+SITE_URL = "https://pauldejong.com"
+# Output paths (relative to public/, forward slashes) left out of the sitemap:
+# error page, the errata admin dashboard, and the post-subscribe thank-you.
+SITEMAP_EXCLUDE = {"404.html", "errata/admin/index.html", "thanks/index.html"}
+
+
+def build_sitemap():
+    """Write public/sitemap.xml listing every built HTML page.
+
+    Runs last so it picks up everything the build wrote. URLs have no
+    trailing slash because firebase.json sets cleanUrls and
+    trailingSlash: false.
+    """
+    urls = []
+    for path in sorted(glob.glob(os.path.join(OUTPUT_DIR, "**", "*.html"), recursive=True)):
+        rel = os.path.relpath(path, OUTPUT_DIR).replace(os.sep, "/")
+        if rel in SITEMAP_EXCLUDE:
+            continue
+        if rel == "index.html":
+            loc = SITE_URL + "/"
+        elif rel.endswith("/index.html"):
+            loc = f"{SITE_URL}/{rel[:-len('/index.html')]}"
+        else:
+            loc = f"{SITE_URL}/{rel[:-len('.html')]}"
+        urls.append(loc)
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    lines += [f"  <url><loc>{escape(u)}</loc></url>" for u in urls]
+    lines.append("</urlset>")
+    write_file(os.path.join(OUTPUT_DIR, "sitemap.xml"), "\n".join(lines) + "\n")
+    print(f"  Built: {os.path.join(OUTPUT_DIR, 'sitemap.xml')} ({len(urls)} URLs)")
 
 
 # --- File operations ---
@@ -584,7 +743,9 @@ def build():
     build_series()
     build_chapter_excerpts()
     build_errata_pages()
+    build_review_page()
     build_404()
+    build_sitemap()
 
     print("\nBuild complete!")
 

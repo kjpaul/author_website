@@ -19,7 +19,7 @@ The first edition runs to eight chapters across three sections:
 
 ## A Note on This Edition
 
-This is the original single-volume edition. The work has since been expanded into a three-volume edition, *Engineering Orbital Rings, Mass Drivers and Space Elevators*, with significantly more detail and updated analysis. If you are buying for the first time, you may prefer the new edition.
+This is the original single-volume edition. The work has since been expanded into a three-volume edition, *Orbital Ring Engineering*, with significantly more detail and updated analysis. If you are buying for the first time, you may prefer the new edition.
 
 ## Endorsements
 

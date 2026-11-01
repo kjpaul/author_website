@@ -1711,6 +1711,172 @@ footer .foot-meta a:hover { color: #c1a064; }
   margin: 0.6rem 0 1rem;
 }
 
+/* --- REVIEW PAGE (/review) ---
+   Most visitors arrive from a QR code in a printed book, so this is built
+   phone-first: cover and title side by side, then full-width buttons at
+   least 52px tall. Each book section is a link target (/review#vol-1). */
+.review-page { max-width: 720px; margin: 0 auto; }
+.review-intro h1 { margin-bottom: 1.1rem; }
+.review-intro p,
+.review-outro p { font-family: var(--serif); font-size: 1.08rem; line-height: 1.6; color: var(--ink-2); }
+
+.review-jump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.4rem 0 0.4rem;
+}
+.review-jump-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  margin-right: 0.3rem;
+}
+.review-jump a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bg-card);
+}
+.review-jump a:hover { border-color: var(--accent); text-decoration: none; }
+
+.review-book {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-areas:
+    "cover head"
+    "cover actions";
+  grid-template-rows: auto 1fr;
+  column-gap: 1.6rem;
+  row-gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  scroll-margin-top: 5rem;  /* clear the sticky nav when opened as /review#vol-1 */
+}
+.review-book:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.review-book-cover { grid-area: cover; }
+.review-book-cover img,
+.review-book-cover .cover-placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 12px 24px -10px rgba(8, 38, 63, 0.45);
+}
+.review-book-cover .cover-placeholder { font-size: 0.7rem; letter-spacing: 0.14em; }
+.review-book-head { grid-area: head; align-self: start; }
+.review-book-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+.review-book-head h2 { font-size: 1.45rem; margin: 0; text-wrap: balance; }
+.review-book-actions { grid-area: actions; }
+
+.review-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.review-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.7rem 1rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.review-btn:hover { border-color: var(--ink); color: var(--ink); text-decoration: none; }
+.review-btn-amazon {
+  grid-column: 1 / -1;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+  font-size: 1.05rem;
+}
+.review-btn-amazon:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.review-btn:focus-visible,
+.review-intl a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.review-intl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.review-intl-label {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-right: 0.3rem;
+}
+.review-intl a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bg);
+}
+.review-intl a:hover { border-color: var(--accent); text-decoration: none; }
+
+.review-outro {
+  margin-top: 2.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 640px) {
+  main:has(.review-page) { padding-top: 1.5rem; }
+  .review-book {
+    grid-template-columns: 84px 1fr;
+    grid-template-areas:
+      "cover head"
+      "actions actions";
+    grid-template-rows: auto auto;
+    column-gap: 1rem;
+    padding: 1.1rem;
+    margin: 1.4rem 0;
+  }
+  .review-book-head { align-self: center; }
+  .review-book-head h2 { font-size: 1.2rem; }
+  .review-buttons { grid-template-columns: 1fr; }
+  .review-intl { gap: 0.35rem; }
+  .review-intl-label { flex-basis: 100%; margin-bottom: 0.1rem; }
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 960px) {
   .home-launch { grid-template-columns: 1fr; gap: 2rem; }

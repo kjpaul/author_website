@@ -1,16 +1,16 @@
 ---
-title: "Space Mass Transit Complete Design Review"
-description: "Volume III of Orbital Ring, Mass Driver, and Space Elevator Engineering."
+title: "Mass Transit Launch Technologies from First Principles"
+description: "Volume III of Orbital Ring Engineering."
 ---
 
 ## Overview
 
-Volume III is a complete design review of an orbital ring system with integrated mass driver launch and space elevator. The volume covers materials selection, structural analysis, power generation and transmission, control systems, orbital mechanics, construction sequencing, and the failure modes you have to design against.
+Volume III works through each proposed space launch technology from first principles. For each system (rockets, mass drivers, skyhooks, launch loops, space fountains, space elevators, and orbital rings), the volume develops the governing physics, estimates the materials and power requirements, and identifies the binding constraints.
 
-Where Volumes I and II establish motivation and comparative analysis, Volume III commits to a specific design and works through it.
+The goal is not to advocate for a single design. It is to build the comparison tools a reader needs to judge any proposal fairly.
 
 ## What's Inside
 
-Thirteen chapters, each a complete subsystem: cable design, lifting systems, ring rotation dynamics, power, thermal, mass driver integration, anchor and ground stations, construction sequencing, control and guidance, failure and recovery, economics at scale.
+A chapter per major system, each with the same structure: the physics, the materials envelope, the power budget, the failure modes, and the realistic throughput.
 
 Detailed table of contents and sample excerpts will be posted as the draft is finalized.

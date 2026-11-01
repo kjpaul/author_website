@@ -13,6 +13,9 @@
     {%- if refs.last_updated %}
     <p class="refs-meta">Last updated {{ refs.last_updated }}</p>
     {%- endif %}
+    {%- if refs.note %}
+    <p class="refs-meta">{{ refs.note }}</p>
+    {%- endif %}
   </header>
 
   {%- if refs.chapters and refs.chapters | length > 0 %}
@@ -42,6 +45,7 @@
       {% with anchor_prefix=anchor %}{% include "includes/reference.html" %}{% endwith %}
       {% endfor %}
     </ol>
+    {%- if ch.note %}<p class="refs-empty">{{ ch.note }}</p>{% endif %}
     {%- elif ch.note %}
     <p class="refs-empty">{{ ch.note }}</p>
     {%- else %}
