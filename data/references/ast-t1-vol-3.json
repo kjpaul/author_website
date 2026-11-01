@@ -1,4 +1,5 @@
 {
+  "_editor_note": "Editorial note (2026-11-01), not rendered on the page: the cross-references of the form 'Volume II Chapter NN, forthcoming, this volume' and 'Volume III Chapter 10.4' / 'Chapter 83' use the chapter numbers of the May 2026 draft of the launch technologies volume (then Volume II; the design review was then Volume III). They will be renumbered when that manuscript is final. Do not touch them before then.",
   "series_id": "AST-T1",
   "book_title": "Orbital Ring Engineering",
   "volume": 3,
@@ -3509,7 +3510,7 @@
         },
         {
           "num": 8,
-          "text": "de Jong, P. (Vol IV, forthcoming). The tripod design's detailed engineering."
+          "text": "de Jong, P. Orbital Ring Engineering, Volume I: Space Mass Transit Complete Design Review, Chapter 13, Space Elevators (the tripod on the 700 km ring)."
         }
       ]
     },
