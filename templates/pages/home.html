@@ -96,7 +96,7 @@
           <span class="spine-mono">PGdJ</span>
         </a>
         {%- endfor -%}
-      {%- elif book.id != 'why-space' -%}
+      {%- elif book.id != 'ast-c1' -%}
         <a class="spine spine-tbd" href="/series/technical/{{ book.slug }}/" role="listitem" title="{{ book.short_title or book.title }}">
           <span class="spine-vol">{{ book.id | upper | replace('AST-', '') }}</span>
           <span class="spine-title">{{ book.short_title or book.title }}</span>
