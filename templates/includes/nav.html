@@ -16,12 +16,7 @@
             <div class="dropdown-group">
               <div class="dropdown-group-label">{{ g.label }}</div>
               {%- for book in series[g.key] %}
-              {%- if book.kind == 'children' and not (book.series and book.series.entries) %}
-              <span class="dropdown-item dropdown-item-planned">
-                <span class="dropdown-item-title">{{ book.short_title or book.title }}</span>
-                {% with status=book.status %}{% include "includes/status-badge.html" %}{% endwith %}
-              </span>
-              {%- else %}
+              {%- if not (book.kind == 'children' and not (book.series and book.series.entries)) %}
               <a href="/series/{{ g.key }}/{{ book.slug }}/" role="menuitem" class="dropdown-item">
                 <span class="dropdown-item-title">{{ book.short_title or book.title }}{% if book.volumes %} (Vols I–{{ (book.volumes | length) | roman }}){% elif book.volume_count %} ({{ book.volume_count }} volumes){% endif %}</span>
                 {% with status=book.status %}{% include "includes/status-badge.html" %}{% endwith %}

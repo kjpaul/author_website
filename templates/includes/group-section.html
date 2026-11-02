@@ -17,9 +17,4 @@
     {%- endif %}
     {%- endfor %}
   </div>
-  {%- for book in books %}
-  {%- if book.kind == 'children' and not (book.series and book.series.entries) %}
-  <p class="books-planned"><strong>{{ book.byline or 'Planned' }}:</strong> {{ book.description }}</p>
-  {%- endif %}
-  {%- endfor %}
 </section>
