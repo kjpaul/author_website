@@ -8,6 +8,7 @@ Reads:
     static/               CSS, JS, images (copied verbatim)
     data/                 JSON data files (copied to public/data/)
     series.json           book catalog, exposed as `series` in templates
+    site.json             site settings (analytics), exposed as `site` in templates
 
 Writes:
     public/               ready for `firebase deploy`
@@ -34,6 +35,7 @@ STATIC_DIR = "static"
 DATA_DIR = "data"
 OUTPUT_DIR = "public"
 SERIES_FILE = "series.json"
+SITE_FILE = "site.json"
 
 # Group labels are filled from series.json (its `groups` list) once the catalog is loaded; see load_series().
 TRACK_LABELS = {}
@@ -132,6 +134,17 @@ def load_series():
 
 env.globals["series"] = load_series()
 SERIES = env.globals["series"]
+
+
+def load_site():
+    """Site-wide settings (site.json): analytics provider and ids."""
+    if os.path.exists(SITE_FILE):
+        with open(SITE_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+env.globals["site"] = load_site()
 GROUPS = SERIES.get("groups") or [
     {"key": "technical", "label": "Technical Books", "line": "", "book_label": "Technical Book"},
     {"key": "fiction", "label": "Science Fiction", "line": "", "book_label": "Hard Science Fiction Book"},

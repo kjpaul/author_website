@@ -1,0 +1,40 @@
+{#- Traffic analytics, on every page, switched by site.json `analytics.provider` (empty = off). -#}
+{%- set a = site.analytics if site else none -%}
+{%- if a and a.provider == 'ga4' and a.ga4_measurement_id %}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': 'denied', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied'});
+    try { if (localStorage.getItem('pdj-consent') === 'granted') { gtag('consent', 'update', {'analytics_storage': 'granted'}); } } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', '{{ a.ga4_measurement_id }}', {'anonymize_ip': true});
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ a.ga4_measurement_id }}"></script>
+  <div class="consent-banner" id="consent-banner" hidden role="region" aria-label="Cookie consent">
+    <p>This site uses Google Analytics to count visits. Analytics cookies are set only if you accept. <a href="/privacy/">Privacy</a></p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-primary" data-consent="granted">Accept</button>
+      <button type="button" class="btn btn-ghost" data-consent="denied">Decline</button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var b = document.getElementById('consent-banner');
+      var stored = null;
+      try { stored = localStorage.getItem('pdj-consent'); } catch (e) {}
+      if (!stored && b) { b.hidden = false; }
+      if (b) b.querySelectorAll('[data-consent]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var v = btn.getAttribute('data-consent');
+          try { localStorage.setItem('pdj-consent', v); } catch (e) {}
+          if (v === 'granted') { gtag('consent', 'update', {'analytics_storage': 'granted'}); }
+          b.hidden = true;
+        });
+      });
+    })();
+  </script>
+{%- elif a and a.provider == 'cloudflare' and a.cloudflare_token %}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ a.cloudflare_token }}"}'></script>
+{%- elif a and a.provider == 'plausible' and a.plausible_domain %}
+  <script defer data-domain="{{ a.plausible_domain }}" src="https://plausible.io/js/script.js"></script>
+{%- endif %}

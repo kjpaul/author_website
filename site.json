@@ -1,0 +1,15 @@
+{
+  "_notes": [
+    "Site-wide settings read by build.py and exposed to the templates as `site`.",
+    "analytics.provider: one of \"\" (off), \"ga4\", \"cloudflare\", \"plausible\". The snippet is in templates/includes/analytics.html and goes on every page.",
+    "ga4: set ga4_measurement_id (G-XXXXXXXXXX). The snippet runs Google Consent Mode with analytics denied until the visitor accepts the cookie banner (needed for EU visitors).",
+    "cloudflare: set cloudflare_token (the token from the Web Analytics site; no cookies, no banner; the domain's DNS must be on Cloudflare or the beacon is added as JS).",
+    "plausible: set plausible_domain (pauldejong.com); no cookies, no banner; paid."
+  ],
+  "analytics": {
+    "provider": "",
+    "ga4_measurement_id": "",
+    "cloudflare_token": "",
+    "plausible_domain": "pauldejong.com"
+  }
+}
