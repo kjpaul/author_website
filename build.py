@@ -35,21 +35,10 @@ DATA_DIR = "data"
 OUTPUT_DIR = "public"
 SERIES_FILE = "series.json"
 
-TRACK_LABELS = {"technical": "Technical Books", "fiction": "Science Fiction"}
-TRACK_LEDES = {
-    "technical": (
-        "Engineering and physics of building space infrastructure — from orbital "
-        "rings and mass drivers to propulsion, habitats, and generational ships. "
-        "Rigorous enough to teach from; accessible enough to read cover-to-cover."
-    ),
-    "fiction": (
-        "Eight hundred years of human history, constrained by known physics. "
-        "Characters live normal lifespans. Propulsion is limited by available "
-        "power. Materials are limited by what can reasonably be manufactured. "
-        "There are no shortcuts."
-    ),
-}
-TRACK_BOOK_LABELS = {"technical": "Technical Book", "fiction": "Hard Science Fiction Book"}
+# Group labels are filled from series.json (its `groups` list) once the catalog is loaded; see load_series().
+TRACK_LABELS = {}
+TRACK_LEDES = {}
+TRACK_BOOK_LABELS = {}
 
 
 # --- Jinja2 filters ---
@@ -126,6 +115,32 @@ def load_series():
 
 env.globals["series"] = load_series()
 SERIES = env.globals["series"]
+GROUPS = SERIES.get("groups") or [
+    {"key": "technical", "label": "Technical Books", "line": "", "book_label": "Technical Book"},
+    {"key": "fiction", "label": "Science Fiction", "line": "", "book_label": "Hard Science Fiction Book"},
+]
+GROUP_KEYS = [g["key"] for g in GROUPS]
+for _g in GROUPS:
+    TRACK_LABELS[_g["key"]] = _g["label"]
+    TRACK_LEDES[_g["key"]] = _g.get("line", "")
+    TRACK_BOOK_LABELS[_g["key"]] = _g.get("book_label", "Book")
+env.globals["groups"] = GROUPS
+
+
+def find_group(key):
+    return next((g for g in GROUPS if g["key"] == key), None)
+
+
+def featured_book():
+    """The book (and volume, when the book has volumes) the home page sells, from series.json `featured`."""
+    f = SERIES.get("featured") or {}
+    track, book = find_book_by_id(f.get("book", ""))
+    if not book:
+        return None, None, None
+    vol = None
+    if f.get("volume") is not None and book.get("volumes"):
+        vol = next((v for v in book["volumes"] if v["number"] == f["volume"]), None)
+    return track, book, vol
 
 
 # --- IO helpers ---
@@ -283,8 +298,10 @@ def get_errata_books():
     """
     books = []
 
-    # Original single-volume edition (the one currently on Amazon).
-    for entry in SERIES.get("legacy", []):
+    # The 2025 first edition (the `related` group, kind first_edition; `legacy` in older catalogs).
+    first_editions = [b for b in SERIES.get("related", []) if b.get("kind") == "first_edition"]
+    first_editions += SERIES.get("legacy", [])
+    for entry in first_editions:
         books.append({
             "key": entry.get("errata_key", entry["slug"]),
             "title": f"{entry['title']} (1st Edition)",
@@ -302,15 +319,18 @@ def get_errata_books():
                 "isbn": (vol.get("isbns") or {}).get("paperback", ""),
             })
 
-    # Standalone technical books that carry an errata key (Why Space, the economic case, which left the
-    # AST-T1 set on 2026-10-31 and keeps its key ast-t1-vol-1).
-    for book in SERIES.get("technical", []):
-        if not book.get("volumes") and book.get("errata_key"):
-            books.append({
-                "key": book["errata_key"],
-                "title": book["title"],
-                "isbn": (book.get("isbns") or {}).get("paperback", ""),
-            })
+    # Every other standalone book that carries an errata key, in any group (Why Space keeps ast-t1-vol-1).
+    seen = {bk["key"] for bk in books}
+    for key in GROUP_KEYS:
+        for book in SERIES.get(key, []):
+            ek = book.get("errata_key")
+            if ek and not book.get("volumes") and ek not in seen:
+                books.append({
+                    "key": ek,
+                    "title": book["title"],
+                    "isbn": (book.get("isbns") or {}).get("paperback", ""),
+                })
+                seen.add(ek)
 
     return books
 
@@ -349,18 +369,20 @@ def build_404():
 
 # --- Series generation ---
 def build_series_overview():
+    """The Books page: every group of the catalog, in catalog order."""
     intro_meta, intro_html = render_markdown_file(
         os.path.join(CONTENT_DIR, "series", "overview.md")
     )
     render_template(
         "pages/series-overview.html",
         os.path.join(OUTPUT_DIR, "series", "index.html"),
-        title="Series",
+        title="Books",
         description=(
-            "Astronomy's Shocking Twist — a 10-book series of technical "
-            "engineering and hard science fiction."
+            "The books of Paul G. de Jong: the Astronomy's Shocking Twist series, "
+            "five technical works and five hard science fiction novels, and the related books."
         ),
         intro_html=intro_html,
+        group_list=[(g, SERIES.get(g["key"], [])) for g in GROUPS],
     )
 
 
@@ -378,6 +400,7 @@ def build_series_track(track):
         track_lede=TRACK_LEDES[track],
         books=SERIES.get(track, []),
         intro_html=intro_html,
+        group=find_group(track),
     )
 
 
@@ -394,8 +417,10 @@ def build_book_page(book, track):
             _, book_content = render_markdown_file(candidate)
             break
 
+    # The 2025 first edition keeps its own page layout.
+    template = "pages/legacy-book.html" if book.get("kind") == "first_edition" else "pages/book-detail.html"
     render_template(
-        "pages/book-detail.html",
+        template,
         os.path.join(OUTPUT_DIR, "series", track, book["slug"], "index.html"),
         title=book["title"],
         description=book.get("description", ""),
@@ -404,6 +429,8 @@ def build_book_page(book, track):
         track_book_label=f"{TRACK_BOOK_LABELS[track]} {book['id'].upper()}",
         book=book,
         book_content=book_content,
+        content=book_content,
+        group=find_group(track),
     )
 
 
@@ -425,24 +452,30 @@ def build_volume_page(book, vol, track):
         CONTENT_DIR, "series", track, book["slug"], f"{vol['slug']}.md"
     )
     _, vol_content = render_markdown_file(content_path)
+    # An optional table of contents beside the page copy: <slug>.toc.md
+    _, vol_toc = render_markdown_file(
+        os.path.join(CONTENT_DIR, "series", track, book["slug"], f"{vol['slug']}.toc.md")
+    )
     render_template(
         "pages/volume-detail.html",
         out_path,
         title=vol["title"],
-        description=f"{book['title']} - Volume {to_roman(vol['number'])}.",
+        description=vol.get("headline") or f"{book['title']} - Volume {to_roman(vol['number'])}.",
         track=track,
         track_label=TRACK_LABELS[track],
         track_book_label=f"{TRACK_BOOK_LABELS[track]} {book['id'].upper()}",
         book=book,
         vol=vol,
         vol_content=vol_content,
+        vol_toc=vol_toc,
+        group=find_group(track),
     )
 
 
 def find_book_by_id(book_id):
-    """Return (track, book) for a given book id (case-insensitive)."""
-    target = book_id.lower()
-    for track in ("technical", "fiction"):
+    """Return (group key, book) for a given book id (case-insensitive), searching every group."""
+    target = (book_id or "").lower()
+    for track in GROUP_KEYS:
         for book in SERIES.get(track, []):
             if book["id"].lower() == target:
                 return track, book
@@ -501,37 +534,18 @@ def build_reference_pages():
         )
 
 
-def build_legacy_book():
-    legacy_list = SERIES.get("legacy", [])
-    if not legacy_list:
-        return
-    for entry in legacy_list:
-        content_path = os.path.join(
-            CONTENT_DIR, "series", "technical", f"{entry['slug']}.md"
-        )
-        _, content_html = render_markdown_file(content_path)
-        render_template(
-            "pages/legacy-book.html",
-            os.path.join(
-                OUTPUT_DIR, "series", "technical", entry["slug"], "index.html"
-            ),
-            title=entry["title"],
-            description=entry.get("description", ""),
-            content=content_html,
-            book=entry,
-        )
-
-
 def build_series():
     build_series_overview()
-    for track in ("technical", "fiction"):
+    for track in GROUP_KEYS:
         build_series_track(track)
         for book in SERIES.get(track, []):
+            # A planned series with no entries yet (the children's books) has no page.
+            if book.get("kind") == "children" and not (book.get("series") or {}).get("entries"):
+                continue
             build_book_page(book, track)
             if book.get("volumes"):
                 for vol in book["volumes"]:
                     build_volume_page(book, vol, track)
-    build_legacy_book()
     build_reference_pages()
 
 
@@ -596,9 +610,18 @@ def get_review_books():
     `review.anchor`.
     """
     entries = []
-    for track in ("technical", "fiction"):
+    for track in GROUP_KEYS:
         for book in SERIES.get(track, []):
-            if book.get("volumes"):
+            if book.get("kind") == "first_edition":
+                entries.append(review_entry(
+                    book.get("review"),
+                    anchor=book["slug"],
+                    label="Original single-volume edition",
+                    title=book["title"],
+                    cover=book.get("cover_image", ""),
+                    placeholder="1st Ed",
+                ))
+            elif book.get("volumes"):
                 for vol in book["volumes"]:
                     entries.append(review_entry(
                         vol.get("review"),

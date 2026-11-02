@@ -395,7 +395,11 @@ article li,
 .badge-published,
 .badge-confirmed { background: rgba(26, 106, 52, 0.12); color: var(--ok); border: 1px solid rgba(26, 106, 52, 0.3); }
 .badge-in-progress { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
-.badge-coming-soon { background: var(--bg-inset); color: var(--muted); border: 1px solid var(--rule); }
+.badge-coming-soon,
+.badge-forthcoming,
+.badge-planned { background: var(--bg-inset); color: var(--muted); border: 1px solid var(--rule); }
+.badge-pre-order { background: rgba(201, 74, 26, 0.1); color: var(--accent-2); border: 1px solid var(--accent-2); }
+.badge-replaced { background: var(--bg-inset); color: var(--muted-2); border: 1px solid var(--rule); }
 .badge-fixed { background: rgba(11, 61, 102, 0.1); color: var(--accent); border: 1px solid var(--accent); }
 .badge-pending { background: rgba(201, 74, 26, 0.1); color: var(--accent-2); border: 1px solid var(--accent-2); }
 .badge-rejected { background: rgba(218, 54, 51, 0.1); color: #b9302d; border: 1px solid #b9302d; }
