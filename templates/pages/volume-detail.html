@@ -99,7 +99,7 @@
       <div><span class="k">Library of Congress Control Number</span><span class="v">{{ vol.lccn }}</span></div>
       {%- endif %}
     </div>
-    <p>{% if vol.release_date %}{% if vol.status == 'published' %}Released{% else %}Release{% endif %} {{ vol.release_date | longdate }} through Amazon and, for bookstores and libraries, IngramSpark. {% endif %}The current list of the books, with release dates and where each one can be bought, is kept on this site at <a href="/series/">pauldejong.com</a>. Reviews go to <a href="/review/">pauldejong.com/review</a>.</p>
+    <p>{% if vol.release_date %}{% if vol.status == 'published' %}Released{% else %}Coming{% endif %} {{ vol.release_date | longdate }} through Amazon and, for bookstores and libraries, IngramSpark. {% endif %}The current list of the books, with release dates and where each one can be bought, is kept on this site at <a href="/series/">pauldejong.com</a>. Reviews go to <a href="/review/">pauldejong.com/review</a>.</p>
   </section>
   {%- endif %}
 

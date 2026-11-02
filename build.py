@@ -109,14 +109,20 @@ env.filters["ref_markdown"] = ref_markdown
 
 
 def longdate(value, year=True):
-    """2026-11-15 -> '15 November 2026' (or '15 November' with year=False)."""
+    """2026-11-15 -> '15 November 2026' (or '15 November' with year=False).
+    A month-only date, 2026-12, -> 'December 2026' (or 'December')."""
     if not value:
         return ""
     try:
-        y, m, d = str(value).split("-")
+        parts = str(value).split("-")
         months = ["January", "February", "March", "April", "May", "June", "July",
                   "August", "September", "October", "November", "December"]
-        out = f"{int(d)} {months[int(m) - 1]}"
+        if len(parts) == 2:
+            y, m = parts
+            out = months[int(m) - 1]
+        else:
+            y, m, d = parts
+            out = f"{int(d)} {months[int(m) - 1]}"
         return f"{out} {y}" if year else out
     except (ValueError, IndexError):
         return str(value)

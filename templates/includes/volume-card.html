@@ -6,7 +6,7 @@
   </div>
   <h3 class="volume-card-title">{{ vol.title }}</h3>
   {%- if vol.release_date %}
-  <div class="volume-card-meta">{% if vol.status == 'published' %}Released{% else %}Release{% endif %} {{ vol.release_date | longdate }}{% if vol.pages %} &middot; {{ vol.pages }} pages{% endif %}</div>
+  <div class="volume-card-meta">{% if vol.status == 'published' %}Released{% else %}Coming{% endif %} {{ vol.release_date | longdate }}{% if vol.pages %} &middot; {{ vol.pages }} pages{% endif %}</div>
   {%- elif vol.chapters %}
   <div class="volume-card-meta">{{ vol.chapters }} chapters</div>
   {%- endif %}

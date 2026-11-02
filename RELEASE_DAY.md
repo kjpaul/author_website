@@ -1,14 +1,16 @@
-# Release day for Volume I (15 November 2026)
+# Release day for Volume I (December 2026, day not set)
 
 Three data changes, no code. Rebuild with `python build.py`, deploy with `firebase deploy --only hosting`.
 
-1. **Status.** In `series.json`, the first volume of `technical[0]` (Volume I): change `"status": "pre_order"` to `"status": "published"`. The badge on every card and page follows, and the Volume I page says "Released 15 November 2026".
+The release is in December 2026 and the day is not set. `release_date` on Volume I in `series.json` holds the month only, `2026-12`, which renders as "December 2026" on the hero, the volume cards and the buy button. When the day is known, set it to the full date (`2026-12-DD`) and the same places render it.
+
+1. **Status.** In `series.json`, the first volume of `technical[0]` (Volume I): change `"status": "pre_order"` to `"status": "published"`. The badge on every card and page follows, and the Volume I page says "Released December 2026" (or the full date once `release_date` carries it).
 
 2. **Buy links.** In the same volume's `purchase` block, fill in the links as they go live:
-   - `kindle`: the Amazon Kindle listing (the ASIN appears when the Kindle pre-order or the listing goes live). This turns the "Available 15 November" button into the Amazon link.
+   - `kindle`: the Amazon Kindle listing (the ASIN appears when the Kindle pre-order or the listing goes live). This turns the "Coming December 2026" button into the Amazon link.
    - `paperback` and `hardcover`: the Amazon print listings. Each format gets its own button with the price from `prices`.
    - `bookstore`: the IngramSpark listing for bookstores and libraries. The line under the buttons becomes a link.
-   Until `kindle`, `paperback` or `hardcover` is set, the button reads "Available 15 November" and the notify-me form is the call to action.
+   Until `kindle`, `paperback` or `hardcover` is set, the button reads "Coming December 2026" and the notify-me form is the call to action.
 
 3. **Cover.** Replace `static/images/covers/orbital-ring-vol-1-cover.png` with the professional cover under the same name (800 x 1200, PNG). Nothing else references the file by another name.
 

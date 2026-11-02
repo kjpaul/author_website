@@ -3,7 +3,7 @@
     "Book catalog for pauldejong.com. The build reads it; nothing here is code.",
     "Groups: technical and fiction are the two five-book tracks of Astronomy's Shocking Twist; related holds books outside the ten parts (companion, first_edition, children).",
     "Status values: published, pre_order, forthcoming, replaced, planned. Older values in_progress and coming_soon still render.",
-    "Release day (2026-11-15) for Volume I: set technical[0].volumes[0].status to published, fill purchase.kindle / paperback / hardcover with the Amazon links and purchase.bookstore with the IngramSpark listing, and replace static/images/covers/orbital-ring-vol-1-cover.png with the professional cover under the same name. Until purchase.kindle is set the buy button reads 'Available 15 November'.",
+    "Release day for Volume I is in December 2026; the day is not set. release_date holds the month only (2026-12) and renders as 'December 2026'; put the full date (2026-12-DD) in when it is known. On the day: set technical[0].volumes[0].status to published, fill purchase.kindle / paperback / hardcover with the Amazon links and purchase.bookstore with the IngramSpark listing, and replace static/images/covers/orbital-ring-vol-1-cover.png with the professional cover under the same name. Until purchase.kindle is set the buy button reads 'Coming December 2026'.",
     "Errata keys are stable Firestore identifiers and never change: Volume I carries ast-t1-vol-3, Volume III ast-t1-vol-2, Why Space ast-t1-vol-1 (history from the 2026-10-29 renumbering). Each book also carries errata_slug, the name shown in its /errata/?book= link, and errata_aliases maps every slug to its Firestore key. The errata page resolves the slug to the key in the browser; nothing in Firestore moves.",
     "Children's books: add entries to related[2].series.entries with the fields listed in entry_fields; the templates render them when present."
   ],
@@ -73,7 +73,7 @@
           "headline": "Orbital rings? Mass drivers? Space elevators? This book has the numbers.",
           "description": "Volume I is the complete design review, and the volume to read first. It takes the ring as a whole, at one altitude, with one cable, one bearing, one set of motors and one power system, and asks whether it all works together. The answer is mostly yes, with the caveats stated, and the open questions are listed for the team that eventually builds the ring. Volumes II and III carry the derivations behind the numbers: the first principles, and the launch technologies.",
           "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
-          "release_date": "2026-11-15",
+          "release_date": "2026-12",
           "isbns": {
             "hardcover": "979-8-9932868-6-0",
             "paperback": "979-8-9932868-7-7",

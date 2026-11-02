@@ -12,7 +12,7 @@
   {%- endif %}
   {%- if not (p.kindle or p.paperback or p.hardcover) %}
   {%- if item.release_date %}
-  <span class="btn btn-primary btn-static" aria-disabled="true">Available {{ item.release_date | longdate(False) }}</span>
+  <span class="btn btn-primary btn-static" aria-disabled="true">Coming {{ item.release_date | longdate }}</span>
   {%- else %}
   <span class="btn btn-primary btn-static" aria-disabled="true">Forthcoming</span>
   {%- endif %}
