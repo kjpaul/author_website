@@ -10,9 +10,13 @@
 
   <section class="home-launch">
     <div class="cover-wrap">
-            <div class="cover-placeholder">VOL {{ vol.number | roman }}</div>
+      {%- if vol.cover_image %}
+      <img class="book-cover" src="{{ vol.cover_image }}" alt="Cover of {{ book.title }}, Volume {{ vol.number | roman }}: {{ vol.title }}, by Paul G. de Jong">
+      {%- else %}
+      <div class="cover-placeholder">VOL {{ vol.number | roman }}</div>
       <div class="cover-caption"><span class="pill">In progress</span>Cover and ISBNs to come</div>
-          </div>
+      {%- endif %}
+    </div>
 
     <div class="hero-body">
       <div class="launch-meta">

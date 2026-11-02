@@ -6,7 +6,7 @@
       "short_title": "Orbital Ring Engineering",
       "slug": "orbital-rings",
       "status": "in_progress",
-      "cover_image": "",
+      "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
       "description": "Mass transit to space: orbital ring, mass driver, and space elevator engineering.",
       "volumes": [
         {
@@ -25,7 +25,8 @@
             "barnes_noble": "",
             "kobo": "",
             "apple_books": ""
-          }
+          },
+          "cover_image": "/images/covers/orbital-ring-vol-1-cover.png"
         },
         {
           "number": 2,
@@ -73,7 +74,7 @@
       "slug": "why-space",
       "status": "in_progress",
       "chapters": 20,
-      "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
+      "cover_image": "/images/covers/why-space-cover.png",
       "description": "The economic case for space mass transit, written for the general reader. The standalone companion to Orbital Ring Engineering.",
       "has_references": true,
       "has_excerpt": true,
