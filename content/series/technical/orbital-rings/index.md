@@ -5,7 +5,7 @@ date: 2026-04-24
 author: "Paul G. de Jong"
 type: page
 status: publish
-excerpt: "A three-volume engineering treatment of the orbital ring: the complete design review, the first principles, and the launch technologies. Companion to the Astronomy's Shocking Twist hard science fiction series."
+excerpt: "A three-volume engineering treatment of the orbital ring: the complete design review, the first principles and the launch technologies. Companion to the Astronomy's Shocking Twist hard science fiction series."
 ---
 
 A three-volume engineering treatment of the orbital ring, the most credible architecture for moving mass and people between Earth's surface and the rest of the solar system at industrial scale.
