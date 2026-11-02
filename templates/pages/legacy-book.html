@@ -61,7 +61,7 @@
   <section class="book-links">
     <h2>More</h2>
     <ul>
-      <li><a href="/errata/?book={{ book.errata_key or 'orbital-ring-engineering' }}">Report or view errata for this edition</a></li>
+      <li><a href="/errata/?book={{ book.errata_slug or book.errata_key or 'orbital-ring-engineering' }}">Report or view errata for this edition</a></li>
       <li><a href="/series/technical/orbital-rings/vol-1/">Orbital Ring Engineering, Volume I: the complete design review</a></li>
       <li><a href="/series/technical/orbital-rings/">The three-volume edition</a></li>
       <li><a href="/code/">Related code</a></li>

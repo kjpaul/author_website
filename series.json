@@ -4,12 +4,19 @@
     "Groups: technical and fiction are the two five-book tracks of Astronomy's Shocking Twist; related holds books outside the ten parts (companion, first_edition, children).",
     "Status values: published, pre_order, forthcoming, replaced, planned. Older values in_progress and coming_soon still render.",
     "Release day (2026-11-15) for Volume I: set technical[0].volumes[0].status to published, fill purchase.kindle / paperback / hardcover with the Amazon links and purchase.bookstore with the IngramSpark listing, and replace static/images/covers/orbital-ring-vol-1-cover.png with the professional cover under the same name. Until purchase.kindle is set the buy button reads 'Available 15 November'.",
-    "Errata keys are stable Firestore identifiers and never change: Volume I carries ast-t1-vol-3, Volume III ast-t1-vol-2, Why Space ast-t1-vol-1 (history from the 2026-10-29 renumbering).",
+    "Errata keys are stable Firestore identifiers and never change: Volume I carries ast-t1-vol-3, Volume III ast-t1-vol-2, Why Space ast-t1-vol-1 (history from the 2026-10-29 renumbering). Each book also carries errata_slug, the name shown in its /errata/?book= link, and errata_aliases maps every slug to its Firestore key. The errata page resolves the slug to the key in the browser; nothing in Firestore moves.",
     "Children's books: add entries to related[2].series.entries with the fields listed in entry_fields; the templates render them when present."
   ],
   "featured": {
     "book": "ast-t1",
     "volume": 1
+  },
+  "errata_aliases": {
+    "ast-t1-vol-1": "ast-t1-vol-3",
+    "ast-t1-vol-2": "ast-t1-first-principles",
+    "ast-t1-vol-3": "ast-t1-vol-2",
+    "why-space": "ast-t1-vol-1",
+    "orbital-ring-engineering": "orbital-ring-engineering"
   },
   "groups": [
     {
@@ -95,7 +102,7 @@
             "overview": "/series/technical/orbital-rings/vol-1/",
             "excerpt": "/books/orbital-ring-engineering/vol-1-chapter-one/",
             "references": "/series/technical/orbital-rings/vol-1/references/",
-            "errata": "/errata/?book=ast-t1-vol-3",
+            "errata": "/errata/?book=ast-t1-vol-1",
             "review": "/review/"
           },
           "review": {
@@ -104,7 +111,8 @@
             "barnes_noble": "",
             "kobo": "",
             "apple_books": ""
-          }
+          },
+          "errata_slug": "ast-t1-vol-1"
         },
         {
           "number": 2,
@@ -119,7 +127,7 @@
           "errata_key": "ast-t1-first-principles",
           "links": {
             "overview": "/series/technical/orbital-rings/vol-2/",
-            "errata": "/errata/?book=ast-t1-first-principles"
+            "errata": "/errata/?book=ast-t1-vol-2"
           },
           "review": {
             "amazon_asin": "",
@@ -127,7 +135,8 @@
             "barnes_noble": "",
             "kobo": "",
             "apple_books": ""
-          }
+          },
+          "errata_slug": "ast-t1-vol-2"
         },
         {
           "number": 3,
@@ -143,7 +152,7 @@
           "links": {
             "overview": "/series/technical/orbital-rings/vol-3/",
             "references": "/series/technical/orbital-rings/vol-3/references/",
-            "errata": "/errata/?book=ast-t1-vol-2"
+            "errata": "/errata/?book=ast-t1-vol-3"
           },
           "review": {
             "amazon_asin": "",
@@ -151,7 +160,8 @@
             "barnes_noble": "",
             "kobo": "",
             "apple_books": ""
-          }
+          },
+          "errata_slug": "ast-t1-vol-3"
         }
       ]
     },
@@ -332,7 +342,7 @@
         "overview": "/series/related/why-space/",
         "excerpt": "/books/orbital-ring/chapter-one/",
         "references": "/series/related/why-space/references/",
-        "errata": "/errata/?book=ast-t1-vol-1"
+        "errata": "/errata/?book=why-space"
       },
       "review": {
         "amazon_asin": "",
@@ -341,7 +351,8 @@
         "kobo": "",
         "apple_books": ""
       },
-      "volumes": null
+      "volumes": null,
+      "errata_slug": "why-space"
     },
     {
       "group": "related",
@@ -392,7 +403,8 @@
         "anchor": "1st-edition"
       },
       "volumes": null,
-      "code": "2025 ED"
+      "code": "2025 ED",
+      "errata_slug": "orbital-ring-engineering"
     },
     {
       "group": "related",

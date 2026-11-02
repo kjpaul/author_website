@@ -48,7 +48,7 @@
         <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
         {%- endif %}
         {%- if vol.errata_key %}
-        <a class="quicklink" href="/errata/?book={{ vol.errata_key }}">Errata</a>
+        <a class="quicklink" href="/errata/?book={{ vol.errata_slug or vol.errata_key }}">Errata</a>
         {%- endif %}
         <a class="quicklink" href="/review/">Leave a review</a>
       </div>
@@ -108,7 +108,7 @@
     <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References for Vol {{ vol.number | roman }}</a>
     {%- endif %}
     {%- if vol.errata_key %}
-    <a class="quicklink" href="/errata/?book={{ vol.errata_key }}">Errata for Vol {{ vol.number | roman }}</a>
+    <a class="quicklink" href="/errata/?book={{ vol.errata_slug or vol.errata_key }}">Errata for Vol {{ vol.number | roman }}</a>
     {%- endif %}
     <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">All volumes</a>
     <a class="quicklink" href="/series/">All books</a>

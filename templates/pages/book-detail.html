@@ -80,7 +80,7 @@
         <a class="quicklink" href="{{ book.links.references }}">References</a>
         {%- endif %}
         {%- if book.errata_key %}
-        <a class="quicklink" href="/errata/?book={{ book.errata_key }}">Errata</a>
+        <a class="quicklink" href="/errata/?book={{ book.errata_slug or book.errata_key }}">Errata</a>
         {%- endif %}
       </div>
       {%- if book.isbns %}

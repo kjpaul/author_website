@@ -64,5 +64,6 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="/js/firebase-config.js"></script>
 <script>window.ERRATA_BOOKS = {{ errata_books_json | safe }};</script>
+<script>window.ERRATA_ALIASES = {{ errata_aliases_json | safe }};</script>
 <script type="module" src="/js/errata.js"></script>
 {% endblock %}

@@ -33,4 +33,12 @@
     {%- endif %}
   </aside>
   {%- endif %}
+
+  {#- The release-news form after the chapter text, unless the chapter's own content already carries one -#}
+  {%- if 'data-notify-form' not in content %}
+  <section class="excerpt-notify" aria-labelledby="excerpt-notify-heading" style="max-width: 720px; margin: 2.5rem auto 0;">
+    <h2 id="excerpt-notify-heading">Get release news.</h2>
+    {% with label="Get release news." %}{% include "includes/notify-form.html" %}{% endwith %}
+  </section>
+  {%- endif %}
 </article>{% endblock %}

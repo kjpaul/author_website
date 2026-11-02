@@ -339,6 +339,7 @@ def get_errata_books():
     for entry in first_editions:
         books.append({
             "key": entry.get("errata_key", entry["slug"]),
+            "slug": entry.get("errata_slug"),
             "title": f"{entry['title']} (1st Edition)",
             "isbn": entry.get("isbn", ""),
         })
@@ -350,6 +351,7 @@ def get_errata_books():
         for vol in ast_t1["volumes"]:
             books.append({
                 "key": vol.get("errata_key") or f"ast-t1-vol-{vol['number']}",
+                "slug": vol.get("errata_slug"),
                 "title": f"Vol {to_roman(vol['number'])}: {vol['title']}",
                 "isbn": (vol.get("isbns") or {}).get("paperback", ""),
             })
@@ -362,6 +364,7 @@ def get_errata_books():
             if ek and not book.get("volumes") and ek not in seen:
                 books.append({
                     "key": ek,
+                    "slug": book.get("errata_slug"),
                     "title": book["title"],
                     "isbn": (book.get("isbns") or {}).get("paperback", ""),
                 })
@@ -370,10 +373,30 @@ def get_errata_books():
     return books
 
 
+def get_errata_aliases(books):
+    """The alias table: the slug shown in every /errata/?book= link to the
+    Firestore key it stands for. Read from series.json `errata_aliases`,
+    checked against each book's `errata_slug`; the page's JavaScript resolves
+    the slug to the key, so nothing stored in Firestore changes.
+    """
+    aliases = dict(SERIES.get("errata_aliases") or {})
+    keys = {b["key"] for b in books}
+    for slug, key in aliases.items():
+        if key not in keys:
+            raise SystemExit(f"errata_aliases: {slug} points at unknown errata key {key}")
+    # Every book's own errata_slug must be in the table and point at its own key.
+    for b in books:
+        slug = b.get("slug")
+        if slug and aliases.get(slug) != b["key"]:
+            raise SystemExit(f"errata_slug {slug} of {b['title']} is not aliased to its key {b['key']}")
+    return aliases
+
+
 def build_errata_pages():
     books = get_errata_books()
     books_map = {b["key"]: {"title": b["title"], "isbn": b["isbn"]} for b in books}
     books_json = json.dumps(books_map)
+    aliases_json = json.dumps(get_errata_aliases(books))
 
     render_template(
         "pages/errata.html",
@@ -382,6 +405,7 @@ def build_errata_pages():
         description="Report and search for book errata",
         errata_books=books,
         errata_books_json=books_json,
+        errata_aliases_json=aliases_json,
     )
     render_template(
         "admin/errata-dashboard.html",

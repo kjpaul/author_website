@@ -10,6 +10,20 @@ const coll = collection(db, "errata");
 // --- Books registry (injected by build.py from series.json) ---
 const BOOKS = window.ERRATA_BOOKS || {};
 
+// --- Alias table (injected by build.py from series.json `errata_aliases`) ---
+// The slug in a /errata/?book= link to the key stored on the Firestore
+// records. The keys were crossed by the 2026-10-29 renumbering of the
+// volumes (Volume I's records carry ast-t1-vol-3, Volume III's ast-t1-vol-2,
+// Why Space's ast-t1-vol-1), so the links use a slug that names the book as
+// it is today and this table turns it back into the stored key. Nothing in
+// Firestore moves. A link that already carries a key still works.
+const ALIASES = window.ERRATA_ALIASES || {};
+function resolveBookKey(param) {
+  if (!param) return null;
+  if (Object.prototype.hasOwnProperty.call(ALIASES, param)) return ALIASES[param];
+  return BOOKS[param] ? param : null;
+}
+
 // --- DOM refs ---
 const listEl     = document.getElementById("errata-list");
 const searchEl   = document.getElementById("errata-search");
@@ -131,7 +145,7 @@ bookFilter.addEventListener("change", () => loadErrata(searchEl.value, bookFilte
 
 // --- Deep link: /errata/?book=<key> preselects the book in filter + form ---
 function applyBookParam() {
-  const key = new URLSearchParams(location.search).get("book");
+  const key = resolveBookKey(new URLSearchParams(location.search).get("book"));
   if (key && BOOKS[key]) {
     if ([...bookFilter.options].some(o => o.value === key)) bookFilter.value = key;
     if (formEl && [...formEl.book.options].some(o => o.value === key)) formEl.book.value = key;

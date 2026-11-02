@@ -57,7 +57,7 @@
         const r = await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, groups: ['vol1'] }),
+          body: JSON.stringify({ email, groups: ['vol1', 'progress'] }),
         });
         if (r.ok) {
           if (status) {
