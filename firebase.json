@@ -56,27 +56,122 @@
       },
       {
         "source": "/series/technical/orbital-rings/vol-4",
-        "destination": "/series/technical/why-space",
+        "destination": "/series/related/why-space",
         "type": 301
       },
       {
         "source": "/series/technical/orbital-rings/vol-4/",
-        "destination": "/series/technical/why-space",
+        "destination": "/series/related/why-space",
         "type": 301
       },
       {
         "source": "/series/technical/orbital-rings/vol-4/references",
-        "destination": "/series/technical/why-space/references",
+        "destination": "/series/related/why-space/references",
         "type": 301
       },
       {
         "source": "/series/technical/orbital-rings/vol-4/references/",
-        "destination": "/series/technical/why-space/references",
+        "destination": "/series/related/why-space/references",
         "type": 301
       },
       {
         "source": "/series/technical/orbital-rings/vol-4/references/index.html",
-        "destination": "/series/technical/why-space/references",
+        "destination": "/series/related/why-space/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/why-space",
+        "destination": "/series/related/why-space",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/why-space/",
+        "destination": "/series/related/why-space",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/why-space/references",
+        "destination": "/series/related/why-space/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/why-space/references/",
+        "destination": "/series/related/why-space/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/why-space/references/index.html",
+        "destination": "/series/related/why-space/references",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-ring-engineering-1st-ed",
+        "destination": "/series/related/orbital-ring-engineering-1st-ed",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/orbital-ring-engineering-1st-ed/",
+        "destination": "/series/related/orbital-ring-engineering-1st-ed",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/mia-drive",
+        "destination": "/series/technical/thor-drive",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/mia-drive/",
+        "destination": "/series/technical/thor-drive",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/full-picture",
+        "destination": "/series/technical/technology-overview",
+        "type": 301
+      },
+      {
+        "source": "/series/technical/full-picture/",
+        "destination": "/series/technical/technology-overview",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/learning-to-live",
+        "destination": "/series/fiction/escaping-gravity",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/learning-to-live/",
+        "destination": "/series/fiction/escaping-gravity",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/en-route",
+        "destination": "/series/fiction/the-journey-begins",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/en-route/",
+        "destination": "/series/fiction/the-journey-begins",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/challenge-begins",
+        "destination": "/series/fiction/the-catastrophe-unfolds",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/challenge-begins/",
+        "destination": "/series/fiction/the-catastrophe-unfolds",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/humanitys-next-chapter",
+        "destination": "/series/fiction/the-great-beyond",
+        "type": 301
+      },
+      {
+        "source": "/series/fiction/humanitys-next-chapter/",
+        "destination": "/series/fiction/the-great-beyond",
         "type": 301
       }
     ],
