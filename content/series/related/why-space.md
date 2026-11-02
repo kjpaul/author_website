@@ -24,4 +24,4 @@ The intent is that a reader with no prior aerospace background can follow the ar
 
 ## References
 
-The references for every chapter are at [/series/technical/why-space/references/](/series/technical/why-space/references/), organized by chapter.
+The references for every chapter are at [/series/related/why-space/references/](/series/related/why-space/references/), organized by chapter.

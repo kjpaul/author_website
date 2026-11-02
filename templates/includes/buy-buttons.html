@@ -1,0 +1,29 @@
+{#- Buy buttons for a volume or a standalone book. Context: item (dict with status, purchase, release_date, links, formats) -#}
+{%- set p = item.purchase or {} -%}
+<div class="launch-actions buy-actions">
+  {%- if p.kindle %}
+  <a class="btn btn-primary" href="{{ p.kindle }}" rel="noopener">Kindle</a>
+  {%- endif %}
+  {%- if p.paperback %}
+  <a class="btn {% if p.kindle %}btn-ghost{% else %}btn-primary{% endif %}" href="{{ p.paperback }}" rel="noopener">Paperback{% if item.prices and item.prices.paperback %} &middot; ${{ item.prices.paperback }}{% endif %}</a>
+  {%- endif %}
+  {%- if p.hardcover %}
+  <a class="btn btn-ghost" href="{{ p.hardcover }}" rel="noopener">Hardcover{% if item.prices and item.prices.hardcover %} &middot; ${{ item.prices.hardcover }}{% endif %}</a>
+  {%- endif %}
+  {%- if not (p.kindle or p.paperback or p.hardcover) %}
+  {%- if item.release_date %}
+  <span class="btn btn-primary btn-static" aria-disabled="true">Available {{ item.release_date | longdate(False) }}</span>
+  {%- else %}
+  <span class="btn btn-primary btn-static" aria-disabled="true">Forthcoming</span>
+  {%- endif %}
+  {%- endif %}
+  {%- if item.links and item.links.excerpt %}
+  <a class="btn btn-ghost" href="{{ item.links.excerpt }}">Read Chapter One</a>
+  {%- endif %}
+  <a class="btn btn-ghost" href="#notify">Get release news</a>
+</div>
+{%- if p.bookstore %}
+<p class="buy-note">Bookstores and libraries: <a href="{{ p.bookstore }}" rel="noopener">order the IngramSpark edition</a>.</p>
+{%- elif item.release_date %}
+<p class="buy-note">Also through IngramSpark for bookstores and libraries.</p>
+{%- endif %}

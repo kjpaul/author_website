@@ -22,7 +22,7 @@ This three-volume series is that reference.
 
 - **Volume III: Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators.** The physics and engineering of each launch system on its own terms. Rockets, skyhooks, mass drivers, launch loops, non-synchronous space elevators, rotovators, and orbital rings.
 
-The economic case is a separate book. *Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building* is the standalone companion to the series, written for a general educated reader: why an orbital ring, what rockets can and cannot do, what alternative launch systems exist, and how the economics close. Math is light and conversational; every equation that appears is explained in words first. [More about Why Space](/series/technical/why-space/).
+The economic case is a separate book. *Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building* is the standalone companion to the series, written for a general educated reader: why an orbital ring, what rockets can and cannot do, what alternative launch systems exist, and how the economics close. Math is light and conversational; every equation that appears is explained in words first. [More about Why Space](/series/related/why-space/).
 
 A further volume on construction logistics is planned for after the companion fiction series is complete.
 
@@ -33,7 +33,7 @@ A further volume on construction logistics is planned for after the companion fi
 - [Volume I, the design review, and its references](/series/technical/orbital-rings/vol-1/)
 - [Volume II summary](/series/technical/orbital-rings/vol-2/)
 - [Volume III summary](/series/technical/orbital-rings/vol-3/)
-- [Why Space, the economic case: landing page, sample chapter, and notify-me form](/series/technical/why-space/)
+- [Why Space, the economic case: landing page, sample chapter, and notify-me form](/series/related/why-space/)
 
 ## What makes this series different
 
@@ -52,7 +52,7 @@ The fiction series is in advanced planning. Titles will be announced as they are
 ## Resources
 
 - [Volume I references, organized by chapter](/series/technical/orbital-rings/vol-1/references/)
-- [Why Space references, organized by chapter](/series/technical/why-space/references/)
+- [Why Space references, organized by chapter](/series/related/why-space/references/)
 - [Open-source simulation code on GitHub](/code/)
 - [Submit errata or feedback](/errata/)
 

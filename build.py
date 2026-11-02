@@ -106,6 +106,23 @@ env.filters["roman"] = to_roman
 env.filters["ref_markdown"] = ref_markdown
 
 
+def longdate(value, year=True):
+    """2026-11-15 -> '15 November 2026' (or '15 November' with year=False)."""
+    if not value:
+        return ""
+    try:
+        y, m, d = str(value).split("-")
+        months = ["January", "February", "March", "April", "May", "June", "July",
+                  "August", "September", "October", "November", "December"]
+        out = f"{int(d)} {months[int(m) - 1]}"
+        return f"{out} {y}" if year else out
+    except (ValueError, IndexError):
+        return str(value)
+
+
+env.filters["longdate"] = longdate
+
+
 def load_series():
     if os.path.exists(SERIES_FILE):
         with open(SERIES_FILE, encoding="utf-8") as f:
@@ -254,14 +271,19 @@ def build_blog_index(posts):
 
 
 def build_homepage():
+    track, book, vol = featured_book()
+    item = vol or book
     render_template(
         "pages/home.html",
         os.path.join(OUTPUT_DIR, "index.html"),
         title="Home",
-        description=(
-            "Paul de Jong — author of Orbital Ring Engineering, "
-            "a deep dive into building humanity's highway to space."
+        description=(item or {}).get("headline") or (
+            "Paul de Jong, author of Orbital Ring Engineering: "
+            "orbital rings, mass drivers and space elevators, with the numbers."
         ),
+        featured_track=track,
+        featured=book,
+        featured_vol=vol,
     )
 
 

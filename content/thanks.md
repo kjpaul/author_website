@@ -16,4 +16,4 @@ I will email you when *Why Space*, the economic case, ships and not before.
 
 Paul
 
-[Back to the book](/series/technical/why-space/)
+[Back to the book](/series/related/why-space/)

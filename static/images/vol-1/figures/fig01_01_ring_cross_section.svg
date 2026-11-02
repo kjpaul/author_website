@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1150" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#999" stroke-width="2"/></pattern></defs>
+<rect width="1600" height="1150" fill="#ffffff"/>
+<text x="800" y="44" font-size="24" text-anchor="middle" font-weight="bold" fill="#111">Cross section of the orbital ring at 700 km, looking west along the ring (schematic, not to scale)</text>
+<text x="150" y="120" font-size="22" text-anchor="middle" font-weight="normal" fill="#111">South</text>
+<text x="1450" y="120" font-size="22" text-anchor="middle" font-weight="normal" fill="#111">North</text>
+<polygon points="685,560 915,560 915,960 685,960" fill="#eef2f6" stroke="none"/>
+<rect x="130" y="282" width="490" height="10" fill="#3b5b8c" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="980" y="282" width="490" height="10" fill="#3b5b8c" stroke="#222" stroke-width="1" rx="0"/>
+<text x="375" y="268" font-size="20" text-anchor="middle" font-weight="normal" fill="#111">Ring-mounted solar panels, 27.5 m a side at 8 MW</text>
+<text x="1240" y="268" font-size="20" text-anchor="middle" font-weight="normal" fill="#111">Ring-mounted solar panels, 27.5 m a side at 8 MW</text>
+<rect x="620" y="262" width="360" height="400" fill="url(#hatch)" stroke="#222" stroke-width="3" rx="0"/>
+<rect x="645" y="290" width="310" height="300" fill="#ffffff" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="645" y="600" width="310" height="50" fill="#d9d9d9" stroke="#222" stroke-width="1" rx="0"/>
+<text x="800" y="632" font-size="17" text-anchor="middle" font-weight="normal" fill="#111">equipment bay (bottom-heavy)</text>
+<rect x="690" y="240" width="220" height="22" fill="#7a7a7a" stroke="#222" stroke-width="2" rx="0"/>
+<rect x="730" y="200" width="140" height="38" fill="#ffffff" stroke="#222" stroke-width="2" rx="6"/>
+<text x="800" y="226" font-size="18" text-anchor="middle" font-weight="normal" fill="#111">sled</text>
+<line x1="910" y1="251" x2="1080" y2="200" stroke="#222" stroke-width="2"/>
+<text x="1090" y="196" font-size="20" text-anchor="start" font-weight="normal" fill="#111">Mass driver (LSM) track on top of the casing</text>
+<rect x="685" y="330" width="230" height="230" fill="#555555" stroke="#222" stroke-width="2" rx="0"/>
+<text x="800" y="438" font-size="22" text-anchor="middle" font-weight="bold" fill="#ffffff">CNT cable</text>
+<text x="800" y="466" font-size="19" text-anchor="middle" font-weight="normal" fill="#ffffff">8.22 m square</text>
+<circle cx="800" cy="505" r="16" fill="none" stroke="#ffffff" stroke-width="3"/>
+<line x1="789" y1="494" x2="811" y2="516" stroke="#ffffff" stroke-width="3"/>
+<line x1="811" y1="494" x2="789" y2="516" stroke="#ffffff" stroke-width="3"/>
+<rect x="705" y="330" width="70" height="9" fill="#b04a2f" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="705" y="551" width="70" height="9" fill="#b04a2f" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="825" y="330" width="70" height="9" fill="#b04a2f" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="825" y="551" width="70" height="9" fill="#b04a2f" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="685" y="395" width="8" height="100" fill="#c9a227" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="907" y="395" width="8" height="100" fill="#c9a227" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="705" y="568" width="70" height="22" fill="#2f7a4a" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="705" y="300" width="70" height="22" fill="#2f7a4a" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="825" y="568" width="70" height="22" fill="#2f7a4a" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="825" y="300" width="70" height="22" fill="#2f7a4a" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="655" y="395" width="22" height="100" fill="#6a4c93" stroke="#222" stroke-width="1" rx="0"/>
+<rect x="923" y="395" width="22" height="100" fill="#6a4c93" stroke="#222" stroke-width="1" rx="0"/>
+<line x1="895" y1="311" x2="1080" y2="330" stroke="#222" stroke-width="2"/>
+<text x="1090" y="336" font-size="20" text-anchor="start" font-weight="normal" fill="#111">Lift compensation tracks (EMS coils)</text>
+<line x1="895" y1="335" x2="1080" y2="370" stroke="#222" stroke-width="2"/>
+<text x="1090" y="376" font-size="20" text-anchor="start" font-weight="normal" fill="#111">Ferromagnetic plates on the cable</text>
+<line x1="945" y1="445" x2="1080" y2="420" stroke="#222" stroke-width="2"/>
+<text x="1090" y="426" font-size="20" text-anchor="start" font-weight="normal" fill="#111">LIM stators, with reaction plates on the cable</text>
+<line x1="895" y1="579" x2="1080" y2="470" stroke="#222" stroke-width="2"/>
+<text x="1090" y="476" font-size="20" text-anchor="start" font-weight="normal" fill="#111">Casing support tracks (EMS coils)</text>
+<text x="1090" y="506" font-size="18" text-anchor="start" font-weight="normal" fill="#444">about 100 mm gap between coil and plate</text>
+<line x1="620" y1="470" x2="520" y2="470" stroke="#222" stroke-width="2"/>
+<text x="510" y="455" font-size="20" text-anchor="end" font-weight="normal" fill="#111">Casing, about 9 to 11 m</text>
+<text x="510" y="482" font-size="20" text-anchor="end" font-weight="normal" fill="#111">on a side</text>
+<text x="510" y="540" font-size="18" text-anchor="end" font-weight="normal" fill="#444">The cable moves away from the</text>
+<text x="510" y="564" font-size="18" text-anchor="end" font-weight="normal" fill="#444">viewer at 8,786 m/s relative</text>
+<text x="510" y="588" font-size="18" text-anchor="end" font-weight="normal" fill="#444">to the casing, which holds still</text>
+<text x="510" y="612" font-size="18" text-anchor="end" font-weight="normal" fill="#444">over the ground.</text>
+<line x1="740" y1="662" x2="740" y2="720" stroke="#222" stroke-width="2"/>
+<line x1="860" y1="662" x2="860" y2="720" stroke="#222" stroke-width="2"/>
+<rect x="690" y="720" width="220" height="80" fill="#ffffff" stroke="#222" stroke-width="2" rx="8"/>
+<text x="800" y="752" font-size="19" text-anchor="middle" font-weight="normal" fill="#111">Quarters and offices</text>
+<text x="800" y="778" font-size="19" text-anchor="middle" font-weight="normal" fill="#111">in the cable's shadow</text>
+<line x1="775" y1="800" x2="775" y2="840" stroke="#222" stroke-width="2"/>
+<line x1="825" y1="800" x2="825" y2="840" stroke="#222" stroke-width="2"/>
+<rect x="700" y="840" width="200" height="60" fill="#ffffff" stroke="#222" stroke-width="2" rx="8"/>
+<text x="800" y="876" font-size="19" text-anchor="middle" font-weight="normal" fill="#111">Factories, depots</text>
+<text x="800" y="940" font-size="18" text-anchor="middle" font-weight="normal" fill="#445566">Shielded from above by the cable</text>
+<line x1="625" y1="662" x2="520" y2="1060" stroke="#222" stroke-width="3" stroke-dasharray="12,8" marker-end="url(#ar)"/>
+<line x1="975" y1="662" x2="1080" y2="1060" stroke="#222" stroke-width="3" stroke-dasharray="12,8" marker-end="url(#ar)"/>
+<text x="470" y="1000" font-size="19" text-anchor="end" font-weight="normal" fill="#111">Anchor lines and spreader arms</text>
+<text x="470" y="1026" font-size="19" text-anchor="end" font-weight="normal" fill="#111">to the ground, 700 km below</text>
+<text x="1130" y="1000" font-size="19" text-anchor="start" font-weight="normal" fill="#111">Spreader arms hold the suspended</text>
+<text x="1130" y="1026" font-size="19" text-anchor="start" font-weight="normal" fill="#111">solar array open 100 km below</text>
+<text x="800" y="1110" font-size="18" text-anchor="middle" font-weight="normal" fill="#444">Not to scale. Dimensions from Chapters 3, 8, and 16.</text>
+</svg>

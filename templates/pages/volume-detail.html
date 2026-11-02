@@ -2,7 +2,7 @@
 {% block main_class %}wide{% endblock %}
 {% block content %}<article class="volume-detail track-{{ track }}">
   <div class="breadcrumb">
-    <a href="/series/">Series</a><span class="sep">/</span>
+    <a href="/series/">Books</a><span class="sep">/</span>
     <a href="/series/{{ track }}/">{{ track_label }}</a><span class="sep">/</span>
     <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a><span class="sep">/</span>
     Vol {{ vol.number | roman }}
@@ -14,52 +14,103 @@
       <img class="book-cover" src="{{ vol.cover_image }}" alt="Cover of {{ book.title }}, Volume {{ vol.number | roman }}: {{ vol.title }}, by Paul G. de Jong">
       {%- else %}
       <div class="cover-placeholder">VOL {{ vol.number | roman }}</div>
-      <div class="cover-caption"><span class="pill">In progress</span>Cover and ISBNs to come</div>
+      <div class="cover-caption"><span class="pill">Forthcoming</span>Cover to come</div>
       {%- endif %}
     </div>
 
     <div class="hero-body">
       <div class="launch-meta">
-        <span class="vol-id">VOLUME {{ vol.number | roman }}</span>
-        {%- if vol.status == 'in_progress' %}
-        <span class="vol-status">In press</span>
-        {%- else %}
+        <span class="vol-id">{{ book.title }}, Volume {{ vol.number | roman }}</span>
         {% with status=vol.status %}{% include "includes/status-badge.html" %}{% endwith %}
-        {%- endif %}
       </div>
 
-      <div class="launch-series-line">{{ book.title }} &middot; Volume {{ vol.number | roman }}</div>
+      <h1>{{ vol.title }}</h1>
 
-            <h1>{{ vol.title }}</h1>
+      {%- if vol.isbns %}
+      {#- A volume with release data: the full hero -#}
+      {%- if vol.headline %}
+      <p class="launch-subtitle">{{ vol.headline }}</p>
+      {%- endif %}
+      {%- if vol.description %}
+      <p class="launch-lede">{{ vol.description }}</p>
+      {%- endif %}
+      <p class="launch-series-line launch-meta-line">{% if vol.pages %}{{ vol.pages }} pages &middot; {% endif %}Hardcover, paperback and Kindle{% if vol.release_date %} &middot; {{ vol.release_date | longdate }}{% endif %}</p>
 
+      {% with item=vol %}{% include "includes/buy-buttons.html" %}{% endwith %}
+
+      {% include "includes/notify-form.html" %}
+
+      <div class="launch-actions launch-links">
+        {%- if vol.links and vol.links.excerpt %}
+        <a class="quicklink" href="{{ vol.links.excerpt }}">Chapter One</a>
+        {%- endif %}
+        {%- if vol.has_references %}
+        <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
+        {%- endif %}
+        {%- if vol.errata_key %}
+        <a class="quicklink" href="/errata/?book={{ vol.errata_key }}">Errata</a>
+        {%- endif %}
+        <a class="quicklink" href="/review/">Leave a review</a>
+      </div>
+      {%- else %}
+      {#- A forthcoming volume: the stub -#}
       {%- if vol_content %}
       <div class="book-description">{{ vol_content | safe }}</div>
       {%- else %}
       <p class="launch-lede">
-        Detailed content, table of contents, and sample excerpts will be
-        posted here as Volume {{ vol.number | roman }} progresses.
-        {% if vol.chapters %}Current draft: approximately {{ vol.chapters }} chapters.{% endif %}
+        Volume {{ vol.number | roman }} is forthcoming. Its contents and sample chapters will be posted here as the manuscript is finalized.
       </p>
       {%- endif %}
-
       <div class="launch-actions">
         {%- if vol.has_references %}
         <a class="btn btn-primary" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
         {%- endif %}
-        <a class="btn btn-ghost" href="/series/{{ track }}/{{ book.slug }}/">Back to book</a>
+        <a class="btn btn-ghost" href="/series/{{ track }}/{{ book.slug }}/">All volumes</a>
       </div>
-          </div>
+      {%- endif %}
+    </div>
   </section>
 
-  
+  {%- if vol.isbns and vol_content %}
+  <div class="book-description volume-copy">{{ vol_content | safe }}</div>
+  {%- endif %}
+
+  {%- if vol_toc %}
+  <section class="volume-toc">
+    <h2>Table of Contents</h2>
+    {{ vol_toc | safe }}
+  </section>
+  {%- endif %}
+
+  {%- if vol.isbns %}
+  <section class="volume-editions book-description">
+    <h2>ISBNs and Library of Congress Number</h2>
+    <div class="launch-isbns" aria-label="ISBN-13 numbers for Volume {{ vol.number | roman }}">
+      {%- if vol.isbns.hardcover %}
+      <div><span class="k">Hardcover ISBN</span><span class="v">{{ vol.isbns.hardcover }}</span></div>
+      {%- endif %}
+      {%- if vol.isbns.paperback %}
+      <div><span class="k">Paperback ISBN</span><span class="v">{{ vol.isbns.paperback }}</span></div>
+      {%- endif %}
+      {%- if vol.isbns.epub %}
+      <div><span class="k">E-book ISBN</span><span class="v">{{ vol.isbns.epub }}</span></div>
+      {%- endif %}
+      {%- if vol.lccn %}
+      <div><span class="k">Library of Congress Control Number</span><span class="v">{{ vol.lccn }}</span></div>
+      {%- endif %}
+    </div>
+    <p>{% if vol.release_date %}{% if vol.status == 'published' %}Released{% else %}Release{% endif %} {{ vol.release_date | longdate }} through Amazon and, for bookstores and libraries, IngramSpark. {% endif %}The current list of the books, with release dates and where each one can be bought, is kept on this site at <a href="/series/">pauldejong.com</a>. Reviews go to <a href="/review/">pauldejong.com/review</a>.</p>
+  </section>
+  {%- endif %}
+
   <aside class="refs-quicklinks" style="max-width: 720px; margin: 3rem auto 0;">
     {%- if vol.has_references %}
     <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References for Vol {{ vol.number | roman }}</a>
     {%- endif %}
-    {%- if book.id == 'ast-t1' %}
-    <a class="quicklink" href="/errata/?book={{ vol.errata_key or ('ast-t1-vol-' ~ vol.number) }}">Errata for Vol {{ vol.number | roman }}</a>
+    {%- if vol.errata_key %}
+    <a class="quicklink" href="/errata/?book={{ vol.errata_key }}">Errata for Vol {{ vol.number | roman }}</a>
     {%- endif %}
     <a class="quicklink" href="/series/{{ track }}/{{ book.slug }}/">All volumes</a>
-    <a class="quicklink" href="/series/">Series overview</a>
+    <a class="quicklink" href="/series/">All books</a>
   </aside>
 </article>{% endblock %}

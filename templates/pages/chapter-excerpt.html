@@ -1,20 +1,36 @@
 {% extends "base.html" %}
 {% block content %}<article class="chapter-excerpt">
   <div class="breadcrumb">
-    <a href="/series/">Series</a><span class="sep">/</span>
-    <a href="/series/technical/">Technical</a><span class="sep">/</span>
-    <a href="/series/technical/orbital-rings/">Orbital Ring Engineering</a><span class="sep">/</span>
-    <a href="/series/technical/why-space/">Why Space</a><span class="sep">/</span>
-    Chapter One
+    <a href="/series/">Books</a><span class="sep">/</span>
+    {%- if meta.group_url %}
+    <a href="{{ meta.group_url }}">{{ meta.group_label or 'Books' }}</a><span class="sep">/</span>
+    {%- endif %}
+    {%- if meta.book_url %}
+    <a href="{{ meta.book_url }}">{{ meta.book_short or meta.book_title }}</a><span class="sep">/</span>
+    {%- endif %}
+    {{ meta.crumb or 'Chapter One' }}
   </div>
 
   <header class="excerpt-header">
-    <div class="excerpt-eyebrow">Why Space &middot; Chapter 1</div>
+    <div class="excerpt-eyebrow">{{ meta.eyebrow or 'Chapter 1' }}</div>
     <h1>{{ meta.title or title }}</h1>
-    <p class="excerpt-deck">An excerpt from <em>Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building</em>, the economic case for space mass transit.</p>
+    {%- if meta.deck %}
+    <p class="excerpt-deck">{{ meta.deck | safe }}</p>
+    {%- endif %}
   </header>
 
   <div class="excerpt-body">
     {{ content | safe }}
   </div>
+
+  {%- if meta.book_url or meta.references_url %}
+  <aside class="refs-quicklinks" style="max-width: 720px; margin: 3rem auto 0;">
+    {%- if meta.book_url %}
+    <a class="quicklink" href="{{ meta.book_url }}">Back to {{ meta.book_short or meta.book_title or 'the book' }}</a>
+    {%- endif %}
+    {%- if meta.references_url %}
+    <a class="quicklink" href="{{ meta.references_url }}">References for this chapter</a>
+    {%- endif %}
+  </aside>
+  {%- endif %}
 </article>{% endblock %}

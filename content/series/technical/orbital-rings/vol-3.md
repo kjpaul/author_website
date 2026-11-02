@@ -1,5 +1,5 @@
 ---
-title: "Mass Transit Launch Technologies from First Principles"
+title: "Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators"
 description: "Volume III of Orbital Ring Engineering."
 ---
 

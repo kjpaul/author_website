@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}<article class="references-page track-{{ track }}">
   <div class="breadcrumb">
-    <a href="/series/">Series</a> / <a href="/series/{{ track }}/">{{ track_label }}</a> / <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a>
+    <a href="/series/">Books</a> / <a href="/series/{{ track }}/">{{ track_label }}</a> / <a href="/series/{{ track }}/{{ book.slug }}/">{{ book.title }}</a>
     {%- if vol %} / <a href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/">Vol {{ vol.number | roman }}</a>{% endif %} / References
   </div>
 

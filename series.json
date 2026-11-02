@@ -391,7 +391,8 @@
         "apple_books": "",
         "anchor": "1st-edition"
       },
-      "volumes": null
+      "volumes": null,
+      "code": "2025 ED"
     },
     {
       "group": "related",
@@ -426,7 +427,8 @@
         "entries": []
       },
       "links": {},
-      "volumes": null
+      "volumes": null,
+      "code": "PLANNED"
     }
   ]
 }

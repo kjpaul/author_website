@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block main_class %}wide{% endblock %}
-{% block content %}<article class="book-detail legacy-book track-technical">
+{% block content %}<article class="book-detail legacy-book track-{{ track or 'related' }}">
   <div class="breadcrumb">
-    <a href="/series/">Series</a><span class="sep">/</span>
-    <a href="/series/technical/">Technical Books</a><span class="sep">/</span>
-    Orbital Ring Engineering (1st Edition)
+    <a href="/series/">Books</a><span class="sep">/</span>
+    <a href="/series/{{ track or 'related' }}/">{{ track_label or 'Related books' }}</a><span class="sep">/</span>
+    {{ book.short_title or book.title }}
   </div>
 
   <div class="legacy-banner">
-    <strong>This is the original single-volume first edition.</strong>
-    It has since been expanded into a four-volume edition with significantly more
-    detail. See: <a href="/series/technical/orbital-rings/">Orbital Ring Engineering</a> (AST-T1).
+    <strong>This is the 2025 book, the first treatment.</strong>
+    The three volumes of <a href="/series/technical/orbital-rings/">Orbital Ring Engineering</a> replace and expand it,
+    and <a href="/series/technical/orbital-rings/vol-1/">Volume I, the complete design review</a>, is the one to read first.
   </div>
 
   <header class="book-header">
@@ -24,16 +24,16 @@
 
     <div class="book-info">
       <div class="book-meta-line">
-        <span>Legacy &middot; 1st Edition</span>
+        <span>{{ book.byline or 'First edition' }}</span>
         <span class="sep">&middot;</span>
-        {% with status="published" %}{% include "includes/status-badge.html" %}{% endwith %}
+        {% with status=book.status or "published" %}{% include "includes/status-badge.html" %}{% endwith %}
       </div>
       <h1>{{ book.title }}</h1>
       {%- if book.subtitle %}
       <p class="book-subtitle">{{ book.subtitle }}</p>
       {%- endif %}
       {%- if book.author %}
-      <p class="book-tagline">By {{ book.author }}</p>
+      <p class="book-tagline">By {{ book.author }}{% if book.release_date %}, {{ book.release_date | longdate }}{% endif %}</p>
       {%- endif %}
 
       {%- if book.amazon %}
@@ -62,7 +62,8 @@
     <h2>More</h2>
     <ul>
       <li><a href="/errata/?book={{ book.errata_key or 'orbital-ring-engineering' }}">Report or view errata for this edition</a></li>
-      <li><a href="/series/technical/orbital-rings/">The new four-volume edition</a></li>
+      <li><a href="/series/technical/orbital-rings/vol-1/">Orbital Ring Engineering, Volume I: the complete design review</a></li>
+      <li><a href="/series/technical/orbital-rings/">The three-volume edition</a></li>
       <li><a href="/code/">Related code</a></li>
     </ul>
   </section>

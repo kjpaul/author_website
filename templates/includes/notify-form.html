@@ -1,0 +1,9 @@
+{#- The release-news (notify-me) form. Context: label (optional) -#}
+<form class="notify-form" id="notify" data-notify-form aria-label="{{ label or 'Get release news by email' }}">
+  <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
+  <button class="btn btn-primary notify-form-submit" type="submit">
+    Notify me on release
+    <span class="arrow">&rarr;</span>
+  </button>
+  <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
+</form>

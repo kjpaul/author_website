@@ -1917,3 +1917,33 @@ footer .foot-meta a:hover { color: #c1a064; }
   footer .foot-grid { grid-template-columns: 1fr; }
   .reference { grid-template-columns: 32px 1fr; }
 }
+
+
+/* --- Books page, home rows and the release hero (2026-11-02 restructure) --- */
+.books-group { padding: 2.4rem 0; border-bottom: 1px solid var(--rule); }
+.books-group:last-of-type { border-bottom: 0; }
+.books-group .track-header h1,
+.books-group .track-header h2,
+.books-group .track-header h3 { margin: 0.2rem 0 0.4rem; }
+.books-group .section-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.books-planned { color: var(--muted); font-size: 0.92rem; margin: 0.6rem 0 0; }
+.home-volumes, .home-series { padding: 3rem 0; border-bottom: 1px solid var(--rule); }
+.home-series .books-group { padding: 1.6rem 0; }
+.launch-meta-line { margin-bottom: 1rem; }
+.btn-static { cursor: default; opacity: 0.85; }
+.buy-note { font-size: 0.85rem; color: var(--muted); margin: -0.8rem 0 1.4rem; }
+.launch-links { gap: 1rem; }
+.volume-copy, .volume-toc, .volume-editions { max-width: 720px; margin: 2.4rem auto 0; }
+.volume-toc ul { list-style: none; padding-left: 0; }
+.volume-toc ul ul { padding-left: 1.4rem; font-size: 0.92rem; color: var(--ink-2); }
+.volume-toc li { margin: 0.25rem 0; }
+.excerpt-body img { max-width: 100%; height: auto; display: block; margin: 1.2rem auto; }
+.excerpt-body table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1.2rem 0; }
+.excerpt-body th, .excerpt-body td { border: 1px solid var(--rule); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+.dropdown-item-planned { opacity: 0.7; cursor: default; }

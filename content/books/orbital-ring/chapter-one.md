@@ -1,13 +1,20 @@
 ---
 title: "Chapter One: What's Out There"
 slug: chapter-one
-book: orbital-ring
-volume: 1
+book: ast-c1
+group_label: Related books
+group_url: /series/related/
+book_title: "Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building"
+book_short: Why Space
+book_url: /series/related/why-space/
+references_url: /series/related/why-space/references/#ch-1
+eyebrow: "Why Space &middot; Chapter 1"
+deck: "An excerpt from <em>Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building</em>, the economic case for space mass transit."
 description: "Read Chapter One of Why Space, the economic case for space mass transit. The solar system as a destination and as a resource."
 ---
 
 <div class="excerpt-note">
-  <strong>Read Chapter One.</strong> This is the opening chapter of <em>Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building</em>, the economic case for space mass transit. Numbered citations refer to the <a href="/series/technical/why-space/references/#ch-1">Why Space references for Chapter 1</a>.
+  <strong>Read Chapter One.</strong> This is the opening chapter of <em>Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building</em>, the economic case for space mass transit. Numbered citations refer to the <a href="/series/related/why-space/references/#ch-1">Why Space references for Chapter 1</a>.
 </div>
 
 ## Introduction
@@ -297,5 +304,5 @@ The rest of this book is about building it.
     <button class="btn btn-primary notify-form-submit" type="submit">Notify me on release <span class="arrow">&rarr;</span></button>
     <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
   </form>
-  <p><a class="btn btn-ghost" href="/series/technical/why-space/">Back to Why Space</a> &nbsp; <a class="btn btn-ghost" href="/series/technical/why-space/references/#ch-1">Chapter 1 references</a></p>
+  <p><a class="btn btn-ghost" href="/series/related/why-space/">Back to Why Space</a> &nbsp; <a class="btn btn-ghost" href="/series/related/why-space/references/#ch-1">Chapter 1 references</a></p>
 </div>

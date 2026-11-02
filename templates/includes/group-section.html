@@ -1,0 +1,25 @@
+{#- One group of the catalog as a section: heading, series line, the cards, and the planned series as a line. Context: g (group dict), books (list), heading_tag ("h2" default) -#}
+{%- set tag = heading_tag or "h2" -%}
+<section class="series-track books-group books-group-{{ g.key }}" id="{{ g.key }}">
+  <header class="track-header">
+    {%- if g.series %}
+    <div class="section-eyebrow">{{ g.series }}</div>
+    {%- endif %}
+    <{{ tag }}>{{ g.label }}</{{ tag }}>
+    {%- if g.line %}
+    <p class="track-lede">{{ g.line }}</p>
+    {%- endif %}
+  </header>
+  <div class="book-grid">
+    {%- for book in books %}
+    {%- if not (book.kind == 'children' and not (book.series and book.series.entries)) %}
+    {% with track=g.key %}{% include "includes/book-card.html" %}{% endwith %}
+    {%- endif %}
+    {%- endfor %}
+  </div>
+  {%- for book in books %}
+  {%- if book.kind == 'children' and not (book.series and book.series.entries) %}
+  <p class="books-planned"><strong>{{ book.byline or 'Planned' }}:</strong> {{ book.description }}</p>
+  {%- endif %}
+  {%- endfor %}
+</section>

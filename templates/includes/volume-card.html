@@ -5,7 +5,9 @@
     {% with status=vol.status %}{% include "includes/status-badge.html" %}{% endwith %}
   </div>
   <h3 class="volume-card-title">{{ vol.title }}</h3>
-  {%- if vol.chapters %}
+  {%- if vol.release_date %}
+  <div class="volume-card-meta">{% if vol.status == 'published' %}Released{% else %}Release{% endif %} {{ vol.release_date | longdate }}{% if vol.pages %} &middot; {{ vol.pages }} pages{% endif %}</div>
+  {%- elif vol.chapters %}
   <div class="volume-card-meta">{{ vol.chapters }} chapters</div>
   {%- endif %}
   <div class="volume-card-links">
@@ -13,7 +15,12 @@
     {%- if vol.has_references %}
     <a href="/series/{{ track }}/{{ book.slug }}/{{ vol.slug }}/references/">References</a>
     {%- endif %}
-    {%- if vol.purchase_url %}
+    {%- if vol.links and vol.links.excerpt %}
+    <a href="{{ vol.links.excerpt }}">Chapter One</a>
+    {%- endif %}
+    {%- if vol.purchase and vol.purchase.kindle %}
+    <a href="{{ vol.purchase.kindle }}" class="volume-card-purchase" rel="noopener">Buy</a>
+    {%- elif vol.purchase_url %}
     <a href="{{ vol.purchase_url }}" class="volume-card-purchase">Purchase</a>
     {%- endif %}
   </div>

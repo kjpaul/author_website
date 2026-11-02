@@ -2,7 +2,7 @@
 {% block main_class %}wide{% endblock %}
 {% block content %}<article class="book-detail track-{{ track }}">
   <div class="breadcrumb">
-    <a href="/series/">Series</a><span class="sep">/</span>
+    <a href="/series/">Books</a><span class="sep">/</span>
     <a href="/series/{{ track }}/">{{ track_label }}</a><span class="sep">/</span>
     {{ book.title }}
   </div>
@@ -11,20 +11,24 @@
     <div class="book-cover-wrap">
       {%- if book.cover_image %}
       <img class="book-cover" src="{{ book.cover_image }}" alt="{{ book.title }} cover">
+      {%- if book.cover_note %}<div class="cover-caption">{{ book.cover_note | capitalize }}</div>{% endif %}
       {%- else %}
-      <div class="cover-placeholder">{{ book.id | upper }}</div>
+      <div class="cover-placeholder">{{ book.code or (book.id | upper) }}</div>
       {%- endif %}
     </div>
 
     <div class="book-info">
       <div class="book-meta-line">
-        <span>{{ book.id | upper }}</span>
+        <span>{{ book.code or (book.id | upper) }}</span>
         <span class="sep">&middot;</span>
-        <span>Astronomy's Shocking Twist {{ track_book_label }}</span>
+        <span>{% if group and group.series %}{{ group.series }} {% endif %}{{ track_book_label | replace(book.id | upper, '') | trim }}</span>
       </div>
       <h1>{{ book.title }}</h1>
       {%- if book.subtitle %}
       <p class="book-subtitle">{{ book.subtitle }}</p>
+      {%- endif %}
+      {%- if book.byline %}
+      <p class="book-tagline">{{ book.byline }}</p>
       {%- endif %}
       {%- if book.description %}
       <p class="book-tagline">{{ book.description }}</p>
@@ -39,6 +43,8 @@
         {% include "includes/volume-card.html" %}
         {% endfor %}
       </div>
+      {%- elif book.volume_count %}
+      <p class="book-tagline">In {{ book.volume_count }} volumes.</p>
       {%- endif %}
     </div>
   </header>
@@ -67,31 +73,26 @@
           <li>A future with billions living across the solar system</li>
         </ul>
       </div>
-      <form class="notify-form" data-notify-form aria-label="Notify me when Why Space is available">
-        <input class="notify-form-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
-        <button class="btn btn-primary notify-form-submit" type="submit">
-          Notify me on release
-          <span class="arrow">&rarr;</span>
-        </button>
-        <p class="notify-form-status" data-notify-status role="status" aria-live="polite"></p>
-      </form>
-      <div class="launch-actions">
-        <a class="btn btn-ghost" href="/books/orbital-ring/chapter-one/">Read Chapter One</a>
-        {%- if book.has_references %}
-        <a class="btn btn-ghost" href="/series/{{ track }}/{{ book.slug }}/references/">References</a>
+      {% with item=book %}{% include "includes/buy-buttons.html" %}{% endwith %}
+      {% include "includes/notify-form.html" %}
+      <div class="launch-actions launch-links">
+        {%- if book.links and book.links.references %}
+        <a class="quicklink" href="{{ book.links.references }}">References</a>
         {%- endif %}
-        <a class="btn btn-ghost" href="/errata/?book={{ book.errata_key }}">Errata</a>
+        {%- if book.errata_key %}
+        <a class="quicklink" href="/errata/?book={{ book.errata_key }}">Errata</a>
+        {%- endif %}
       </div>
       {%- if book.isbns %}
-      <div class="launch-isbns" aria-label="ISBN-13 numbers for Why Space">
-        {%- if book.isbns.hardback %}
-        <div><span class="k">Hardback ISBN</span><span class="v">{{ book.isbns.hardback }}</span></div>
+      <div class="launch-isbns" aria-label="ISBN-13 numbers for {{ book.title }}">
+        {%- if book.isbns.hardcover %}
+        <div><span class="k">Hardcover ISBN</span><span class="v">{{ book.isbns.hardcover }}</span></div>
         {%- endif %}
         {%- if book.isbns.paperback %}
         <div><span class="k">Paperback ISBN</span><span class="v">{{ book.isbns.paperback }}</span></div>
         {%- endif %}
         {%- if book.isbns.epub %}
-        <div><span class="k">ePub ISBN</span><span class="v">{{ book.isbns.epub }}</span></div>
+        <div><span class="k">E-book ISBN</span><span class="v">{{ book.isbns.epub }}</span></div>
         {%- endif %}
       </div>
       {%- endif %}
@@ -101,7 +102,7 @@
 
   {%- if book_content %}
   <div class="book-description">{{ book_content | safe }}</div>
-  {%- elif book.status == "coming_soon" %}
+  {%- elif book.status in ("coming_soon", "forthcoming", "planned") %}
   <div class="book-description">
     <p>More details about this book will be posted here as it develops. The
     book is part of the ten-volume <em>Astronomy's Shocking Twist</em>
@@ -112,14 +113,16 @@
   <section class="book-links">
     <h2>More</h2>
     <ul>
-      {%- if book.status != 'coming_soon' %}
+      {%- if book.status in ('published', 'pre_order') %}
       <li><a href="/errata/">Errata</a></li>
       {%- endif %}
       {%- if book.id == 'ast-t1' %}
-      <li><a href="/series/technical/orbital-ring-engineering-1st-ed/">Original 1st edition</a></li>
+      <li><a href="/series/related/orbital-ring-engineering-1st-ed/">The 2025 first edition</a></li>
+      <li><a href="/series/related/why-space/">Why Space, the economic case</a></li>
       {%- endif %}
       <li><a href="/code/">Related code</a></li>
       <li><a href="/blog/">Related blog posts</a></li>
+      <li><a href="/series/">All books</a></li>
     </ul>
   </section>
 </article>{% endblock %}

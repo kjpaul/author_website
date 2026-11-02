@@ -11,11 +11,13 @@
           </p>
         </div>
         <div class="foot-col">
-          <h5>Series</h5>
-          <a href="/series/">Overview</a>
-          <a href="/series/technical/">Technical books</a>
-          <a href="/series/fiction/">Science fiction</a>
-          <a href="/series/technical/why-space/">Why Space, the economic case</a>
+          <h5>Books</h5>
+          <a href="/series/">All books</a>
+          {%- for g in groups %}
+          <a href="/series/{{ g.key }}/">{{ g.label }}</a>
+          {%- endfor %}
+          <a href="/series/technical/orbital-rings/vol-1/">Orbital Ring Engineering, Volume I</a>
+          <a href="/series/related/why-space/">Why Space, the economic case</a>
         </div>
         <div class="foot-col">
           <h5>Site</h5>
