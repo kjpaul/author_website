@@ -17,7 +17,7 @@ Nineteen chapters in five parts, with an appendix on the simulation code, a glos
     - 3.2 Cable Specifications
     - 3.3 Cable Cross-Section Geometry
     - 3.4 The Cable in Earth's Magnetic Field
-- **Chapter 4: Why 700 Kilometers? Catastrophic Failure and the Design Altitude**
+- **Chapter 4: Why 700 km?**
     - 4.1 The Failure Scenario
     - 4.2 Collision Geometry
     - 4.3 Fragment Populations
@@ -80,9 +80,10 @@ Nineteen chapters in five parts, with an appendix on the simulation code, a glos
     - 9.5 The LIM Design for Deployment
     - 9.6 Deployment Results
     - 9.7 Voltage and the Number of Turns
-    - 9.8 The LIMs After Deployment
-    - 9.9 The LSM on the Mass Driver
-    - 9.10 Common Hardware and Design Lessons
+    - 9.8 Shortening the Deployment
+    - 9.9 The LIMs After Deployment
+    - 9.10 The LSM on the Mass Driver
+    - 9.11 Common Hardware and Design Lessons
 
 ### Part III: Reaching Out From the Ring
 

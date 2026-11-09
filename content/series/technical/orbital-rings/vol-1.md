@@ -13,12 +13,12 @@ An orbital ring is a cable in orbit around the Earth, moving faster than orbital
 
 ## What this volume does
 
-Volume I is the complete design review, and the volume to read first. It takes the ring as a whole, at one altitude, with one cable, one bearing, one set of motors and one power system, and asks whether it all works together. The answer is mostly yes, with the caveats stated, and the open questions are listed for the team that eventually builds the ring. Volumes II and III carry the derivations behind the numbers: the first principles, and the launch technologies.
+Volume I is the complete design review, and the volume to read first. It takes the ring as a whole, at one altitude, with one cable, one bearing, one set of motors and one power system, and asks whether it all works together. The answer is mostly yes, with the caveats stated, and the open questions are listed for the team that eventually builds the ring. Volumes II and III carry the derivations behind the numbers: the first principles and the launch technologies.
 
 ## Inside this volume
 
 - Why the ring is at 700 km, and what a cable break at 250 km would do to the climate
-- The carbon nanotube cable: 25 GPa, 846 GN of tension, and the two assumptions the whole design rests on
+- The carbon nanotube cable: 25 GPa, 683 GN of tension, and the two assumptions the whole design rests on
 - Superconducting levitation, the linear motors that deploy the ring, and the power to run them
 - The mass driver, the anchor lines, the suspended solar array and the space elevators
 - Debris, damage and repair, and the load the casing can carry
@@ -28,7 +28,7 @@ Nineteen chapters, an appendix on the simulation code, a glossary and an index; 
 
 ## Editions
 
-Hardcover, paperback and Kindle. Release 15 November 2026 through Amazon and, for bookstores and libraries, IngramSpark.
+Hardcover, paperback and Kindle. Release in December 2026 through Amazon and, for bookstores and libraries, IngramSpark. The date is announced to the release-news list first.
 
 ## References
 
