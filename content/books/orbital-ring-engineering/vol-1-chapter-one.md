@@ -146,7 +146,7 @@ Table 1.1 is the design case for this volume. The orbital values come from the e
 | Parameter | Value | Derived in. |
 |:---|:---|:---|
 | Ring altitude | 700 km | Chapter 4. |
-| Deployment altitude | 527 km, where the ring is assembled; the cable's strain raises it 173 km to 700 km as the tension builds | Chapters 3 and 9. |
+| Deployment altitude | 527 km, where the ring is assembled; the cable's strain raises it 173 km to 700 km as the tension builds. The 527 km rests on the assumed 500 GPa modulus of the cable | Chapters 3 and 9. |
 | Orbit | Equatorial and circular | Chapter 2. |
 | Cable direction | Retrograde: the cable runs westward, the casing eastward with the ground | Chapter 3. |
 | Orbital radius | 7,078,137 m | Section 1.2. |
