@@ -27,7 +27,7 @@
       An orbital ring is a cable in orbit around the Earth, moving faster than orbital velocity, with a stationary casing riding on it. Anchor lines tie it to the ground, a mass driver on the ring throws spacecraft to the Moon, Mars and beyond, and space elevators bring people home. No rockets, no fuel, no countdown. Volume I is the complete design review: one ring, one design, every number checked and every one of them open to inspection.
     </p>
 
-    <p class="launch-series-line launch-meta-line">{% if item.pages %}{{ item.pages }} pages &middot; {% endif %}Hardcover, paperback and Kindle{% if item.release_date %} &middot; {{ item.release_date | longdate }}{% endif %}</p>
+    <p class="launch-series-line launch-meta-line">By {{ author.name }}{% if item.pages %} &middot; {{ item.pages }} pages{% endif %} &middot; Hardcover, paperback and Kindle{% if item.release_date %} &middot; {{ item.release_date | longdate }}{% endif %}</p>
 
     {% include "includes/buy-buttons.html" %}
 
@@ -62,14 +62,33 @@
 </section>
 {%- endif %}
 
+<section class="home-author" id="about-the-author">
+  <div class="section-head">
+    <div class="section-eyebrow">The author</div>
+    <h2>About {{ author.name }}</h2>
+  </div>
+  <div class="author-card">
+    {%- if primary_headshot %}
+    <a class="author-photo-link" href="/about/"><img class="author-photo" src="{{ primary_headshot.file }}" alt="{{ primary_headshot.alt }}" width="{{ primary_headshot.width }}" height="{{ primary_headshot.height }}" loading="lazy"></a>
+    {%- endif %}
+    <div class="author-card-body">
+      <p>{{ author.bios.short }}</p>
+      <div class="author-card-actions">
+        <a class="btn btn-ghost" href="/about/">More about {{ author.name }} <span class="arrow">&rarr;</span></a>
+        <a class="quicklink" href="/press/">Press kit</a>
+        <a class="quicklink" href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="home-series">
   <div class="section-head">
-    <div class="section-eyebrow">A ten-book series</div>
-    <h2>The Astronomy's Shocking Twist series</h2>
+    <div class="section-eyebrow">What {{ author.name }} writes</div>
+    <h2>Engineering textbooks and hard science fiction, built on the same physics.</h2>
     <p class="section-lede">
-      Five technical works on the engineering and five hard science fiction
-      novels that live inside the same physics. Known laws. Real materials.
-      Normal lifespans. No shortcuts.
+      {{ author.series.name }} is a ten-book project. {{ author.series.line }}
+      Known laws. Real materials. Normal lifespans. No shortcuts.
     </p>
   </div>
   {%- for g in groups if g.key != 'related' %}

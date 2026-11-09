@@ -1,0 +1,10 @@
+# pauldejong.com
+# Everyone is welcome: search engines, AI crawlers and the agents that read
+# pages on a person's behalf. The books are sold elsewhere; this site exists
+# to be found and understood. The one exception is the errata admin page.
+
+User-agent: *
+Allow: /
+Disallow: /errata/admin
+
+Sitemap: https://pauldejong.com/sitemap.xml

@@ -1,47 +1,52 @@
 ---
-title: "About"
+title: "About Paul G. de Jong"
 slug: "about"
-date: 2026-04-26
+date: 2026-11-09
 author: "Paul G. de Jong"
 type: page
 status: publish
-excerpt: "Paul G. de Jong is the author of the Astronomy's Shocking Twist series, a ten-book project on space mass transit infrastructure and the civilization it enables."
+excerpt: "Paul G. de Jong is the author of Orbital Ring Engineering and the Astronomy's Shocking Twist series: five engineering textbooks and five hard science fiction novels on mass transit to space."
 ---
 
-## About this project
+<!-- Third person throughout, so the name is in the text. Search engines and AI crawlers rank this page for "Paul G. de Jong" from the body, not from the title. First-person history lives on the blog; the origin story is linked below. -->
 
-I have been thinking about orbital rings and space infrastructure for more than ten years. The current book series is the culmination of that thought.
+## The books
 
-The planned series is called *Astronomy's Shocking Twist*. It consists of ten books across two tracks. The technical track includes five non-fiction books on space infrastructure: orbital rings, mass drivers, space elevators, propulsion systems, and large-scale space habitation. The hard science fiction track comprises five novels that share a single universe grounded in the technical work. The two tracks are meant to reinforce each other. The fiction tells a story that could happen, while the technical books demonstrate how it could be achieved, using real materials and real numbers.
+Paul G. de Jong has been thinking about orbital rings and space infrastructure for more than ten years. The book series is the long version of that thought.
 
-The standalone companion to the technical track, *Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building*, the economic case for space mass transit, serves as the starting point for the general reader. It is written for a generally educated reader; you do not need an engineering degree to follow the arguments. Volumes I to III are the engineering: the complete design review, the first principles and the launch technologies. A volume on construction is planned for release after the fiction series is complete.
+The series is called *Astronomy's Shocking Twist*. It is ten books in two tracks. The technical track is five non-fiction books on space infrastructure: orbital rings, mass drivers, space elevators, ion propulsion, generational ships and large-scale space habitation, written to serve as undergraduate textbooks. The hard science fiction track is five novels that share one universe and use the technology the textbooks describe. The two tracks reinforce each other. The fiction tells a story that could happen, and the technical books show how it could be done, with real materials and real numbers.
 
-## About me
+*Orbital Ring Engineering*, in three volumes, is the engineering: the complete design review in Volume I, the first principles in Volume II and the launch technologies in Volume III. Volume I is the one to read first. The companion book *Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building* is the economic case for mass transit to space, written for a generally educated reader; no engineering degree is needed to follow the arguments. A volume on construction is planned for after the fiction series is complete.
 
-The career arc has traversed several fields: electronics technician at Acuson Medical Ultrasound in the late 1980s, member of the Hydrogen Energy Association in the 1990s when hydrogen was a fringe topic, and a project called "Making Math Fun" in the same decade when I was considering teaching. Since then, I have worked in software and audio as an inventor and serial entrepreneur, maintaining a home physics lab that has remained active throughout. The common thread across ultrasound, hydrogen, software, audio, the home physics lab, and space infrastructure is a habit of showing the work. These books represent the long version of that habit.
+The fiction follows one rule: nothing in it breaks the known laws of physics. People live normal lifespans. Propulsion is limited by the power that can be produced. Materials are limited to reasonable extrapolations of current research. Heat has to go somewhere. Every trajectory is calculated with real orbital mechanics.
 
-Much of the thinking that led to this book series was prompted by Isaac Arthur's YouTube channel, *Science & Futurism with Isaac Arthur*. If any of this material is new to you and the SFIA format appeals to you, start with his episodes on orbital rings and megastructures, as they remain the best accessible introductions available.
+## The author
 
-## How I work
+Paul G. de Jong writes at the intersection of physics, electronics and engineering. His career has crossed several fields: electronics technician at Acuson Medical Ultrasound in the late 1980s, member of the Hydrogen Energy Society in the 1990s when hydrogen was a fringe topic, and a project called Making Math Fun in the same decade when he was considering teaching. Since then he has worked in software and audio as an inventor and serial entrepreneur, founding AnyTaxi, Club Clock and KaraokeListMaker in San Francisco, while keeping a home physics lab active throughout. He studied electronics at Heald Institute of Technology and physics at Ohlone College, UC Berkeley and the University of Amsterdam.
 
-Derivations are performed in MathCAD and verified against simulation code written in Python. The simulation code is open source and available on GitHub. Every major number in the book comes from one of three sources: a peer-reviewed publication, a calculation presented in the book, or a simulation whose code the reader can download and run.
+The common thread across ultrasound, hydrogen, software, audio, the lab and space infrastructure is a habit of showing the work. The books are the long version of that habit. His threshold for suspension of disbelief is very low, and the technical series arose from a desire for more truly hard science fiction.
 
-I use AI tools to assist with research, technical verification, and editorial feedback. The engineering decisions, design choices, and writing are my own. Any errors are also my own. If you find one, the Errata page linked in the footer is how you can inform me.
+Much of the thinking that led to the series was prompted by Isaac Arthur's YouTube channel, *Science & Futurism with Isaac Arthur*. For anyone new to the material, his episodes on orbital rings and megastructures remain the best accessible introduction.
+
+De Jong is Dutch-American. The longer story, from watching the Moon landing at six to a farm in the Netherlands to San Francisco, is on the blog: [Astronomy's Shocking Twist and Orbital Ring Engineering: Origin Story](/blog/astronomys-shocking-twist-orbital-ring-engineering-origin-story/).
+
+## How the books are made
+
+Derivations are performed in MathCAD and verified against simulation code written in Python. The simulation code is [open source on GitHub](https://github.com/kjpaul/orbitalring). Every major number in the books comes from one of three sources: a peer-reviewed publication, a calculation presented in the book, or a simulation whose code the reader can download and run.
+
+De Jong uses AI tools for research, technical verification and editorial feedback. The engineering decisions, design choices and writing are his own. So are any errors. The [Errata page](/errata/) is where readers report them; it puts the correction in front of other readers and keeps credit where it belongs.
 
 ## Contact
 
-I read every email. I cannot always respond quickly, but I do respond.
+He reads every email and answers, though not always quickly.
 
-Email: [author@pauldejong.com](mailto:author@pauldejong.com)
+- General correspondence: [author@pauldejong.com](mailto:author@pauldejong.com)
+- Permissions, bulk orders and foreign-language rights: [permissions@pauldejong.com](mailto:permissions@pauldejong.com)
+- Corrections to the books: the [Errata page](/errata/), not email
+- Interviews and review copies: the [press kit](/press/) has bios, headshots, cover files and talking points
 
-For corrections to the books, please use the [Errata page](/errata/) rather than email. It puts the correction in front of other readers and keeps credit where it belongs.
+## Elsewhere
 
-For permissions, bulk orders, or foreign-language rights: [permissions@pauldejong.com](mailto:permissions@pauldejong.com).
-
-## Where to find me online
-
-- GitHub: code and simulation repositories
-- Amazon: books and reviews
-- LinkedIn, Patreon, and a few other social platforms
-
-Links are in the site footer.
+- [GitHub](https://github.com/kjpaul/orbitalring): the simulation code
+- [Amazon author page](https://www.amazon.com/stores/Paul-G.-de-Jong/author/B0FWZ55SKP): the books and their reviews
+- [LinkedIn](https://www.linkedin.com/in/paul-g-de-jong/) and [Patreon](https://www.patreon.com/kjpaul/)

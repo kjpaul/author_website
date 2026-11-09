@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ title }}{% endblock %} — Paul de Jong</title>
+  {#- The page title: '<title> | Paul G. de Jong', unless the title already carries the name (the home page, the About page, the press kit). -#}
+  {%- set full_title = title if author.name in (title or "") else (title ~ " | " ~ author.name) %}
+  <title>{{ full_title }}</title>
   <meta name="description" content="{{ description }}">
+  <meta name="author" content="{{ author.name }}">
+  {% include "includes/head-meta.html" %}
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">

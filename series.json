@@ -5,11 +5,18 @@
     "Status values: published, pre_order, forthcoming, replaced, planned. Older values in_progress and coming_soon still render.",
     "Release day for Volume I is in December 2026; the day is not set. release_date holds the month only (2026-12) and renders as 'December 2026'; put the full date (2026-12-DD) in when it is known. On the day: set technical[0].volumes[0].status to published, fill purchase.kindle / paperback / hardcover with the Amazon links and purchase.bookstore with the IngramSpark listing, and replace static/images/covers/orbital-ring-vol-1-cover.png with the professional cover under the same name. Until purchase.kindle is set the buy button reads 'Coming December 2026'.",
     "Errata keys are stable Firestore identifiers and never change: Volume I carries ast-t1-vol-3, Volume III ast-t1-vol-2, Why Space ast-t1-vol-1 (history from the 2026-10-29 renumbering). Each book also carries errata_slug, the name shown in its /errata/?book= link, and errata_aliases maps every slug to its Firestore key. The errata page resolves the slug to the key in the browser; nothing in Firestore moves.",
-    "Children's books: add entries to related[2].series.entries with the fields listed in entry_fields; the templates render them when present."
+    "Children's books: add entries to related[2].series.entries with the fields listed in entry_fields; the templates render them when present.",
+    "Publication metadata (added 2026-11-09): metadata_defaults holds author, publisher and language for every book; each group carries subjects (BISAC display names), bisac_codes and audience; a book or volume can override any of these with its own subjects, bisac_codes, audience, publisher or language. build.py renders the Publication details block on every book, volume and first-edition page, the JSON-LD Book schema in each page head, and METADATA.md at the repo root from these fields plus data/author.json. Fill bisac_codes from the BISG list (bisg.org) before the KDP and IngramSpark listings; only TEC002000 is confirmed."
   ],
   "featured": {
     "book": "ast-t1",
     "volume": 1
+  },
+  "metadata_defaults": {
+    "author": "Paul G. de Jong",
+    "publisher": "Paul G. de Jong",
+    "language": "en",
+    "country": "US"
   },
   "errata_aliases": {
     "ast-t1-vol-1": "ast-t1-vol-3",
@@ -26,7 +33,16 @@
       "heading": "Astronomy's Shocking Twist: technical works",
       "line": "These books are the scientific background behind the Astronomy's Shocking Twist series.",
       "book_label": "Technical Book",
-      "path": "/series/technical/"
+      "path": "/series/technical/",
+      "subjects": [
+        "Technology & Engineering / Aeronautics & Astronautics",
+        "Science / Space Science / General",
+        "Technology & Engineering / Engineering (General)"
+      ],
+      "bisac_codes": [
+        "TEC002000"
+      ],
+      "audience": "Undergraduate engineering and physics students; engineers and technically literate general readers"
     },
     {
       "key": "fiction",
@@ -35,7 +51,13 @@
       "heading": "Astronomy's Shocking Twist: hard science fiction",
       "line": "Five novels over eight hundred years. Hard science fiction in the strictest sense: every law of physics is obeyed as currently understood. The titles follow the story outline and are not final.",
       "book_label": "Hard Science Fiction Book",
-      "path": "/series/fiction/"
+      "path": "/series/fiction/",
+      "subjects": [
+        "Fiction / Science Fiction / Hard Science Fiction",
+        "Fiction / Science Fiction / Space Exploration"
+      ],
+      "bisac_codes": [],
+      "audience": "Adult readers of hard science fiction"
     },
     {
       "key": "related",
@@ -44,7 +66,12 @@
       "heading": "Related books",
       "line": "These books stand outside the ten-part series and support it.",
       "book_label": "Related Book",
-      "path": "/series/related/"
+      "path": "/series/related/",
+      "subjects": [
+        "Science / Space Science / General"
+      ],
+      "bisac_codes": [],
+      "audience": "General readers"
     }
   ],
   "technical": [
@@ -352,7 +379,14 @@
         "apple_books": ""
       },
       "volumes": null,
-      "errata_slug": "why-space"
+      "errata_slug": "why-space",
+      "subjects": [
+        "Science / Space Science / General",
+        "Political Science / Public Policy / Science & Technology Policy",
+        "History / Modern / 20th Century"
+      ],
+      "bisac_codes": [],
+      "audience": "General readers; no engineering background needed"
     },
     {
       "group": "related",
@@ -404,7 +438,18 @@
       },
       "volumes": null,
       "code": "2025 ED",
-      "errata_slug": "orbital-ring-engineering"
+      "errata_slug": "orbital-ring-engineering",
+      "subjects": [
+        "Technology & Engineering / Aeronautics & Astronautics",
+        "Science / Space Science / General",
+        "Technology & Engineering / Engineering (General)"
+      ],
+      "bisac_codes": [
+        "TEC002000"
+      ],
+      "audience": "Undergraduate engineering and physics students; engineers and technically literate general readers",
+      "pages": null,
+      "language": "en"
     },
     {
       "group": "related",

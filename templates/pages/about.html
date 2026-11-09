@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}<article class="about-page">
+  <header class="about-header">
+    {%- if primary_headshot %}
+    <figure class="author-portrait">
+      <img src="{{ primary_headshot.file }}" alt="{{ primary_headshot.alt }}" width="{{ primary_headshot.width }}" height="{{ primary_headshot.height }}">
+      {%- if primary_headshot.credit %}<figcaption>Photo: {{ primary_headshot.credit }}</figcaption>{% endif %}
+    </figure>
+    {%- endif %}
+    <div class="about-intro">
+      <div class="section-eyebrow">About the author</div>
+      <h1>{{ author.name }}</h1>
+      <p class="lede">{{ author.bios.one_line }}</p>
+      <div class="about-actions">
+        <a class="quicklink" href="/series/">The books</a>
+        <a class="quicklink" href="/press/">Press kit</a>
+        <a class="quicklink" href="/contact/">Contact</a>
+      </div>
+    </div>
+  </header>
+  <div class="about-body book-description">
+    {{ content | safe }}
+  </div>
+</article>{% endblock %}

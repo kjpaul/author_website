@@ -1,0 +1,20 @@
+{#- Publication details for one book or volume. `pub` comes from
+    publication_details() in build.py: the title, author, series, publisher,
+    dates, pages, formats, ISBN-13s, ASINs, LCCN, subjects and audience, as
+    (label, value) rows with the empty ones already left out. Readers scan
+    it; search engines and AI crawlers read it to tell this book from every
+    other one with a similar title. -#}
+{%- if pub and pub.rows %}
+<section class="book-metadata" id="publication-details" aria-label="Publication details for {{ pub.full_title }}">
+  <h2>Publication details</h2>
+  <dl>
+    {%- for label, value in pub.rows %}
+    <div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+    {%- endfor %}
+  </dl>
+  {%- if pub.editions | selectattr('url') | list %}
+  <p class="book-metadata-note">Where to buy: {% for ed in pub.editions if ed.url %}<a href="{{ ed.url }}" rel="noopener">{{ ed.label }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}.</p>
+  {%- endif %}
+  <p class="book-metadata-note">Press and cover files: <a href="/press/">pauldejong.com/press</a>.</p>
+</section>
+{%- endif %}

@@ -34,7 +34,7 @@
       {%- if vol.description %}
       <p class="launch-lede">{{ vol.description }}</p>
       {%- endif %}
-      <p class="launch-series-line launch-meta-line">{% if vol.pages %}{{ vol.pages }} pages &middot; {% endif %}Hardcover, paperback and Kindle{% if vol.release_date %} &middot; {{ vol.release_date | longdate }}{% endif %}</p>
+      <p class="launch-series-line launch-meta-line">By {{ author.name }}{% if vol.pages %} &middot; {{ vol.pages }} pages{% endif %} &middot; Hardcover, paperback and Kindle{% if vol.release_date %} &middot; {{ vol.release_date | longdate }}{% endif %}</p>
 
       {% with item=vol %}{% include "includes/buy-buttons.html" %}{% endwith %}
 
@@ -84,24 +84,11 @@
 
   {%- if vol.isbns %}
   <section class="volume-editions book-description">
-    <h2>ISBNs and Library of Congress Number</h2>
-    <div class="launch-isbns" aria-label="ISBN-13 numbers for Volume {{ vol.number | roman }}">
-      {%- if vol.isbns.hardcover %}
-      <div><span class="k">Hardcover ISBN</span><span class="v">{{ vol.isbns.hardcover }}</span></div>
-      {%- endif %}
-      {%- if vol.isbns.paperback %}
-      <div><span class="k">Paperback ISBN</span><span class="v">{{ vol.isbns.paperback }}</span></div>
-      {%- endif %}
-      {%- if vol.isbns.epub %}
-      <div><span class="k">E-book ISBN</span><span class="v">{{ vol.isbns.epub }}</span></div>
-      {%- endif %}
-      {%- if vol.lccn %}
-      <div><span class="k">Library of Congress Control Number</span><span class="v">{{ vol.lccn }}</span></div>
-      {%- endif %}
-    </div>
     <p>{% if vol.release_date %}{% if vol.status == 'published' %}Released{% else %}Coming{% endif %} {{ vol.release_date | longdate }} through Amazon and, for bookstores and libraries, IngramSpark. {% endif %}The current list of the books, with release dates and where each one can be bought, is kept on this site at <a href="/series/">pauldejong.com</a>. Reviews go to <a href="/review/">pauldejong.com/review</a>.</p>
   </section>
   {%- endif %}
+
+  {% include "includes/book-metadata.html" %}
 
   <aside class="refs-quicklinks" style="max-width: 720px; margin: 3rem auto 0;">
     {%- if vol.has_references %}

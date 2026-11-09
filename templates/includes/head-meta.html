@@ -1,0 +1,37 @@
+{#- Canonical URL, Open Graph and Twitter cards, and the JSON-LD graph.
+    build.py fills page_url, og_type, og_image and schema_json for every page;
+    full_title and description come from base.html. The graph always carries
+    the WebSite and the Person (from data/author.json); book, volume, blog
+    and profile pages add their own entity. -#}
+  <link rel="canonical" href="{{ page_url }}">
+  <meta property="og:site_name" content="{{ author.name }}">
+  <meta property="og:type" content="{{ og_type or 'website' }}">
+  <meta property="og:title" content="{{ full_title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ page_url }}">
+  {%- if og_image %}
+  <meta property="og:image" content="{{ og_image }}">
+  {%- endif %}
+  <meta property="og:locale" content="en_US">
+  {%- if og_type == 'book' and pub %}
+  <meta property="book:author" content="{{ pub.author }}">
+  {%- for ed in pub.editions if ed.isbn %}
+  <meta property="book:isbn" content="{{ ed.isbn }}">
+  {%- endfor %}
+  {%- if pub.release_date %}
+  <meta property="book:release_date" content="{{ pub.release_date }}">
+  {%- endif %}
+  {%- endif %}
+  {%- if og_type == 'profile' %}
+  <meta property="profile:first_name" content="{{ author.given_name }}">
+  <meta property="profile:last_name" content="{{ author.family_name }}">
+  {%- endif %}
+  <meta name="twitter:card" content="{{ 'summary' if og_type == 'profile' else 'summary_large_image' }}">
+  <meta name="twitter:title" content="{{ full_title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  {%- if og_image %}
+  <meta name="twitter:image" content="{{ og_image }}">
+  {%- endif %}
+  <script type="application/ld+json">
+{{ schema_json }}
+  </script>

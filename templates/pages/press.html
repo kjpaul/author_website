@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}<article class="press-kit">
+  <header class="press-header">
+    <div class="section-eyebrow">Press kit</div>
+    <h1>{{ author.name }}</h1>
+    <p class="lede">{{ author.bios.one_line }}</p>
+    {{ intro_html | safe }}
+    <p class="press-contact">Interviews, review copies and permissions: <a href="mailto:{{ author.contact.press }}">{{ author.contact.press }}</a>{% if author.contact.permissions and author.contact.permissions != author.contact.press %}. Rights and bulk orders: <a href="mailto:{{ author.contact.permissions }}">{{ author.contact.permissions }}</a>{% endif %}.</p>
+  </header>
+
+  <nav class="press-toc" aria-label="On this page">
+    <a href="#bios">Bios</a>
+    {%- if headshots %}<a href="#headshots">Headshots</a>{% endif %}
+    {%- if covers %}<a href="#covers">Cover art</a>{% endif %}
+    {%- if press_books %}<a href="#books">Book data</a>{% endif %}
+    <a href="#talking-points">Talking points</a>
+    <a href="#facts">At a glance</a>
+    <a href="#links">Links</a>
+  </nav>
+
+  <section id="bios">
+    <h2>Bios</h2>
+    <p class="press-note">Four lengths, all in the third person. Use any of them as written; a shortened version is fine as long as the name and the book titles stay intact.</p>
+    {%- for key, label in [("one_line", "One line"), ("short", "Short"), ("medium", "Medium"), ("long", "Long")] %}
+    {%- set text = author.bios[key] %}
+    <div class="bio-block" id="bio-{{ key | replace('_', '-') }}">
+      <h3>{{ label }} <span class="count">{{ text | word_count }} words</span></h3>
+      {%- for para in text | paragraphs %}
+      <p>{{ para }}</p>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </section>
+
+  {%- if headshots %}
+  <section id="headshots">
+    <h2>Headshots</h2>
+    <p class="press-note">Click an image for the full-size file. Credit as noted. No alteration beyond cropping, please.</p>
+    <div class="press-assets">
+      {%- for shot in headshots %}
+      <figure class="press-asset">
+        <a href="{{ shot.file }}" download><img src="{{ shot.file }}" alt="{{ shot.alt }}" loading="lazy"></a>
+        <figcaption class="asset-meta">{{ shot.label }}{% if shot.width %}<br>{{ shot.width }} &times; {{ shot.height }} px{% endif %}{% if shot.credit %}<br>Photo: {{ shot.credit }}{% endif %}<br><a href="{{ shot.file }}" download>Download</a></figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if covers %}
+  <section id="covers">
+    <h2>Cover art</h2>
+    <p class="press-note">Full-resolution covers for articles, reviews and presentations. Click a cover for the file.</p>
+    <div class="press-assets">
+      {%- for c in covers %}
+      <figure class="press-asset">
+        <a href="{{ c.file }}" download><img src="{{ c.file }}" alt="Cover of {{ c.title }}" loading="lazy"></a>
+        <figcaption class="asset-meta"><a href="{{ c.page }}">{{ c.title }}</a>{% if c.size %}<br>{{ c.size[0] }} &times; {{ c.size[1] }} px{% endif %}<br>{{ c.status }} &middot; <a href="{{ c.file }}" download>Download</a></figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if press_books %}
+  <section id="books">
+    <h2>Book data</h2>
+    <p class="press-note">The same details are on each book's page under Publication details.</p>
+    {%- for pub in press_books %}
+    <div class="press-book">
+      <h3><a href="{{ pub.links.overview }}">{{ pub.full_title }}</a></h3>
+      <dl class="facts">
+        {%- for label, value in pub.rows if label != 'Title' %}
+        <div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+        {%- endfor %}
+      </dl>
+      {%- if pub.description %}<p class="press-description">{{ pub.description }}</p>{% endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  <section id="talking-points">
+    <h2>Talking points</h2>
+    <p class="press-note">Subjects {{ author.given_name }} can speak to on a podcast, a panel or in an interview.</p>
+    <ul class="talking-points">
+      {%- for tp in author.talking_points %}
+      <li>{{ tp }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section id="facts">
+    <h2>At a glance</h2>
+    <dl class="facts">
+      {%- for label, value in author.facts %}
+      <div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+      {%- endfor %}
+      <div><dt>Name</dt><dd>{{ author.name }} (sort as {{ author.sort_name }})</dd></div>
+      <div><dt>Website</dt><dd><a href="{{ author.sites.primary }}">{{ author.sites.primary | replace('https://', '') }}</a></dd></div>
+    </dl>
+    {%- if author.author_mark %}
+    <h3>Author mark</h3>
+    <div class="press-assets">
+      <figure class="press-asset press-mark">
+        <a href="{{ author.author_mark }}" download><img src="{{ author.author_mark }}" alt="{{ author.initials }}, the author mark of {{ author.name }}" width="600" height="300"></a>
+        <figcaption class="asset-meta">{{ author.initials }} mark, SVG &middot; <a href="{{ author.author_mark }}" download>Download</a></figcaption>
+      </figure>
+    </div>
+    {%- endif %}
+  </section>
+
+  <section id="links">
+    <h2>Links</h2>
+    <ul class="press-links">
+      {%- for key, url in author.profiles.items() if url %}
+      <li><a href="{{ url }}" rel="noopener">{{ key | replace('_', ' ') | capitalize }}</a> <span class="url">{{ url }}</span></li>
+      {%- endfor %}
+      {%- if author.sites.project %}
+      <li><a href="{{ author.sites.project }}" rel="noopener">Project site</a> <span class="url">{{ author.sites.project }}</span></li>
+      {%- endif %}
+      <li><a href="{{ author.contact.errata }}">Errata</a> <span class="url">{{ author.contact.errata }}</span></li>
+      <li><a href="{{ author.contact.reviews }}">Reviews</a> <span class="url">{{ author.contact.reviews }}</span></li>
+    </ul>
+  </section>
+</article>{% endblock %}

@@ -27,6 +27,7 @@
       {%- if book.subtitle %}
       <p class="book-subtitle">{{ book.subtitle }}</p>
       {%- endif %}
+      <p class="book-author-line">By {{ pub.author if pub else author.name }}</p>
       {%- if book.byline %}
       <p class="book-tagline">{{ book.byline }}</p>
       {%- endif %}
@@ -109,6 +110,8 @@
     series, written and engineered alongside the rest of the work.</p>
   </div>
   {%- endif %}
+
+  {% include "includes/book-metadata.html" %}
 
   <section class="book-links">
     <h2>More</h2>

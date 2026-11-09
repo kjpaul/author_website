@@ -7,11 +7,14 @@ Reads:
     templates/*.html      Jinja2 templates (base + includes + pages)
     static/               CSS, JS, images (copied verbatim)
     data/                 JSON data files (copied to public/data/)
+    data/author.json      the author record, exposed as `author` in templates
     series.json           book catalog, exposed as `series` in templates
     site.json             site settings (analytics), exposed as `site` in templates
 
 Writes:
     public/               ready for `firebase deploy`
+    METADATA.md           human-readable export of the author and book metadata
+                          (generated; edit data/author.json and series.json instead)
 
 Usage:
     python build.py
@@ -28,6 +31,11 @@ import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup, escape
 
+try:
+    from PIL import Image
+except ImportError:  # image sizes on the press kit are optional
+    Image = None
+
 # --- Paths ---
 CONTENT_DIR = "content"
 TEMPLATE_DIR = "templates"
@@ -36,6 +44,10 @@ DATA_DIR = "data"
 OUTPUT_DIR = "public"
 SERIES_FILE = "series.json"
 SITE_FILE = "site.json"
+AUTHOR_FILE = os.path.join(DATA_DIR, "author.json")
+METADATA_MD = "METADATA.md"
+
+SITE_URL = "https://pauldejong.com"
 
 # Group labels are filled from series.json (its `groups` list) once the catalog is loaded; see load_series().
 TRACK_LABELS = {}
@@ -97,6 +109,15 @@ def to_roman(n):
     return "".join(out)
 
 
+def word_count(text):
+    return len((text or "").split())
+
+
+def paragraphs(text):
+    """Split a bio string on blank lines into a list of paragraphs."""
+    return [p.strip() for p in (text or "").split("\n\n") if p.strip()]
+
+
 # --- Jinja2 environment ---
 env = Environment(
     loader=FileSystemLoader(TEMPLATE_DIR),
@@ -106,6 +127,8 @@ env = Environment(
 env.filters["truncate_excerpt"] = truncate_excerpt
 env.filters["roman"] = to_roman
 env.filters["ref_markdown"] = ref_markdown
+env.filters["word_count"] = word_count
+env.filters["paragraphs"] = paragraphs
 
 
 def longdate(value, year=True):
@@ -131,11 +154,15 @@ def longdate(value, year=True):
 env.filters["longdate"] = longdate
 
 
-def load_series():
-    if os.path.exists(SERIES_FILE):
-        with open(SERIES_FILE, encoding="utf-8") as f:
+def load_json(path):
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     return {}
+
+
+def load_series():
+    return load_json(SERIES_FILE)
 
 
 env.globals["series"] = load_series()
@@ -144,13 +171,23 @@ SERIES = env.globals["series"]
 
 def load_site():
     """Site-wide settings (site.json): analytics provider and ids."""
-    if os.path.exists(SITE_FILE):
-        with open(SITE_FILE, encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+    return load_json(SITE_FILE)
 
 
 env.globals["site"] = load_site()
+
+AUTHOR = load_json(AUTHOR_FILE)
+if not AUTHOR:
+    raise SystemExit(f"{AUTHOR_FILE} is missing; the templates need the author record")
+env.globals["author"] = AUTHOR
+env.globals["site_url"] = SITE_URL
+
+META_DEFAULTS = SERIES.get("metadata_defaults") or {
+    "author": AUTHOR.get("name", ""),
+    "publisher": (AUTHOR.get("publisher") or {}).get("name", ""),
+    "language": "en",
+}
+
 GROUPS = SERIES.get("groups") or [
     {"key": "technical", "label": "Technical Books", "line": "", "book_label": "Technical Book"},
     {"key": "fiction", "label": "Science Fiction", "line": "", "book_label": "Hard Science Fiction Book"},
@@ -179,6 +216,17 @@ def featured_book():
     return track, book, vol
 
 
+def primary_headshot():
+    shots = AUTHOR.get("headshots") or []
+    for shot in shots:
+        if shot.get("primary"):
+            return shot
+    return shots[0] if shots else None
+
+
+env.globals["primary_headshot"] = primary_headshot()
+
+
 # --- IO helpers ---
 def read_file(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -186,9 +234,42 @@ def read_file(path):
 
 
 def write_file(path, content):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
+
+
+def absolute_url(path):
+    """'/images/x.png' -> 'https://pauldejong.com/images/x.png'. Full URLs pass through."""
+    if not path:
+        return ""
+    if path.startswith("http://") or path.startswith("https://"):
+        return path
+    return SITE_URL + (path if path.startswith("/") else "/" + path)
+
+
+def page_url_for(output_path):
+    """The canonical URL of a built page, matching the sitemap rules
+    (cleanUrls and trailingSlash: false in firebase.json; the home page
+    keeps its slash)."""
+    rel = os.path.relpath(output_path, OUTPUT_DIR).replace(os.sep, "/")
+    if rel == "index.html":
+        return SITE_URL + "/"
+    if rel.endswith("/index.html"):
+        return f"{SITE_URL}/{rel[:-len('/index.html')]}"
+    return f"{SITE_URL}/{rel[:-len('.html')]}"
+
+
+def image_size(static_path):
+    """(width, height) of an image under static/, by its site path, or None."""
+    if not Image or not static_path:
+        return None
+    path = os.path.join(STATIC_DIR, static_path.lstrip("/"))
+    try:
+        with Image.open(path) as im:
+            return im.size
+    except (OSError, ValueError):
+        return None
 
 
 # --- Markdown / frontmatter ---
@@ -242,14 +323,287 @@ def render_markdown_file(path):
     return meta, fix_old_urls(render_markdown(md_body))
 
 
+# --- Publication metadata ---
+FORMAT_LABELS = {
+    "hardcover": "Hardcover",
+    "paperback": "Paperback",
+    "kindle": "Kindle",
+    "epub": "E-book",
+}
+SCHEMA_FORMATS = {
+    "hardcover": "https://schema.org/Hardcover",
+    "paperback": "https://schema.org/Paperback",
+    "kindle": "https://schema.org/EBook",
+    "epub": "https://schema.org/EBook",
+}
+STATUS_LABELS = {
+    "published": "Published",
+    "pre_order": "Pre-order",
+    "forthcoming": "Forthcoming",
+    "planned": "Planned",
+    "replaced": "Replaced by a later edition",
+    "in_progress": "In progress",
+    "coming_soon": "Coming soon",
+}
+_ASIN_RE = re.compile(r"/dp/([A-Z0-9]{10})")
+
+
+def book_full_title(book, vol=None):
+    """'Orbital Ring Engineering, Volume I: Space Mass Transit Complete Design Review'
+    or 'Why Space: Apollo, the Lost Decades, ...'."""
+    if vol:
+        return f"{book['title']}, Volume {to_roman(vol['number'])}: {vol['title']}"
+    if book.get("subtitle"):
+        return f"{book['title']}: {book['subtitle']}"
+    return book["title"]
+
+
+def inherit(item, book, group, key, default=None):
+    """A metadata field from the volume, else the book, else the group, else the catalog defaults."""
+    for source in (item, book, group):
+        if source and source.get(key) not in (None, "", []):
+            return source[key]
+    return META_DEFAULTS.get(key, default)
+
+
+def asin_from(url):
+    m = _ASIN_RE.search(url or "")
+    return m.group(1) if m else ""
+
+
+def publication_details(book, vol, track):
+    """Everything the Publication details block, the Book schema and
+    METADATA.md need for one book or volume, in one dict."""
+    group = find_group(track) or {}
+    item = vol or book
+    isbns = item.get("isbns") or {}
+    if not isbns and item.get("isbn"):
+        isbns = {"paperback": item["isbn"]}
+    purchase = item.get("purchase") or item.get("amazon") or {}
+    prices = item.get("prices") or {}
+    formats = item.get("formats") or [k for k in ("hardcover", "paperback", "kindle") if isbns.get(k) or purchase.get(k)]
+    formats = [f for f in ("hardcover", "paperback", "kindle", "epub") if f in formats]  # the usual order
+
+    series_parts = []
+    if group.get("series"):
+        series_parts.append(f"{group['series']}, {group.get('label', '').lower()}".rstrip(", "))
+    if vol:
+        series_parts.append(f"{book['title']}, Volume {to_roman(vol['number'])} of {len(book.get('volumes') or [])}")
+    elif book.get("kind") == "first_edition":
+        series_parts.append("First edition, replaced by Orbital Ring Engineering in three volumes")
+
+    editions = []
+    for fmt in ("hardcover", "paperback", "kindle", "epub"):
+        isbn = isbns.get(fmt) or (isbns.get("epub") if fmt == "kindle" else "")
+        url = purchase.get(fmt) or ""
+        price = prices.get(fmt)
+        if fmt == "epub" and ("kindle" in formats or purchase.get("kindle")):
+            continue  # the e-book is listed once, under Kindle
+        if fmt not in formats and not isbn and not url:
+            continue
+        editions.append({
+            "format": fmt,
+            "label": FORMAT_LABELS[fmt],
+            "isbn_label": "e-book" if fmt in ("kindle", "epub") else FORMAT_LABELS[fmt].lower(),
+            "schema_format": SCHEMA_FORMATS[fmt],
+            "isbn": isbn,
+            "url": url,
+            "asin": asin_from(url) or ((item.get("review") or {}).get("amazon_asin") if fmt == "hardcover" else ""),
+            "price": price,
+        })
+
+    cover = item.get("cover_image") or book.get("cover_image") or ""
+    details = {
+        "full_title": book_full_title(book, vol),
+        "title": item["title"],
+        "subtitle": item.get("subtitle", "") if not vol else "",
+        "author": inherit(item, book, group, "author"),
+        "publisher": inherit(item, book, group, "publisher"),
+        "language": inherit(item, book, group, "language", "en"),
+        "series": "; ".join(series_parts),
+        "series_name": group.get("series") or "",
+        "status": STATUS_LABELS.get(item.get("status") or book.get("status") or "", (item.get("status") or "").replace("_", " ").capitalize()),
+        "status_key": item.get("status") or book.get("status") or "",
+        "release_date": item.get("release_date") or "",
+        "pages": item.get("pages"),
+        "chapters": item.get("chapters"),
+        "formats": [FORMAT_LABELS[f] for f in formats if f in FORMAT_LABELS],
+        "editions": editions,
+        "lccn": item.get("lccn", ""),
+        "subjects": inherit(item, book, group, "subjects", []) or [],
+        "bisac_codes": inherit(item, book, group, "bisac_codes", []) or [],
+        "audience": inherit(item, book, group, "audience", ""),
+        "description": item.get("description") or book.get("description") or "",
+        "headline": item.get("headline", ""),
+        "cover": cover,
+        "cover_size": image_size(cover),
+        "cover_note": item.get("cover_note") or book.get("cover_note") or "",
+        "links": item.get("links") or {},
+        "review": item.get("review") or {},
+        "catalog_id": book.get("id", ""),
+        "errata_key": item.get("errata_key", ""),
+    }
+
+    # The rows the template prints, in order. Empty values are left out.
+    rows = [
+        ("Title", details["full_title"]),
+        ("Author", details["author"]),
+        ("Series", details["series"]),
+        ("Publisher", details["publisher"]),
+        ("Publication date", longdate(details["release_date"]) if details["release_date"] else ""),
+        ("Status", details["status"] if not details["release_date"] or details["status_key"] != "published" else ""),
+        ("Language", "English" if details["language"] == "en" else details["language"]),
+        ("Pages", str(details["pages"]) if details["pages"] else ""),
+        ("Chapters", str(details["chapters"]) if details["chapters"] else ""),
+        ("Formats", ", ".join(details["formats"])),
+    ]
+    for ed in editions:
+        if ed["isbn"]:
+            rows.append((f"ISBN-13, {ed['isbn_label']}", ed["isbn"]))
+    for ed in editions:
+        if ed["asin"]:
+            rows.append((f"Amazon ASIN, {ed['label'].lower()}", ed["asin"]))
+    rows += [
+        ("Library of Congress Control Number", details["lccn"]),
+        ("Subjects", "; ".join(details["subjects"])),
+        ("BISAC codes", ", ".join(details["bisac_codes"])),
+        ("Audience", details["audience"]),
+    ]
+    for ed in editions:
+        if ed["price"]:
+            rows.append((f"List price, {ed['label'].lower()}", f"US$ {ed['price']:.2f}"))
+    details["rows"] = [(k, v) for k, v in rows if v]
+    return details
+
+
+# --- Structured data (JSON-LD) ---
+PERSON_ID = SITE_URL + "/#person"
+WEBSITE_ID = SITE_URL + "/#website"
+
+
+def person_schema():
+    shot = primary_headshot()
+    same_as = [u for u in (AUTHOR.get("profiles") or {}).values() if u]
+    same_as += [u for u in (AUTHOR.get("sites") or {}).get("alternate_domains", []) if u]
+    for key in ("project",):
+        u = (AUTHOR.get("sites") or {}).get(key)
+        if u:
+            same_as.append(u)
+    person = {
+        "@type": "Person",
+        "@id": PERSON_ID,
+        "name": AUTHOR.get("name"),
+        "givenName": AUTHOR.get("given_name"),
+        "additionalName": AUTHOR.get("additional_name"),
+        "familyName": AUTHOR.get("family_name"),
+        "jobTitle": AUTHOR.get("job_title", "Author"),
+        "description": (AUTHOR.get("bios") or {}).get("one_line", ""),
+        "url": SITE_URL + "/",
+        "mainEntityOfPage": SITE_URL + "/about",
+        "sameAs": same_as,
+    }
+    if shot:
+        person["image"] = absolute_url(shot["file"])
+    if (AUTHOR.get("contact") or {}).get("general"):
+        person["email"] = "mailto:" + AUTHOR["contact"]["general"]
+    return {k: v for k, v in person.items() if v}
+
+
+def website_schema():
+    return {
+        "@type": "WebSite",
+        "@id": WEBSITE_ID,
+        "url": SITE_URL + "/",
+        "name": AUTHOR.get("name"),
+        "description": (AUTHOR.get("seo") or {}).get("home_description", ""),
+        "publisher": {"@id": PERSON_ID},
+        "inLanguage": "en",
+    }
+
+
+def book_schema(details, url):
+    work_examples = []
+    for ed in details["editions"]:
+        ex = {
+            "@type": "Book",
+            "bookFormat": ed["schema_format"],
+            "name": details["full_title"],
+        }
+        if ed["isbn"]:
+            ex["isbn"] = ed["isbn"]
+        if ed["url"]:
+            offer = {"@type": "Offer", "url": ed["url"], "availability": "https://schema.org/InStock"
+                     if details["status_key"] == "published" else "https://schema.org/PreOrder"}
+            if ed["price"]:
+                offer["price"] = f"{ed['price']:.2f}"
+                offer["priceCurrency"] = "USD"
+            ex["offers"] = offer
+        work_examples.append(ex)
+    is_part_of = []
+    if details["series_name"]:
+        is_part_of.append({"@type": "BookSeries", "name": details["series_name"]})
+    schema = {
+        "@type": "Book",
+        "@id": url + "#book",
+        "url": url,
+        "name": details["full_title"],
+        "author": {"@id": PERSON_ID},
+        "publisher": {"@type": "Organization", "name": details["publisher"]},
+        "inLanguage": details["language"],
+        "description": details["description"],
+        "image": absolute_url(details["cover"]) if details["cover"] else "",
+        "datePublished": details["release_date"],
+        "numberOfPages": details["pages"],
+        "about": details["subjects"],
+        "audience": {"@type": "Audience", "audienceType": details["audience"]} if details["audience"] else None,
+        "isPartOf": is_part_of,
+        "workExample": work_examples,
+    }
+    return {k: v for k, v in schema.items() if v}
+
+
+def profile_page_schema(url):
+    return {"@type": "ProfilePage", "@id": url, "url": url, "mainEntity": {"@id": PERSON_ID}}
+
+
+def blog_posting_schema(post, url):
+    schema = {
+        "@type": "BlogPosting",
+        "@id": url,
+        "url": url,
+        "headline": post.get("title", ""),
+        "description": post.get("excerpt", ""),
+        "datePublished": post.get("date", ""),
+        "author": {"@id": PERSON_ID},
+        "publisher": {"@id": PERSON_ID},
+        "mainEntityOfPage": url,
+    }
+    return {k: v for k, v in schema.items() if v}
+
+
+def schema_json(extra):
+    """The JSON-LD graph for a page: the site, the author and the page's own entities."""
+    graph = [website_schema(), person_schema()] + [s for s in (extra or []) if s]
+    text = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
+    return Markup(text.replace("</", "<\\/"))
+
+
 # --- Rendering ---
 def render_template(template_name, output_path, **context):
+    """Render a template. Every page gets its canonical URL, an Open Graph
+    type and image, and a JSON-LD graph; a builder can pass og_type,
+    og_image (a site path) and schema (a list of extra entities)."""
     template = env.get_template(template_name)
+    url = page_url_for(output_path)
+    context.setdefault("page_url", url)
+    context.setdefault("og_type", "website")
+    context["og_image"] = absolute_url(context.get("og_image") or AUTHOR.get("default_share_image", ""))
+    context["schema_json"] = schema_json(context.pop("schema", None))
     write_file(output_path, template.render(**context))
     print(f"  Built: {output_path}")
 
 
-def build_markdown_page(md_path, output_path, template_name="pages/page.html"):
+def build_markdown_page(md_path, output_path, template_name="pages/page.html", **extra):
     meta, html = render_markdown_file(md_path)
     render_template(
         template_name,
@@ -258,6 +612,24 @@ def build_markdown_page(md_path, output_path, template_name="pages/page.html"):
         description=meta.get("excerpt", meta.get("title", "")),
         content=html,
         meta=meta,
+        **extra,
+    )
+
+
+def build_about_page():
+    """The About page: third-person copy from content/about.md, the primary
+    headshot, and a ProfilePage schema so search engines treat it as the
+    author's profile."""
+    md_path = "content/about.md"
+    if not os.path.exists(md_path):
+        return
+    out = os.path.join(OUTPUT_DIR, "about", "index.html")
+    shot = primary_headshot()
+    build_markdown_page(
+        md_path, out, "pages/about.html",
+        og_type="profile",
+        og_image=shot["file"] if shot else None,
+        schema=[profile_page_schema(page_url_for(out))],
     )
 
 
@@ -267,13 +639,16 @@ def build_blog_post(md_path):
     if not slug:
         return None
     html = fix_old_urls(render_markdown(md_body))
+    out = os.path.join(OUTPUT_DIR, "blog", slug, "index.html")
     render_template(
         "pages/blog-post.html",
-        os.path.join(OUTPUT_DIR, "blog", slug, "index.html"),
+        out,
         title=meta.get("title", ""),
         description=meta.get("excerpt", meta.get("title", "")),
         content=html,
         post=meta,
+        og_type="article",
+        schema=[blog_posting_schema(meta, page_url_for(out))],
     )
     return meta
 
@@ -292,17 +667,21 @@ def build_blog_index(posts):
 def build_homepage():
     track, book, vol = featured_book()
     item = vol or book
+    seo = AUTHOR.get("seo") or {}
+    schema = []
+    if book:
+        details = publication_details(book, vol, track)
+        schema.append(book_schema(details, absolute_url(item.get("links", {}).get("overview", "/"))))
     render_template(
         "pages/home.html",
         os.path.join(OUTPUT_DIR, "index.html"),
-        title="Home",
-        description=(item or {}).get("headline") or (
-            "Paul de Jong, author of Orbital Ring Engineering: "
-            "orbital rings, mass drivers and space elevators, with the numbers."
-        ),
+        title=seo.get("home_title") or AUTHOR.get("name", "Home"),
+        description=seo.get("home_description") or (item or {}).get("headline") or "",
         featured_track=track,
         featured=book,
         featured_vol=vol,
+        og_image=(item or {}).get("cover_image"),
+        schema=schema,
     )
 
 
@@ -324,6 +703,7 @@ def build_chapter_excerpts():
             description=meta.get("description", meta.get("title", "")),
             content=html,
             meta=meta,
+            og_type="article",
         )
 
 
@@ -482,11 +862,13 @@ def build_book_page(book, track):
             _, book_content = render_markdown_file(candidate)
             break
 
+    out_path = os.path.join(OUTPUT_DIR, "series", track, book["slug"], "index.html")
+    pub = publication_details(book, None, track)
     # The 2025 first edition keeps its own page layout.
     template = "pages/legacy-book.html" if book.get("kind") == "first_edition" else "pages/book-detail.html"
     render_template(
         template,
-        os.path.join(OUTPUT_DIR, "series", track, book["slug"], "index.html"),
+        out_path,
         title=book["title"],
         description=book.get("description", ""),
         track=track,
@@ -496,6 +878,10 @@ def build_book_page(book, track):
         book_content=book_content,
         content=book_content,
         group=find_group(track),
+        pub=pub,
+        og_type="book",
+        og_image=book.get("cover_image"),
+        schema=[book_schema(pub, page_url_for(out_path))],
     )
 
 
@@ -521,10 +907,11 @@ def build_volume_page(book, vol, track):
     _, vol_toc = render_markdown_file(
         os.path.join(CONTENT_DIR, "series", track, book["slug"], f"{vol['slug']}.toc.md")
     )
+    pub = publication_details(book, vol, track)
     render_template(
         "pages/volume-detail.html",
         out_path,
-        title=vol["title"],
+        title=pub["full_title"],
         description=vol.get("headline") or f"{book['title']} - Volume {to_roman(vol['number'])}.",
         track=track,
         track_label=TRACK_LABELS[track],
@@ -534,6 +921,10 @@ def build_volume_page(book, vol, track):
         vol_content=vol_content,
         vol_toc=vol_toc,
         group=find_group(track),
+        pub=pub,
+        og_type="book",
+        og_image=vol.get("cover_image") or book.get("cover_image"),
+        schema=[book_schema(pub, page_url_for(out_path))],
     )
 
 
@@ -612,6 +1003,191 @@ def build_series():
                 for vol in book["volumes"]:
                     build_volume_page(book, vol, track)
     build_reference_pages()
+
+
+# --- Press kit ---
+def all_publication_details():
+    """(group, book, vol, details) for every book and volume with a page, in catalog order."""
+    out = []
+    for track in GROUP_KEYS:
+        group = find_group(track)
+        for book in SERIES.get(track, []):
+            if book.get("kind") == "children" and not (book.get("series") or {}).get("entries"):
+                continue
+            if book.get("volumes"):
+                for vol in book["volumes"]:
+                    out.append((group, book, vol, publication_details(book, vol, track)))
+            else:
+                out.append((group, book, None, publication_details(book, None, track)))
+    return out
+
+
+def build_press_page():
+    """The press kit at /press/: bios, headshots, covers, book facts and
+    talking points, all from data/author.json and series.json. The intro
+    text, if any, comes from content/press.md."""
+    intro_meta, intro_html = render_markdown_file(os.path.join(CONTENT_DIR, "press.md"))
+    headshots = []
+    for shot in AUTHOR.get("headshots") or []:
+        shot = dict(shot)
+        size = image_size(shot["file"])
+        if size and not shot.get("width"):
+            shot["width"], shot["height"] = size
+        headshots.append(shot)
+    # Covers: every book or volume with a real cover file, once each.
+    covers, seen = [], set()
+    for group, book, vol, details in all_publication_details():
+        cover = details["cover"]
+        if not cover or cover in seen or details.get("cover_note") == "mock cover":
+            continue
+        seen.add(cover)
+        covers.append({
+            "title": details["full_title"],
+            "file": cover,
+            "size": details["cover_size"],
+            "status": details["status"],
+            "page": details["links"].get("overview", ""),
+        })
+    # Books with release data (ISBNs) get a facts block on the press page.
+    books = [d for g, b, v, d in all_publication_details() if d["editions"] and any(e["isbn"] for e in d["editions"])]
+    out = os.path.join(OUTPUT_DIR, "press", "index.html")
+    seo = AUTHOR.get("seo") or {}
+    render_template(
+        "pages/press.html",
+        out,
+        title=seo.get("press_title", "Press kit"),
+        description=intro_meta.get("excerpt") or f"Press kit for {AUTHOR.get('name')}: bios, headshots, cover art, book data and talking points.",
+        intro_html=intro_html,
+        headshots=headshots,
+        covers=covers,
+        press_books=books,
+        og_type="profile",
+        og_image=(primary_headshot() or {}).get("file"),
+        schema=[profile_page_schema(page_url_for(out))],
+    )
+
+
+# --- METADATA.md ---
+def write_metadata_md():
+    """A human-readable export of everything in data/author.json and
+    series.json that a store listing, a catalog or a back cover needs.
+    Generated on every build; do not edit by hand."""
+    L = []
+    w = L.append
+    name = AUTHOR.get("name", "")
+    w(f"# Metadata: {name}")
+    w("")
+    w("Generated by `build.py` from `data/author.json` and `series.json`. Edit those files, not this one. "
+      "Everything here is also rendered on the site (page heads, the Publication details blocks, the About page and the press kit at /press/).")
+    w("")
+    w("## Author")
+    w("")
+    rows = [
+        ("Name", name),
+        ("Sort name", AUTHOR.get("sort_name", "")),
+        ("Initials / mark", AUTHOR.get("initials", "")),
+        ("Handle", AUTHOR.get("handle", "")),
+        ("Tagline", AUTHOR.get("tagline", "")),
+        ("Website", (AUTHOR.get("sites") or {}).get("primary", "")),
+        ("Alternate domains", ", ".join((AUTHOR.get("sites") or {}).get("alternate_domains", []))),
+        ("Series domains", ", ".join((AUTHOR.get("sites") or {}).get("series_domains", []))),
+        ("Project site", (AUTHOR.get("sites") or {}).get("project", "")),
+        ("Publisher / imprint", (AUTHOR.get("publisher") or {}).get("name", "")),
+        ("ISBN prefix", (AUTHOR.get("publisher") or {}).get("isbn_prefix", "")),
+        ("Distribution", (AUTHOR.get("publisher") or {}).get("distribution", "")),
+    ]
+    for k, v in (AUTHOR.get("contact") or {}).items():
+        rows.append((f"Contact, {k}", v))
+    for k, v in (AUTHOR.get("profiles") or {}).items():
+        rows.append((f"Profile, {k.replace('_', ' ')}", v or "(empty)"))
+    w("| Field | Value |")
+    w("|---|---|")
+    for k, v in rows:
+        w(f"| {k} | {v} |")
+    w("")
+    w("### Headshots")
+    w("")
+    shots = AUTHOR.get("headshots") or []
+    if not shots:
+        w("None yet.")
+    for s in shots:
+        size = f"{s.get('width')} x {s.get('height')} px" if s.get("width") else ""
+        w(f"- `{s['file']}` {size} {'(primary)' if s.get('primary') else ''} {s.get('label', '')}. Alt: {s.get('alt', '')}. Credit: {s.get('credit') or '(none)'}")
+    w("")
+    for key, label in (("one_line", "One-line bio"), ("short", "Short bio"), ("medium", "Medium bio"), ("long", "Long bio")):
+        text = (AUTHOR.get("bios") or {}).get(key, "")
+        w(f"### {label} ({word_count(text)} words)")
+        w("")
+        w(text)
+        w("")
+    w("### Talking points")
+    w("")
+    for tp in AUTHOR.get("talking_points") or []:
+        w(f"- {tp}")
+    w("")
+    w("### SEO")
+    w("")
+    for k, v in (AUTHOR.get("seo") or {}).items():
+        w(f"- {k}: {v}")
+    w("")
+    w("## Books")
+    w("")
+    empties = []
+    for group, book, vol, d in all_publication_details():
+        w(f"### {d['full_title']}")
+        w("")
+        w(f"Catalog id `{d['catalog_id']}`" + (f", volume {vol['number']}" if vol else "") + f". Group: {group['label']}. Page: {absolute_url(d['links'].get('overview', ''))}")
+        w("")
+        w("| Field | Value |")
+        w("|---|---|")
+        for k, v in d["rows"]:
+            w(f"| {k} | {v} |")
+        for ed in d["editions"]:
+            if ed["url"]:
+                w(f"| Buy link, {ed['label'].lower()} | {ed['url']} |")
+        for k in ("excerpt", "references", "errata", "review"):
+            if d["links"].get(k):
+                w(f"| Link, {k} | {absolute_url(d['links'][k])} |")
+        for k, v in (d["review"] or {}).items():
+            if v and k != "anchor":
+                w(f"| Review link, {k.replace('_', ' ')} | {v} |")
+        if d["cover"]:
+            size = f" ({d['cover_size'][0]} x {d['cover_size'][1]} px)" if d["cover_size"] else ""
+            w(f"| Cover file | `static{d['cover']}`{size}{' (mock cover)' if d['cover_note'] == 'mock cover' else ''} |")
+        w("")
+        if d["headline"]:
+            w(f"**Headline.** {d['headline']}")
+            w("")
+        if d["description"]:
+            w(f"**Description.** {d['description']}")
+            w("")
+        # What is still missing for a book that has release data.
+        if d["editions"]:
+            for ed in d["editions"]:
+                if not ed["isbn"]:
+                    empties.append(f"{d['full_title']}: ISBN, {ed['isbn_label']}")
+                if not ed["url"]:
+                    empties.append(f"{d['full_title']}: buy link, {ed['label'].lower()}")
+            if not d["release_date"]:
+                empties.append(f"{d['full_title']}: release date")
+            if not d["pages"]:
+                empties.append(f"{d['full_title']}: page count")
+            if not d["bisac_codes"]:
+                empties.append(f"{d['full_title']}: BISAC codes")
+            if not (d["review"] or {}).get("amazon_asin"):
+                empties.append(f"{d['full_title']}: review ASIN")
+    w("## Still empty")
+    w("")
+    w("Fields a store listing or the site will need that are not filled in yet, for the books that have release data.")
+    w("")
+    for k, v in (AUTHOR.get("profiles") or {}).items():
+        if not v:
+            empties.insert(0, f"Author profile: {k.replace('_', ' ')}")
+    for e in empties:
+        w(f"- [ ] {e}")
+    w("")
+    write_file(METADATA_MD, "\n".join(L))
+    print(f"  Built: {METADATA_MD}")
 
 
 # --- Review page ---
@@ -738,7 +1314,6 @@ def build_review_page():
 
 
 # --- Sitemap ---
-SITE_URL = "https://pauldejong.com"
 # Output paths (relative to public/, forward slashes) left out of the sitemap:
 # error page, the errata admin dashboard, and the post-subscribe thank-you.
 SITEMAP_EXCLUDE = {"404.html", "errata/admin/index.html", "thanks/index.html"}
@@ -756,13 +1331,7 @@ def build_sitemap():
         rel = os.path.relpath(path, OUTPUT_DIR).replace(os.sep, "/")
         if rel in SITEMAP_EXCLUDE:
             continue
-        if rel == "index.html":
-            loc = SITE_URL + "/"
-        elif rel.endswith("/index.html"):
-            loc = f"{SITE_URL}/{rel[:-len('/index.html')]}"
-        else:
-            loc = f"{SITE_URL}/{rel[:-len('.html')]}"
-        urls.append(loc)
+        urls.append(page_url_for(path))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines += [f"  <url><loc>{escape(u)}</loc></url>" for u in urls]
@@ -799,8 +1368,8 @@ def copy_tree(src, dst, label):
         print(f"  Copied {label}")
 
 
+# Plain markdown pages. The About page has its own builder (build_about_page).
 PAGE_MAP = {
-    "content/about.md": "about",
     "content/code.md": "code",
     "content/contact.md": "contact",
     "content/privacy.md": "privacy",
@@ -814,6 +1383,7 @@ def build():
     copy_tree(DATA_DIR, os.path.join(OUTPUT_DIR, "data"), "data files")
 
     build_homepage()
+    build_about_page()
 
     for md_path, out_dir in PAGE_MAP.items():
         if os.path.exists(md_path):
@@ -832,8 +1402,10 @@ def build():
     build_chapter_excerpts()
     build_errata_pages()
     build_review_page()
+    build_press_page()
     build_404()
     build_sitemap()
+    write_metadata_md()
 
     print("\nBuild complete!")
 
