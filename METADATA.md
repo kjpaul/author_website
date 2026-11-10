@@ -55,17 +55,17 @@ Paul G. de Jong is the author of Orbital Ring Engineering, a three-volume engine
 
 De Jong studied electronics and physics at Heald Institute of Technology, Ohlone College, UC Berkeley and the University of Amsterdam. He has worked as an electronics technician in medical ultrasound, in hydrogen energy when it was still a fringe topic, and as an inventor and software entrepreneur in San Francisco. His derivations are done in MathCAD and checked against open-source Python simulations that readers can download and run.
 
-### Long bio (410 words)
+### Long bio (213 words)
 
-Paul G. de Jong is the author of Orbital Ring Engineering, a three-volume engineering treatment of space mass transit infrastructure, and of Why Space, the economic case for building it. The books belong to Astronomy's Shocking Twist, a ten-book project in two tracks. The technical track is five non-fiction books on orbital rings, mass drivers, space elevators, ion propulsion, generational ships and large-scale space habitation, written to serve as undergraduate textbooks. The fiction track is five hard science fiction novels that share one universe and use the technology the textbooks describe. The two tracks are meant to reinforce each other: the fiction tells a story that could happen, and the technical books show how it could be done with real materials and real numbers.
+Paul G. de Jong is a Dutch-American author and entrepreneur. He studied physics at the University of California, Berkeley, and the University of Amsterdam, where he took an early interest in chaos theory. In the 1990s he was a member of the International Association for Hydrogen Energy and attended its 10th World Hydrogen Energy Conference in Florida in 1994.
 
-De Jong has been thinking about orbital rings and space infrastructure for more than ten years. The series is the long version of that thought. Much of it was prompted by Isaac Arthur's YouTube channel, Science and Futurism with Isaac Arthur, whose episodes on orbital rings and megastructures he still recommends as the best accessible introduction to the subject.
+Settling in San Francisco in 1997, he founded several software companies: AnyTaxi, a direct user-to-provider dispatch system; Club Clock, an automated tour-booking platform; and KaraokeListMaker, a karaoke-hosting system with mobile requests.
 
-His career has crossed several fields: electronics technician at Acuson Medical Ultrasound in the late 1980s, member of the Hydrogen Energy Society in the 1990s when hydrogen was a fringe topic, and a project called Making Math Fun in the same decade when he was considering teaching. Since then he has worked in software and audio as an inventor and serial entrepreneur, founding AnyTaxi, Club Clock and KaraokeListMaker in San Francisco, while keeping a home physics lab active throughout. He studied electronics at Heald Institute of Technology and physics at Ohlone College, UC Berkeley and the University of Amsterdam. The common thread across ultrasound, hydrogen, software, audio, the lab and space infrastructure is a habit of showing the work.
+In the mid-2010s, Andy Weir's The Martian and Isaac Arthur's YouTube channel, Science & Futurism with Isaac Arthur, brought him back to physics, and Gerard K. O'Neill's The High Frontier: Human Colonies in Space set the direction. The storyline of the ten-book series Astronomy's Shocking Twist took its final shape in 2024.
 
-That habit shapes how the books are written. Derivations are performed in MathCAD and verified against simulation code written in Python. The simulation code is open source on GitHub. Every major number in the books comes from one of three sources: a peer-reviewed publication, a calculation presented in the book, or a simulation whose code the reader can download and run. De Jong uses AI tools for research, technical verification and editorial feedback; the engineering decisions, design choices and writing are his own, and so are any errors. The Errata page on this site is where readers report them.
+During the COVID years he worked through electromagnetism, nuclear physics, plasma physics and superconductivity, and designed a high-power ion accelerator, the THOR Drive, the subject of the series' second technical book.
 
-He is Dutch-American and writes under his own name.
+Orbital Ring Engineering, in three volumes, is the first of the five technical books. It applies decades of problem-solving as an entrepreneur to an orbital ring, a megastructure he expects to be built within the next 100 to 200 years.
 
 ### Talking points
 
@@ -99,7 +99,7 @@ Catalog id `ast-t1`, volume 1. Group: Technical works. Page: https://pauldejong.
 | Author | Paul G. de Jong |
 | Series | Astronomy's Shocking Twist, technical works; Orbital Ring Engineering, Volume I of 3 |
 | Publisher | Paul G. de Jong |
-| Publication date | December 2026 |
+| Publication date | 19 January 2027 |
 | Status | Pre-order |
 | Language | English |
 | Pages | 450 |
@@ -122,7 +122,19 @@ Catalog id `ast-t1`, volume 1. Group: Technical works. Page: https://pauldejong.
 
 **Headline.** Orbital rings? Mass drivers? Space elevators? This book has the numbers.
 
-**Description.** Volume I is the complete design review, and the volume to read first. It takes the ring as a whole, at one altitude, with one cable, one bearing, one set of motors and one power system, and asks whether it all works together. The answer is mostly yes, with the caveats stated, and the open questions are listed for the team that eventually builds the ring. Volumes II and III carry the derivations behind the numbers: the first principles and the launch technologies.
+**Store description** (283 words; Bowker, KDP, IngramSpark, Google Books, word for word).
+
+Orbital rings? Mass drivers? Space elevators? This book has the numbers.
+
+An orbital ring is a cable moving at orbital speed inside a stationary casing, held up by its own momentum and anchored to the ground by lines 700 km long. Trolley cars ride the anchor lines to the ring. A mass driver on the ring launches spacecraft at up to 30 km/s, and space elevators bring people home. No rockets, no fuel, no countdown. It is mass transit into space, designed for millions of passengers a day.
+
+Volume I is the design review, and the volume to read first. It sets the altitude at 700 km, integrates every subsystem, and specifies the carbon nanotube cable, the superconducting magnetic bearing that carries the casing, the linear induction motors that bring the cable to speed over 500 days, the power system, the mass driver, the anchor lines, the space elevators and their pods, and the cryogenic system. It analyzes how the ring can fail, determines its load capacity, scales the design to the Moon, Mars and the asteroids, and sets out what the ring launches and why. The final chapter states the conclusions, lists the open questions, and ranks what gets built first.
+
+The orbital ring is a huge engineering challenge. So was the transcontinental railroad when the state of the art was wagon trails. The design rests on mass-produced 25 GPa carbon nanotube yarn on a similar timescale. Everything else exists today. Every number comes from a derivation in the book or from the open-source simulation code at pauldejong.com/code.
+
+This is the first of three volumes on the orbital ring, and the scientific background of the Astronomy's Shocking Twist hard science fiction series.
+
+**Short description** (cards and the page hero). Volume I is the complete design review, and the volume to read first. It takes the ring as a whole, at one altitude, with one cable, one bearing, one set of motors and one power system, and asks whether it all works together. The answer is mostly yes, with the caveats stated, and the open questions are listed for the team that eventually builds the ring. Volumes II and III carry the derivations behind the numbers: the first principles and the launch technologies.
 
 ### Orbital Ring Engineering, Volume II: First Principles: Orbital Mechanics, Materials Science, and Electrical Systems
 
@@ -142,7 +154,7 @@ Catalog id `ast-t1`, volume 2. Group: Technical works. Page: https://pauldejong.
 | Link, errata | https://pauldejong.com/errata/?book=ast-t1-vol-2 |
 | Cover file | `static/images/covers/orbital-ring-vol-1-cover.png` (800 x 1200 px) |
 
-**Description.** Mass transit to space: orbital ring, mass driver, and space elevator engineering. Volume I, the complete design review, is the one to read first.
+**Short description** (cards and the page hero). Mass transit to space: orbital ring, mass driver, and space elevator engineering. Volume I, the complete design review, is the one to read first.
 
 ### Orbital Ring Engineering, Volume III: Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators
 
@@ -163,7 +175,7 @@ Catalog id `ast-t1`, volume 3. Group: Technical works. Page: https://pauldejong.
 | Link, errata | https://pauldejong.com/errata/?book=ast-t1-vol-3 |
 | Cover file | `static/images/covers/orbital-ring-vol-1-cover.png` (800 x 1200 px) |
 
-**Description.** Mass transit to space: orbital ring, mass driver, and space elevator engineering. Volume I, the complete design review, is the one to read first.
+**Short description** (cards and the page hero). Mass transit to space: orbital ring, mass driver, and space elevator engineering. Volume I, the complete design review, is the one to read first.
 
 ### Megawatt-Class Ion Propulsion: The THOR Drive Architecture
 
@@ -181,7 +193,7 @@ Catalog id `ast-t2`. Group: Technical works. Page: https://pauldejong.com/series
 | BISAC codes | TEC002000 |
 | Audience | Undergraduate engineering and physics students; engineers and technically literate general readers |
 
-**Description.** Megawatt-class ion propulsion for the ships of the series: the THOR Drive, in two volumes. The next release after Volume I.
+**Short description** (cards and the page hero). Megawatt-class ion propulsion for the ships of the series: the THOR Drive, in two volumes. The next release after Volume I.
 
 ### Generational Ships: The Equipment and Orbital Mechanics for Multigenerational Space Travel
 
@@ -199,7 +211,7 @@ Catalog id `ast-t3`. Group: Technical works. Page: https://pauldejong.com/series
 | BISAC codes | TEC002000 |
 | Audience | Undergraduate engineering and physics students; engineers and technically literate general readers |
 
-**Description.** Designing ships and societies for multi-generation interstellar voyages.
+**Short description** (cards and the page hero). Designing ships and societies for multi-generation interstellar voyages.
 
 ### Living In Space: Beyond the High Frontier
 
@@ -217,7 +229,7 @@ Catalog id `ast-t4`. Group: Technical works. Page: https://pauldejong.com/series
 | BISAC codes | TEC002000 |
 | Audience | Undergraduate engineering and physics students; engineers and technically literate general readers |
 
-**Description.** O'Neill cylinders, Venus floating cities, lunar, asteroid, and gas giant moon mining.
+**Short description** (cards and the page hero). O'Neill cylinders, Venus floating cities, lunar, asteroid, and gas giant moon mining.
 
 ### The Complete Technology Overview for the Astronomy's Shocking Twist Series
 
@@ -235,7 +247,7 @@ Catalog id `ast-t5`. Group: Technical works. Page: https://pauldejong.com/series
 | BISAC codes | TEC002000 |
 | Audience | Undergraduate engineering and physics students; engineers and technically literate general readers |
 
-**Description.** System-level integration of all components across the technical series.
+**Short description** (cards and the page hero). System-level integration of all components across the technical series.
 
 ### The Beginning of the End: 2035-2100
 
@@ -252,7 +264,7 @@ Catalog id `ast-f1`. Group: Hard science fiction. Page: https://pauldejong.com/s
 | Subjects | Fiction / Science Fiction / Hard Science Fiction; Fiction / Science Fiction / Space Exploration |
 | Audience | Adult readers of hard science fiction |
 
-**Description.** The discovery that changes everything, and humanity's first steps toward orbital infrastructure.
+**Short description** (cards and the page hero). The discovery that changes everything, and humanity's first steps toward orbital infrastructure.
 
 ### Escaping Gravity
 
@@ -269,7 +281,7 @@ Catalog id `ast-f2`. Group: Hard science fiction. Page: https://pauldejong.com/s
 | Subjects | Fiction / Science Fiction / Hard Science Fiction; Fiction / Science Fiction / Space Exploration |
 | Audience | Adult readers of hard science fiction |
 
-**Description.** Humanity adapts to life in space as the first orbital infrastructure comes online.
+**Short description** (cards and the page hero). Humanity adapts to life in space as the first orbital infrastructure comes online.
 
 ### The Journey Begins
 
@@ -286,7 +298,7 @@ Catalog id `ast-f3`. Group: Hard science fiction. Page: https://pauldejong.com/s
 | Subjects | Fiction / Science Fiction / Hard Science Fiction; Fiction / Science Fiction / Space Exploration |
 | Audience | Adult readers of hard science fiction |
 
-**Description.** The long voyage outward, generational ships, propulsion, and the human cost.
+**Short description** (cards and the page hero). The long voyage outward, generational ships, propulsion, and the human cost.
 
 ### The Catastrophe Unfolds
 
@@ -303,7 +315,7 @@ Catalog id `ast-f4`. Group: Hard science fiction. Page: https://pauldejong.com/s
 | Subjects | Fiction / Science Fiction / Hard Science Fiction; Fiction / Science Fiction / Space Exploration |
 | Audience | Adult readers of hard science fiction |
 
-**Description.** Arrival, conflict, and the work of building humanity's next home.
+**Short description** (cards and the page hero). Arrival, conflict, and the work of building humanity's next home.
 
 ### The Great Beyond
 
@@ -320,7 +332,7 @@ Catalog id `ast-f5`. Group: Hard science fiction. Page: https://pauldejong.com/s
 | Subjects | Fiction / Science Fiction / Hard Science Fiction; Fiction / Science Fiction / Space Exploration |
 | Audience | Adult readers of hard science fiction |
 
-**Description.** Eight hundred years after the discovery, what humanity has become.
+**Short description** (cards and the page hero). Eight hundred years after the discovery, what humanity has become.
 
 ### Why Space: Apollo, the Lost Decades, the New Space Race, and the Infrastructure Worth Building
 
@@ -345,7 +357,7 @@ Catalog id `ast-c1`. Group: Related books. Page: https://pauldejong.com/series/r
 | Link, errata | https://pauldejong.com/errata/?book=why-space |
 | Cover file | `static/images/covers/why-space-cover.png` (780 x 1024 px) (mock cover) |
 
-**Description.** The economic case for space mass transit, written for the general reader. The standalone companion to Orbital Ring Engineering.
+**Short description** (cards and the page hero). The economic case for space mass transit, written for the general reader. The standalone companion to Orbital Ring Engineering.
 
 ### Orbital Ring Engineering: Mechanics and Material Science for Space Launch Mass Transit Systems
 
@@ -375,7 +387,7 @@ Catalog id `orbital-ring-engineering-1st-ed`. Group: Related books. Page: https:
 | Review link, goodreads | https://www.goodreads.com/book/show/242946874 |
 | Cover file | `static/images/covers/orbital-ring-engineering-1st-ed-cover.jpg` (800 x 1200 px) |
 
-**Description.** The original single-volume edition of 2025. The three volumes of Orbital Ring Engineering replace and expand it; Volume I is the one to read first.
+**Short description** (cards and the page hero). The original single-volume edition of 2025. The three volumes of Orbital Ring Engineering replace and expand it; Volume I is the one to read first.
 
 ## Still empty
 

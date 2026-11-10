@@ -71,6 +71,15 @@
     </div>
   </section>
 
+  {%- if vol.store_description %}
+  <section class="book-description volume-copy volume-store-copy" id="about-this-book">
+    <h2>About this book</h2>
+    {%- for para in vol.store_description | paragraphs %}
+    <p>{{ para }}</p>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
   {%- if vol.isbns and vol_content %}
   <div class="book-description volume-copy">{{ vol_content | safe }}</div>
   {%- endif %}

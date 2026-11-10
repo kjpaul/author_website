@@ -433,7 +433,9 @@ def publication_details(book, vol, track):
         "subjects": inherit(item, book, group, "subjects", []) or [],
         "bisac_codes": inherit(item, book, group, "bisac_codes", []) or [],
         "audience": inherit(item, book, group, "audience", ""),
-        "description": item.get("description") or book.get("description") or "",
+        "description": item.get("store_description") or item.get("description") or book.get("description") or "",
+        "short_description": item.get("description") or book.get("description") or "",
+        "store_description": item.get("store_description") or book.get("store_description") or "",
         "headline": item.get("headline", ""),
         "cover": cover,
         "cover_size": image_size(cover),
@@ -1158,8 +1160,13 @@ def write_metadata_md():
         if d["headline"]:
             w(f"**Headline.** {d['headline']}")
             w("")
-        if d["description"]:
-            w(f"**Description.** {d['description']}")
+        if d["store_description"]:
+            w(f"**Store description** ({word_count(d['store_description'])} words; Bowker, KDP, IngramSpark, Google Books, word for word).")
+            w("")
+            w(d["store_description"])
+            w("")
+        if d["short_description"]:
+            w(f"**Short description** (cards and the page hero). {d['short_description']}")
             w("")
         # What is still missing for a book that has release data.
         if d["editions"]:

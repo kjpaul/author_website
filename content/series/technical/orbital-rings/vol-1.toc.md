@@ -30,7 +30,7 @@ Nineteen chapters in five parts, with an appendix on the simulation code, a glos
     - 4.10 The 250 km Case
     - 4.11 What a Real Analysis Would Change
 - **Chapter 5: The Radiation Environment at 700 km**
-    - 5.1 Two Kinds of Radiation
+    - 5.1 What Reaches the Ring
     - 5.2 The South Atlantic Anomaly
     - 5.3 Shielding Against Trapped Protons
     - 5.4 Solar Panels
