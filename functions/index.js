@@ -42,6 +42,7 @@ const CHECKBOX_TO_GROUP_ENV = {
   vol1: "MAILERLITE_GROUP_VOL1",
   vol23: "MAILERLITE_GROUP_VOL23",
   progress: "MAILERLITE_GROUP_PROGRESS",
+  arc: "MAILERLITE_GROUP_ARC",
 };
 
 const ALLOWED_ORIGINS = [
@@ -99,6 +100,10 @@ exports.subscribe = onRequest(
     // (POST /api/submit-errata). A new function can't be made public because of
     // the org's Domain Restricted Sharing policy, so errata rides on this one.
     // Dispatch by payload shape: errata carries `book`/`turnstileToken`.
+    if (req.body && req.body.kind === "arc") {
+      await handleArcSubmit(req, res);
+      return;
+    }
     if (req.body && (req.body.book !== undefined || req.body.turnstileToken !== undefined)) {
       await handleErrataSubmit(req, res);
       return;
@@ -246,6 +251,150 @@ async function handleErrataSubmit(req, res) {
   }
 }
 
+// --- ARC applications --------------------------------------------------------
+// POST /api/arc (rewritten to `subscribe`; dispatched on body.kind === "arc").
+// An advance-reader-copy application from /arc/. Order of checks: honeypot,
+// Turnstile, validation, then the record goes to Firestore (`arc_applications`)
+// and the reader is added to the MailerLite "ARC applicants" group with the
+// answers as subscriber fields. Nothing is sent to the reader by this code:
+// MailerLite's double opt-in confirms the address, and the copy itself goes
+// out only after Paul moves the applicant to the "ARC readers" group, which
+// triggers the delivery automation there.
+//
+// Environment (functions/.env):
+//   MAILERLITE_GROUP_ARC  - group ID for "ARC applicants"
+//   ARC_NOTIFY_TO         - where onArcApplicationCreated mails the application
+//                           (default: ERRATA_NOTIFY_TO, then author@pauldejong.com)
+// MailerLite custom fields the answers are written to (create them once in
+// MailerLite, Subscribers > Fields; type text): arc_background, arc_platforms,
+// arc_format, arc_why. If a field does not exist yet, the subscriber is still
+// created, without the fields, and the answers stay in Firestore.
+
+const ARC_BACKGROUNDS = new Set(["student", "engineer", "educator", "reviewer", "reader", "general"]);
+const ARC_PLATFORMS = new Set(["goodreads", "amazon", "blog", "video", "academic", "none"]);
+const ARC_FORMATS = new Set(["pdf", "epub", "either"]);
+// The groups the site's notify form joins (static/js/main.js). An applicant
+// joins them only by ticking the newsletter box on the form.
+const ARC_NEWSLETTER_GROUPS = ["vol1", "progress"];
+const ARC_MAX = { name: 100, email: 254, why: 1000, link: 300 };
+
+async function handleArcSubmit(req, res) {
+  const body = req.body || {};
+
+  if (typeof body.website === "string" && body.website.trim() !== "") {
+    res.status(200).json({ ok: true });
+    return;
+  }
+
+  const token = typeof body.turnstileToken === "string" ? body.turnstileToken : "";
+  if (!token) {
+    res.status(400).json({ error: "captcha_missing" });
+    return;
+  }
+  const ip = req.headers["cf-connecting-ip"] || "";
+  const human = await verifyTurnstile(token, TURNSTILE_SECRET_KEY.value(), ip);
+  if (!human) {
+    res.status(403).json({ error: "captcha_failed" });
+    return;
+  }
+
+  const email = trimStr(body.email).toLowerCase();
+  const name = trimStr(body.name);
+  const background = trimStr(body.background);
+  const format = trimStr(body.format) || "either";
+  const why = trimStr(body.why);
+  const newsletter = body.newsletter === true;
+  let link = trimStr(body.link);
+  if (link && !/^https?:\/\//i.test(link)) link = "https://" + link;
+  const platforms = Array.isArray(body.platforms)
+    ? body.platforms.filter((p) => typeof p === "string" && ARC_PLATFORMS.has(p))
+    : [];
+
+  if (!EMAIL_RE.test(email) || email.length > ARC_MAX.email) {
+    res.status(400).json({ error: "invalid_email" });
+    return;
+  }
+  if (!name || !ARC_BACKGROUNDS.has(background) || !ARC_FORMATS.has(format)) {
+    res.status(400).json({ error: "missing_fields" });
+    return;
+  }
+  if (name.length > ARC_MAX.name || why.length > ARC_MAX.why || link.length > ARC_MAX.link) {
+    res.status(400).json({ error: "too_long" });
+    return;
+  }
+  if (link && !/^https?:\/\/[^\s/]+\.[^\s]+$/.test(link)) {
+    res.status(400).json({ error: "invalid_link" });
+    return;
+  }
+
+  // 1. The record of the application, whatever MailerLite does next.
+  let docId = "";
+  try {
+    const ref = await admin.firestore().collection("arc_applications").add({
+      email,
+      name,
+      background,
+      platforms,
+      format,
+      why,
+      link,
+      newsletter,
+      status: "applied",
+      created_at: admin.firestore.Timestamp.now(),
+    });
+    docId = ref.id;
+  } catch (err) {
+    logger.error(`arc_write_failed: ${err && err.message}`, { code: err && err.code });
+    res.status(500).json({ error: "internal" });
+    return;
+  }
+
+  // 2. The MailerLite subscriber, in the applicants group, with the answers.
+  // The applicants group only, unless the reader ticked the newsletter box.
+  const groupIds = resolveGroupIds(newsletter ? ["arc", ...ARC_NEWSLETTER_GROUPS] : ["arc"]);
+  if (groupIds.length === 0) {
+    logger.warn("arc_group_not_configured", { docId });
+    res.status(200).json({ ok: true });
+    return;
+  }
+  const fields = {
+    name,
+    arc_background: background,
+    arc_platforms: platforms.join(", "),
+    arc_format: format,
+    arc_why: why.slice(0, 500),
+  };
+  const ok = await mailerliteUpsert(email, groupIds, fields)
+    || await mailerliteUpsert(email, groupIds, { name });
+  if (!ok) {
+    logger.error("arc_mailerlite_failed", { docId });
+  }
+  res.status(200).json({ ok: true });
+}
+
+async function mailerliteUpsert(email, groupIds, fields) {
+  try {
+    const upstream = await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${MAILERLITE_API_KEY.value()}`,
+      },
+      body: JSON.stringify({ email, groups: groupIds, status: "unconfirmed", fields }),
+    });
+    if (!upstream.ok) {
+      const text = await upstream.text();
+      logger.warn("mailerlite_upsert_failed", { status: upstream.status, body: text.slice(0, 300) });
+      return false;
+    }
+    return true;
+  } catch (err) {
+    logger.error("mailerlite_upsert_exception", { message: err && err.message });
+    return false;
+  }
+}
+
 async function verifyTurnstile(token, secret, ip) {
   try {
     const form = new URLSearchParams();
@@ -350,6 +499,65 @@ exports.onErrataCreated = onDocumentCreated(
 
       await transporter.sendMail({ from, to, subject, text });
       logger.info("errata_email_sent", { errataId: event.params.errataId, book });
+    } catch (err) {
+      logger.error("gmail_send_failed", { message: err && err.message });
+    }
+  }
+);
+
+// --- ARC application notification -------------------------------------------
+// A new application in `arc_applications` is mailed to the author, the same
+// way errata are. The reader is not emailed here; MailerLite handles that.
+exports.onArcApplicationCreated = onDocumentCreated(
+  {
+    document: "arc_applications/{applicationId}",
+    region: "us-central1",
+    secrets: [GMAIL_APP_PASSWORD],
+    maxInstances: 5,
+  },
+  async (event) => {
+    const snap = event.data;
+    if (!snap) return;
+    const d = snap.data() || {};
+
+    const appPassword = (GMAIL_APP_PASSWORD.value() || "").replace(/\s+/g, "");
+    const gmailUser = process.env.GMAIL_USER || "";
+    if (!appPassword || !gmailUser) {
+      logger.warn("gmail_not_configured", { msg: "skipping ARC application email" });
+      return;
+    }
+
+    const to = process.env.ARC_NOTIFY_TO || process.env.ERRATA_NOTIFY_TO || "author@pauldejong.com";
+    const from = process.env.MAIL_FROM || gmailUser;
+    const subject = `ARC application: ${d.name || "unknown"} (${d.background || "?"})`;
+    const text = [
+      "A new advance reader copy application came in on pauldejong.com/arc.",
+      "",
+      `Name:        ${d.name || ""}`,
+      `Email:       ${d.email || ""}`,
+      `Background:  ${d.background || ""}`,
+      `Might post:  ${(d.platforms || []).join(", ") || "(none given)"}`,
+      `Format:      ${d.format || ""}`,
+      `Link:        ${d.link || "(none)"}`,
+      `Newsletter:  ${d.newsletter ? "yes, also wants news about the series" : "no"}`,
+      "",
+      "What interests them about this book:",
+      d.why || "(blank)",
+      "",
+      "To send a copy: in MailerLite, move the subscriber from 'ARC applicants' to 'ARC readers';",
+      "the delivery automation on that group sends the BookFunnel link.",
+      `Firestore document: arc_applications/${event.params.applicationId}`,
+    ].join("\n");
+
+    try {
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: { user: gmailUser, pass: appPassword },
+      });
+      await transporter.sendMail({ from, to, subject, text });
+      logger.info("arc_email_sent", { applicationId: event.params.applicationId });
     } catch (err) {
       logger.error("gmail_send_failed", { message: err && err.message });
     }

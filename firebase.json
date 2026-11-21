@@ -183,6 +183,10 @@
       {
         "source": "/api/submit-errata",
         "function": "subscribe"
+      },
+      {
+        "source": "/api/arc",
+        "function": "subscribe"
       }
     ],
     "headers": [

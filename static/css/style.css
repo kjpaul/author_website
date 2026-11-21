@@ -346,6 +346,7 @@ article li,
   align-items: stretch;
   margin: 0 0 0.8rem;
   max-width: 32rem;
+  scroll-margin-top: 10rem;  /* keep the form clear of the sticky nav when opened as /#notify */
 }
 .notify-form-input {
   flex: 1 1 14rem;
@@ -2201,4 +2202,77 @@ footer .foot-meta a:hover { color: #c1a064; }
   color: var(--muted);
   margin-left: 0.5rem;
   word-break: break-all;
+}
+
+
+/* --- ARC PAGE (added 2026-11-17) --- */
+.arc-callout {
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  color: var(--ink-2);
+  margin: 0.2rem 0 1.2rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--accent-2);
+  background: var(--bg-inset);
+}
+.arc-callout a { font-weight: 600; }
+.arc-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.2rem;
+  align-items: start;
+  padding: 1rem 0 2rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.5rem;
+}
+.arc-header .book-cover { width: 100%; display: block; border-radius: 3px; box-shadow: 0 8px 24px rgba(11, 61, 102, 0.15); }
+.arc-intro .section-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  margin-bottom: 0.4rem;
+}
+.arc-intro h1 { font-size: clamp(2rem, 3.6vw, 2.6rem); margin: 0 0 0.7rem; }
+.arc-intro .lede { font-family: var(--serif); font-size: 1.1rem; line-height: 1.5; color: var(--ink-2); margin-bottom: 0.6rem; }
+.arc-meta { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 1.1rem; }
+.arc-body h2 { font-size: 1.5rem; margin-top: 2.2rem; }
+.arc-body ol, .arc-body ul { margin: 0.6rem 0 1rem 1.3rem; }
+.arc-form-section { margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid var(--rule); }
+.arc-form-section h2 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+.arc-form { max-width: 620px; }
+.arc-checks { border: 0; padding: 0; margin: 0 0 1rem; }
+.arc-checks legend {
+  font-size: 0.78rem; font-weight: 500; font-family: var(--mono);
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 0.5rem; padding: 0;
+}
+.arc-checks label {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 400;
+  letter-spacing: 0; text-transform: none; color: var(--ink-2);
+  margin: 0.35rem 0;
+}
+.arc-checks input[type="checkbox"] { width: auto; margin: 0; accent-color: var(--accent); }
+.arc-help { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0; }
+.arc-newsletter label { align-items: flex-start; }
+.arc-newsletter input[type="checkbox"] { margin-top: 0.25rem; flex: none; }
+.arc-consent { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+#form-status .success,
+#form-status .error {
+  display: block;
+  margin-top: 0.4rem;
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+#form-status .success { color: #fff; background: var(--accent-2); }
+#form-status .error { color: var(--accent-2); background: var(--bg-inset); border-left: 3px solid var(--accent-2); }
+@media (max-width: 640px) {
+  .arc-header { grid-template-columns: 1fr; }
+  .arc-header .book-cover { max-width: 220px; }
 }

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block head_extra %}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{% endblock %}
+{% block content %}<article class="arc-page">
+  <header class="arc-header">
+    <div class="arc-cover">
+      <a href="{{ arc_vol.links.overview }}"><img class="book-cover" src="{{ arc_vol.cover_image }}" alt="Cover of {{ arc_book.title }}, Volume {{ arc_vol.number | roman }}: {{ arc_vol.title }}, by {{ author.name }}"></a>
+    </div>
+    <div class="arc-intro">
+      <div class="section-eyebrow">Advance reader copies</div>
+      <h1>Read Volume I before it is out.</h1>
+      <p class="lede">A free advance copy of <em>Orbital Ring Engineering, Volume I</em> for readers who will check the numbers. PDF or EPUB, sent to your device. An honest review is welcome and entirely optional.</p>
+      <p class="arc-meta">On sale {{ arc_vol.release_date | longdate }} &middot; {{ arc_vol.pages }} pages &middot; copies go out from early December</p>
+      <a class="btn btn-primary" href="#apply">Apply for a copy <span class="arrow">&darr;</span></a>
+    </div>
+  </header>
+
+  <div class="book-description arc-body">
+    {{ content | safe }}
+  </div>
+
+  <section class="arc-form-section" id="apply">
+    <h2>Apply for an advance copy</h2>
+    <p class="press-note">Every field except the last two is required. Your address is used only for this advance copy. You get one email to confirm it. If you are sent a copy, you also get the download link and three short notes about this book, the last one in early February 2027. Applying does not add you to <a href="/privacy/">my newsletter</a> unless you tick the box below, and every email has an unsubscribe link.</p>
+    <form id="arc-form" class="arc-form" novalidate>
+      <div class="form-group">
+        <label for="arc-name">Name</label>
+        <input type="text" id="arc-name" name="name" autocomplete="name" maxlength="100" required>
+      </div>
+      <div class="form-group">
+        <label for="arc-email">Email</label>
+        <input type="email" id="arc-email" name="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+      </div>
+      <div class="form-group">
+        <label for="arc-background">Which of these is closest to you?</label>
+        <select id="arc-background" name="background" required>
+          <option value="">Choose one</option>
+          <option value="engineer">Engineer or scientist</option>
+          <option value="student">Student</option>
+          <option value="educator">Teacher or lecturer</option>
+          <option value="reviewer">Reviewer, blogger or podcaster</option>
+          <option value="reader">Reader of hard science fiction and space books</option>
+          <option value="general">General reader</option>
+        </select>
+      </div>
+      <fieldset class="form-group arc-checks">
+        <legend>If you write about it, where might that be? Tick any, or none.</legend>
+        <label><input type="checkbox" name="platforms" value="goodreads"> Goodreads</label>
+        <label><input type="checkbox" name="platforms" value="amazon"> Amazon (from 19 January)</label>
+        <label><input type="checkbox" name="platforms" value="blog"> My own blog, newsletter or social account</label>
+        <label><input type="checkbox" name="platforms" value="video"> YouTube or a podcast</label>
+        <label><input type="checkbox" name="platforms" value="academic"> A journal, a course or a reading group</label>
+        <label><input type="checkbox" name="platforms" value="none"> Probably nowhere; I just want to read it</label>
+      </fieldset>
+      <div class="form-group">
+        <label for="arc-format">Format</label>
+        <select id="arc-format" name="format">
+          <option value="either">Either, send me the download page</option>
+          <option value="pdf">PDF (the equations and figures as printed)</option>
+          <option value="epub">EPUB (Kindle, Apple Books, Kobo)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="arc-link">A link to where you write or publish (optional)</label>
+        <input type="text" id="arc-link" name="link" placeholder="yourblog.com or a channel address" maxlength="300" autocomplete="url">
+      </div>
+      <div class="form-group">
+        <label for="arc-why">What interests you about this book? (optional)</label>
+        <textarea id="arc-why" name="why" rows="4" maxlength="1000" placeholder="For example: what you work on or like to read, and where you heard about the book." aria-describedby="arc-why-help"></textarea>
+        <p class="arc-help" id="arc-why-help">I read every application myself. A sentence or two here helps.</p>
+      </div>
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label>Leave this field blank
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADV41gJX6q3KQgId" style="margin-bottom:1rem"></div>
+      <p class="arc-consent">By applying you agree to receive the confirmation email and, if chosen, the copy and a few emails about it. Nothing else. Unsubscribe at any time.</p>
+      <div class="form-group arc-checks arc-newsletter">
+        <label><input type="checkbox" name="newsletter" value="yes"> Also send me news about the series. A few emails a year, and you can unsubscribe at any time.</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Apply for a copy <span class="arrow">&rarr;</span></button>
+      <div id="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+</article>
+<script src="/js/arc.js" defer></script>
+{% endblock %}

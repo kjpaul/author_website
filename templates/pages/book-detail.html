@@ -10,7 +10,13 @@
   <header class="book-header">
     <div class="book-cover-wrap">
       {%- if book.cover_image %}
-      <img class="book-cover" src="{{ book.cover_image }}" alt="{{ book.title }} cover">
+      {#- The cover is a link: to the volume it belongs to on a multi-volume book, else to the full-size image. -#}
+      {%- set cover_vols = (book.volumes | selectattr('cover_image', 'equalto', book.cover_image) | list) if book.volumes else [] %}
+      {%- if cover_vols %}
+      <a href="/series/{{ track }}/{{ book.slug }}/{{ cover_vols[0].slug }}/" title="Volume {{ cover_vols[0].number | roman }}: {{ cover_vols[0].title }}"><img class="book-cover" src="{{ book.cover_image }}" alt="Cover of {{ book.title }}, Volume {{ cover_vols[0].number | roman }}, by {{ author.name }}"></a>
+      {%- else %}
+      <a href="{{ book.cover_image }}" title="Full-size cover"><img class="book-cover" src="{{ book.cover_image }}" alt="Cover of {{ book.title }} by {{ author.name }}"></a>
+      {%- endif %}
       {%- if book.cover_note %}<div class="cover-caption">{{ book.cover_note | capitalize }}</div>{% endif %}
       {%- else %}
       <div class="cover-placeholder">{{ book.code or (book.id | upper) }}</div>

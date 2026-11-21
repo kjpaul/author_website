@@ -635,6 +635,36 @@ def build_about_page():
     )
 
 
+# The share image for /arc/ only (1200 x 630), made by
+# tools/make_arc_share_image.py. Facebook caches a preview by the image URL,
+# so a regenerated image gets the next version number here and in its name.
+ARC_SHARE_IMAGE = "/images/social/arc-share-v1.png"
+ARC_SHARE_ALT = ("Cover of Orbital Ring Engineering, Volume I, beside the words: "
+                 "Read Volume I before it is out. Free advance copies at "
+                 "pauldejong.com/arc.")
+
+
+def build_arc_page():
+    """The advance-reader-copy page at /arc/: the copy from content/arc.md and
+    the application form from the template, with the featured volume's cover
+    and release data."""
+    md_path = os.path.join(CONTENT_DIR, "arc.md")
+    if not os.path.exists(md_path):
+        return
+    track, book, vol = featured_book()
+    if not vol:
+        return
+    out = os.path.join(OUTPUT_DIR, "arc", "index.html")
+    build_markdown_page(
+        md_path, out, "pages/arc.html",
+        arc_book=book, arc_vol=vol, arc_track=track,
+        og_type="book",
+        og_image=ARC_SHARE_IMAGE,
+        og_image_width=1200, og_image_height=630,
+        og_image_alt=ARC_SHARE_ALT,
+    )
+
+
 def build_blog_post(md_path):
     meta, md_body = parse_frontmatter(read_file(md_path))
     slug = meta.get("slug")
@@ -1391,6 +1421,7 @@ def build():
 
     build_homepage()
     build_about_page()
+    build_arc_page()
 
     for md_path, out_dir in PAGE_MAP.items():
         if os.path.exists(md_path):

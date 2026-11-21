@@ -5,7 +5,7 @@
     <h1>{{ author.name }}</h1>
     <p class="lede">{{ author.bios.one_line }}</p>
     {{ intro_html | safe }}
-    <p class="press-contact">Interviews, review copies and permissions: <a href="mailto:{{ author.contact.press }}">{{ author.contact.press }}</a>{% if author.contact.permissions and author.contact.permissions != author.contact.press %}. Rights and bulk orders: <a href="mailto:{{ author.contact.permissions }}">{{ author.contact.permissions }}</a>{% endif %}.</p>
+    <p class="press-contact">Reviewers: advance copies of Volume I are available through the <a href="/arc/">advance reader copy page</a>. Interviews, review copies and permissions: <a href="mailto:{{ author.contact.press }}">{{ author.contact.press }}</a>{% if author.contact.permissions and author.contact.permissions != author.contact.press %}. Rights and bulk orders: <a href="mailto:{{ author.contact.permissions }}">{{ author.contact.permissions }}</a>{% endif %}.</p>
   </header>
 
   <nav class="press-toc" aria-label="On this page">

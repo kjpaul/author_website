@@ -121,3 +121,6 @@ book/
 
 # local working backups (pre-edit copies for WinMerge)
 backups/
+
+# Fonts for the share image script (downloaded from Google Fonts; the script falls back to system fonts without them)
+tools/fonts/

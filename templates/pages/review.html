@@ -16,7 +16,7 @@
   <section class="review-book" id="{{ b.anchor }}" aria-labelledby="{{ b.anchor }}-title">
     <div class="review-book-cover">
       {%- if b.cover %}
-      <img src="{{ b.cover }}" alt="Cover of {{ b.title }}" loading="lazy" width="400" height="600">
+      <a href="{{ b.cover }}" title="Full-size cover"><img src="{{ b.cover }}" alt="Cover of {{ b.title }}" loading="lazy" width="400" height="600"></a>
       {%- else %}
       <div class="cover-placeholder">{{ b.placeholder }}</div>
       {%- endif %}

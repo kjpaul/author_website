@@ -48,5 +48,5 @@ He reads every email and answers, though not always quickly.
 ## Elsewhere
 
 - [GitHub](https://github.com/kjpaul/orbitalring): the simulation code
-- [Amazon author page](https://www.amazon.com/stores/Paul-G.-de-Jong/author/B0FWZ55SKP): the books and their reviews
+- [Amazon author page](https://www.amazon.com/author/paul-g-de-jong): the books and their reviews
 - [LinkedIn](https://www.linkedin.com/in/paul-g-de-jong/) and [Patreon](https://www.patreon.com/kjpaul/)

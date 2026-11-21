@@ -11,7 +11,7 @@
   <section class="home-launch">
     <div class="cover-wrap">
       {%- if vol.cover_image %}
-      <img class="book-cover" src="{{ vol.cover_image }}" alt="Cover of {{ book.title }}, Volume {{ vol.number | roman }}: {{ vol.title }}, by Paul G. de Jong">
+      <a href="{{ vol.cover_image }}" title="Full-size cover"><img class="book-cover" src="{{ vol.cover_image }}" alt="Cover of {{ book.title }}, Volume {{ vol.number | roman }}: {{ vol.title }}, by {{ author.name }}"></a>
       {%- else %}
       <div class="cover-placeholder">VOL {{ vol.number | roman }}</div>
       <div class="cover-caption"><span class="pill">Forthcoming</span>Cover to come</div>
@@ -39,6 +39,10 @@
       {% with item=vol %}{% include "includes/buy-buttons.html" %}{% endwith %}
 
       {% include "includes/notify-form.html" %}
+
+      {%- if vol.status != 'published' and vol.number == 1 %}
+      <p class="arc-callout"><a href="/arc/">Advance reader copies</a>: a limited number go out in December, free, to readers who will check the numbers.</p>
+      {%- endif %}
 
       <div class="launch-actions launch-links">
         {%- if vol.links and vol.links.excerpt %}

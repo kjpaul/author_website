@@ -53,9 +53,9 @@
     "reviews": "https://pauldejong.com/review/"
   },
   "profiles": {
-    "amazon_author": "https://www.amazon.com/stores/Paul-G.-de-Jong/author/B0FWZ55SKP",
-    "goodreads_author": "",
-    "google_books": "",
+    "amazon_author": "https://www.amazon.com/author/paul-g-de-jong",
+    "goodreads_author": "https://www.goodreads.com/author/show/60831190.Paul_G_de_Jong",
+    "google_books": "https://www.google.com/search?tbm=bks&q=inauthor:%22Paul+G.+de+Jong%22",
     "github": "https://github.com/kjpaul",
     "github_project": "https://github.com/kjpaul/orbitalring",
     "patreon": "https://www.patreon.com/kjpaul/",
@@ -64,8 +64,9 @@
     "bluesky": "",
     "mastodon": "",
     "x": "",
-    "facebook": "",
-    "instagram": ""
+    "facebook": "https://www.facebook.com/orbitalring.space",
+    "instagram": "https://www.instagram.com/astronomys_shocking_twist/",
+    "tiktok": "https://www.tiktok.com/@orbitalring"
   },
   "headshots": [
     {
