@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Space Engineering, Space Physics]
-excerpt: "Perovskites are often mentioned in scientific papers related to the topics of high-efficiency solar cells, coloured LEDs, fluorescent dyes."
+excerpt: "What perovskites are, and why they turn up in papers on solar cells, colored LEDs, fluorescent dyes and type II superconductors."
 ---
 
 > [Introduction](#introduction)
@@ -24,7 +24,7 @@ This post is the abstract of a long-form article I shared to my supporters on [P
 
 ### Introduction
 
-The term **perovskite** has been coming up in a lot of scientific papers lately--especially in contexts like high-efficiency solar cells, coloured LEDs and fluorescent dyes. It also appears in the context of high-temperature superconductors.
+The term **perovskite** has been coming up in a lot of scientific papers lately--especially in contexts like high-efficiency solar cells, colored LEDs and fluorescent dyes. It also appears in the context of high-temperature superconductors.
 
 So what exactly is a perovskite? And how does it tie to **type II superconductors** and to Orbital Ring Engineering? Let’s explore these links.
 

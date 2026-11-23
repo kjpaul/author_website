@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Space Engineering, Space Physics]
-excerpt: "Perovskites are redefining solar power and superconductivity. In the future they could be powering an orbital ring, and feed energy to Earth."
+excerpt: "How perovskite solar cells could power an orbital ring and send energy to Earth."
 ---
 
 > [More about Perovskites](#perovskites)

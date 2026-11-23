@@ -5,16 +5,22 @@ service cloud.firestore {
       // Anyone can read confirmed/fixed errata
       allow read: if resource.data.status in ["confirmed", "fixed"];
 
+      // The admin is one Google Workspace account. Its sign-in address is
+      // paul@pauldejong.com; Firebase Auth still issues its tokens with the older
+      // address paul@orbitalring.space, so both are named. email_verified keeps out
+      // an account that merely claims one of the addresses.
       // Admin can read all errata (including pending/rejected)
       allow read: if request.auth != null
-                  && request.auth.token.email == "paul@orbitalring.space";
+                  && request.auth.token.email_verified == true
+                  && request.auth.token.email in ["paul@pauldejong.com", "paul@orbitalring.space"];
 
       // No direct client writes. New errata come in through the submitErrata
       // Cloud Function (Admin SDK), which verifies Turnstile + honeypot first.
 
       // Only admin can update or delete
       allow update, delete: if request.auth != null
-                            && request.auth.token.email == "paul@orbitalring.space";
+                            && request.auth.token.email_verified == true
+                  && request.auth.token.email in ["paul@pauldejong.com", "paul@orbitalring.space"];
     }
   }
 }

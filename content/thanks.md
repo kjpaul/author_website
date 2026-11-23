@@ -5,16 +5,16 @@ date: 2026-11-17
 author: "Paul G. de Jong"
 type: page
 status: publish
-excerpt: "Your email address is confirmed. What happens next depends on which list you joined."
+excerpt: "Your email address is confirmed. What happens next depends on what you asked for."
 ---
 
-## You are on the list
+## Your address is confirmed
 
-Your address is confirmed. What happens next:
+What happens next depends on what you asked for.
 
-- **Release news.** One email when *Orbital Ring Engineering, Volume I* goes on sale on 19 January 2027, and one for each book after it. Nothing in between.
-- **Progress notes.** An occasional note on how the books are going, a few times a year.
-- **Advance reader copies.** Paul reads every application and chooses the group; if you are in it, the download link arrives from early December. If not, you still hear when the book is out.
+- If you asked for release news: one email when *Orbital Ring Engineering, Volume I* goes on sale on 19 January 2027, and one for each book after it. Nothing in between.
+- If you asked for progress notes: an occasional note on how the books are going, a few times a year.
+- If you applied for an advance copy: I read every application myself. If you are sent a copy, the download link for the book and the Reader's Guide arrives from early December. Applying did not add you to my newsletter unless you ticked that box.
 
 Every email has an unsubscribe link at the bottom.
 

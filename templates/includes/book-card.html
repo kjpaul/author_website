@@ -2,7 +2,7 @@
 <a class="book-card track-{{ track }}" href="/series/{{ track }}/{{ book.slug }}/">
   <div class="book-card-cover">
     {%- if book.cover_image %}
-    <img src="{{ book.cover_image }}" alt="{{ book.title }} cover">
+    <img src="{{ book.cover_image | web_image }}" alt="{{ book.title }} cover">
     {%- else %}
     <div class="cover-placeholder"><span class="cover-id">Cover to come</span></div>
     {%- endif %}

@@ -13,9 +13,9 @@
       {#- The cover is a link: to the volume it belongs to on a multi-volume book, else to the full-size image. -#}
       {%- set cover_vols = (book.volumes | selectattr('cover_image', 'equalto', book.cover_image) | list) if book.volumes else [] %}
       {%- if cover_vols %}
-      <a href="/series/{{ track }}/{{ book.slug }}/{{ cover_vols[0].slug }}/" title="Volume {{ cover_vols[0].number | roman }}: {{ cover_vols[0].title }}"><img class="book-cover" src="{{ book.cover_image }}" alt="Cover of {{ book.title }}, Volume {{ cover_vols[0].number | roman }}, by {{ author.name }}"></a>
+      <a href="/series/{{ track }}/{{ book.slug }}/{{ cover_vols[0].slug }}/" title="Volume {{ cover_vols[0].number | roman }}: {{ cover_vols[0].title }}"><img class="book-cover" src="{{ book.cover_image | web_image }}" alt="Cover of {{ book.title }}, Volume {{ cover_vols[0].number | roman }}, by {{ author.name }}"></a>
       {%- else %}
-      <a href="{{ book.cover_image }}" title="Full-size cover"><img class="book-cover" src="{{ book.cover_image }}" alt="Cover of {{ book.title }} by {{ author.name }}"></a>
+      <a href="{{ book.cover_image }}" title="Full-size cover"><img class="book-cover" src="{{ book.cover_image | web_image }}" alt="Cover of {{ book.title }} by {{ author.name }}"></a>
       {%- endif %}
       {%- if book.cover_note %}<div class="cover-caption">{{ book.cover_note | capitalize }}</div>{% endif %}
       {%- else %}
@@ -64,22 +64,12 @@
         not science fiction. It is a choice.
       </p>
       <p class="launch-lede">
-        <em>Why Space</em> is a roller coaster ride through the history that gave us
-        the idea and the politics that makes and breaks it. What is at
-        stake, and what can we do to make a highway to space a realistic
-        option for our future? The three volumes of <em>Orbital Ring Engineering</em>
-        explain the technology in detail. This book is about origins, the politics, and the why.
+        <em>Why Space</em> covers the history that produced the idea and the
+        politics that decide whether it is built. What is at stake, and what
+        would make a highway to space a realistic option? The three volumes of
+        <em>Orbital Ring Engineering</em> explain the technology in detail.
+        This book makes the economic case.
       </p>
-      <div class="launch-inside">
-        <h4>Inside <em>Why Space</em></h4>
-        <ul>
-          <li>The Apollo legacy and why it still matters</li>
-          <li>Space politics: the good, the bad, and the ugly</li>
-          <li>Skyhooks, launch loops, space elevators, and more</li>
-          <li>An orbital ring that powers the entire planet</li>
-          <li>A future with billions living across the solar system</li>
-        </ul>
-      </div>
       {% with item=book %}{% include "includes/buy-buttons.html" %}{% endwith %}
       {% include "includes/notify-form.html" %}
       <div class="launch-actions launch-links">
@@ -112,7 +102,7 @@
   {%- elif book.status in ("coming_soon", "forthcoming", "planned") %}
   <div class="book-description">
     <p>More details about this book will be posted here as it develops. The
-    book is part of the ten-volume <em>Astronomy's Shocking Twist</em>
+    book is part of the ten-part <em>Astronomy's Shocking Twist</em>
     series, written and engineered alongside the rest of the work.</p>
   </div>
   {%- endif %}

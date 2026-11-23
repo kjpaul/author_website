@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Science Fiction, Space Engineering]
-excerpt: "From early astronomical theories to today's space travel, we explore the creative methods humanity has devised to escape Earth’s gravity."
+excerpt: "From early astronomy to today's space travel: the methods people have proposed for escaping Earth's gravity."
 ---
 
 > [From Science to Science Fiction to Science](#science-science-fiction)

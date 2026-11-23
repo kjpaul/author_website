@@ -12,8 +12,8 @@ The release date is 19 January 2027, filed at Bowker on 2026-11-10 as the public
    - `bookstore`: the IngramSpark listing for bookstores and libraries. The line under the buttons becomes a link.
    Until `kindle`, `paperback` or `hardcover` is set, the button reads "Coming 19 January 2027" and the notify-me form is the call to action.
 
-3. **Cover.** Replace `static/images/covers/orbital-ring-vol-1-cover.png` with the professional cover under the same name (800 x 1200, PNG). Nothing else references the file by another name.
+3. **Cover.** Replace `static/images/covers/orbital-ring-vol-1-cover.png` with the professional cover under the same name (800 x 1200, PNG). Then save a JPG of the same cover over `static/images/covers/orbital-ring-vol-1-cover.jpg`: the pages show the JPG (it is a fifth of the size) and keep the PNG for the full-size link, the press kit and the share image. If the JPG is older than the PNG the build shows the PNG, so a forgotten JPG costs speed, not a wrong cover. Nothing else references either file by another name.
 
-Also on release day, when the listings exist: the Amazon ASIN in the same volume's `review.amazon_asin` puts Volume I on the review page (`/review/`), and the other store links in that block add their buttons.
+Also on release day: Volume I is already on the review page (`/review/`). Put the Amazon ASIN in the same volume's `review.amazon_asin`, then build and deploy on or after 19 January 2027. `build.py` leaves the Amazon review links out, and prints "Amazon accepts reviews from the release date", for as long as the date of the build is before the volume's `release_date`, so a build made earlier does not switch by itself. The other store links in that block (`goodreads`, `barnes_noble`, `kobo`, `apple_books`) add their buttons as soon as they are filled in.
 
 The catalog's `_notes` carry the same instructions.

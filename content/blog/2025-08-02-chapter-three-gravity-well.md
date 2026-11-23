@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Science Fiction, Space Engineering, Space Physics]
-excerpt: "Chapter 3 of the book explores \"The Gravity Well\", as well as history and pioneers in space mass transport systems, and Orbital Ring design."
+excerpt: "The gravity well, the history and pioneers of space mass transit, and the design of an orbital ring, from Chapter 3 of the book."
 ---
 
 > [Orbital Rings: The Ultimate Space Transit System](#orbital-rings)

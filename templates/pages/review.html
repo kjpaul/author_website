@@ -16,7 +16,7 @@
   <section class="review-book" id="{{ b.anchor }}" aria-labelledby="{{ b.anchor }}-title">
     <div class="review-book-cover">
       {%- if b.cover %}
-      <a href="{{ b.cover }}" title="Full-size cover"><img src="{{ b.cover }}" alt="Cover of {{ b.title }}" loading="lazy" width="400" height="600"></a>
+      <a href="{{ b.cover }}" title="Full-size cover"><img src="{{ b.cover | web_image }}" alt="Cover of {{ b.cover_alt or b.title }}" loading="lazy" width="400" height="600"></a>
       {%- else %}
       <div class="cover-placeholder">{{ b.placeholder }}</div>
       {%- endif %}
@@ -26,6 +26,7 @@
       <h2 id="{{ b.anchor }}-title">{{ b.title }}</h2>
     </div>
     <div class="review-book-actions">
+      {%- if b.amazon_url or b.stores %}
       <div class="review-buttons">
         {%- if b.amazon_url %}
         <a class="review-btn review-btn-amazon" href="{{ b.amazon_url }}" rel="noopener">Review on Amazon</a>
@@ -34,6 +35,7 @@
         <a class="review-btn" href="{{ s.url }}" rel="noopener">{{ s.name }}</a>
         {%- endfor %}
       </div>
+      {%- endif %}
       {%- if b.amazon_intl %}
       <div class="review-intl">
         <span class="review-intl-label">Outside the US? Amazon</span>
@@ -41,6 +43,9 @@
         <a href="{{ c.url }}" rel="noopener">{{ c.country }}</a>
         {%- endfor %}
       </div>
+      {%- endif %}
+      {%- if b.amazon_note %}
+      <p class="review-note">{{ b.amazon_note }}</p>
       {%- endif %}
     </div>
   </section>

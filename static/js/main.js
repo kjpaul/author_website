@@ -61,7 +61,7 @@
         });
         if (r.ok) {
           if (status) {
-            status.textContent = 'Thanks — check your email to confirm.';
+            status.textContent = 'Thanks. Check your email to confirm.';
             status.className = 'notify-form-status is-success';
           }
           form.reset();

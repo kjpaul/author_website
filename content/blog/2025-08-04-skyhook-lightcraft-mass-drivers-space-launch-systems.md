@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Mass Drivers, Orbital Ring, Science Fiction, Space Engineering, Space Physics]
-excerpt: "Here is where we discuss SkyHooks, LightCraft, Mass Drivers, as well as current and future Space Launch Systems and technologies."
+excerpt: "Skyhooks, lightcraft, mass drivers, and other current and proposed space launch systems."
 ---
 
 > [The SkyHook](#skyhook)

@@ -113,8 +113,9 @@
   <section id="links">
     <h2>Links</h2>
     <ul class="press-links">
+      {%- set profile_labels = {"amazon_author": "Amazon author page", "goodreads_author": "Goodreads author page", "google_books": "Google Books", "github": "GitHub", "github_project": "GitHub project", "patreon": "Patreon", "linkedin": "LinkedIn", "youtube": "YouTube", "bluesky": "Bluesky", "mastodon": "Mastodon", "x": "X", "facebook": "Facebook", "instagram": "Instagram", "tiktok": "TikTok"} %}
       {%- for key, url in author.profiles.items() if url %}
-      <li><a href="{{ url }}" rel="noopener">{{ key | replace('_', ' ') | capitalize }}</a> <span class="url">{{ url }}</span></li>
+      <li><a href="{{ url }}" rel="noopener">{{ profile_labels.get(key, key | replace('_', ' ') | capitalize) }}</a> <span class="url">{{ url }}</span></li>
       {%- endfor %}
       {%- if author.sites.project %}
       <li><a href="{{ author.sites.project }}" rel="noopener">Project site</a> <span class="url">{{ author.sites.project }}</span></li>

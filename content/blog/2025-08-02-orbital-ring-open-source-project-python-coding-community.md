@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Python Coding]
-excerpt: "Join the Orbital Ring Open-Source Python project on GitHub, and join the coding community that takes the challenge of designing the future."
+excerpt: "The orbital ring simulation code is an open-source Python project on GitHub, and anyone can contribute."
 ---
 
 > [I still have a dream](#dream)

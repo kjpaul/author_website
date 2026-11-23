@@ -20,6 +20,7 @@ Usage:
     python build.py
 """
 
+import datetime
 import glob
 import json
 import os
@@ -154,6 +155,28 @@ def longdate(value, year=True):
 env.filters["longdate"] = longdate
 
 
+def web_image(path):
+    """The copy of an image that the pages show.
+
+    A PNG cover is close to 1 MB. When a JPG of the same name sits beside it
+    under static/, and is not older than the PNG, the pages show the JPG. The
+    PNG stays the file behind the full-size link, the press kit and the share
+    image. A PNG that was replaced after its JPG was made is shown itself, so
+    a stale JPG never puts an old cover on a page.
+    """
+    if path and path.lower().endswith(".png"):
+        jpg = path[:-4] + ".jpg"
+        png_file = os.path.join(STATIC_DIR, path.lstrip("/"))
+        jpg_file = os.path.join(STATIC_DIR, jpg.lstrip("/"))
+        if os.path.exists(jpg_file) and os.path.exists(png_file) \
+                and os.path.getmtime(jpg_file) >= os.path.getmtime(png_file):
+            return jpg
+    return path
+
+
+env.filters["web_image"] = web_image
+
+
 def load_json(path):
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -286,6 +309,10 @@ def parse_frontmatter(text):
 
 
 def render_markdown(text):
+    """Markdown to HTML. HTML comments in a content file are notes for the
+    editor (rules to keep, TODOs); they are removed here so that they do not
+    reach the public page source."""
+    text = re.sub(r"<!--.*?-->[ \t]*\n?", "", text, flags=re.S)
     return markdown.markdown(text, extensions=["tables", "fenced_code"])
 
 
@@ -751,17 +778,6 @@ def get_errata_books():
     """
     books = []
 
-    # The 2025 first edition (the `related` group, kind first_edition; `legacy` in older catalogs).
-    first_editions = [b for b in SERIES.get("related", []) if b.get("kind") == "first_edition"]
-    first_editions += SERIES.get("legacy", [])
-    for entry in first_editions:
-        books.append({
-            "key": entry.get("errata_key", entry["slug"]),
-            "slug": entry.get("errata_slug"),
-            "title": f"{entry['title']} (1st Edition)",
-            "isbn": entry.get("isbn", ""),
-        })
-
     # The volumes of the new edition (AST-T1). The key is `errata_key` when a volume carries one (the volumes were renumbered
     # on 2026-10-29 and the keys stayed with their books), else ast-t1-vol-<number>.
     _, ast_t1 = find_book_by_id("ast-t1")
@@ -779,7 +795,7 @@ def get_errata_books():
     for key in GROUP_KEYS:
         for book in SERIES.get(key, []):
             ek = book.get("errata_key")
-            if ek and not book.get("volumes") and ek not in seen:
+            if ek and not book.get("volumes") and ek not in seen and book.get("kind") != "first_edition":
                 books.append({
                     "key": ek,
                     "slug": book.get("errata_slug"),
@@ -787,6 +803,18 @@ def get_errata_books():
                     "isbn": (book.get("isbns") or {}).get("paperback", ""),
                 })
                 seen.add(ek)
+
+    # The 2025 first edition comes last, so the current books lead the list and Volume I is the
+    # default choice on the form (the `related` group, kind first_edition; `legacy` in older catalogs).
+    first_editions = [b for b in SERIES.get("related", []) if b.get("kind") == "first_edition"]
+    first_editions += SERIES.get("legacy", [])
+    for entry in first_editions:
+        books.append({
+            "key": entry.get("errata_key", entry["slug"]),
+            "slug": entry.get("errata_slug"),
+            "title": f"{entry['title']} (1st Edition)",
+            "isbn": entry.get("isbn", ""),
+        })
 
     return books
 
@@ -944,7 +972,7 @@ def build_volume_page(book, vol, track):
         "pages/volume-detail.html",
         out_path,
         title=pub["full_title"],
-        description=vol.get("headline") or f"{book['title']} - Volume {to_roman(vol['number'])}.",
+        description=vol.get("headline") or vol.get("meta_description") or f"{book['title']}, Volume {to_roman(vol['number'])}: {vol['title']}.",
         track=track,
         track_label=TRACK_LABELS[track],
         track_book_label=f"{TRACK_BOOK_LABELS[track]} {book['id'].upper()}",
@@ -955,7 +983,8 @@ def build_volume_page(book, vol, track):
         group=find_group(track),
         pub=pub,
         og_type="book",
-        og_image=vol.get("cover_image") or book.get("cover_image"),
+        # A volume without its own cover shares the site image, not another volume's cover.
+        og_image=vol.get("cover_image") or None,
         schema=[book_schema(pub, page_url_for(out_path))],
     )
 
@@ -993,6 +1022,9 @@ def build_reference_pages():
                     f"  WARN: {book_id} volume {vol_num} missing from series.json"
                 )
                 continue
+            if not vol.get("has_references"):
+                # No references page for a volume that does not link to one yet.
+                continue
 
         if vol:
             out_path = os.path.join(
@@ -1008,7 +1040,7 @@ def build_reference_pages():
         render_template(
             "pages/references.html",
             out_path,
-            title=refs_data.get("page_title") or f"References — {refs_data.get('volume_title') or refs_data.get('book_title')}",
+            title=refs_data.get("page_title") or f"References: {refs_data.get('volume_title') or refs_data.get('book_title')}",
             description=(
                 f"Numbered references for {refs_data.get('book_title')}"
                 + (f", Volume {to_roman(vol_num)}" if vol_num else "")
@@ -1250,26 +1282,45 @@ AMAZON_REVIEW_INTL = [
 ]
 
 
-def review_entry(review, anchor, label, title, cover, placeholder):
+def review_entry(review, anchor, label, title, cover, placeholder, release_date=None, cover_alt=None):
     """Turn a series.json `review` block into what the template needs.
 
     Returns None when no link is set, so books that are not out yet stay
-    off the page until their links are added.
+    off the page until their links are added. One optional flag in the
+    `review` block changes that for a book in its advance-copy period:
+
+      "show_before_links": true   the block is on the page even with no link
+
+    Amazon takes reviews only from the release date. Before a full
+    `release_date` (YYYY-MM-DD) the Amazon links are left out, whatever the
+    ASIN, and a line gives the date. The choice is made from the date of the
+    build, so the site has to be built and deployed again on or after the
+    release date for the links to appear.
     """
     review = review or {}
     asin = (review.get("amazon_asin") or "").strip()
+    amazon_note = ""
+    try:
+        released_on = datetime.date.fromisoformat(str(release_date))
+    except (TypeError, ValueError):
+        released_on = None
+    if released_on and datetime.date.today() < released_on:
+        asin = ""
+        amazon_note = f"Amazon accepts reviews from the release date, {longdate(release_date)}."
     stores = [
         {"key": key, "name": name, "url": review[key].strip()}
         for key, name in REVIEW_STORES
         if (review.get(key) or "").strip()
     ]
-    if not asin and not stores:
+    if not asin and not stores and not review.get("show_before_links"):
         return None
     return {
+        "amazon_note": amazon_note,
         "anchor": review.get("anchor") or anchor,
         "label": label,
         "title": title,
         "cover": cover,
+        "cover_alt": cover_alt or title,
         "placeholder": placeholder,
         "amazon_url": AMAZON_REVIEW_US.format(asin=asin) if asin else "",
         "amazon_intl": [
@@ -1294,10 +1345,10 @@ def get_review_books():
                 entries.append(review_entry(
                     book.get("review"),
                     anchor=book["slug"],
-                    label="Original single-volume edition",
-                    title=book["title"],
+                    label="Earlier edition",
+                    title=f"{book.get('short_title') or book['title']}, the original single-volume edition",
                     cover=book.get("cover_image", ""),
-                    placeholder="1st Ed",
+                    placeholder="2025 edition",
                 ))
             elif book.get("volumes"):
                 for vol in book["volumes"]:
@@ -1307,7 +1358,9 @@ def get_review_books():
                         label=f"{book.get('short_title') or book['title']} · Volume {to_roman(vol['number'])}",
                         title=vol["title"],
                         cover=vol.get("cover_image", ""),
-                        placeholder=f"Vol {to_roman(vol['number'])}",
+                        placeholder=f"Volume {to_roman(vol['number'])}",
+                        release_date=vol.get("release_date"),
+                        cover_alt=f"{book['title']}, Volume {to_roman(vol['number'])}: {vol['title']}, by {AUTHOR.get('name', '')}",
                     ))
             else:
                 entries.append(review_entry(

@@ -5,7 +5,7 @@ description: "Volume I of Orbital Ring Engineering. Orbital rings, mass drivers,
 
 ## An engineering book, not a sales pitch
 
-I do not sugar-coat technology, and this is an engineering book, not a sales pitch. Orbital rings, mass drivers and space elevators are easy to talk about; the numbers are the hard part. Every number in this book comes from a derivation shown in it or in Volumes II and III, or from the open-source simulation code written for the series, and every one of them can be checked. The code is on the [Code](/code/) page, the references for every chapter are on this site, and errors go on the [errata page](/errata/).
+I do not sugar-coat technology. Orbital rings, mass drivers and space elevators are easy to talk about; the numbers are the hard part. Every number in this book comes from a derivation shown in it or in Volumes II and III, or from the open-source simulation code written for the series, and every one of them can be checked. The code is on the [Code](/code/) page, the references for every chapter are on this site, and errors go on the [errata page](/errata/).
 
 ## Inside this volume
 
@@ -16,11 +16,11 @@ I do not sugar-coat technology, and this is an engineering book, not a sales pit
 - Debris, damage and repair, and the load the casing can carry
 - Rings at the Moon and Mars, and the missions a ring launches
 
-Nineteen chapters, an appendix on the simulation code, a glossary and an index; 450 pages.
+Nineteen chapters, an appendix on the simulation code, a glossary and an index; 490 pages.
 
 ## Editions
 
-Hardcover, paperback and Kindle. Release on 19 January 2027 through Amazon and, for bookstores and libraries, IngramSpark. The date is announced to the release-news list first.
+Hardcover, paperback and Kindle. Release on 19 January 2027 through Amazon and, for bookstores and libraries, IngramSpark.
 
 ## References
 

@@ -1,9 +1,9 @@
 {
-  "_editor_note": "Editorial note (2026-11-01), not rendered on the page: the cross-references of the form 'Volume II Chapter NN, forthcoming, this volume' and 'Volume III Chapter 10.4' / 'Chapter 83' use the chapter numbers of the May 2026 draft of the launch technologies volume (then Volume II; the design review was then Volume III). They will be renumbered when that manuscript is final. Do not touch them before then.",
+  "_editor_note": "Editorial note, not rendered on the page: the cross-references in these entries use the chapter numbers of the May 2026 draft. They will be renumbered when the manuscript is final. Do not touch them before then. The page is not built while has_references is false for this volume in series.json.",
   "series_id": "AST-T1",
   "book_title": "Orbital Ring Engineering",
   "volume": 3,
-  "volume_title": "Mass Transit Launch Technologies from First Principles",
+  "volume_title": "Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators",
   "last_updated": "2026-05-27",
   "source_markdown": "Vol_II_References_for_Website_2026-05-27.md",
   "chapters": [

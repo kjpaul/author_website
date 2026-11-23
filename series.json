@@ -97,10 +97,10 @@
           "title": "Space Mass Transit Complete Design Review",
           "status": "pre_order",
           "chapters": 19,
-          "pages": 450,
+          "pages": 490,
           "headline": "Orbital rings? Mass drivers? Space elevators? This book has the numbers.",
           "description": "Volume I is the complete design review, and the volume to read first. It takes the ring as a whole, at one altitude, with one cable, one bearing, one set of motors and one power system, and asks whether it all works together. The answer is mostly yes, with the caveats stated, and the open questions are listed for the team that eventually builds the ring. Volumes II and III carry the derivations behind the numbers: the first principles and the launch technologies.",
-          "store_description": "Orbital rings? Mass drivers? Space elevators? This book has the numbers.\n\nAn orbital ring is a cable moving at orbital speed inside a stationary casing, held up by its own momentum and anchored to the ground by lines 700 km long. Trolley cars ride the anchor lines to the ring. A mass driver on the ring launches spacecraft at up to 30 km/s, and space elevators bring people home. No rockets, no fuel, no countdown. It is mass transit into space, designed for millions of passengers a day.\n\nVolume I is the design review, and the volume to read first. It sets the altitude at 700 km, integrates every subsystem, and specifies the carbon nanotube cable, the superconducting magnetic bearing that carries the casing, the linear induction motors that bring the cable to speed over 500 days, the power system, the mass driver, the anchor lines, the space elevators and their pods, and the cryogenic system. It analyzes how the ring can fail, determines its load capacity, scales the design to the Moon, Mars and the asteroids, and sets out what the ring launches and why. The final chapter states the conclusions, lists the open questions, and ranks what gets built first.\n\nThe orbital ring is a huge engineering challenge. So was the transcontinental railroad when the state of the art was wagon trails. The design rests on mass-produced 25 GPa carbon nanotube yarn on a similar timescale. Everything else exists today. Every number comes from a derivation in the book or from the open-source simulation code at pauldejong.com/code.\n\nThis is the first of three volumes on the orbital ring, and the scientific background of the Astronomy's Shocking Twist hard science fiction series.",
+          "store_description": "Orbital rings? Mass drivers? Space elevators? This book has the numbers.\n\nAn orbital ring is a cable moving faster than orbital speed inside a stationary casing, held up by its own momentum and anchored to the ground from 700 km up. Trolley cars ride the anchor lines to the ring. A mass driver on the ring launches spacecraft at up to 30 km/s, and space elevators bring people home. The launch needs no rocket and no propellant. It is mass transit into space, designed to carry tens of millions of passengers a year.\n\nVolume I is the design review, and the volume to read first. It sets the altitude at 700 km, integrates every subsystem, and specifies the carbon nanotube cable, the superconducting magnetic bearing that carries the casing, the linear induction motors that bring the cable to speed in about a year, the power system, the mass driver, the anchor lines, the space elevators and their pods, and the cryogenic system. It analyzes how the ring can fail, determines its load capacity, scales the design to the Moon, Mars and the asteroids, and sets out what the ring launches and why. The final chapter states the conclusions, lists the open questions, and ranks what gets built first.\n\nThe orbital ring is a huge engineering challenge. So was the transcontinental railroad when the state of the art was wagon trails. The design rests on two assumptions: mass-produced 25 GPa carbon nanotube yarn, and a mass driver that releases at 10 km/s and more. The book states both and lists what else is still open. Every number comes from a derivation in the book or from the open-source simulation code at pauldejong.com/code.\n\nThis is the first of three volumes on the orbital ring, and the scientific background of the Astronomy's Shocking Twist hard science fiction series.",
           "cover_image": "/images/covers/orbital-ring-vol-1-cover.png",
           "release_date": "2027-01-19",
           "isbns": {
@@ -135,6 +135,7 @@
             "review": "/review/"
           },
           "review": {
+            "show_before_links": true,
             "amazon_asin": "",
             "goodreads": "",
             "barnes_noble": "",
@@ -147,6 +148,7 @@
           "number": 2,
           "slug": "vol-2",
           "title": "First Principles: Orbital Mechanics, Materials Science, and Electrical Systems",
+          "meta_description": "Volume II of Orbital Ring Engineering: the orbital mechanics, materials science and electrical systems behind the design, derived from first principles.",
           "status": "forthcoming",
           "chapters": null,
           "cover_image": "",
@@ -171,16 +173,16 @@
           "number": 3,
           "slug": "vol-3",
           "title": "Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators",
+          "meta_description": "Volume III of Orbital Ring Engineering: levitation, linear motors, mass drivers and space elevators, each worked through in detail.",
           "status": "forthcoming",
           "chapters": null,
           "cover_image": "",
           "release_date": null,
-          "has_references": true,
+          "has_references": false,
           "has_excerpt": false,
           "errata_key": "ast-t1-vol-2",
           "links": {
             "overview": "/series/technical/orbital-rings/vol-3/",
-            "references": "/series/technical/orbital-rings/vol-3/references/",
             "errata": "/errata/?book=ast-t1-vol-3"
           },
           "review": {
@@ -347,7 +349,7 @@
       "chapters": 20,
       "cover_image": "/images/covers/why-space-cover.png",
       "cover_note": "mock cover",
-      "description": "The economic case for space mass transit, written for the general reader. The standalone companion to Orbital Ring Engineering.",
+      "description": "The case for why a civilization should build space mass transit at all, written for a general reader and light on mathematics.",
       "isbns": {
         "hardcover": "979-8-9932868-3-9",
         "paperback": "979-8-9932868-4-6",

@@ -14,6 +14,6 @@ I read every email. I cannot always respond quickly, but I do respond.
 
 - **General inquiries and correspondence:** [author@pauldejong.com](mailto:author@pauldejong.com)
 - **Permissions, bulk orders, foreign-language rights:** [permissions@pauldejong.com](mailto:permissions@pauldejong.com)
-- **Corrections to the books:** please use the [Errata page](/errata/) rather than email. It puts the correction in front of other readers and keeps credit where it belongs.
+- **Corrections to the books:** please use the [Errata page](/errata/) rather than email. It puts the correction in front of other readers.
 
 Social and project links are in the site footer.

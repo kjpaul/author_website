@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Science Fiction, Space Engineering, Space Physics]
-excerpt: "Engage with us in the dream of building a floating highway to space. An article from the author of the book \"Orbital Ring Engineering\"."
+excerpt: "An introduction to the orbital ring as a floating highway to space."
 ---
 
 > [Introduction](#introduction)

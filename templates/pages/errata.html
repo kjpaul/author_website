@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% block content %}<h1>Book Errata</h1>
+{% block content %}<h1>Search errata</h1>
 <p>
   Found an error in one of the books? Search existing errata below or
-  submit a new one. All submissions are reviewed before publishing.
+  <a href="#report">report a new one</a>. All submissions are reviewed before publishing.
 </p>
+<p><a class="cta" href="#report">Report an error <span class="arrow">&darr;</span></a></p>
 <p class="text-muted">
   The 1st Edition is the original single-volume book of 2025. Volumes I, II, and III
   are the three-volume edition that replaces it; Why Space is its companion.
@@ -19,11 +20,17 @@
   </select>
 </div>
 <p id="errata-count" class="text-muted"></p>
+<p id="recent-wrap" hidden><button type="button" id="recent-btn" class="cta cta-ghost">Show recent errata</button></p>
 <div id="errata-list"></div>
+<div id="errata-pager" class="errata-pager" hidden>
+  <button type="button" id="errata-prev" class="cta cta-ghost">&larr; Previous</button>
+  <span id="errata-page-info" class="text-muted"></span>
+  <button type="button" id="errata-next" class="cta cta-ghost">Next &rarr;</button>
+</div>
 
 <hr>
 
-<h2>Report an Error</h2>
+<h2 id="report" style="scroll-margin-top: 10rem">Report an error</h2>
 <form id="errata-form">
   <div class="form-group">
     <label for="f-book">Book</label>
@@ -34,21 +41,26 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="f-page">Page / Section</label>
-    <input type="text" id="f-page" name="page" placeholder="e.g. 142 or Ch.5 Sec.3" required>
+    <label for="f-page">Chapter and section</label>
+    <input type="text" id="f-page" name="page" placeholder="e.g. Chapter 5, Section 5.3" required>
   </div>
   <div class="form-group">
     <label for="f-quote">Quote from the book (for context)</label>
     <textarea id="f-quote" name="quote" rows="3"
-              placeholder="Copy a few lines from the book so we can locate the error..." required></textarea>
+              placeholder="Copy a few lines from the book so I can find the error." required></textarea>
   </div>
   <div class="form-group">
     <label for="f-desc">What is the error?</label>
     <textarea id="f-desc" name="description" rows="3"
-              placeholder="Describe what is wrong and what it should be..." required></textarea>
+              placeholder="Describe what is wrong and what it should be." required></textarea>
   </div>
   <div class="form-group">
-    <label for="f-email">Your email (optional, for follow-up)</label>
+    <label for="f-name">Your name (optional)</label>
+    <input type="text" id="f-name" name="reader_name" maxlength="100" autocomplete="name" aria-describedby="f-name-help">
+    <p class="text-muted" id="f-name-help">If you give a name, I may thank you by that name in a list of corrections on this site.</p>
+  </div>
+  <div class="form-group">
+    <label for="f-email">Your email (optional, in case I have a question; it is never published)</label>
     <input type="email" id="f-email" name="email" placeholder="you@example.com">
   </div>
   <div style="position:absolute;left:-9999px" aria-hidden="true">

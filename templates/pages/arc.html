@@ -5,12 +5,12 @@
 {% block content %}<article class="arc-page">
   <header class="arc-header">
     <div class="arc-cover">
-      <a href="{{ arc_vol.links.overview }}"><img class="book-cover" src="{{ arc_vol.cover_image }}" alt="Cover of {{ arc_book.title }}, Volume {{ arc_vol.number | roman }}: {{ arc_vol.title }}, by {{ author.name }}"></a>
+      <a href="{{ arc_vol.links.overview }}"><img class="book-cover" src="{{ arc_vol.cover_image | web_image }}" alt="Cover of {{ arc_book.title }}, Volume {{ arc_vol.number | roman }}: {{ arc_vol.title }}, by {{ author.name }}"></a>
     </div>
     <div class="arc-intro">
       <div class="section-eyebrow">Advance reader copies</div>
       <h1>Read Volume I before it is out.</h1>
-      <p class="lede">A free advance copy of <em>Orbital Ring Engineering, Volume I</em> for readers who will check the numbers. PDF or EPUB, sent to your device. An honest review is welcome and entirely optional.</p>
+      <p class="lede">A free advance copy of <em>Orbital Ring Engineering, Volume I</em>, as a PDF or an EPUB. A review is welcome and optional.</p>
       <p class="arc-meta">On sale {{ arc_vol.release_date | longdate }} &middot; {{ arc_vol.pages }} pages &middot; copies go out from early December</p>
       <a class="btn btn-primary" href="#apply">Apply for a copy <span class="arrow">&darr;</span></a>
     </div>
@@ -22,7 +22,7 @@
 
   <section class="arc-form-section" id="apply">
     <h2>Apply for an advance copy</h2>
-    <p class="press-note">Every field except the last two is required. Your address is used only for this advance copy. You get one email to confirm it. If you are sent a copy, you also get the download link and three short notes about this book, the last one in early February 2027. Applying does not add you to <a href="/privacy/">my newsletter</a> unless you tick the box below, and every email has an unsubscribe link.</p>
+    <p class="press-note">Every field except the last two is required.</p>
     <form id="arc-form" class="arc-form" novalidate>
       <div class="form-group">
         <label for="arc-name">Name</label>
@@ -68,7 +68,7 @@
       <div class="form-group">
         <label for="arc-why">What interests you about this book? (optional)</label>
         <textarea id="arc-why" name="why" rows="4" maxlength="1000" placeholder="For example: what you work on or like to read, and where you heard about the book." aria-describedby="arc-why-help"></textarea>
-        <p class="arc-help" id="arc-why-help">I read every application myself. A sentence or two here helps.</p>
+        <p class="arc-help" id="arc-why-help">A sentence or two here helps.</p>
       </div>
       <div style="position:absolute;left:-9999px" aria-hidden="true">
         <label>Leave this field blank
@@ -76,9 +76,9 @@
         </label>
       </div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAADV41gJX6q3KQgId" style="margin-bottom:1rem"></div>
-      <p class="arc-consent">By applying you agree to receive the confirmation email and, if chosen, the copy and a few emails about it. Nothing else. Unsubscribe at any time.</p>
+      <p class="arc-consent">By applying you agree to receive one email to confirm your address and, if you are sent a copy, the download link and three short notes about the book. Your address is used for nothing else unless you tick the box below. Every email has an unsubscribe link. See the <a href="/privacy/">privacy page</a>.</p>
       <div class="form-group arc-checks arc-newsletter">
-        <label><input type="checkbox" name="newsletter" value="yes"> Also send me news about the series. A few emails a year, and you can unsubscribe at any time.</label>
+        <label><input type="checkbox" name="newsletter" value="yes"> Also send me news about the series, a few emails a year.</label>
       </div>
       <button type="submit" class="btn btn-primary">Apply for a copy <span class="arrow">&rarr;</span></button>
       <div id="form-status" role="status" aria-live="polite"></div>

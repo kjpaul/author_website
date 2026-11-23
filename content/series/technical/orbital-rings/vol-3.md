@@ -1,16 +1,12 @@
 ---
 title: "Mass Transit Launch Technologies: Levitation, Linear Motors, Mass Drivers, and Space Elevators"
-description: "Volume III of Orbital Ring Engineering."
+description: "Volume III of Orbital Ring Engineering: levitation, linear motors, mass drivers and space elevators, each worked through in detail."
 ---
 
 ## Overview
 
-Volume III works through each proposed space launch technology from first principles. For each system (rockets, mass drivers, skyhooks, launch loops, space fountains, space elevators, and orbital rings), the volume develops the governing physics, estimates the materials and power requirements, and identifies the binding constraints.
+Volume III is the detailed treatment of the systems that Volume I brings together: the magnetic levitation that carries the casing, the linear motors that deploy the ring, the mass driver that launches spacecraft, and the space elevators that bring people home. Each system gets the derivations behind the numbers used in the design review.
 
-The goal is not to advocate for a single design. It is to build the comparison tools a reader needs to judge any proposal fairly.
+## Inside this volume
 
-## What's Inside
-
-A chapter per major system, each with the same structure: the physics, the materials envelope, the power budget, the failure modes, and the realistic throughput.
-
-Detailed table of contents and sample excerpts will be posted as the draft is finalized.
+The table of contents and sample excerpts will be posted as the draft is finalized.

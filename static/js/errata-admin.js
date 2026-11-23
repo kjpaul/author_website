@@ -5,7 +5,9 @@ import { getFirestore, collection, query, orderBy, getDocs, doc, updateDoc, dele
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut }
   from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
 
-const ADMIN_EMAIL = "paul@orbitalring.space";
+// One Google Workspace account. It signs in as paul@pauldejong.com; Firebase Auth
+// may still report its older address. Must match firestore.rules.
+const ADMIN_EMAILS = ["paul@pauldejong.com", "paul@orbitalring.space"];
 const BOOKS = window.ERRATA_BOOKS || {};
 
 const app  = initializeApp(firebaseConfig);
@@ -24,7 +26,7 @@ const filterEl     = document.getElementById("status-filter");
 
 // --- Auth ---
 onAuthStateChanged(auth, (user) => {
-  if (user && user.email === ADMIN_EMAIL) {
+  if (user && ADMIN_EMAILS.includes(user.email)) {
     authSection.style.display = "none";
     adminSection.style.display = "block";
     userInfo.textContent = `Signed in as ${user.email}`;
@@ -70,9 +72,9 @@ async function loadAll(statusFilter = "all") {
     listEl.innerHTML = items.map(d => `
       <div class="errata-item admin-item" data-id="${d._id}">
         <div class="errata-header">
-          <span class="errata-page">Page ${escHtml(d.page || "?")}</span>
+          <span class="errata-page">${/^\d+$/.test((d.page || "").trim()) ? "Page " : ""}${escHtml(d.page || "?")}</span>
           <span class="badge badge-${d.status}">${d.status}</span>
-          <span class="errata-meta">${escHtml(BOOKS[d.book]?.title || d.book || "?")} &middot; ${fmtDate(d.created_at)} &middot; ${escHtml(d.submitted_by)}</span>
+          <span class="errata-meta">${escHtml(BOOKS[d.book]?.title || d.book || "?")} &middot; ${fmtDate(d.created_at)} &middot; ${escHtml(d.submitted_by)}${d.credit_name ? " &middot; name: " + escHtml(d.credit_name) : ""}</span>
         </div>
         <div class="errata-quote">"${escHtml(d.quote)}"</div>
         <div class="errata-desc">${escHtml(d.description)}</div>

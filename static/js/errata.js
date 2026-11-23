@@ -11,12 +11,8 @@ const coll = collection(db, "errata");
 const BOOKS = window.ERRATA_BOOKS || {};
 
 // --- Alias table (injected by build.py from series.json `errata_aliases`) ---
-// The slug in a /errata/?book= link to the key stored on the Firestore
-// records. The keys were crossed by the 2026-10-29 renumbering of the
-// volumes (Volume I's records carry ast-t1-vol-3, Volume III's ast-t1-vol-2,
-// Why Space's ast-t1-vol-1), so the links use a slug that names the book as
-// it is today and this table turns it back into the stored key. Nothing in
-// Firestore moves. A link that already carries a key still works.
+// Maps the slug in a /errata/?book= link to the key stored on the Firestore
+// records. A link that already carries a key still works.
 const ALIASES = window.ERRATA_ALIASES || {};
 function resolveBookKey(param) {
   if (!param) return null;
@@ -32,46 +28,66 @@ const formEl     = document.getElementById("errata-form");
 const statusEl   = document.getElementById("form-status");
 const countEl    = document.getElementById("errata-count");
 
-// --- Load & render confirmed errata ---
-async function loadErrata(searchText = "", bookKey = "all") {
-  listEl.innerHTML = '<p class="loading">Loading...</p>';
+// --- Load the confirmed errata once; search, book filter and paging work on that list ---
+const PAGE_SIZE = 10;
+const recentWrap = document.getElementById("recent-wrap");
+const recentBtn  = document.getElementById("recent-btn");
+const pagerEl    = document.getElementById("errata-pager");
+const prevBtn    = document.getElementById("errata-prev");
+const nextBtn    = document.getElementById("errata-next");
+const pageInfo   = document.getElementById("errata-page-info");
 
+let allItems = null;   // every confirmed or fixed erratum, newest first; null until loaded
+let shown    = [];     // the ones that match the search box and the book filter
+let page     = 0;
+let listOpen = false;  // the list opens on "Show recent errata", a search, or a choice of book
+
+async function fetchErrata() {
+  if (allItems) return allItems;
+  const q = query(coll,
+    where("status", "in", ["confirmed", "fixed"]),
+    orderBy("created_at", "desc"));
+  const snap = await getDocs(q);
+  const items = [];
+  snap.forEach(doc => items.push(doc.data()));
+  allItems = items;
+  return items;
+}
+
+async function loadErrata() {
   try {
-    const q = query(coll,
-      where("status", "in", ["confirmed", "fixed"]),
-      orderBy("created_at", "desc"));
-    const snap = await getDocs(q);
-
-    const search = searchText.toLowerCase();
-    const items = [];
-    snap.forEach(doc => {
-      const d = doc.data();
-      if (bookKey !== "all" && d.book !== bookKey) return;
+    if (!allItems) countEl.textContent = "Loading…";
+    const items = await fetchErrata();
+    const search = searchEl.value.trim().toLowerCase();
+    const bookKey = bookFilter.value;
+    shown = items.filter(d => {
+      if (bookKey !== "all" && d.book !== bookKey) return false;
       if (search && ![d.page, d.quote, d.description, d.admin_note || ""]
           .some(f => (f || "").toLowerCase().includes(search))) {
-        return;
+        return false;
       }
-      items.push(d);
+      return true;
     });
+    page = 0;
+    render();
+  } catch (err) {
+    console.error(err);
+    countEl.textContent = "";
+    listEl.innerHTML = '<p class="error">Could not load errata. Please try again later.</p>';
+  }
+}
 
-    countEl.textContent = `${items.length} errata found`;
-
-    if (items.length === 0) {
-      listEl.innerHTML = '<p class="empty">No errata found.</p>';
-      return;
-    }
-
-    listEl.innerHTML = items.map(d => {
-      const book = BOOKS[d.book]?.title || d.book;
-      const statusBadge = d.status === "fixed"
-        ? '<span class="badge badge-fixed">Fixed</span>'
-        : '<span class="badge badge-confirmed">Confirmed</span>';
-      const adminNote = d.admin_note
-        ? `<div class="admin-note"><strong>Author note:</strong> ${escHtml(d.admin_note)}</div>`
-        : "";
-      return `<div class="errata-item">
+function itemHtml(d) {
+  const book = BOOKS[d.book]?.title || d.book;
+  const statusBadge = d.status === "fixed"
+    ? '<span class="badge badge-fixed">Fixed</span>'
+    : '<span class="badge badge-confirmed">Confirmed</span>';
+  const adminNote = d.admin_note
+    ? `<div class="admin-note"><strong>Author note:</strong> ${escHtml(d.admin_note)}</div>`
+    : "";
+  return `<div class="errata-item">
         <div class="errata-header">
-          <span class="errata-page">Page ${escHtml(d.page || "?")}</span>
+          <span class="errata-page">${escHtml(fmtWhere(d.page))}</span>
           ${statusBadge}
         </div>
         <div class="errata-quote">"${escHtml(d.quote)}"</div>
@@ -79,27 +95,66 @@ async function loadErrata(searchText = "", bookKey = "all") {
         ${adminNote}
         <div class="errata-meta">${escHtml(book)} &middot; ${fmtDate(d.created_at)}</div>
       </div>`;
-    }).join("\n");
-
-  } catch (err) {
-    console.error(err);
-    listEl.innerHTML = '<p class="error">Could not load errata. Please try again later.</p>';
-  }
 }
+
+function render() {
+  if (!allItems) return;
+  if (allItems.length === 0) {
+    countEl.textContent = "No errata have been confirmed yet.";
+    listEl.innerHTML = "";
+    recentWrap.hidden = true;
+    pagerEl.hidden = true;
+    return;
+  }
+  countEl.textContent = shown.length === 1 ? "1 erratum found" : `${shown.length} errata found`;
+  if (!listOpen) {
+    listEl.innerHTML = "";
+    recentWrap.hidden = false;
+    pagerEl.hidden = true;
+    return;
+  }
+  recentWrap.hidden = true;
+  if (shown.length === 0) {
+    listEl.innerHTML = '<p class="empty">No errata match.</p>';
+    pagerEl.hidden = true;
+    return;
+  }
+  const pages = Math.ceil(shown.length / PAGE_SIZE);
+  page = Math.min(Math.max(page, 0), pages - 1);
+  const start = page * PAGE_SIZE;
+  const slice = shown.slice(start, start + PAGE_SIZE);
+  listEl.innerHTML = slice.map(itemHtml).join("\n");
+  pagerEl.hidden = pages <= 1;
+  prevBtn.disabled = page === 0;
+  nextBtn.disabled = page >= pages - 1;
+  pageInfo.textContent = `${start + 1} to ${start + slice.length} of ${shown.length}`;
+}
+
+// --- Recent errata, ten at a time ---
+recentBtn.addEventListener("click", () => { listOpen = true; page = 0; render(); });
+function turnPage(step) {
+  page += step;
+  render();
+  countEl.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+prevBtn.addEventListener("click", () => turnPage(-1));
+nextBtn.addEventListener("click", () => turnPage(1));
 
 // --- Submit form ---
 formEl.addEventListener("submit", async (e) => {
   e.preventDefault();
   const btn = formEl.querySelector("button[type=submit]");
   btn.disabled = true;
-  btn.textContent = "Submitting...";
+  btn.textContent = "Submitting…";
   statusEl.textContent = "";
+  let sent = false;
 
   const payload = {
     book:        formEl.book.value,
     page:        formEl.page.value.trim(),
     quote:       formEl.quote.value.trim(),
     description: formEl.description.value.trim(),
+    name:        (document.getElementById("f-name")?.value || "").trim(),
     email:       formEl.email.value.trim(),
     website:     formEl.website.value,                         // honeypot
     turnstileToken: formEl["cf-turnstile-response"]?.value || "",
@@ -115,6 +170,7 @@ formEl.addEventListener("submit", async (e) => {
 
     if (resp.ok && json.ok) {
       statusEl.innerHTML = '<span class="success">Thank you! Your submission will be reviewed.</span>';
+      sent = true;
       formEl.reset();
       applyBookParam();  // restore any deep-linked book selection after reset
     } else {
@@ -128,7 +184,8 @@ formEl.addEventListener("submit", async (e) => {
     statusEl.innerHTML = '<span class="error">Submission failed. Please try again.</span>';
   } finally {
     btn.disabled = false;
-    btn.textContent = "Submit";
+    // After a report has gone through, the button must not look as if it still needs pressing.
+    btn.textContent = sent ? "Report another error" : "Submit";
     if (window.turnstile) window.turnstile.reset();
   }
 });
@@ -137,11 +194,11 @@ formEl.addEventListener("submit", async (e) => {
 let searchTimeout;
 searchEl.addEventListener("input", () => {
   clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(() => loadErrata(searchEl.value, bookFilter.value), 300);
+  searchTimeout = setTimeout(() => { listOpen = true; loadErrata(); }, 300);
 });
 
 // --- Book filter ---
-bookFilter.addEventListener("change", () => loadErrata(searchEl.value, bookFilter.value));
+bookFilter.addEventListener("change", () => { listOpen = true; loadErrata(); });
 
 // --- Deep link: /errata/?book=<key> preselects the book in filter + form ---
 function applyBookParam() {
@@ -159,6 +216,14 @@ function escHtml(s) {
   return el.innerHTML;
 }
 
+// Where the error is. New reports give a chapter and section; older ones
+// gave a page number, shown as "Page 142".
+function fmtWhere(v) {
+  const s = (v || "").trim();
+  if (!s) return "?";
+  return /^\d+$/.test(s) ? `Page ${s}` : s;
+}
+
 function fmtDate(ts) {
   if (!ts) return "";
   const d = ts.toDate ? ts.toDate() : new Date(ts);
@@ -167,4 +232,5 @@ function fmtDate(ts) {
 
 // --- Init ---
 applyBookParam();
-loadErrata("", bookFilter.value);
+if (bookFilter.value !== "all") listOpen = true;   // a link to one book opens its list
+loadErrata();

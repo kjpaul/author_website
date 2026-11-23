@@ -184,7 +184,7 @@ function hashEmail(email) {
 // templates/pages/errata.html), then
 // `firebase functions:secrets:set TURNSTILE_SECRET_KEY`.
 
-const ERRATA_MAX = { book: 100, page: 200, quote: 4000, description: 4000, email: 254 };
+const ERRATA_MAX = { book: 100, page: 200, quote: 4000, description: 4000, email: 254, name: 100 };
 
 // Called by `subscribe` when the payload looks like an erratum. CORS, OPTIONS,
 // and the POST check are already handled by the caller.
@@ -217,6 +217,7 @@ async function handleErrataSubmit(req, res) {
   const quote = trimStr(body.quote);
   const description = trimStr(body.description);
   const email = trimStr(body.email);
+  const name = trimStr(body.name);
 
   if (!book || !page || !quote || !description) {
     res.status(400).json({ error: "missing_fields" });
@@ -224,7 +225,7 @@ async function handleErrataSubmit(req, res) {
   }
   if (book.length > ERRATA_MAX.book || page.length > ERRATA_MAX.page ||
       quote.length > ERRATA_MAX.quote || description.length > ERRATA_MAX.description ||
-      email.length > ERRATA_MAX.email) {
+      email.length > ERRATA_MAX.email || name.length > ERRATA_MAX.name) {
     res.status(400).json({ error: "too_long" });
     return;
   }
@@ -233,17 +234,35 @@ async function handleErrataSubmit(req, res) {
     return;
   }
 
+  // Confirmed errata are readable by anyone (firestore.rules), so the public
+  // `errata` record never holds the reader's email address. The address goes
+  // into `errata_contacts/<same id>`, which no client can read; the
+  // notification email to the author carries it. `credit_name` is the name the
+  // reader chose to give for the thank-you list, so it may be public.
   try {
-    await admin.firestore().collection("errata").add({
+    const db = admin.firestore();
+    const now = admin.firestore.Timestamp.now();
+    const ref = db.collection("errata").doc();
+    const batch = db.batch();
+    batch.set(ref, {
       book,
       page,
       quote,
       description,
-      submitted_by: email || "anonymous",
+      submitted_by: email ? "email on file" : "anonymous",
+      credit_name: name,
       status: "pending",
       admin_note: "",
-      created_at: admin.firestore.Timestamp.now(),
+      created_at: now,
     });
+    if (email) {
+      batch.set(db.collection("errata_contacts").doc(ref.id), {
+        email,
+        name,
+        created_at: now,
+      });
+    }
+    await batch.commit();
     res.status(200).json({ ok: true });
   } catch (err) {
     logger.error(`errata_write_failed: ${err && err.message}`, { code: err && err.code });
@@ -468,15 +487,27 @@ exports.onErrataCreated = onDocumentCreated(
 
     const book = d.book || "unknown";
     const page = d.page || "?";
-    const subject = `New errata: ${book} (page ${page})`;
+    const subject = `New errata: ${book} (${page})`;
+
+    // The reader's email address is kept out of the public record; see
+    // handleErrataSubmit. Records written before that change carry it in
+    // `submitted_by`.
+    let submitter = d.submitted_by || "anonymous";
+    try {
+      const contact = await admin.firestore().collection("errata_contacts").doc(event.params.errataId).get();
+      if (contact.exists && contact.data().email) submitter = contact.data().email;
+    } catch (err) {
+      logger.warn("errata_contact_read_failed", { message: err && err.message });
+    }
 
     const text = [
       "A new erratum was submitted on pauldejong.com.",
       "",
       `Book:         ${book}`,
       `ISBN:         ${d.isbn || "n/a"}`,
-      `Page/Section: ${page}`,
-      `Submitted by: ${d.submitted_by || "anonymous"}`,
+      `Chapter/Sec.: ${page}`,
+      `Submitted by: ${submitter}`,
+      `Name:         ${d.credit_name || "(none given)"}`,
       `Status:       ${d.status || "pending"}`,
       "",
       "Quote:",

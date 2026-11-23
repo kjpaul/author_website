@@ -7,7 +7,7 @@
   <div class="cover-wrap">
     <a href="{{ item.links.overview }}">
       {%- if item.cover_image %}
-      <img class="book-cover" src="{{ item.cover_image }}" alt="Cover of {{ featured.title }}, Volume {{ item.number | roman }}: {{ item.title }}, by Paul G. de Jong">
+      <img class="book-cover" src="{{ item.cover_image | web_image }}" alt="Cover of {{ featured.title }}, Volume {{ item.number | roman }}: {{ item.title }}, by Paul G. de Jong">
       {%- else %}
       <div class="cover-placeholder">VOL {{ item.number | roman }}</div>
       {%- endif %}
@@ -24,7 +24,7 @@
     <p class="launch-subtitle">{{ item.headline }}</p>
 
     <p class="launch-lede">
-      An orbital ring is a cable in orbit around the Earth, moving faster than orbital velocity, with a stationary casing riding on it. Anchor lines tie it to the ground, a mass driver on the ring throws spacecraft to the Moon, Mars and beyond, and space elevators bring people home. No rockets, no fuel, no countdown. Volume I is the complete design review: one ring, one design, every number checked and every one of them open to inspection.
+      An orbital ring is a cable in orbit around the Earth, moving faster than orbital velocity, with a stationary casing riding on it. Anchor lines tie it to the ground, a mass driver on the ring throws spacecraft to the Moon, Mars and beyond, and space elevators bring people home. The launch needs no rocket and no propellant. Volume I is the complete design review: one ring, one design, every number checked and every one of them open to inspection.
     </p>
 
     <p class="launch-series-line launch-meta-line">By {{ author.name }}{% if item.pages %} &middot; {{ item.pages }} pages{% endif %} &middot; Hardcover, paperback and Kindle{% if item.release_date %} &middot; {{ item.release_date | longdate }}{% endif %}</p>
@@ -33,7 +33,7 @@
 
     {% include "includes/notify-form.html" %}
 
-    <p class="arc-callout"><a href="/arc/">Advance reader copies</a>: a limited number go out in December, free, to readers who will check the numbers.</p>
+    <p class="arc-callout"><a href="/arc/">Advance reader copies</a>: free, from early December. <a href="/arc/#apply">Apply here</a>.</p>
 
     <div class="launch-actions launch-links">
       {%- if item.links.excerpt %}
@@ -89,7 +89,7 @@
     <div class="section-eyebrow">What {{ author.name }} writes</div>
     <h2>Engineering textbooks and hard science fiction, built on the same physics.</h2>
     <p class="section-lede">
-      {{ author.series.name }} is a ten-book project. {{ author.series.line }}
+      {{ author.series.name }} is a ten-part project. {{ author.series.line }}
       Known laws. Real materials. Normal lifespans. No shortcuts.
     </p>
   </div>

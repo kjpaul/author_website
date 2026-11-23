@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Mass Drivers, Orbital Ring, Science Fiction, Space Engineering]
-excerpt: "Follow-up to The Gravity Well, exploring Space Transit Systems such as Tethered Rings, Launch Loops, Space Fountains, and The Space Elevator."
+excerpt: "A follow-up to The Gravity Well: tethered rings, launch loops, space fountains, and the space elevator."
 ---
 
 > [Tethered Rings](#tethered-rings)

@@ -378,6 +378,12 @@ article li,
   color: var(--muted);
   min-height: 1em;
 }
+.notify-form-note {
+  flex-basis: 100%;
+  margin: 0.1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 .notify-form-status.is-success { color: var(--accent); }
 .notify-form-status.is-error { color: var(--accent-2); }
 
@@ -1255,6 +1261,15 @@ article li,
 }
 
 .text-muted { color: var(--muted); font-size: 0.85rem; }
+.errata-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+.errata-pager[hidden] { display: none; }
+.errata-pager button:disabled { opacity: 0.45; cursor: default; }
 .loading, .empty, .error-msg { color: var(--muted); padding: 2rem 0; text-align: center; font-family: var(--sans); }
 .success { color: var(--ok); }
 .error-msg { color: #b9302d; }
@@ -1867,6 +1882,15 @@ footer .foot-meta a:hover { color: #c1a064; }
   background: var(--bg);
 }
 .review-intl a:hover { border-color: var(--accent); text-decoration: none; }
+
+.review-note {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0.8rem 0 0;
+}
+.review-book-actions > .review-note:first-child { margin-top: 0; }
 
 .review-outro {
   margin-top: 2.6rem;

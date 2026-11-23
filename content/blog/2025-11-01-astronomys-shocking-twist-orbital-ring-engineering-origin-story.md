@@ -1,12 +1,12 @@
 ---
-title: "Astronomy’s Shocking Twist and Orbital Ring Engineering: Origin Story"
+title: "Astronomy's Shocking Twist and Orbital Ring Engineering: Origin Story"
 slug: "astronomys-shocking-twist-orbital-ring-engineering-origin-story"
 date: 2025-11-01
 author: "Paul G. de Jong"
 type: post
 status: publish
-categories: [Astronomy’s Shocking Twist, Orbital Ring, Python Coding, Space Physics]
-excerpt: "Learn about the process and history that inspired the author for the creation of the Astronomy's Shocking Twist saga. | Orbital Ring blog"
+categories: [Astronomy's Shocking Twist, Orbital Ring, Python Coding, Space Physics]
+excerpt: "How the Astronomy's Shocking Twist series and Orbital Ring Engineering came about."
 ---
 
 > [My Early Years](#early-years)
@@ -60,7 +60,7 @@ The Hammock Hangout theme camp at Burning Man 2005. Photo by Paul G. de Jong.
 
 In 2015 I became inspired by [Isaac Arthur’s YouTube channel](https://www.youtube.com/@isaacarthurSFIA). I started writing these stories back in 2015 after seeing an [Isaac Arthur YouTube video](https://youtu.be/MQLDwY-LT_o) about orbital rings and reading a [Wired Magazine article](https://www.wired.com/2015/06/bolt-threads-spider-silk/) about artificial spider silk machines. To me, it was like peanut butter and chocolate.
 
-I also read *Andy Weir*'s **The Martian** around that time.* Isaac Arthur*'s Science and Futurism YouTube channel turned me on to *Gerard K. O'Neill*'s seminal work, **The High Frontier: Human Colonies in Space**. It became yet another catalyst for the science and technology books of the [Astronomy’s Shocking Twist series](https://www.orbitalring.space/blog/astronomys-shocking-twist/)’ technology books, the first being [Orbital Ring Engineering](https://www.orbitalring.space/buy-book/). My reading went from economics and politics back to science and science fiction.
+I also read *Andy Weir*'s **The Martian** around that time.* Isaac Arthur*'s Science and Futurism YouTube channel turned me on to *Gerard K. O'Neill*'s seminal work, **The High Frontier: Human Colonies in Space**. It became yet another catalyst for the science and technology books of the [Astronomy’s Shocking Twist series](/series/)’ technology books, the first being [Orbital Ring Engineering](https://www.orbitalring.space/buy-book/). My reading went from economics and politics back to science and science fiction.
 
 **The original inspiration** for this book is the [Orbital Rings & Space Elevators video](https://youtu.be/MQLDwY-LT_o) by* Isaac Arthur*. I wanted to know what was really possible and understand the real physics behind building such an advanced engineering challenge.
 

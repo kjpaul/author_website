@@ -52,7 +52,7 @@ Paul G. de Jong writes at the intersection of physics, electronics and engineeri
 
 ### Medium bio (185 words)
 
-Paul G. de Jong is the author of Orbital Ring Engineering, a three-volume engineering treatment of orbital rings, mass drivers and space elevators, and of Why Space, the economic case for mass transit to space written for the general reader. Both belong to Astronomy's Shocking Twist, a ten-book project: five technical books written to serve as undergraduate textbooks and five hard science fiction novels set in the world the technical books describe. The novels obey the known laws of physics. People live normal lifespans, propulsion is limited by the power that can be produced, materials are limited to reasonable extrapolations of current research, heat has to go somewhere, and every trajectory is calculated with real orbital mechanics.
+Paul G. de Jong is the author of Orbital Ring Engineering, a three-volume engineering treatment of orbital rings, mass drivers and space elevators, and of Why Space, the economic case for mass transit to space written for the general reader. Both belong to Astronomy's Shocking Twist, a ten-part project: five technical books written to serve as undergraduate textbooks and five hard science fiction novels set in the world the technical books describe. The novels obey the known laws of physics. People live normal lifespans, propulsion is limited by the power that can be produced, materials are limited to reasonable extrapolations of current research, heat has to go somewhere, and every trajectory is calculated with real orbital mechanics.
 
 De Jong studied electronics and physics at Heald Institute of Technology, Ohlone College, UC Berkeley and the University of Amsterdam. He has worked as an electronics technician in medical ultrasound, in hydrogen energy when it was still a fringe topic, and as an inventor and software entrepreneur in San Francisco. His derivations are done in MathCAD and checked against open-source Python simulations that readers can download and run.
 
@@ -70,7 +70,7 @@ Orbital Ring Engineering, in three volumes, is the first of the five technical b
 
 ### Talking points
 
-- What an orbital ring is, in one minute: a cable in orbit moving faster than orbital velocity, a stationary casing riding on it, anchor lines tying it to the ground, and a mass driver on top that throws spacecraft to the Moon and Mars. No rockets, no fuel, no countdown.
+- What an orbital ring is, in one minute: a cable in orbit moving faster than orbital velocity, a stationary casing riding on it, anchor lines tying it to the ground, and a mass driver on top that throws spacecraft to the Moon and Mars. The launch needs no rocket and no propellant.
 - Why mass transit to space is an engineering question, not a physics question: every part of the ring uses known physics and materials that exist or are reasonable extrapolations of current research.
 - The heat problem: heat dissipation, not thrust, is the limit on space propulsion and on any megastructure, and what that does to the design.
 - The power budget: how much power an orbital ring needs, where it comes from, and why the same ring can power the planet.
@@ -78,7 +78,7 @@ Orbital Ring Engineering, in three volumes, is the first of the five technical b
 - Writing a textbook and a novel series at the same time, and how each one changes the other.
 - Showing the work: every number traceable to a paper, a calculation in the book, or open-source code the reader can run.
 - Using AI tools in technical writing without letting them do the engineering.
-- From Isaac Arthur's YouTube channel to a ten-book series: how a hobby of thinking about megastructures became a full-time project.
+- From Isaac Arthur's YouTube channel to a ten-part series: how a hobby of thinking about megastructures became a full-time project.
 - Why the 2025 first edition of Orbital Ring Engineering was replaced by three volumes, and what a complete design review of an orbital ring looks like.
 
 ### SEO
@@ -103,7 +103,7 @@ Catalog id `ast-t1`, volume 1. Group: Technical works. Page: https://pauldejong.
 | Publication date | 19 January 2027 |
 | Status | Pre-order |
 | Language | English |
-| Pages | 450 |
+| Pages | 490 |
 | Chapters | 19 |
 | Formats | Hardcover, Paperback, Kindle |
 | ISBN-13, hardcover | 979-8-9932868-6-0 |
@@ -119,19 +119,20 @@ Catalog id `ast-t1`, volume 1. Group: Technical works. Page: https://pauldejong.
 | Link, references | https://pauldejong.com/series/technical/orbital-rings/vol-1/references/ |
 | Link, errata | https://pauldejong.com/errata/?book=ast-t1-vol-1 |
 | Link, review | https://pauldejong.com/review/ |
+| Review link, show before links | True |
 | Cover file | `static/images/covers/orbital-ring-vol-1-cover.png` (800 x 1200 px) |
 
 **Headline.** Orbital rings? Mass drivers? Space elevators? This book has the numbers.
 
-**Store description** (283 words; Bowker, KDP, IngramSpark, Google Books, word for word).
+**Store description** (305 words; Bowker, KDP, IngramSpark, Google Books, word for word).
 
 Orbital rings? Mass drivers? Space elevators? This book has the numbers.
 
-An orbital ring is a cable moving at orbital speed inside a stationary casing, held up by its own momentum and anchored to the ground by lines 700 km long. Trolley cars ride the anchor lines to the ring. A mass driver on the ring launches spacecraft at up to 30 km/s, and space elevators bring people home. No rockets, no fuel, no countdown. It is mass transit into space, designed for millions of passengers a day.
+An orbital ring is a cable moving faster than orbital speed inside a stationary casing, held up by its own momentum and anchored to the ground from 700 km up. Trolley cars ride the anchor lines to the ring. A mass driver on the ring launches spacecraft at up to 30 km/s, and space elevators bring people home. The launch needs no rocket and no propellant. It is mass transit into space, designed to carry tens of millions of passengers a year.
 
-Volume I is the design review, and the volume to read first. It sets the altitude at 700 km, integrates every subsystem, and specifies the carbon nanotube cable, the superconducting magnetic bearing that carries the casing, the linear induction motors that bring the cable to speed over 500 days, the power system, the mass driver, the anchor lines, the space elevators and their pods, and the cryogenic system. It analyzes how the ring can fail, determines its load capacity, scales the design to the Moon, Mars and the asteroids, and sets out what the ring launches and why. The final chapter states the conclusions, lists the open questions, and ranks what gets built first.
+Volume I is the design review, and the volume to read first. It sets the altitude at 700 km, integrates every subsystem, and specifies the carbon nanotube cable, the superconducting magnetic bearing that carries the casing, the linear induction motors that bring the cable to speed in about a year, the power system, the mass driver, the anchor lines, the space elevators and their pods, and the cryogenic system. It analyzes how the ring can fail, determines its load capacity, scales the design to the Moon, Mars and the asteroids, and sets out what the ring launches and why. The final chapter states the conclusions, lists the open questions, and ranks what gets built first.
 
-The orbital ring is a huge engineering challenge. So was the transcontinental railroad when the state of the art was wagon trails. The design rests on mass-produced 25 GPa carbon nanotube yarn on a similar timescale. Everything else exists today. Every number comes from a derivation in the book or from the open-source simulation code at pauldejong.com/code.
+The orbital ring is a huge engineering challenge. So was the transcontinental railroad when the state of the art was wagon trails. The design rests on two assumptions: mass-produced 25 GPa carbon nanotube yarn, and a mass driver that releases at 10 km/s and more. The book states both and lists what else is still open. Every number comes from a derivation in the book or from the open-source simulation code at pauldejong.com/code.
 
 This is the first of three volumes on the orbital ring, and the scientific background of the Astronomy's Shocking Twist hard science fiction series.
 
@@ -172,7 +173,6 @@ Catalog id `ast-t1`, volume 3. Group: Technical works. Page: https://pauldejong.
 | Subjects | Technology & Engineering / Aeronautics & Astronautics; Science / Space Science / General; Technology & Engineering / Engineering (General) |
 | BISAC codes | TEC002000 |
 | Audience | Undergraduate engineering and physics students; engineers and technically literate general readers |
-| Link, references | https://pauldejong.com/series/technical/orbital-rings/vol-3/references/ |
 | Link, errata | https://pauldejong.com/errata/?book=ast-t1-vol-3 |
 | Cover file | `static/images/covers/orbital-ring-vol-1-cover.png` (800 x 1200 px) |
 
@@ -358,7 +358,7 @@ Catalog id `ast-c1`. Group: Related books. Page: https://pauldejong.com/series/r
 | Link, errata | https://pauldejong.com/errata/?book=why-space |
 | Cover file | `static/images/covers/why-space-cover.png` (780 x 1024 px) (mock cover) |
 
-**Short description** (cards and the page hero). The economic case for space mass transit, written for the general reader. The standalone companion to Orbital Ring Engineering.
+**Short description** (cards and the page hero). The case for why a civilization should build space mass transit at all, written for a general reader and light on mathematics.
 
 ### Orbital Ring Engineering: Mechanics and Material Science for Space Launch Mass Transit Systems
 

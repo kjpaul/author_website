@@ -1,23 +1,38 @@
 ---
-title: "Coding Hub"
-slug: "coding-hub"
-date: 2025-08-11
+title: "Code"
+slug: "code"
+date: 2026-11-23
 author: "Paul G. de Jong"
 type: page
 status: publish
-excerpt: "Open source Python project for modeling orbital rings, space elevators, and mass drivers."
+excerpt: "The open-source Python simulation code behind Orbital Ring Engineering: what the repository holds and how to run it."
 ---
 
-## Coding Hub Community
+## The simulation code
 
-While writing *Why Space*, the economic case that accompanies the orbital ring series, I started with a set of assumptions that turned out to be completely wrong. Some of the issues I encountered could be solved analytically, but the time-dependent processes, like orbital ring deployment, needed iterative solutions.
+The numbers, tables and figures in *Orbital Ring Engineering, Volume I* come from Python code that anyone can download and run. The code is at [github.com/kjpaul/orbitalring](https://github.com/kjpaul/orbitalring), under the MIT license.
 
-That process led to some surprising results, which I describe in the book. I did the numerical analysis using simple Python code, running it repeatedly to hone in on results that actually worked.
+## What the repository holds
 
-The code was crude but magical at the same time. This got me thinking: why not create an [open source project on GitHub](https://github.com/kjpaul/orbitalring) to optimize various space-based applications like orbital rings, space elevators, and mass driver systems?
+- `ring_altitude.py` holds the ring that every chapter uses: the 700 km altitude and the numbers that follow from it. Every other script reads it.
+- `run_all.py` runs the cases behind the book and writes one log for each into a `runs` folder.
+- The other scripts are grouped by subject: the levitation bearing, the linear induction motors that deploy the ring, the mass driver, the anchor lines, the space elevators, power, debris, radiation and the lunar ring.
+- `README.md` lists each script beside the chapters it serves.
 
-Eventually, I want the application to go beyond optimizing these specific space infrastructure projects, towards subjects like trajectories, such as a 4g launch from an orbital ring based on the ring's specific parameters. The goal is to build a Python interface that people can download and run on their own computers. The interface shows the equations involved and explains how they work.
+## How to run it
 
-People can improve the code, and if the community likes the improvements, they get added to the repository. It is both a design tool and a learning tool, meant to inspire curious minds who want a deep understanding of this technology and what it takes to build it.
+The code needs Python 3.10 or later. From the repository folder:
 
-Here is the link to the [Orbital Ring Python coding community on GitHub](https://github.com/kjpaul/orbitalring). Join in.
+```
+pip install -r requirements.txt
+python run_all.py --list
+python run_all.py
+```
+
+The first command installs the packages. The second prints the list of cases. The third runs them all, which takes about three hours on a laptop. To run only some of them, use `python run_all.py --only=name,name` with names from the list.
+
+## Change the assumptions
+
+The code is published so that the numbers can be checked. Change an assumption, run the case again, and see what happens to the result. If you find an error in the code or in the book, please report it on the [errata page](/errata/). Improvements to the code are welcome as pull requests on GitHub.
+
+I also plan to publish the MathCAD worksheets behind the derivations.

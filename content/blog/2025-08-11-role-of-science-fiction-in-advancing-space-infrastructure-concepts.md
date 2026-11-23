@@ -6,7 +6,7 @@ author: "Paul G. de Jong"
 type: post
 status: publish
 categories: [Orbital Ring, Science Fiction, Space Engineering]
-excerpt: "While the principles of orbital mechanics were laid by scientists, envisioning space megastructures came from the realm of science fiction."
+excerpt: "Scientists worked out orbital mechanics. Science fiction writers were the first to imagine space megastructures."
 ---
 
 > [The Role of Science Fiction in Advancing Space Infrastructure Concepts](#role-science-fiction)
