@@ -5,7 +5,7 @@ date: 2026-11-09
 author: "Paul G. de Jong"
 type: page
 status: publish
-excerpt: "Paul G. de Jong is the author of Orbital Ring Engineering and the Astronomy's Shocking Twist series: five engineering textbooks and five hard science fiction novels on mass transit to space."
+excerpt: "Paul G. de Jong is the author of Orbital Ring Engineering and the Astronomy's Shocking Twist series: five technical works and five hard science fiction novels on mass transit to space."
 ---
 
 <!-- Third person throughout, so the name is in the text. Search engines and AI crawlers rank this page for "Paul G. de Jong" from the body, not from the title. First-person history lives on the blog; the origin story is linked below. -->
@@ -22,7 +22,7 @@ The fiction follows one rule: nothing in it breaks the known laws of physics. Pe
 
 ## The author
 
-Paul G. de Jong writes at the intersection of physics, electronics and engineering. His career has crossed several fields: electronics technician at Acuson Medical Ultrasound in the late 1980s, member of the International Association for Hydrogen Energy in the 1990s, when hydrogen was a fringe topic, attending its 10th World Hydrogen Energy Conference in Florida in 1994, and a project called Making Math Fun in the same decade when he was considering teaching. Settling in San Francisco in 1997, he worked in software and audio as an inventor and serial entrepreneur, founding AnyTaxi, Club Clock and KaraokeListMaker, while keeping a home physics lab active throughout. He studied electronics at Heald Institute of Technology and physics at Ohlone College, UC Berkeley and the University of Amsterdam.
+Paul G. de Jong writes at the intersection of physics, electronics and engineering. His career has crossed several fields: electronics technician at Acuson Medical Ultrasound in the late 1980s, member of the International Association for Hydrogen Energy in the 1990s, when hydrogen was a fringe topic, attending its 10th World Hydrogen Energy Conference in Florida in 1994, and a project called Making Math Fun in the same decade when he was considering teaching. Settling in San Francisco in 1997, he worked in software and audio as an inventor and serial entrepreneur, founding AnyTaxi, Club Clock and KaraokeListMaker, while keeping a home physics lab active throughout.
 
 The common thread across ultrasound, hydrogen, software, audio, the lab and space infrastructure is a habit of showing the work. The books are the long version of that habit. His threshold for suspension of disbelief is very low, and the technical series arose from a desire for more truly hard science fiction.
 
@@ -32,7 +32,7 @@ De Jong is Dutch-American. The longer story, from watching the Moon landing at s
 
 ## How the books are made
 
-Derivations are performed in MathCAD and verified against simulation code written in Python. The simulation code is [open source on GitHub](https://github.com/kjpaul/orbitalring). Every major number in the books comes from one of three sources: a peer-reviewed publication, a calculation presented in the book, or a simulation whose code the reader can download and run.
+Derivations are worked out in math software and verified against simulation code written in Python. The simulation code is [open source on GitHub](https://github.com/kjpaul/orbitalring). Every major number in the books comes from one of three sources: a peer-reviewed publication, a calculation presented in the book, or a simulation whose code the reader can download and run.
 
 De Jong uses AI tools for research, technical verification and editorial feedback. The engineering decisions, design choices and writing are his own. So are any errors. The [Errata page](/errata/) is where readers report them; it puts the correction in front of other readers.
 
